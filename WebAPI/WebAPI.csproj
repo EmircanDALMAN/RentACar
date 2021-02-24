@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReCapProject.Business\ReCapProject.Business.csproj" />
+    <ProjectReference Include="..\ReCapProject.DataAccess\ReCapProject.DataAccess.csproj" />
+  </ItemGroup>
+
+
+</Project>
