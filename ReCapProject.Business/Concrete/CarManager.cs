@@ -18,7 +18,7 @@ namespace ReCapProject.Business.Concrete
 {
     public class CarManager : ICarService
     {
-        readonly ICarDal _carDal;
+        private readonly ICarDal _carDal;
 
         public CarManager(ICarDal carDal)
         {
@@ -66,7 +66,7 @@ namespace ReCapProject.Business.Concrete
         [ValidationAspect(typeof(CarValidator))]
         public IResult Update(Car car)
         {
-           
+
             _carDal.Update(car);
             return new SuccessResult(Messages.CarUpdated);
 

@@ -1,6 +1,5 @@
-﻿using System;
+﻿using ReCapProject.Entities.Concrete;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ReCapProject.Business.Constants
 {
@@ -18,6 +17,8 @@ namespace ReCapProject.Business.Constants
         public static string CarAdded = "Araç kayıt işlemi başarılı";
         public static string CarDeleted = "Araç silme işlemi başarılı";
         public static string CarUpdated = "Araç güncelleme işlemi başarılı";
+        public static string GetErrorCarMessage = "Hatalı Giriş";
+
 
         //ColorMessages
         public static string ColorAdded = "Renk kayıt işlemi başarılı";
@@ -41,7 +42,13 @@ namespace ReCapProject.Business.Constants
         public static string UserUpdated = "Kullanıcı güncelleme işlemi başarılı";
         public static string UserDeleted = "Kullanıcı silme işlemi başarılı";
 
+        //Car Image Messages
+        public static string CountOfCarImagesCorrect = "Bir arabanın en fazla 5 resmi olabilir";
+        public static string CarImageAdded = "Araba resmi eklendi";
+        public static string CarImageUpdated = "Araba resmi güncellendi";
+        public static string CarImageDeleted = "Araba resmi silindi";
 
+        public static string WrongImageFileExtension = "Hatalı Uzantı!";
 
     }
 }

@@ -16,7 +16,7 @@ namespace ReCapProject.DataAccess.Concrete.EntityFramework
         public List<RentalDetailDto> GetRentalDetails(Expression<Func<Rental, bool>> filter = null)
         {
 
-            using (RecapProjectDbContext context = new RecapProjectDbContext())
+            using (var context = new RecapProjectDbContext())
             {
                 var result = from re in filter is null ? context.Rentals : context.Rentals.Where(filter)
                              join ca in context.Cars
