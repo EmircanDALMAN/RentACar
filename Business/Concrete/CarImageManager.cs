@@ -1,23 +1,22 @@
 ﻿using Business.Abstract;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
-using Core.Aspect.Autofac.Validation;
 using Core.Utilities.Business;
-using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Core.Aspects.AutoFac.Validation;
+using Core.Utilities.Results.Abstract;
+using Core.Utilities.Results.Concrete;
 
 namespace Business.Concrete
 {
     public class CarImageManager : ICarImageService
     {
-        ICarImageDal _carImageDal;
+        private readonly ICarImageDal _carImageDal;
 
         public CarImageManager(ICarImageDal carImageDal)
         {
@@ -27,7 +26,7 @@ namespace Business.Concrete
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Add(CarImage carImage,string extension)
         {
-            IResult result = BusinessRules.Run(
+            var result = BusinessRules.Run(
                 CheckIfImageLimit(carImage.CarId)
                 );
 
@@ -44,7 +43,7 @@ namespace Business.Concrete
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Delete(CarImage carImage)
         {
-            IResult result = BusinessRules.Run(CarImageDelete(carImage));
+            var result = BusinessRules.Run(CarImageDelete(carImage));
             if (result != null)
             {
                 return result;
@@ -80,7 +79,7 @@ namespace Business.Concrete
 
         private List<CarImage> CheckIfCarImageNull(int id)
         {
-            string path = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).FullName + @"\Images\default.jpg");
+            var path = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).FullName + @"\Images\default.jpg");
             var result = _carImageDal.GetAll(c => c.CarId == id).Any();
             if (!result)
             {
@@ -90,18 +89,18 @@ namespace Business.Concrete
         }
 
         private IDataResult<CarImage> CreatedFile(CarImage carImage,string extension)
-        {            
+        {
 
-            string path = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).FullName + @"\Images");           
+            var path = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).FullName + @"\Images");           
 
             var creatingUniqueFilename = Guid.NewGuid().ToString("N")
                 + "_" + DateTime.Now.Month + "_"
                 + DateTime.Now.Day + "_"
                 + DateTime.Now.Year + extension;
 
-            string source = Path.Combine(carImage.ImagePath);
+            var source = Path.Combine(carImage.ImagePath);
 
-            string result = $@"{path}\{creatingUniqueFilename}";
+            var result = $@"{path}\{creatingUniqueFilename}";
 
             try
             {
@@ -121,9 +120,9 @@ namespace Business.Concrete
         {
             var creatingUniqueFilename = Guid.NewGuid().ToString("N") + "_" + DateTime.Now.Month + "_" + DateTime.Now.Day + "_" + DateTime.Now.Year + ".jpeg";
 
-            string path = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).FullName + @"\Images");                     
+            var path = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).FullName + @"\Images");
 
-            string result = $"{path}\\{creatingUniqueFilename}";
+            var result = $"{path}\\{creatingUniqueFilename}";
 
             File.Copy(carImage.ImagePath, path + "\\" + creatingUniqueFilename);
 
@@ -149,8 +148,8 @@ namespace Business.Concrete
 
         private IResult CheckIfImageLimit(int carid)
         {
-            var carImagecount = _carImageDal.GetAll(p => p.CarId == carid).Count;
-            if (carImagecount >= 5)
+            var carImageCount = _carImageDal.GetAll(p => p.CarId == carid).Count;
+            if (carImageCount >= 5)
             {
                 return new ErrorResult(Messages.FailAddedImageLimit);
             }

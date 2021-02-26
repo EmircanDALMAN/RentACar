@@ -1,0 +1,15 @@
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\DataAccess\bin\Debug\netstandard2.0\DataAccess.deps.json
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\DataAccess\bin\Debug\netstandard2.0\DataAccess.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\DataAccess\bin\Debug\netstandard2.0\DataAccess.pdb
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\DataAccess\bin\Debug\netstandard2.0\Core.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\DataAccess\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\DataAccess\bin\Debug\netstandard2.0\Core.pdb
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\DataAccess\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\DataAccess\bin\Debug\netstandard2.0\Entities.dll.config
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.csprojAssemblyReference.cache
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CopyComplete
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb

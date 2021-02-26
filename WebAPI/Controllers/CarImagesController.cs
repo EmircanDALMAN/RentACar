@@ -15,9 +15,9 @@ namespace WebAPI.Controllers
     [ApiController]
     public class CarImagesController : ControllerBase
     {
-        ICarImageService _carImageService;
+        private readonly ICarImageService _carImageService;
 
-        IWebHostEnvironment _webHostEnvironment;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
         public CarImagesController(ICarImageService carImageService, IWebHostEnvironment webHostEnvironment)
         {
@@ -62,18 +62,18 @@ namespace WebAPI.Controllers
         [HttpPost("add")]
         public async Task<IActionResult> AddAsync([FromForm(Name = ("Image"))] IFormFile file, [FromForm] CarImage carImage)
         {
-            System.IO.FileInfo ff = new System.IO.FileInfo(file.FileName);
-            string fileExtension = ff.Extension;
+            var ff = new System.IO.FileInfo(file.FileName);
+            var fileExtension = ff.Extension;
 
             var path = Path.GetTempFileName();
             if (file.Length > 0)
-                using (var stream = new FileStream(path, FileMode.Create))
+                await using (var stream = new FileStream(path, FileMode.Create))
                     await file.CopyToAsync(stream);
 
-            var carimage = new CarImage { CarId = carImage.CarId, ImagePath = path, Date = DateTime.Now };
+            var carImages = new CarImage { CarId = carImage.CarId, ImagePath = path, Date = DateTime.Now };
 
 
-            var result = _carImageService.Add(carimage, fileExtension);
+            var result = _carImageService.Add(carImages, fileExtension);
 
             if (result.Success)
             {
@@ -96,9 +96,9 @@ namespace WebAPI.Controllers
 
         public class FileUpload
         {
-            public IFormFile files { get; set; }
+            public IFormFile Files { get; set; }
 
-            public IFormFile carid { get; set; }
+            public IFormFile CarId { get; set; }
         }
 
         [HttpPost("add3")]
@@ -106,8 +106,8 @@ namespace WebAPI.Controllers
         {
 
 
-            System.IO.FileInfo ff = new System.IO.FileInfo(file.files.FileName);
-            string fileExtension = ff.Extension;
+            var ff = new System.IO.FileInfo(file.Files.FileName);
+            var fileExtension = ff.Extension;
 
 
             var createdUniqueFilename = Guid.NewGuid().ToString("N")
@@ -116,29 +116,25 @@ namespace WebAPI.Controllers
                 + DateTime.Now.Year + fileExtension;
 
 
-            string path = "";
             if (!Directory.Exists(_webHostEnvironment.WebRootPath + "\\uploads\\"))
             {
                 Directory.CreateDirectory(_webHostEnvironment.WebRootPath + "\\uploads\\");
             }
-            using (FileStream fs = System.IO.File.Create(_webHostEnvironment.WebRootPath + "\\uploads\\" + createdUniqueFilename))
-            {
-                await file.files.CopyToAsync(fs);
 
-                path = _webHostEnvironment.WebRootPath + "\\uploads\\" + createdUniqueFilename;
+            await using (var fs = System.IO.File.Create(_webHostEnvironment.WebRootPath + "\\uploads\\" + createdUniqueFilename))
+            {
+                await file.Files.CopyToAsync(fs);
 
                 fs.Flush();
             }
 
 
-            await AddAsync(file.files, carImage);
+            await AddAsync(file.Files, carImage);
 
             return "\\uploads\\" + createdUniqueFilename;
 
 
         }
-
-
 
         [HttpPost("delete")]
         public IActionResult Delete(CarImage carImage)
@@ -162,6 +158,4 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
     }
-
-
 }
