@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Business.Abstract;
+using Entities.Concrete;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ReCapProject.Business.Abstract;
-using ReCapProject.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,44 +14,66 @@ namespace WebAPI.Controllers
     public class ColorsController : ControllerBase
     {
         IColorService _colorService;
-        public ColorsController(IColorService olorService)
+
+        public ColorsController(IColorService colorService)
         {
-            _colorService = olorService;
+            _colorService = colorService;
         }
+
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
             var result = _colorService.GetAll();
-            if (result.Success) { return Ok(result); }
-            return BadRequest();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
+
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            var result = _colorService.GetById(id);
-            if (result.Success) { return Ok(result); }
-            return BadRequest();
+            var result = _colorService.Get(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
+
         [HttpPost("add")]
         public IActionResult Add(Color color)
         {
             var result = _colorService.Add(color);
-            if (result.Success) { return Ok(result); }
-            return BadRequest();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
+
         [HttpPost("delete")]
         public IActionResult Delete(Color color)
         {
             var result = _colorService.Delete(color);
-            if (result.Success) { return Ok(result); }
-            return BadRequest();
+            if(result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
+
         [HttpPost("update")]
         public IActionResult Update(Color color)
         {
             var result = _colorService.Update(color);
-            if (result.Success) { return Ok(result); }
-            return BadRequest();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
+
     }
 }
