@@ -4,12 +4,10 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using DataAccess.Concrete.Contexts;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfCustomerDal:EfEntityRepositoryBase<Customer, CarRentalContext>,ICustomerDal
+    public class EfCustomerDal : EfCarRentalRepositoryBase<Customer, CarRentalContext>, ICustomerDal
     {
-
     }
 }

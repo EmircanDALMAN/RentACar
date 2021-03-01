@@ -8,22 +8,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
-using System.Threading.Tasks;
-using DataAccess.Concrete.Contexts;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfCarDal : EfEntityRepositoryBase<Car, CarRentalContext>, ICarDal
+    public class EfCarDal : EfCarRentalRepositoryBase<Car, CarRentalContext>, ICarDal
     {
         public List<CarDetailDto> GetCarDetails()
         {
-            using (var context = new CarRentalContext())
+            using (CarRentalContext context = new CarRentalContext())
             {
-                var result = from c in context.Cars
-                             join b in context.Brands on c.BrandId equals b.Id
-                             join co in context.Colors on c.ColorId equals co.Id
-                             select new CarDetailDto { CarName = c.Description, BrandName = b.BrandName, ColorName = co.ColorName, DailyPrice = c.DailyPrice };
-                             
+                var result = from car in context.Cars
+                             join brand in context.Brands
+                             on car.BrandId equals brand.Id
+                             join color in context.Colors
+                             on car.ColorId equals color.Id
+                             select new CarDetailDto
+                             {
+                                 BrandName = brand.Name,
+                                 CarColor = color.Name,
+                                 CarDailyPrice = car.DailyPrice,
+                                 CarDescription = car.Description
+                             };
                 return result.ToList();
             }
         }

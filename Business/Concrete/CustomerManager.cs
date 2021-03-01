@@ -1,58 +1,44 @@
 ﻿using Business.Abstract;
-using Business.ValidationRules.FluentValidation;
-using Core.CrossCuttingConcerns.Validation;
-using Core.Utilities.Results;
+using Business.Constants;
+using Core.Utils.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
-using System.Threading.Tasks;
-using Core.Aspects.AutoFac.Validation;
-using Core.Utilities.Results.Abstract;
-using Core.Utilities.Results.Concrete;
 
 namespace Business.Concrete
 {
-    public class CustomerManager:ICustomerService
+    public class CustomerManager : ICustomerService
     {
-        ICustomerDal _customerDal;
+        private ICustomerDal _customerDal;
 
         public CustomerManager(ICustomerDal customerDal)
         {
             _customerDal = customerDal;
         }
 
-        [ValidationAspect(typeof(ColorValidator))]
         public IResult Add(Customer customer)
         {
-            
             _customerDal.Add(customer);
-            return new SuccessResult();
+            return new SuccessResult(Messages.CustomerAdded);
         }
 
         public IResult Delete(Customer customer)
         {
             _customerDal.Delete(customer);
-            return new SuccessResult();
-        }
-
-        public IDataResult<Customer> Get(int id)
-        {
-            return new SuccessDataResult<Customer>(_customerDal.Get(p => p.Id == id));
+            return new SuccessResult(Messages.CustomerDeleted);
         }
 
         public IDataResult<List<Customer>> GetAll()
         {
-            return new SuccessDataResult<List<Customer>>(_customerDal.GetAll());
+            return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(), Messages.CustomersListed);
         }
 
         public IResult Update(Customer customer)
         {
             _customerDal.Update(customer);
-            return new SuccessResult();
+            return new SuccessResult(Messages.CustomerUpdated);
         }
     }
 }
