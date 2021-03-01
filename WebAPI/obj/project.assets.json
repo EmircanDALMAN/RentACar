@@ -6243,11 +6243,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CarRentalProject\\RentACar\\WepAPI\\WebAPI.csproj",
+      "projectUniqueName": "D:\\CarRentalProject\\RentACar\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "D:\\CarRentalProject\\RentACar\\WepAPI\\WebAPI.csproj",
+      "projectPath": "D:\\CarRentalProject\\RentACar\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\emiq1\\.nuget\\packages\\",
-      "outputPath": "D:\\CarRentalProject\\RentACar\\WepAPI\\obj\\",
+      "outputPath": "D:\\CarRentalProject\\RentACar\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\emiq1\\AppData\\Roaming\\NuGet\\NuGet.Config",
