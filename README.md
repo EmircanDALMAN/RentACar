@@ -11,7 +11,6 @@
       <li>Sorgu çalıştıktan sonra açılan .sql dosyasını kapatabilirsiniz. Artık veritabanı kullanıma hazır.</li>
     </ol>
     </li>
-    <li> <del>ConsoleUI' ı startup project olarak seçtiğinizden emin olunuz.</del> </li>
     <li>11. Hafta Güncellemesi: WebAPI' yi startup project olarak seçtiğinizden emin olunuz.</li>
     <li>7. Haftadaki DataAccess katmanında bulunan Abstract kısım Generic Repository Design Pattern ile güncellendi.</li>
     <li>7. Haftadaki DataAccess katmanında bulunan InMemoryCarDal güncellendi. (LINQ kodları eklenmiştir.)</li>
