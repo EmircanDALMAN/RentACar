@@ -1,16 +1,12 @@
-﻿using Business.Abstract;
+﻿using System;
+using System.IO;
+using Business.Abstract;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using WepAPI.Models;
+using WebAPI.Models;
 
-namespace WepAPI.Controllers
+namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
