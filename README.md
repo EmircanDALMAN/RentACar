@@ -6,7 +6,7 @@
       <li>Açılan menüde SQL Server&gt;(localdb)&gt;Databases dizinini açınız.</li>
       <li>Databases' e sağ tıklayarak Add New Database' i seçiniz.</li>
       <li>Veritabanına istediğiniz ismi verebilirsiniz. Ben CarRental ismini tercih ediyorum.</li>
-      <li>Oluşturduğunuz Database üzerine sağ tıklayıp New Query'i seçiniz. <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalQuery.txt">CarRental.txt</a> içindeki her şeyi kopyalayıp, yeni sorgu içerisine yapıştırınız.</li>
+      <li>Oluşturduğunuz Database üzerine sağ tıklayıp New Query'i seçiniz. <a href="https://github.com/Kontorta16/RentACar/blob/master/DbScript.txt">DbScript.txt</a> içindeki her şeyi kopyalayıp, yeni sorgu içerisine yapıştırınız.</li>
       <li>Sorguyu sol üsteki run tuşundan veya CTRL + SHIFT + E tuş takımı ile çalıştırınız.</li>
       <li>Sorgu çalıştıktan sonra açılan .sql dosyasını kapatabilirsiniz. Artık veritabanı kullanıma hazır.</li>
     </ol>
@@ -16,62 +16,16 @@
     <li>7. Haftadaki DataAccess katmanında bulunan Abstract kısım Generic Repository Design Pattern ile güncellendi.</li>
     <li>7. Haftadaki DataAccess katmanında bulunan InMemoryCarDal güncellendi. (LINQ kodları eklenmiştir.)</li>
     <li>8. Hafta ödevine ilişkin EntityFramework kodları yazıldı.</li>
-    <li><del>Sql Server' da oluşturulan veritabanı <a href="https://hizliresim.com/hL9kKp" rel="nofollow">bu</a> şekildedir.</del></li>
     <li>9. Hafta ödevine ilişkin Core Katmanı kodları yazıldı.</li>
     <li>10. Hafta ödevinin ilk aşamasına ilişkin Core Katmanı kodlarına Utils dizini eklendi ve kod refaktör edildi.</li>
     <li>10. Hafta ödevinin ikinci aşamasına ilişkin veritabanı düzenlendi(foreign keyler vs. eklendi).</li>
     <li>11. Hafta ödevine ilişkin WebAPI katmanı kuruldu.</li>
     <li>11. Haftada Business katmanında bulunan Validasyon kuralları FluentValidation ile yazıldı. ValidationAspect Attribute' u ile AOP teknikleri kullanıldı.</li>
     <li>12. Hafta ödevine ilişkin projeye Autofac, FluentValidation ve AOP Desteği eklendi.</li>
-    <li>Kiralanacak arabanın, teslim edilmiş olması kuralı <del>FluentValidation ile <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/Business/ValidationRules/FluentValidation/RentalValidator.cs">RentalValidator</a>'da yazıldı.</del> 12. ve 13. Hafta Dersi ile beraber bu kuralın Business Kuralı olduğu anlaşılmış işlemler <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/Business/Concrete/RentalManager.cs">RentalManager</a> sınıfına taşınmıştır. </li>
+    <li>Kiralanacak arabanın, teslim edilmiş olması kuralı <del>FluentValidation ile <a href="https://github.com/Kontorta16/RentACar/blob/master/Business/ValidationRules/FluentValidation/RentalValidator.cs">RentalValidator</a>'da yazıldı.</del> 12. ve 13. Hafta Dersi ile beraber bu kuralın Business Kuralı olduğu anlaşılmış işlemler <a href="https://github.com/Kontorta16/RentACar/blob/master/Business/Concrete/RentalManager.cs">RentalManager</a> sınıfına taşınmıştır. </li>
     <li>13. Hafta ödevine ilişkin CarRental veritabanına CarImages eklendi.</li>
     <li>13. Araba fotoğrafları wwwroot dizini altında, GUID'ler ile isimlendirilerek tutuldu. Bu işlemler WebAPI katmanında CarImagesController' ın Add Metodunda bulunmaktadır. </li>
     <li>Araba fotoğraflarının eklenmesi, silinmesi, güncellenmesi işlemleri veritabanında sorunsuz çalışmaktadır. Daha sonra veritabanından silinen araba fotoğrafının wwwroot dizininden silinmesi de eklenebilir.</li>
     <li>14. Hafta ödevine ilişkin JWT entegrasyonu eklendi. SecuredOperation Attribute' u için metot seçilmedi.</li>
-    <li> Postman de yapılan bazı istekler:
-      <h2><a id="user-content-eski-i̇stekler-11hafta-ödevi" class="anchor" aria-hidden="true" href="#eski-i̇stekler-11hafta-ödevi"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><b>Eski İstekler</b> 11.Hafta Ödevi</h2>
-      <ul>
-        <li>GET: https://localhost:44324/api/rentals/details </li>
-        <li>GET: https://localhost:44324/api/users/all </li>
-        <li>GET: https://localhost:44324/api/cars/brand?id=3</li>
-        <li>GET: https://localhost:44324/api/cars/color?id=7</li>
-        <li>POST: https://localhost:44324/api/rentals<br> 
-        BODY(raw -JSON): 
-        <pre> 
-        {
-            "carId": 4,
-            "customerId": 1,
-            "rentDate": "2021-02-14T00:00:00",
-            "returnDate": "2021-02-19T00:00:00"
-        }
-        </pre>
-        <h2><a id="user-content-yeni-i̇stekler-13hafta-ödevi" class="anchor" aria-hidden="true" href="#yeni-i̇stekler-13hafta-ödevi"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><b>Yeni İstekler</b> 13.Hafta Ödevi</h2>
-        <ul>
-          <li>GET: https://localhost:44324/api/carimages/photos?id=1</li>
-          <li>POST: https://localhost:44324/api/carimages/add<br> 
-        <h3><a id="user-content-form-data" class="anchor" aria-hidden="true" href="#form-data"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><b>form-data:</b></h3> 
-        <table>
-          <tbody><tr>
-            <th>Key</th>
-            <th>Value</th>
-            <th>Type</th>
-          </tr>
-          <tr>
-            <td>carId</td>
-            <td>1</td>
-            <td>Text</td>
-          </tr>
-          <tr>
-            <td>File</td>
-            <td>toyota_corolla.jpg</td>
-            <td>File</td>
-          </tr>
-        </tbody></table>
-        <b>Hatırlatma:</b> localhost'tan sonra gelen 44324 port numarası aynı olmayabilir, kendinizinkiyle değiştirebilirsiniz.
-        </li>
-      </ul>
-    </li>
-    <li><del>Console' da isterlerdeki bütün testler simüle edilmiştir. Dilerseniz <a href="https://github.com/poyrazaktas/YazilimGelistiriciKampi/blob/master/CarRentalProject/ConsoleUI/Program.cs">Program.cs</a> üzerinden, yorum satırlarını açarak diğer operasyonları da deneyebilirsiniz.</del></li>
-    <li><del>ConsoleUI' da yapılacan Add, Update, Delete işlemlerini ilgili fonksiyonlardan güncelleyebilirsiniz. </del></li>
   </ul>
 </li></ul></h4>
