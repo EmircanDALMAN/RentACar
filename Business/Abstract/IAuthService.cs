@@ -1,6 +1,6 @@
 ﻿using Core.Entities.Concrete;
-using Core.Utils.Results;
-using Core.Utils.Security.JWT;
+using Core.Utilities.Results;
+using Core.Utilities.Security.JWT;
 using Entities.DTOs;
 
 namespace Business.Abstract

@@ -6605,11 +6605,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj",
+      "projectUniqueName": "D:\\CarRentalProject\\RentACar\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj",
+      "projectPath": "D:\\CarRentalProject\\RentACar\\Core\\Core.csproj",
       "packagesPath": "C:\\Users\\emiq1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\obj\\",
+      "outputPath": "D:\\CarRentalProject\\RentACar\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\emiq1\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -25,7 +25,7 @@ namespace WepAPI.Controllers
             _webHostEnvironment = webHostEnvironment;
         }
 
-        [HttpGet("photos")]
+        [HttpGet("getbyid")]
         public IActionResult GetAll(int carId)
         {
             var result = _carImageService.GetAllByCarId(carId);
@@ -44,7 +44,7 @@ namespace WepAPI.Controllers
             {
                 Directory.CreateDirectory(path);
             }
-            var extension = image.File.FileName.Split('.')[1]; // dosya isminin noktadan sonrası uzantıdır
+            var extension = image.File.FileName.Split('.')[1];
             Guid guid = Guid.NewGuid();
             var imagePath = path + guid.ToString() + "." + extension;
             using (FileStream fileStream = System.IO.File.Create(imagePath))
@@ -52,7 +52,10 @@ namespace WepAPI.Controllers
                 image.File.CopyTo(fileStream);
                 fileStream.Flush();
             }
-            var result = _carImageService.Add(new CarImage { CarId = carId, Date = DateTime.Now, ImagePath = imagePath });
+            var result = _carImageService.Add(new CarImage
+            {
+                CarId = carId, Date = DateTime.Now, ImagePath = imagePath
+            });
             if (result.Success)
             {
                 return Ok(result);

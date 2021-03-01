@@ -6243,11 +6243,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\WepAPI\\WepAPI.csproj",
-      "projectName": "WepAPI",
-      "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\WepAPI\\WepAPI.csproj",
+      "projectUniqueName": "D:\\CarRentalProject\\RentACar\\WepAPI\\WebAPI.csproj",
+      "projectName": "WebAPI",
+      "projectPath": "D:\\CarRentalProject\\RentACar\\WepAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\emiq1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\WepAPI\\obj\\",
+      "outputPath": "D:\\CarRentalProject\\RentACar\\WepAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\emiq1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6266,17 +6266,17 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Business\\Business.csproj"
+            "D:\\CarRentalProject\\RentACar\\Business\\Business.csproj": {
+              "projectPath": "D:\\CarRentalProject\\RentACar\\Business\\Business.csproj"
             },
-            "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj"
+            "D:\\CarRentalProject\\RentACar\\Core\\Core.csproj": {
+              "projectPath": "D:\\CarRentalProject\\RentACar\\Core\\Core.csproj"
             },
-            "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj"
+            "D:\\CarRentalProject\\RentACar\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "D:\\CarRentalProject\\RentACar\\DataAccess\\DataAccess.csproj"
             },
-            "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj"
+            "D:\\CarRentalProject\\RentACar\\Entities\\Entities.csproj": {
+              "projectPath": "D:\\CarRentalProject\\RentACar\\Entities\\Entities.csproj"
             }
           }
         }

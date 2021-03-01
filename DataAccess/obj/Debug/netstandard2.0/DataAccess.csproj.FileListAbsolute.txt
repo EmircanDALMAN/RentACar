@@ -1,0 +1,14 @@
+D:\CarRentalProject\RentACar\DataAccess\bin\Debug\netstandard2.0\DataAccess.deps.json
+D:\CarRentalProject\RentACar\DataAccess\bin\Debug\netstandard2.0\DataAccess.dll
+D:\CarRentalProject\RentACar\DataAccess\bin\Debug\netstandard2.0\DataAccess.pdb
+D:\CarRentalProject\RentACar\DataAccess\bin\Debug\netstandard2.0\Core.dll
+D:\CarRentalProject\RentACar\DataAccess\bin\Debug\netstandard2.0\Entities.dll
+D:\CarRentalProject\RentACar\DataAccess\bin\Debug\netstandard2.0\Core.pdb
+D:\CarRentalProject\RentACar\DataAccess\bin\Debug\netstandard2.0\Entities.pdb
+D:\CarRentalProject\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.csprojAssemblyReference.cache
+D:\CarRentalProject\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfoInputs.cache
+D:\CarRentalProject\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs
+D:\CarRentalProject\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\CarRentalProject\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CopyComplete
+D:\CarRentalProject\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
+D:\CarRentalProject\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb

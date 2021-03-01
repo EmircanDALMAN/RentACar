@@ -1,8 +1,5 @@
 using Business.Abstract;
 using Business.Concrete;
-using Core.Utils.IoC;
-using Core.Utils.Security.Encryption;
-using Core.Utils.Security.JWT;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -20,6 +17,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.Utilities.IoC;
+using Core.Utilities.Security.Encryption;
+using Core.Utilities.Security.JWT;
 
 namespace WepAPI
 {

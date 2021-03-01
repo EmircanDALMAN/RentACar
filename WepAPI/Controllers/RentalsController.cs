@@ -20,7 +20,7 @@ namespace WepAPI.Controllers
             _rentalService = rentalService;
         }
 
-        [HttpGet("all")]
+        [HttpGet("getall")]
         public IActionResult GetAll()
         {
             var result = _rentalService.GetAll();

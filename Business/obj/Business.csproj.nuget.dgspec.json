@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Business\\Business.csproj": {}
+    "D:\\CarRentalProject\\RentACar\\Business\\Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Business\\Business.csproj": {
+    "D:\\CarRentalProject\\RentACar\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Business\\Business.csproj",
+        "projectUniqueName": "D:\\CarRentalProject\\RentACar\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Business\\Business.csproj",
+        "projectPath": "D:\\CarRentalProject\\RentACar\\Business\\Business.csproj",
         "packagesPath": "C:\\Users\\emiq1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Business\\obj\\",
+        "outputPath": "D:\\CarRentalProject\\RentACar\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\emiq1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -30,11 +30,11 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj"
+              "D:\\CarRentalProject\\RentACar\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "D:\\CarRentalProject\\RentACar\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj"
+              "D:\\CarRentalProject\\RentACar\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\CarRentalProject\\RentACar\\Entities\\Entities.csproj"
               }
             }
           }
@@ -98,14 +98,14 @@
         }
       }
     },
-    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj": {
+    "D:\\CarRentalProject\\RentACar\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj",
+        "projectUniqueName": "D:\\CarRentalProject\\RentACar\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj",
+        "projectPath": "D:\\CarRentalProject\\RentACar\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\emiq1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\obj\\",
+        "outputPath": "D:\\CarRentalProject\\RentACar\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\emiq1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -189,14 +189,14 @@
         }
       }
     },
-    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj": {
+    "D:\\CarRentalProject\\RentACar\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\CarRentalProject\\RentACar\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj",
+        "projectPath": "D:\\CarRentalProject\\RentACar\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\emiq1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\obj\\",
+        "outputPath": "D:\\CarRentalProject\\RentACar\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\emiq1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -215,11 +215,11 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj"
+              "D:\\CarRentalProject\\RentACar\\Core\\Core.csproj": {
+                "projectPath": "D:\\CarRentalProject\\RentACar\\Core\\Core.csproj"
               },
-              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj"
+              "D:\\CarRentalProject\\RentACar\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\CarRentalProject\\RentACar\\Entities\\Entities.csproj"
               }
             }
           }
@@ -259,14 +259,14 @@
         }
       }
     },
-    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj": {
+    "D:\\CarRentalProject\\RentACar\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj",
+        "projectUniqueName": "D:\\CarRentalProject\\RentACar\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj",
+        "projectPath": "D:\\CarRentalProject\\RentACar\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\emiq1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\obj\\",
+        "outputPath": "D:\\CarRentalProject\\RentACar\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\emiq1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -285,8 +285,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj"
+              "D:\\CarRentalProject\\RentACar\\Core\\Core.csproj": {
+                "projectPath": "D:\\CarRentalProject\\RentACar\\Core\\Core.csproj"
               }
             }
           }

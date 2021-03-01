@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MEOmSgunoB27ymTSITE96eeUKC9RrYm6NmOvoC/CITO3Apr5DqOFzTnYyW4NeKLgqrG789TzlPK0dQK6JLcSNw==",
+  "dgSpecHash": "qgkMc0ziwbK/5Q6w4lqTJWhLl0w4O4Mfjd7ryk+GAnnKmUPiEsR/VvmqL1DUy0Nic8ZV89JoZwGl4OmbKMVJzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj",
+  "projectFilePath": "D:\\CarRentalProject\\RentACar\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\emiq1\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",

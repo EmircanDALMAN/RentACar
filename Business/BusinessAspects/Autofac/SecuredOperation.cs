@@ -1,13 +1,14 @@
 ﻿using Business.Constants;
 using Castle.DynamicProxy;
 using Core.Extensions;
-using Core.Utils.Interceptors;
-using Core.Utils.IoC;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using Core.Utilities.Interceptors;
+using Core.Utilities.IoC;
 
 namespace Business.BusinessAspects.Autofac
 {
@@ -25,12 +26,9 @@ namespace Business.BusinessAspects.Autofac
         protected override void OnBefore(IInvocation invocation)
         {
             var roleClaims = _httpContextAccessor.HttpContext.User.ClaimRoles();
-            foreach (var role in _roles)
+            if (_roles.Any(role => roleClaims.Contains(role)))
             {
-                if (roleClaims.Contains(role))
-                {
-                    return;
-                }
+                return;
             }
             throw new Exception(Messages.AuthorizationDenied);
         }
