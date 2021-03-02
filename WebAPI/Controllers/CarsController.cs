@@ -8,7 +8,7 @@ namespace WebAPI.Controllers
     [ApiController]
     public class CarsController : ControllerBase
     {
-        private ICarService _carService;
+        private readonly ICarService _carService;
 
         public CarsController(ICarService carService)
         {
@@ -21,7 +21,7 @@ namespace WebAPI.Controllers
             var result = _carService.GetAll();
             if (result.Success)
             {
-                return Ok(result);
+                return Ok(result.Data);
             }
             return BadRequest(result);
         }
@@ -63,6 +63,16 @@ namespace WebAPI.Controllers
         public IActionResult GetAllByModelYear(int year)
         {
             var result = _carService.GetAllByModelYear(year);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int id)
+        {
+            var result = _carService.GetById(id);
             if (result.Success)
             {
                 return Ok(result);

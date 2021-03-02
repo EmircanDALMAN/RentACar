@@ -1,27 +1,16 @@
-using Business.Abstract;
-using Business.Concrete;
-using DataAccess.Abstract;
-using DataAccess.Concrete.EntityFramework;
+using Core.Utilities.IoC;
+using Core.Utilities.Security.Encryption;
+using Core.Utilities.Security.JWT;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Core.Utilities.IoC;
-using Core.Utilities.Security.Encryption;
-using Core.Utilities.Security.JWT;
 
-namespace WepAPI
+namespace WebAPI
 {
     public class Startup
     {
@@ -36,6 +25,12 @@ namespace WepAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors(options => options
+                .AddDefaultPolicy(policy => policy
+                    .AllowCredentials()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .SetIsOriginAllowed(x => true)));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
@@ -65,6 +60,7 @@ namespace WepAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors();
             app.UseHttpsRedirection();
 
             app.UseRouting();

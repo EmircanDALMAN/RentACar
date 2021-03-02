@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfColorDal : EfCarRentalRepositoryBase<Color,CarRentalContext>,IColorDal
+    public class EfColorDal : EfEntityRepositoryBase<Color,CarRentalContext>,IColorDal
     {
     }
 }

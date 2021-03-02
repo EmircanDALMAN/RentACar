@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfUserDal : EfCarRentalRepositoryBase<User, CarRentalContext>, IUserDal
+    public class EfUserDal : EfEntityRepositoryBase<User, CarRentalContext>, IUserDal
     {
         public List<OperationClaim> GetClaims(User user)
         {

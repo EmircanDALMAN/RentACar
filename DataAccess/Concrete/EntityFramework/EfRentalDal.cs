@@ -10,7 +10,7 @@ using System.Linq.Expressions;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfRentalDal : EfCarRentalRepositoryBase<Rental, CarRentalContext>, IRentalDal
+    public class EfRentalDal : EfEntityRepositoryBase<Rental, CarRentalContext>, IRentalDal
     {
         public List<RentalDetailDto> GetRentalDetails()
         {
