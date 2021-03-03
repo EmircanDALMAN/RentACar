@@ -26,5 +26,6 @@
     <li>13. Araba fotoğrafları wwwroot dizini altında, GUID'ler ile isimlendirilerek tutuldu. Bu işlemler WebAPI katmanında CarImagesController' ın Add Metodunda bulunmaktadır. </li>
     <li>Araba fotoğraflarının eklenmesi, silinmesi, güncellenmesi işlemleri veritabanında sorunsuz çalışmaktadır. Daha sonra veritabanından silinen araba fotoğrafının wwwroot dizininden silinmesi de eklenebilir.</li>
     <li>14. Hafta ödevine ilişkin JWT entegrasyonu eklendi. SecuredOperation Attribute' u için metot seçilmedi.</li>
+    <li>15. Hafta ödevleri tamamlandı fazladan özel olarak loglama ve exception yönetimi eklendi.</li>
   </ul>
 </li></ul></h4>
