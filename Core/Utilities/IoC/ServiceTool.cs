@@ -7,10 +7,10 @@ namespace Core.Utilities.IoC
     {
         public static IServiceProvider ServiceProvider { get; private set; }
 
-        public static IServiceCollection Create(IServiceCollection services)
+        public static IServiceCollection Create(IServiceCollection serviceCollections)
         {
-            ServiceProvider = services.BuildServiceProvider();
-            return services;
+            ServiceProvider = serviceCollections.BuildServiceProvider();
+            return serviceCollections;
         }
     }
 }

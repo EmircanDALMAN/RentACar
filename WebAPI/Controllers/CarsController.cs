@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,7 +15,7 @@ namespace WebAPI.Controllers
         {
             _carService = carService;
         }
-
+        [SecuredOperation("car.list")]
         [HttpGet("getall")]
         public IActionResult GetAll()
         {

@@ -72,3 +72,10 @@ D:\CarRentalProject\RentACar\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CopyCo
 D:\CarRentalProject\RentACar\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.dll
 D:\CarRentalProject\RentACar\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.pdb
 D:\CarRentalProject\RentACar\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.genruntimeconfig.cache
+D:\CarRentalProject\RentACar\WebAPI\bin\Debug\netcoreapp3.1\log4net.dll
+D:\CarRentalProject\RentACar\WebAPI\bin\Debug\netcoreapp3.1\MicroKnights.Log4NetAdoNetAppender.dll
+D:\CarRentalProject\RentACar\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\CarRentalProject\RentACar\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+D:\CarRentalProject\RentACar\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\CarRentalProject\RentACar\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+D:\CarRentalProject\RentACar\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
