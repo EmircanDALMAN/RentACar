@@ -8,7 +8,7 @@ namespace WebAPI.Controllers
     [ApiController]
     public class RentalsController : ControllerBase
     {
-        private IRentalService _rentalService;
+        private readonly IRentalService _rentalService;
 
         public RentalsController(IRentalService rentalService)
         {
@@ -21,9 +21,10 @@ namespace WebAPI.Controllers
             var result = _rentalService.GetAll();
             if (result.Success)
             {
-                return Ok(result);
+                return Ok(result.Data);
             }
-            return BadRequest(result);
+
+            return BadRequest(result.Message);
         }
 
         [HttpGet("details")]
@@ -32,9 +33,10 @@ namespace WebAPI.Controllers
             var result = _rentalService.GetRentalDetails();
             if (result.Success)
             {
-                return Ok(result);
+                return Ok(result.Data);
             }
-            return BadRequest(result);
+
+            return BadRequest(result.Message);
         }
 
         [HttpPost("add")]
@@ -43,9 +45,10 @@ namespace WebAPI.Controllers
             var result = _rentalService.Add(rental);
             if (result.Success)
             {
-                return Ok(result);
+                return Ok(result.Message);
             }
-            return BadRequest(result);
+
+            return BadRequest(result.Message);
         }
 
         [HttpPost("update")]
@@ -54,9 +57,10 @@ namespace WebAPI.Controllers
             var result = _rentalService.Update(rental);
             if (result.Success)
             {
-                return Ok(result);
+                return Ok(result.Message);
             }
-            return BadRequest(result);
+
+            return BadRequest(result.Message);
         }
 
         [HttpPost("delete")]
@@ -65,9 +69,10 @@ namespace WebAPI.Controllers
             var result = _rentalService.Delete(rental);
             if (result.Success)
             {
-                return Ok(result);
+                return Ok(result.Message);
             }
-            return BadRequest(result);
+
+            return BadRequest(result.Message);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Business.Concrete
 {
     public class CarImageManager : ICarImageService
     {
-        private ICarImageDal _carImageDal;
+        private readonly ICarImageDal _carImageDal;
 
         public CarImageManager(ICarImageDal carImageDal)
         {

@@ -12,8 +12,8 @@ namespace WebAPI.Controllers
     [ApiController]
     public class CarImagesController : ControllerBase
     {
-        private ICarImageService _carImageService;
-        private IWebHostEnvironment _webHostEnvironment;
+        private readonly ICarImageService _carImageService;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
         public CarImagesController(ICarImageService carImageService, IWebHostEnvironment webHostEnvironment)
         {
@@ -27,36 +27,40 @@ namespace WebAPI.Controllers
             var result = _carImageService.GetAllByCarId(carId);
             if (result.Success)
             {
-                return Ok(result);
+                return Ok(result.Data);
             }
-            return BadRequest(result);
+
+            return BadRequest(result.Message);
         }
 
         [HttpPost("add")]
         public IActionResult Add([FromForm(Name = ("carId"))] int carId, [FromForm] FileUpload image)
         {
-            string path = _webHostEnvironment.WebRootPath + "\\uploads\\";
+            var path = _webHostEnvironment.WebRootPath + "\\uploads\\";
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
             }
             var extension = image.File.FileName.Split('.')[1];
-            Guid guid = Guid.NewGuid();
-            var imagePath = path + guid.ToString() + "." + extension;
-            using (FileStream fileStream = System.IO.File.Create(imagePath))
+            var guid = Guid.NewGuid();
+            var imagePath = path + guid + "." + extension;
+            using (var fileStream = System.IO.File.Create(imagePath))
             {
                 image.File.CopyTo(fileStream);
                 fileStream.Flush();
             }
             var result = _carImageService.Add(new CarImage
             {
-                CarId = carId, Date = DateTime.Now, ImagePath = imagePath
+                CarId = carId, 
+                Date = DateTime.Now, 
+                ImagePath = imagePath
             });
             if (result.Success)
             {
-                return Ok(result);
+                return Ok(result.Message);
             }
-            return BadRequest(result);
+
+            return BadRequest(result.Message);
         }
 
         [HttpPost("update")]
@@ -76,9 +80,10 @@ namespace WebAPI.Controllers
             var result = _carImageService.Delete(carImage);
             if (result.Success)
             {
-                return Ok(result);
+                return Ok(result.Message);
             }
-            return BadRequest(result);
+
+            return BadRequest(result.Message);
         }
     }
 }

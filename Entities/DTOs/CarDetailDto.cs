@@ -9,9 +9,9 @@ namespace Entities.DTOs
     {
         public int Id { get; set; }
         public string BrandName { get; set; }
-        public string CarDescription { get; set; }
-        public string CarColor { get; set; }
-        public int CarDailyPrice { get; set; }
+        public string Description { get; set; }
+        public string Color { get; set; }
+        public int DailyPrice { get; set; }
    
     }
 }

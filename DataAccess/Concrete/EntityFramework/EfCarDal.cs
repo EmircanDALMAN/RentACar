@@ -15,7 +15,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         public List<CarDetailDto> GetCarDetails()
         {
-            using (CarRentalContext context = new CarRentalContext())
+            using (var context = new CarRentalContext())
             {
                 var result = from car in context.Cars
                              join brand in context.Brands
@@ -26,9 +26,9 @@ namespace DataAccess.Concrete.EntityFramework
                              {
                                  Id = car.Id,
                                  BrandName = brand.Name,
-                                 CarColor = color.Name,
-                                 CarDailyPrice = car.DailyPrice,
-                                 CarDescription = car.Description
+                                 Color = color.Name,
+                                 DailyPrice = car.DailyPrice,
+                                 Description = car.Description
                              };
                 return result.ToList();
             }

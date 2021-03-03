@@ -8,7 +8,7 @@ namespace WebAPI.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private IUserService _userService;
+        private readonly IUserService _userService;
 
         public UsersController(IUserService userService)
         {
@@ -21,9 +21,10 @@ namespace WebAPI.Controllers
             var result = _userService.GetAll();
             if (result.Success)
             {
-                return Ok(result);
+                return Ok(result.Data);
             }
-            return BadRequest(result);
+
+            return BadRequest(result.Message);
         }
 
         [HttpPost("add")]
@@ -32,9 +33,10 @@ namespace WebAPI.Controllers
             var result = _userService.Add(user);
             if (result.Success)
             {
-                return Ok(result);
+                return Ok(result.Message);
             }
-            return BadRequest(result);
+
+            return BadRequest(result.Message);
         }
 
         [HttpPost("update")]
@@ -43,9 +45,10 @@ namespace WebAPI.Controllers
             var result = _userService.Update(user);
             if (result.Success)
             {
-                return Ok(result);
+                return Ok(result.Message);
             }
-            return BadRequest(result);
+
+            return BadRequest(result.Message);
         }
 
         [HttpPost("delete")]
@@ -54,9 +57,10 @@ namespace WebAPI.Controllers
             var result = _userService.Delete(user);
             if (result.Success)
             {
-                return Ok(result);
+                return Ok(result.Message);
             }
-            return BadRequest(result);
+
+            return BadRequest(result.Message);
         }
     }
 }
