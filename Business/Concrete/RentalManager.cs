@@ -25,7 +25,7 @@ namespace Business.Concrete
 
         public IResult Add(Rental rental)
         {
-            var result = Rules.Run(CheckIfCarReturned(rental.CarId));
+            var result = BusinessRules.Run(CheckIfCarReturned(rental.CarId));
             if (result != null)
             {
                 return new ErrorResult(result.Message);

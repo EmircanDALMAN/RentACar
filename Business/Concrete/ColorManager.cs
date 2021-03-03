@@ -22,7 +22,7 @@ namespace Business.Concrete
 
         public IResult Add(Color color)
         {
-            var result = Rules.Run(CheckIfColorExists(color.Name));
+            var result = BusinessRules.Run(CheckIfColorExists(color.Name));
             if (result != null)
             {
                 return new ErrorResult(result.Message);

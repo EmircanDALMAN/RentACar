@@ -22,7 +22,7 @@ namespace Business.Concrete
 
         public IResult Add(Brand brand)
         {
-            var result = Rules.Run(CheckIfBrandExists(brand.Name));
+            var result = BusinessRules.Run(CheckIfBrandExists(brand.Name));
             if (result != null)
             {
                 return new ErrorResult(result.Message);

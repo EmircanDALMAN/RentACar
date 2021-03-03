@@ -22,7 +22,7 @@ namespace Business.Concrete
 
         public IResult Add(CarImage carImage)
         {
-            var result = Rules.Run(CheckIfCarImagesExceed(carImage.CarId));
+            var result = BusinessRules.Run(CheckIfCarImagesExceed(carImage.CarId));
             if (result != null)
             {
                 return new ErrorResult(result.Message);
@@ -39,7 +39,7 @@ namespace Business.Concrete
 
         public IResult Delete(CarImage carImage)
         {
-            var result = Rules.Run(CheckIfDataExists());
+            var result = BusinessRules.Run(CheckIfDataExists());
             if (result != null)
             {
                 return new ErrorResult(result.Message);
@@ -50,7 +50,7 @@ namespace Business.Concrete
 
         public IDataResult<List<CarImage>> GetAllByCarId(int carId)
         {
-            var result = Rules.Run(CheckIfCarImageExists(carId));
+            var result = BusinessRules.Run(CheckIfCarImageExists(carId));
             if (result != null)
             {
                 return new ErrorDataResult<List<CarImage>>(new List<CarImage> {
