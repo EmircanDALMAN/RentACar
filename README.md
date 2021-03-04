@@ -8,10 +8,10 @@
 
 ```bash
 # Repository klonlayın
-$ git clone https://github.com/AbdullahOztuurkk/Rent-A-Car-Project.git
+$ git clone https://github.com/Kontorta16/RentACar.git
 
 # Klonladığınız klasöre gidin
-$ cd Rent-A-Car-Project.git
+$ cd RentACar.git
 
 # Bağımlılıkları yükleyin
 $ dotnet restore
@@ -29,12 +29,12 @@ $ dotnet restore
 - [FluentValidation](https://www.apollographql.com/docs/react/get-started/)
 - [ConsoleTableExt](https://github.com/minhhungit/ConsoleTableExt)
 
-## Developer
-#### Abdullah Öztürk
-🧧 [Medium](https://abdullahozturkk.medium.com/)
+## Software Engineer - Web Development
+#### Emircan Dalman
+🧧 [Medium](https://medium.com/@Kontorta)
 
-💻 [Linkedin](https://www.linkedin.com/in/abdullah-ozturk/)
+💻 [Linkedin](https://www.linkedin.com/in/kontorta/)
 
-💬 [Discord](AbdullahOztuurkk#5200)
+💬 [Discord](Kontorta#8800)
 
-🎫 [Email](mailto:oabdullahozturk@yandex.com.tr)
+🎫 [Email](mailto:emircandalman28@gmail.com)
