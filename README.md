@@ -30,6 +30,7 @@ $ dotnet restore
 - [FluentValidation](https://fluentvalidation.net)
 - [ConsoleTableExt](https://github.com/minhhungit/ConsoleTableExt)
 - [Autofac](https://autofac.org)
+- [Log4Net](https://logging.apache.org/log4net/)
 
 ## Software Engineer - Web Development
 #### Emircan Dalman
