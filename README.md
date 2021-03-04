@@ -26,10 +26,10 @@ $ dotnet restore
 
 ## Technologies Used 
 
-- [Entity Framework](https://reactjs.org/)
-- [FluentValidation](https://www.apollographql.com/docs/react/get-started/)
+- [Entity Framework](https://docs.microsoft.com/tr-tr/ef/)
+- [FluentValidation](https://fluentvalidation.net)
 - [ConsoleTableExt](https://github.com/minhhungit/ConsoleTableExt)
-- [Autofac](https://github.com/minhhungit/ConsoleTableExt)
+- [Autofac](https://autofac.org)
 
 ## Software Engineer - Web Development
 #### Emircan Dalman
