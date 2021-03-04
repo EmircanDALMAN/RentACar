@@ -1,7 +1,8 @@
 # Araç Kiralama Sistemi
 
 
-<b>Herkese merhaba!</b>  <p>Bu repo Yazılım Geliştirici Yetiştirme Kampı'nda yapılan çalışmaları kapsayan Araç Kiralama Projesidir. Genel olarak proje katmanlı mimariye uygun şekilde tasarlanıp ORM olarak Entity Framework kullanılmaktadır.</p>
+<b>Herkese merhaba!</b>  <p>Bu repo Yazılım Geliştirici Yetiştirme Kampı'nda yapılan çalışmaları kapsayan Araç Kiralama Projesidir. Genel olarak proje katmanlı mimariye uygun şekilde tasarlandı</p>
+<p>Dikkat Profesyonel Teknikler İçerir..</p>
 <br>
 
 Öncelikle terminale gelin ve aşağıdaki komutları girin :
@@ -28,6 +29,7 @@ $ dotnet restore
 - [Entity Framework](https://reactjs.org/)
 - [FluentValidation](https://www.apollographql.com/docs/react/get-started/)
 - [ConsoleTableExt](https://github.com/minhhungit/ConsoleTableExt)
+- [Autofac](https://github.com/minhhungit/ConsoleTableExt)
 
 ## Software Engineer - Web Development
 #### Emircan Dalman
