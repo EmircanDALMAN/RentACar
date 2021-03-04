@@ -8,17 +8,17 @@ namespace RentACar.WebApi.Controllers
     [ApiController]
     public class BrandsController : ControllerBase
     {
-        private IBrandService brandService;
+        private readonly IBrandService _brandService;
 
         public BrandsController(IBrandService brandService)
         {
-            this.brandService = brandService;
+            _brandService = brandService;
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            var result = brandService.GetAll();
+            var result = _brandService.GetAll();
             if (result.IsSuccess)
             {
                 return Ok(result.Data);
@@ -31,7 +31,7 @@ namespace RentACar.WebApi.Controllers
         [Route("{id}")]
         public IActionResult Get(int id)
         {
-            var result = brandService.GetById(id);
+            var result = _brandService.GetById(id);
             if (result.IsSuccess)
             {
                 return Ok(result);
@@ -43,7 +43,7 @@ namespace RentACar.WebApi.Controllers
         [Route("add")]
         public IActionResult Add([FromBody] Brand brand)
         {
-            var result = brandService.Add(brand);
+            var result = _brandService.Add(brand);
             if (result.IsSuccess)
             {
                 return Ok(result);
@@ -54,7 +54,7 @@ namespace RentACar.WebApi.Controllers
         [HttpDelete]
         public IActionResult Delete(int id)
         {
-            var result = brandService.Delete(id);
+            var result = _brandService.Delete(id);
             if (result.IsSuccess)
             {
                 return Ok(result);
@@ -65,7 +65,7 @@ namespace RentACar.WebApi.Controllers
         [HttpPut]
         public IActionResult Update([FromBody] Brand brand)
         {
-            var result = brandService.Update(brand);
+            var result = _brandService.Update(brand);
             if (result.IsSuccess)
             {
                 return Ok(result);
