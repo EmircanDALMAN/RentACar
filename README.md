@@ -32,7 +32,7 @@ $ dotnet restore
 - [Autofac](https://autofac.org)
 - [Log4Net](https://logging.apache.org/log4net/)
 
-## Software Engineer - Web Development
+## Software Engineer && Web Development
 #### Emircan Dalman
 🧧 [Medium](https://medium.com/@Kontorta)
 
