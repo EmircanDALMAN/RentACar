@@ -1,9 +1,5 @@
 # Araç Kiralama Sistemi
 
-<p align="center">
-	<img width="100%" src="./src/Header.png"></img>
-</p>
-
 
 <b>Herkese merhaba!</b>  <p>Bu repo Yazılım Geliştirici Yetiştirme Kampı'nda yapılan çalışmaları kapsayan Araç Kiralama Projesidir. Genel olarak proje katmanlı mimariye uygun şekilde tasarlanıp ORM olarak entity framework kullanılmaktadır. Kullanıcı arayüzü olarak konsol uygulaması belirlenmiştir.</p>
 <br>
