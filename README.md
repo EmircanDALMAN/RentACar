@@ -3,12 +3,6 @@
 
 <b>Herkese merhaba!</b>  <p>Bu repo Yazılım Geliştirici Yetiştirme Kampı'nda yapılan çalışmaları kapsayan Araç Kiralama Projesidir. Genel olarak proje katmanlı mimariye uygun şekilde tasarlanıp ORM olarak Entity Framework kullanılmaktadır.</p>
 <br>
-<p><b>Gelin hep beraber katmanlarımızı tanıyalım</b></p>
-<p align="center">
-	<img width="100%" src="./src/About.png"></img>
-</p>
-
-## Kullanımı
 
 Öncelikle terminale gelin ve aşağıdaki komutları girin :
 
