@@ -397,6 +397,10 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
+            "MicroKnights.Log4NetAdoNetAppender": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[3.1.12, )"

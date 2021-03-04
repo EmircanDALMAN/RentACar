@@ -168,9 +168,9 @@ namespace RentACar.ConsoleUI
         {
             WriteToCenter("'''''''''''''''''''''''''''''''''''''''''''''''");
             WriteToCenter("'                                             '");
-            WriteToCenter("'        Software Development Camp            '");
+            WriteToCenter("'     Software Enginner && Web Development    '");
             WriteToCenter("'                                             '");
-            WriteToCenter("'            Rent A Car System                '");
+            WriteToCenter("'               Emircan Dalman                '");
             WriteToCenter("'                                             '");
             WriteToCenter("'''''''''''''''''''''''''''''''''''''''''''''''");
             WriteToCenter("Welcome to Rent A Car system.");
@@ -221,8 +221,8 @@ namespace RentACar.ConsoleUI
                     WriteToCenter("Process Types");
                     WriteToCenter("1) Add     2) Delete     3) Update     4) List");
                     WriteToCenter("Which one do you choose :", true);    /*Process Types Menu*/
-                    string processId_2 = Console.ReadLine();
-                    switch (processId_2)
+                    string processId2 = Console.ReadLine();
+                    switch (processId2)
                     {
                         case "1":
                             #region Add brand

@@ -2,7 +2,7 @@
 using System.Linq;
 using Castle.DynamicProxy;
 using FluentValidation;
-using RentACar.Core.Utilities.FluentValidation;
+using RentACar.Core.CrossCuttingConcerns.Validation;
 using RentACar.Core.Utilities.Interceptors;
 
 namespace RentACar.Core.Aspects.Autofac.Validation
@@ -30,7 +30,7 @@ namespace RentACar.Core.Aspects.Autofac.Validation
             var entities = invocation.Arguments.Where(t => t.GetType() == entityType);
             foreach (var entity in entities)
             {
-                CheckValidator.Validate(validator, entity);
+                ValidationTool.Validate(validator, entity);
             }
         }
     }

@@ -163,3 +163,9 @@ C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\obj\Debug\netcoreapp
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\obj\Debug\netcoreapp3.1\RentACar.WebApi.RazorTargetAssemblyInfo.cache
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\obj\Debug\netcoreapp3.1\RentACar.WebApi.csproj.CopyComplete
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\obj\Debug\netcoreapp3.1\RentACar.WebApi.genruntimeconfig.cache
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\MicroKnights.Log4NetAdoNetAppender.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
