@@ -1,27 +1,18 @@
 # Araç Kiralama Sistemi
 
-<p align="center">
-	<img width="100%" src="./src/Header.png"></img>
-</p>
 
-
-<b>Herkese merhaba!</b>  <p>Bu repo Yazılım Geliştirici Yetiştirme Kampı'nda yapılan çalışmaları kapsayan Araç Kiralama Projesidir. Genel olarak proje katmanlı mimariye uygun şekilde tasarlanıp ORM olarak entity framework kullanılmaktadır. Kullanıcı arayüzü olarak konsol uygulaması belirlenmiştir.</p>
+<b>Herkese merhaba!</b>  <p>Bu repo Yazılım Geliştirici Yetiştirme Kampı'nda yapılan çalışmaları kapsayan Araç Kiralama Projesidir. Genel olarak proje katmanlı mimariye uygun şekilde tasarlandı</p>
+<p>Dikkat Profesyonel Teknikler İçerir..</p>
 <br>
-<p><b>Gelin hep beraber katmanlarımızı tanıyalım</b></p>
-<p align="center">
-	<img width="100%" src="./src/About.png"></img>
-</p>
-
-## Kullanımı
 
 Öncelikle terminale gelin ve aşağıdaki komutları girin :
 
 ```bash
 # Repository klonlayın
-$ git clone https://github.com/AbdullahOztuurkk/Rent-A-Car-Project.git
+$ git clone https://github.com/Kontorta16/RentACar.git
 
 # Klonladığınız klasöre gidin
-$ cd Rent-A-Car-Project.git
+$ cd RentACar.git
 
 # Bağımlılıkları yükleyin
 $ dotnet restore
@@ -35,16 +26,18 @@ $ dotnet restore
 
 ## Technologies Used 
 
-- [Entity Framework](https://reactjs.org/)
-- [FluentValidation](https://www.apollographql.com/docs/react/get-started/)
+- [Entity Framework](https://docs.microsoft.com/tr-tr/ef/)
+- [FluentValidation](https://fluentvalidation.net)
 - [ConsoleTableExt](https://github.com/minhhungit/ConsoleTableExt)
+- [Autofac](https://autofac.org)
+- [Log4Net](https://logging.apache.org/log4net/)
 
-## Developer
-#### Abdullah Öztürk
-🧧 [Medium](https://abdullahozturkk.medium.com/)
+## Software Engineer - Web Development
+#### Emircan Dalman
+🧧 [Medium](https://medium.com/@Kontorta)
 
-💻 [Linkedin](https://www.linkedin.com/in/abdullah-ozturk/)
+💻 [Linkedin](https://www.linkedin.com/in/kontorta/)
 
-💬 [Discord](AbdullahOztuurkk#5200)
+💬 [Discord](Kontorta#8800)
 
-🎫 [Email](mailto:oabdullahozturk@yandex.com.tr)
+🎫 [Email](mailto:emircandalman28@gmail.com)
