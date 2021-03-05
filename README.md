@@ -3,6 +3,7 @@
 
 <b>Herkese merhaba!</b>  <p>Bu repo Yazılım Geliştirici Yetiştirme Kampı'nda yapılan çalışmaları kapsayan Araç Kiralama Projesidir. Genel olarak proje katmanlı mimariye uygun şekilde tasarlandı</p>
 <p>Dikkat Profesyonel Teknikler İçerir..</p>
+<p>Elastic Search alt yapısının kullanılabilmesi için WebAPI içerisinde appsettings.json dosyasında 'ElasticSearchConfig' alanı doldurulmalıdır.</p>
 <br>
 
 Öncelikle terminale gelin ve aşağıdaki komutları girin :
@@ -32,6 +33,7 @@ $ dotnet restore
 - [Autofac](https://autofac.org)
 - [Log4Net](https://logging.apache.org/log4net/)
 - [NHibernate](https://nhibernate.info)
+- [ElasticSearch](https://www.elastic.co)
 
 ## Software Engineer && Web Development
 #### Emircan Dalman
