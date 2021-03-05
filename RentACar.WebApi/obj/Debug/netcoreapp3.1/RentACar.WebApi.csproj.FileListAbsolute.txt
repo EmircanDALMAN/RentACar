@@ -87,7 +87,6 @@ C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\obj\Debug\netcoreapp
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\obj\Debug\netcoreapp3.1\RentACar.WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\obj\Debug\netcoreapp3.1\RentACar.WebApi.dll
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\obj\Debug\netcoreapp3.1\RentACar.WebApi.pdb
-C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\RentACar.WebApi.exe
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\RentACar.WebApi.deps.json
@@ -169,3 +168,14 @@ C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\Antlr3.Runtime.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\FluentNHibernate.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\Iesi.Collections.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\NHibernate.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\Remotion.Linq.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\Remotion.Linq.EagerFetching.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\ServiceStack.Common.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\ServiceStack.Interfaces.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\ServiceStack.Redis.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\ServiceStack.Text.dll

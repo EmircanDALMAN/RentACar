@@ -25,7 +25,6 @@ namespace RentACar.Business.Concrete
 
         public CarManager(ICarDal _cardal, ICarImagesDal _carImagesDal, IFileProcess fileProcess)
         {
-            //Constructor Injection
             CarManager._cardal = _cardal;
             CarManager._carImagesDal = _carImagesDal;
             _fileProcess = fileProcess;

@@ -10,10 +10,8 @@ namespace RentACar.DataAccess.Concrete.EntityFramework
     {
         public void AddRange(List<Color> colors)
         {
-            using (RentACarContext context = new RentACarContext())
-            {
-                context.AddRange(colors);
-            }
+            using var context = new RentACarContext();
+            context.AddRange(colors);
         }
     }
 }

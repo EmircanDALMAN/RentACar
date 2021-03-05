@@ -6,10 +6,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using RentACar.Business.Abstract;
 using RentACar.Business.Concrete;
+using RentACar.Core.DataAccess.NHibernate;
 using RentACar.Core.Utilities.Interceptors;
 using RentACar.Core.Utilities.Security.JWT;
 using RentACar.DataAccess.Abstract;
 using RentACar.DataAccess.Concrete.EntityFramework;
+using RentACar.DataAccess.Concrete.NHibernate.Concrete;
+using RentACar.DataAccess.Concrete.NHibernate.Helpers;
 using Module = Autofac.Module;
 
 namespace RentACar.Business.DependencyRevolvers.Autofac
@@ -41,6 +44,7 @@ namespace RentACar.Business.DependencyRevolvers.Autofac
             builder.RegisterType<EfColorDal>().As<IColorDal>();
             builder.RegisterType<EfRentalDal>().As<IRentalDal>();
             builder.RegisterType<EfCarImagesDal>().As<ICarImagesDal>();
+            builder.RegisterType<SqlServerHelper>().As<NHibernateHelper>();
 
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
             builder.RegisterType<HttpContextAccessor>().As<IHttpContextAccessor>();

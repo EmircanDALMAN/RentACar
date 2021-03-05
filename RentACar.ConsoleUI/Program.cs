@@ -9,7 +9,6 @@ using ConsoleTableExt;
 using RentACar.Business.Concrete;
 using RentACar.Core.Entities;
 using RentACar.DataAccess.Concrete.EntityFramework;
-using RentACar.DataAccess.Concrete.InMemory;
 using RentACar.Entities.Attributes;
 using RentACar.Entities.Concrete;
 
@@ -30,8 +29,7 @@ namespace RentACar.ConsoleUI
         private static void WriteToCenter(string word, bool isQuestion = false)
         {
             Console.WriteLine();
-            if (isQuestion) Console.ForegroundColor = ConsoleColor.Red;
-            else Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = isQuestion ? ConsoleColor.Red : ConsoleColor.White;
             Console.SetCursorPosition((Console.WindowWidth - word.Length) / 2, Console.CursorTop);
             Console.Write(word);
         }

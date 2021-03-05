@@ -13,26 +13,25 @@ namespace RentACar.Business.Concrete
 
         public CustomerManager(ICustomerDal customerDal)
         {
-            //constructor injection
             this.customerDal = customerDal;
         }
 
         public IResult Add(Customer customer)
         {
             customerDal.Add(customer);
-            return  new SuccessResult(Messages.Add_Message(typeof(Customer).Name));
+            return  new SuccessResult(Messages.Add_Message(nameof(Customer)));
         }
 
         public IResult Update(Customer customer)
         {
             customerDal.Update(customer);
-            return new SuccessResult( Messages.Update_Message(typeof(Customer).Name));
+            return new SuccessResult( Messages.Update_Message(nameof(Customer)));
         }
 
         public IResult Delete(int id)
         {
             customerDal.Delete(GetById(id).Data);
-            return new SuccessResult( Messages.Delete_Message(typeof(Customer).Name));
+            return new SuccessResult( Messages.Delete_Message(nameof(Customer)));
         }
 
         public IDataResult<Customer> GetById(int id)

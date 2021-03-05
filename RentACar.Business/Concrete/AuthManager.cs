@@ -16,7 +16,7 @@ namespace RentACar.Business.Concrete
         private IUserService _userService;
         private ITokenHelper _tokenHelper;
 
-        public string User_Successful_Login { get; private set; }
+        public string UserSuccessfulLogin { get; private set; }
 
         public AuthManager(IUserService userService, ITokenHelper tokenHelper)
         {
@@ -29,8 +29,7 @@ namespace RentACar.Business.Concrete
         /// <returns>User</returns>
         public IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password)
         {
-            byte[] passwordHash, passwordSalt;
-            HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
+            HashingHelper.CreatePasswordHash(password, out var passwordHash, out var passwordSalt);
             var user = new User
             {
                 Email = userForRegisterDto.Email,
@@ -60,7 +59,7 @@ namespace RentACar.Business.Concrete
                 return new ErrorDataResult<User>(Messages.User_Password_Doesnt_Match);
             }
 
-            return new SuccessDataResult<User>(userToCheck, User_Successful_Login);
+            return new SuccessDataResult<User>(userToCheck, UserSuccessfulLogin);
         }
         /// <summary>
         /// Check the email if it exist

@@ -3,13 +3,13 @@
 
     public class User:IEntity
     {
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public byte[] PasswordHash  { get; set; }
-        public byte[] PasswordSalt { get; set; }
-        public bool Status { get; set; }
+        public virtual int Id { get; set; }
+        public virtual string FirstName { get; set; }
+        public virtual string LastName { get; set; }
+        public virtual string Email { get; set; }
+        public virtual byte[] PasswordHash  { get; set; }
+        public virtual byte[] PasswordSalt { get; set; }
+        public virtual bool Status { get; set; }
 
     }
 }

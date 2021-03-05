@@ -17,10 +17,8 @@ namespace RentACar.DataAccess.Concrete.EntityFramework
     {
         public bool IsExist(int id)
         {
-            using (RentACarContext context=new RentACarContext())
-            {
-                return context.CarImages.Any(pre => pre.Id == id);
-            }
+            using var context =new RentACarContext();
+            return context.CarImages.Any(pre => pre.Id == id);
         }
     }
 }

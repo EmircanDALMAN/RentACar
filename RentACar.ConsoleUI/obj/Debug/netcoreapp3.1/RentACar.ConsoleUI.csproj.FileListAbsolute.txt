@@ -149,3 +149,14 @@ C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\obj\Debug\netcore
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\obj\Debug\netcoreapp3.1\RentACar.ConsoleUI.dll
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\obj\Debug\netcoreapp3.1\RentACar.ConsoleUI.pdb
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\obj\Debug\netcoreapp3.1\RentACar.ConsoleUI.genruntimeconfig.cache
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\bin\Debug\netcoreapp3.1\ServiceStack.Common.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\bin\Debug\netcoreapp3.1\ServiceStack.Interfaces.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\bin\Debug\netcoreapp3.1\ServiceStack.Redis.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\bin\Debug\netcoreapp3.1\ServiceStack.Text.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\bin\Debug\netcoreapp3.1\Antlr3.Runtime.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\bin\Debug\netcoreapp3.1\FluentNHibernate.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\bin\Debug\netcoreapp3.1\Iesi.Collections.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\bin\Debug\netcoreapp3.1\NHibernate.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\bin\Debug\netcoreapp3.1\Remotion.Linq.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\bin\Debug\netcoreapp3.1\Remotion.Linq.EagerFetching.dll

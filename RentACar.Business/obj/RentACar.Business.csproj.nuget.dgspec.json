@@ -166,9 +166,17 @@
               "target": "Package",
               "version": "[6.8.0, )"
             },
+            "NHibernate": {
+              "target": "Package",
+              "version": "[5.3.6, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.2, )"
+            },
+            "ServiceStack.Redis": {
+              "target": "Package",
+              "version": "[5.10.4, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
@@ -247,6 +255,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "FluentNHibernate": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[5.0.3, )"

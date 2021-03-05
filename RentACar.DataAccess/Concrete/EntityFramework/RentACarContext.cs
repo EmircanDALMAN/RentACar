@@ -29,7 +29,8 @@ namespace RentACar.DataAccess.Concrete.EntityFramework
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source = (localdb)\mssqllocaldb; Initial Catalog = RentACarDb; Integrated Security = True;");
+            optionsBuilder.UseSqlServer(@"Data Source = (localdb)\mssqllocaldb; 
+                                Initial Catalog = RentACarDb; Integrated Security = True;");
         }
     }
 }

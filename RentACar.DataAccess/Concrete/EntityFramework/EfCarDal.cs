@@ -18,10 +18,8 @@ namespace RentACar.DataAccess.Concrete.EntityFramework
         /// <param name="cars"></param>
         public void AddRange(List<Car> cars)
         {
-            using (RentACarContext context = new RentACarContext())
-            {
-                context.AddRange(cars);
-            }
+            using var context = new RentACarContext();
+            context.AddRange(cars);
         }
         /// <summary>
         /// Get All details from car table
@@ -29,23 +27,21 @@ namespace RentACar.DataAccess.Concrete.EntityFramework
         /// <returns>Car object</returns>
         public List<GetCarDetailDto> GetCarDetails(Expression<Func<Car,bool>> filter=null)
         {
-            using (RentACarContext context =new RentACarContext())
-            {
-                var result = from car in filter is null ? context.Cars : context.Cars.Where(filter)
-                    join brn in context.Brands
-                        on car.BrandId equals brn.Id
-                    join clr in context.Colors
-                        on car.ColorId equals clr.Id
-                    select new GetCarDetailDto()
-                    {
-                        DailyPrice = car.DailyPrice,
-                        ModelYear = car.ModelYear,
-                        CarName = car.Description,
-                        ColorName = clr.Name,
-                        BrandName = brn.Name
-                    };
-                return result.ToList();
-            }
+            using var context =new RentACarContext();
+            var result = from car in filter is null ? context.Cars : context.Cars.Where(filter)
+                join brn in context.Brands
+                    on car.BrandId equals brn.Id
+                join clr in context.Colors
+                    on car.ColorId equals clr.Id
+                select new GetCarDetailDto()
+                {
+                    DailyPrice = car.DailyPrice,
+                    ModelYear = car.ModelYear,
+                    CarName = car.Description,
+                    ColorName = clr.Name,
+                    BrandName = brn.Name
+                };
+            return result.ToList();
         }
 
         /// <summary>
@@ -55,27 +51,25 @@ namespace RentACar.DataAccess.Concrete.EntityFramework
         /// <returns></returns>
         public List<GetCarImagesDto> GetCarImageDetails(Expression<Func<Car, bool>> filter = null)
         {
-            using (RentACarContext context = new RentACarContext())
-            {
-                var result = from car in filter is null ? context.Cars : context.Cars.Where(filter)
-                    join brn in context.Brands
-                        on car.BrandId equals brn.Id
-                    join clr in context.Colors
-                        on car.ColorId equals clr.Id
-                    join crm in context.CarImages
-                        on car.Id equals crm.CarId
-                    select new GetCarImagesDto()
-                    {
-                        DailyPrice = car.DailyPrice,
-                        ModelYear = car.ModelYear,
-                        Description = car.Description,
-                        ColorName = clr.Name,
-                        BrandName = brn.Name,
-                        ImagePath = crm.ImagePath,
-                        CreatedDate = crm.CreatedDate,
-                    };
-                return result.ToList();
-            }
+            using var context = new RentACarContext();
+            var result = from car in filter is null ? context.Cars : context.Cars.Where(filter)
+                join brn in context.Brands
+                    on car.BrandId equals brn.Id
+                join clr in context.Colors
+                    on car.ColorId equals clr.Id
+                join crm in context.CarImages
+                    on car.Id equals crm.CarId
+                select new GetCarImagesDto()
+                {
+                    DailyPrice = car.DailyPrice,
+                    ModelYear = car.ModelYear,
+                    Description = car.Description,
+                    ColorName = clr.Name,
+                    BrandName = brn.Name,
+                    ImagePath = crm.ImagePath,
+                    CreatedDate = crm.CreatedDate,
+                };
+            return result.ToList();
         }
     }
 }

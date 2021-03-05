@@ -10,10 +10,8 @@ namespace RentACar.DataAccess.Concrete.EntityFramework
     {
         public void AddRange(List<Brand> brands)
         {
-            using (RentACarContext context = new RentACarContext())
-            {
-                context.AddRange(brands);
-            }
+            using var context = new RentACarContext();
+            context.AddRange(brands);
         }
     }
 }
