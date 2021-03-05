@@ -3,7 +3,7 @@
 
 <b>Herkese merhaba!</b>  <p>Bu repo Yazılım Geliştirici Yetiştirme Kampı'nda yapılan çalışmaları kapsayan Araç Kiralama Projesidir. Genel olarak proje katmanlı mimariye uygun şekilde tasarlandı</p>
 <p>Dikkat Profesyonel Teknikler İçerir..</p>
-<p>Elastic Search alt yapısının kullanılabilmesi için WebAPI içerisinde appsettings.json dosyasında 'ElasticSearchConfig' alanı doldurulmalıdır.</p>
+<p style="color:red;">Elastic Search alt yapısının kullanılabilmesi için WebAPI içerisinde appsettings.json dosyasında 'ElasticSearchConfig' alanı doldurulmalıdır.</p>
 <br>
 
 Öncelikle terminale gelin ve aşağıdaki komutları girin :
