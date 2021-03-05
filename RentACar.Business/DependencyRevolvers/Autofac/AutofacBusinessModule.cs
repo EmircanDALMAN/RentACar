@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using RentACar.Business.Abstract;
 using RentACar.Business.Concrete;
 using RentACar.Core.DataAccess.NHibernate;
+using RentACar.Core.Utilities.ElasticSearch;
 using RentACar.Core.Utilities.Interceptors;
 using RentACar.Core.Utilities.Security.JWT;
 using RentACar.DataAccess.Abstract;
@@ -35,6 +36,8 @@ namespace RentACar.Business.DependencyRevolvers.Autofac
             builder.RegisterType<FileManager>().As<IFileProcess>();
             builder.RegisterType<CarImageManager>().As<ICarImageService>();
             builder.RegisterType<AuthManager>().As<IAuthService>();
+            builder.RegisterType<ElasticSearchManager>().As<IElasticSearch>();
+
 
             //DataAccess injections
             builder.RegisterType<EfCarDal>().As<ICarDal>();

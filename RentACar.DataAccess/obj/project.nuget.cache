@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IcbnmUnr+q7X+6ROp9yiaHBo8pBYCRo+8fPm6m8bJAAi92+PalSG0MwGX8C9bz7OoF7mJ2buJRSSKkg7ZSb03w==",
+  "dgSpecHash": "7sejSjR98KjqHlgRa4GkZ2aYGxvM6qIWGGO/h5KuFdt3+uu4gIZH1RjUJZObFclke/ATeHHOaZJ7/3BIc1i7qg==",
   "success": true,
   "projectFilePath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\RentACar.DataAccess\\RentACar.DataAccess.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\emiq1\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.0\\autofac.extras.dynamicproxy.6.0.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
+    "C:\\Users\\emiq1\\.nuget\\packages\\elasticsearch.net\\7.11.1\\elasticsearch.net.7.11.1.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\fluentnhibernate\\3.1.0\\fluentnhibernate.3.1.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\fluentvalidation\\9.5.1\\fluentvalidation.9.5.1.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
@@ -53,6 +54,7 @@
     "C:\\Users\\emiq1\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\emiq1\\.nuget\\packages\\nest\\7.11.1\\nest.7.11.1.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\nhibernate\\5.3.6\\nhibernate.5.3.6.nupkg.sha512",
@@ -79,7 +81,7 @@
     "C:\\Users\\emiq1\\.nuget\\packages\\servicestack.redis\\5.10.4\\servicestack.redis.5.10.4.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\servicestack.text\\5.10.4\\servicestack.text.5.10.4.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
-    "C:\\Users\\emiq1\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
+    "C:\\Users\\emiq1\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",

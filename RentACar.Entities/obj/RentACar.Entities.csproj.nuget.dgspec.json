@@ -78,6 +78,10 @@
               "target": "Package",
               "version": "[6.8.0, )"
             },
+            "NEST": {
+              "target": "Package",
+              "version": "[7.11.1, )"
+            },
             "NHibernate": {
               "target": "Package",
               "version": "[5.3.6, )"
