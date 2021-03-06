@@ -17,13 +17,13 @@ namespace RentACar.Business.Concrete
     /// </summary>
     public class FileManager:IFileProcess
     {
-        private readonly IHostingEnvironment environment;
-        string FileDirectory;
+        private readonly IHostingEnvironment _environment;
+        private readonly string _fileDirectory;
 
         public FileManager(IHostingEnvironment environment)
         {
-            this.environment = environment;
-            FileDirectory = environment.ContentRootPath + "/images/";
+            this._environment = environment;
+            _fileDirectory = environment.ContentRootPath + "/images/";
         }
         /// <summary>
         /// Upload to server's assets folder
@@ -33,11 +33,11 @@ namespace RentACar.Business.Concrete
         /// <returns></returns>
         public async Task<IResult> Upload(string fileName, IFormFile file)
         {
-            using (var fileStream = new FileStream(Path.Combine(FileDirectory, fileName.ToString() + ".png"), FileMode.Create, FileAccess.Write))
+            await using (var fileStream = new FileStream(Path.Combine(_fileDirectory, fileName.ToString() + ".png"), FileMode.Create, FileAccess.Write))
             {
                  await file.CopyToAsync(fileStream);
             }
-            return new SuccessResult(Messages.Add_Message(typeof(CarImage).Name));
+            return new SuccessResult(Messages.Add_Message(nameof(CarImage)));
         }
         /// <summary>
         /// Delete file from given path
@@ -46,10 +46,10 @@ namespace RentACar.Business.Concrete
         /// <returns></returns>
         public IResult Delete(string path)
         {
-            var roadpath = Path.Combine(FileDirectory, path+ ".png");
-            if (File.Exists(roadpath))
+            var roadPath = Path.Combine(_fileDirectory, path+ ".png");
+            if (File.Exists(roadPath))
             {
-                File.Delete(roadpath);
+                File.Delete(roadPath);
             }
             return new SuccessResult();
         }

@@ -15,13 +15,13 @@ namespace RentACar.Business.Concrete
     public class CarImageManager : ICarImageService
     {
         private static ICarImagesDal _carImagesDal;
-        private static ICarDal _cardal;
+        private static ICarDal _carDal;
         private IFileProcess _fileProcess;
 
-        public CarImageManager(ICarImagesDal carImagesDal, ICarDal cardal, IFileProcess fileProcess)
+        public CarImageManager(ICarImagesDal carImagesDal, ICarDal carDal, IFileProcess fileProcess)
         {
             _carImagesDal = carImagesDal;
-            _cardal = cardal;
+            _carDal = carDal;
             _fileProcess = fileProcess;
         }
 
@@ -78,7 +78,7 @@ namespace RentACar.Business.Concrete
         }
         public static IResult CheckTheCarExists(int id)
         {
-            return _cardal.Get(id) != null ? (IResult)new Result(true) :
+            return _carDal.Get(id) != null ? (IResult)new Result(true) :
                 new ErrorResult(Messages.Car_Must_Be_Exists);
         }
         public static IResult CheckTheCarImageExists(int fileId)

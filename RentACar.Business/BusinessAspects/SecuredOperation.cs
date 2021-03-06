@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Castle.DynamicProxy;
 using Microsoft.AspNetCore.Http;
@@ -16,8 +17,8 @@ namespace RentACar.Business.BusinessAspects
     /// </summary>
     public class SecuredOperation : MethodInterception
     {
-        private string[] _roles;
-        private IHttpContextAccessor _httpContextAccessor;
+        private readonly string[] _roles;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
         public SecuredOperation(string roles)
         {
@@ -29,12 +30,9 @@ namespace RentACar.Business.BusinessAspects
         protected override void OnBefore(IInvocation invocation)
         {
             var roleClaims = _httpContextAccessor.HttpContext.User.ClaimRoles();
-            foreach (var role in _roles)
+            if (_roles.Any(role => roleClaims.Contains(role)))
             {
-                if (roleClaims.Contains(role))
-                {
-                    return;
-                }
+                return;
             }
             throw new Exception(Messages.AuthorizationDenied);
         }

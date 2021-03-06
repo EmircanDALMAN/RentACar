@@ -160,3 +160,5 @@ C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\bin\Debug\netcore
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\bin\Debug\netcoreapp3.1\NHibernate.dll
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\bin\Debug\netcoreapp3.1\Remotion.Linq.dll
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\bin\Debug\netcoreapp3.1\Remotion.Linq.EagerFetching.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\bin\Debug\netcoreapp3.1\Elasticsearch.Net.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.ConsoleUI\bin\Debug\netcoreapp3.1\Nest.dll

@@ -179,3 +179,5 @@ C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\ServiceStack.Interfaces.dll
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\ServiceStack.Redis.dll
 C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\ServiceStack.Text.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\Elasticsearch.Net.dll
+C:\Users\emiq1\OneDrive\Masaüstü\RentACar\RentACar.WebApi\bin\Debug\netcoreapp3.1\Nest.dll

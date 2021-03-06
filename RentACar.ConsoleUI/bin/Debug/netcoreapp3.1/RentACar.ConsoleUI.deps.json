@@ -90,6 +90,19 @@
           }
         }
       },
+      "Elasticsearch.Net/7.11.1": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "System.Buffers": "4.5.1",
+          "System.Diagnostics.DiagnosticSource": "5.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Elasticsearch.Net.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.11.1.0"
+          }
+        }
+      },
       "FluentNHibernate/3.1.0": {
         "dependencies": {
           "NHibernate": "5.3.6"
@@ -556,7 +569,7 @@
       "Microsoft.Net.Http.Headers/2.2.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "5.0.0",
-          "System.Buffers": "4.5.0"
+          "System.Buffers": "4.5.1"
         }
       },
       "Microsoft.NETCore.Platforms/3.1.0": {},
@@ -577,6 +590,17 @@
       "Microsoft.Win32.SystemEvents/4.7.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0"
+        }
+      },
+      "NEST/7.11.1": {
+        "dependencies": {
+          "Elasticsearch.Net": "7.11.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Nest.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.11.1.0"
+          }
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -811,7 +835,7 @@
           "System.Runtime": "4.3.1"
         }
       },
-      "System.Buffers/4.5.0": {},
+      "System.Buffers/4.5.1": {},
       "System.Collections/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -1049,7 +1073,7 @@
       "System.IO.Compression/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
-          "System.Buffers": "4.5.0",
+          "System.Buffers": "4.5.1",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
           "System.IO": "4.3.0",
@@ -1067,7 +1091,7 @@
       },
       "System.IO.Compression.ZipFile/4.3.0": {
         "dependencies": {
-          "System.Buffers": "4.5.0",
+          "System.Buffers": "4.5.1",
           "System.IO": "4.3.0",
           "System.IO.Compression": "4.3.0",
           "System.IO.FileSystem": "4.3.0",
@@ -1789,6 +1813,7 @@
           "Microsoft.Extensions.Configuration": "5.0.0",
           "Microsoft.Extensions.Configuration.Binder": "5.0.0",
           "Microsoft.IdentityModel.Tokens": "6.8.0",
+          "NEST": "7.11.1",
           "NHibernate": "5.3.6",
           "Newtonsoft.Json": "12.0.2",
           "ServiceStack.Redis": "5.10.4",
@@ -1869,6 +1894,13 @@
       "sha512": "sha512-Qc+3+6KNTpeQb48SQ10SIgzeSrUrpbiHyD8wXVg/0e4OEID27Xw0GPVs3pyqrWWZffbFq+JEFhVouYp8h6E2HA==",
       "path": "consoletableext/3.1.2",
       "hashPath": "consoletableext.3.1.2.nupkg.sha512"
+    },
+    "Elasticsearch.Net/7.11.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BHtPkGS8maOQ5FYQrLW8gDBSY1jhnqPGgcF4U6X1DvUMI7F6i7Qkx17DtLO4QFuOLvVpVGoh7m+fyXdCEldHzw==",
+      "path": "elasticsearch.net/7.11.1",
+      "hashPath": "elasticsearch.net.7.11.1.nupkg.sha512"
     },
     "FluentNHibernate/3.1.0": {
       "type": "package",
@@ -2199,6 +2231,13 @@
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
     },
+    "NEST/7.11.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-S1Weu2Q2/bo6ohofxrLDhqQIVQ84Xu3srlG1Es1XKAYIALzwxG3+jGx7QPim3/CELTQHYohe32aIU/q+GUrLWQ==",
+      "path": "nest/7.11.1",
+      "hashPath": "nest.7.11.1.nupkg.sha512"
+    },
     "NETStandard.Library/1.6.1": {
       "type": "package",
       "serviceable": true,
@@ -2388,12 +2427,12 @@
       "path": "system.appcontext/4.3.0",
       "hashPath": "system.appcontext.4.3.0.nupkg.sha512"
     },
-    "System.Buffers/4.5.0": {
+    "System.Buffers/4.5.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pL2ChpaRRWI/p4LXyy4RgeWlYF2sgfj/pnVMvBqwNFr5cXg7CXNnWZWxrOONLg8VGdFB8oB+EG2Qw4MLgTOe+A==",
-      "path": "system.buffers/4.5.0",
-      "hashPath": "system.buffers.4.5.0.nupkg.sha512"
+      "sha512": "sha512-Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
+      "path": "system.buffers/4.5.1",
+      "hashPath": "system.buffers.4.5.1.nupkg.sha512"
     },
     "System.Collections/4.3.0": {
       "type": "package",
