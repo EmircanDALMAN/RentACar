@@ -1,0 +1,17 @@
+<div class="form-group ">
+    <input class="form-control" type="text" id="carName" placeholder="Aranacak Kelime" [(ngModel)]="filterText">
+    <div *ngIf="filterText!=''" class="mt-2">Aranan Kelime: <strong>{{filterText}}</strong></div>
+</div>
+<div class="row">
+    <div *ngFor="let car of cars | carFilter:filterText" class="col-md-4 mt-50">
+        <img class="img-responsive" src="{{car.imageUrl}}">
+        <div class="card-body">
+            <p class="card-text">{{car.Description}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-md btn-outline-success">Kirala</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
