@@ -7,8 +7,9 @@
   <div class="row">
     <div *ngFor="let car of cars | carFilter:filterText" class="col-md-6 mt-50">
       <div class="card-body">
-        <img src="{{car.imageUrl}}" class="img-fluid card-img lazyloaded" >
-        <p class="card-text">{{car.Description}}</p>
+        <img src="https://www.otoshops.com/cms/uploads/18/20180525155658/HaberOrtaarac-segmentleri.jpg"
+             class="img-fluid card-img lazyloaded" >
+        <p class="card-text pt-3">{{car.description}}</p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
             <button type="button" class="btn btn-md btn-outline-success">Kirala</button>
@@ -18,4 +19,3 @@
     </div>
   </div>
 </div>
-

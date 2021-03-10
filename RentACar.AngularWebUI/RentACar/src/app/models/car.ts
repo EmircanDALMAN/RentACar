@@ -1,9 +1,11 @@
+import {Photo} from './photo';
+
 export class Car {
-  Id!: number;
-  BrandId!: number;
-  ColorId!: number;
-  ModelYear!: number;
-  DailyPrice!: number;
-  Description!: string;
-  imageUrl!: string;
+  id!: number;
+  brandId!: number;
+  colorId!: number;
+  modelYear!: number;
+  dailyPrice!: number;
+  description!: string;
+  photos:Photo[] = [];
 }

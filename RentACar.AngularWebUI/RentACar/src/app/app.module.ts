@@ -11,9 +11,10 @@ import {CarFilterPipe} from './pipes/car-filter.pipe';
 import {appRoutes} from './routes';
 import {RouterModule} from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, CarComponent, CarFilterPipe, LoginComponent],
+  declarations: [AppComponent, NavComponent, CarComponent, CarFilterPipe, LoginComponent, RegisterComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent],
