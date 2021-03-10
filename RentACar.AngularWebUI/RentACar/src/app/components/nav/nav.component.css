@@ -1,10 +1,15 @@
-@media screen and (min-width: 601px) {
-    .big-font {
-      font-size: 22px;
-    }
-  }
-  @media screen and (max-width: 600px) {
-    .big-font {
-      font-size: 15px;
-    }
-  }
+.card-body img {
+  display: block;
+  width: 100%;
+  max-height: 300px;
+}
+.opacity{
+  background-color: #454647;
+}
+.container a{
+  color: #ebebeb !important;
+}
+.far.fa-user {
+  width: 100px;
+  height: 40px;
+}

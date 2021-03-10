@@ -9,7 +9,6 @@ import { Car } from 'src/app/models/car';
 export class CarComponent implements OnInit {
   constructor() {}
   filterText = '';
-
   cars: Car[] = [
     {
       Id: 1,
