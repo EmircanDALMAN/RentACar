@@ -1,8 +1,10 @@
-
 <div class="container">
   <div class="form-group mt-5">
     <input class="form-control" type="text" id="carName" placeholder="Aranacak Kelime" [(ngModel)]="filterText">
     <div *ngIf="filterText!=''" class="mt-2">Aranan Kelime: <strong>{{filterText}}</strong></div>
+  </div>
+  <div *ngIf="dataLoaded==false" class="spinner-border text-info" role="status">
+    <span class="visually-hidden">Loading...</span>
   </div>
   <div class="row">
     <div *ngFor="let car of cars | carFilter:filterText" class="col-md-6 mt-50">
@@ -10,10 +12,9 @@
         <img src="https://www.otoshops.com/cms/uploads/18/20180525155658/HaberOrtaarac-segmentleri.jpg"
              class="img-fluid card-img lazyloaded" >
         <p class="card-text pt-3">{{car.description}}</p>
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="btn-group">
-            <button type="button" class="btn btn-md btn-outline-success">Kirala</button>
-          </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-between">
+          <button class="btn btn-outline-dark me-md-2" type="button">Hemen Şimdi Kirala</button>
+          <button class="btn btn-outline-success" type="button">Detaya Git</button>
         </div>
       </div>
     </div>

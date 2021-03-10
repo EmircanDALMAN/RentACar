@@ -12,57 +12,57 @@ namespace RentACar.Business.Concrete
     /// </summary>
     public class BrandManager:IBrandService
     {
-        private IBrandDal brandDal;
+        private readonly IBrandDal _brandDal;
 
         public BrandManager(IBrandDal brandDal)
         {
             //Create instance with constructor injection
-            this.brandDal = brandDal;
+            this._brandDal = brandDal;
         }
 
         public IResult Add(Brand brand)
         {
-            brandDal.Add(brand);
-            return new SuccessResult(Messages.Add_Message(typeof(Brand).Name));
+            _brandDal.Add(brand);
+            return new SuccessResult(Messages.Add_Message(nameof(Brand)));
         }
 
         public IResult Update(Brand brand)
         {
-            brandDal.Update(brand);
-            return new SuccessResult(Messages.Update_Message(typeof(Brand).Name));
+            _brandDal.Update(brand);
+            return new SuccessResult(Messages.Update_Message(nameof(Brand)));
         }
 
         public IResult Delete(int id)
         {
-            brandDal.Delete(GetById(id).Data);
-            return new SuccessResult( Messages.Delete_Message(typeof(Brand).Name));
+            _brandDal.Delete(GetById(id).Data);
+            return new SuccessResult( Messages.Delete_Message(nameof(Brand)));
 
         }
 
         public IDataResult<Brand> GetById(int id)
         {
-            var result = brandDal.Get(id);
+            var result = _brandDal.Get(id);
             return new SuccessDataResult<Brand>(result);
 
         }
 
         public IDataResult<List<Brand>> GetAll()
         {
-            var result = brandDal.GetAll();
+            var result = _brandDal.GetAll();
             return new SuccessDataResult<List<Brand>>(result);
         }
 
         public IDataResult<List<Brand>> GetByName(string name)
         {
-            var result = brandDal.GetAll(brand => brand.Name.Contains(name));
+            var result = _brandDal.GetAll(brand => brand.Name.Contains(name));
             return new SuccessDataResult<List<Brand>>(result);
 
         }
 
         public IResult AddRange(List<Brand> brands)
         {
-            brandDal.AddRange(brands);
-            return new SuccessDataResult<List<Brand>>(Messages.Multiple_Add_Message(typeof(Brand).Name));
+            _brandDal.AddRange(brands);
+            return new SuccessDataResult<List<Brand>>(Messages.Multiple_Add_Message(nameof(Brand)));
         }
     }
 }

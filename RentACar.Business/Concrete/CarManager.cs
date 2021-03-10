@@ -82,7 +82,6 @@ namespace RentACar.Business.Concrete
             var result = _cardal.Get(id);
             return new SuccessDataResult<Car>(result);
         }
-        [LogAspect(typeof(FileLogger))]
         public IDataResult<List<Car>> GetAll()
         {
             var result = _cardal.GetAll();

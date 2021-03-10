@@ -53,13 +53,10 @@ namespace RentACar.DataAccess.Concrete.EntityFramework
         {
             using var context = new RentACarContext();
             var result = from car in filter is null ? context.Cars : context.Cars.Where(filter)
-                join brn in context.Brands
-                    on car.BrandId equals brn.Id
-                join clr in context.Colors
-                    on car.ColorId equals clr.Id
-                join crm in context.CarImages
-                    on car.Id equals crm.CarId
-                select new GetCarImagesDto()
+                join brn in context.Brands on car.BrandId equals brn.Id
+                join clr in context.Colors on car.ColorId equals clr.Id
+                join crm in context.CarImages on car.Id equals crm.CarId
+                select new GetCarImagesDto
                 {
                     DailyPrice = car.DailyPrice,
                     ModelYear = car.ModelYear,

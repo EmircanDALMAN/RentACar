@@ -1,22 +1,20 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {CarResponseModel} from '../models/carResponseModel';
 import {Observable} from 'rxjs';
-import {Car} from '../models/car';
-import {Photo} from '../models/photo';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarService {
 
-  constructor(private httpClient: HttpClient) { }
-  path = 'https://localhost:5001/api/';
+  apiUrl = 'https://localhost:5001/api/';
 
-  getCities(): Observable<Car[]> {
-    return this.httpClient.get<Car[]>(this.path + 'cars/getall');
+  constructor(private httpClient: HttpClient) {
   }
-  getPhotosById(id: number): Observable<Photo[]>{
-    return this.httpClient.get<Photo[]>(this.path + 'cars/images/' + id);
+
+  getCars(): Observable<CarResponseModel> {
+    return this.httpClient.get<CarResponseModel>(this.apiUrl + 'cars/getall');
   }
 }
 

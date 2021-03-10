@@ -4,7 +4,7 @@
   max-height: 300px;
 }
 .opacity{
-  background-color: #454647;
+  background-color: rgba(255, 0, 0, 0.5)!important;
 }
 .container a{
   color: #ebebeb !important;

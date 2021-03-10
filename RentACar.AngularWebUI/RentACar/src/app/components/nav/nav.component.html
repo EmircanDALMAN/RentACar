@@ -1,42 +1,31 @@
-<nav class="navbar navbar-expand-lg opacity">
+<header class="site-navbar site-navbar-target" role="banner">
+
   <div class="container">
+    <div class="row align-items-center position-relative">
 
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
-            aria-controls="navbarColor01"
-            aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <div class="col-3 ">
+        <div class="site-logo">
+          <a href="index.html">CarRent</a>
+        </div>
+      </div>
 
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-             aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
-        </li>
-      </ul>
-      <a routerLink="/login"><i class="far fa-user fa-2x mt-2 login"></i></a>
+      <div class="col-9  text-right">
+
+
+            <span class="d-inline-block d-lg-none"><a href="#"
+                                                      class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span
+              class="icon-menu h3 text-white"></span></a></span>
+
+
+        <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+          <ul class="site-menu main-menu js-clone-nav ml-auto ">
+            <li class="active"><a href="index.html" class="nav-link">Home</a></li>
+          </ul>
+        </nav>
+      </div>
+
+
     </div>
   </div>
-</nav>
+
+</header>

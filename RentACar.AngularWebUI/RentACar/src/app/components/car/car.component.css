@@ -1,0 +1,9 @@
+.card-text{
+  font-size: 1.9em;
+  color: darkcyan;
+}
+.card-body:hover{
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}

@@ -31,7 +31,7 @@ namespace RentACar.WebApi.Controllers
             var result = carService.GetAll();
             if (result.IsSuccess)
             {
-                return Ok(result.Data);
+                return Ok(result);
             }
 
             return BadRequest(result.Message);
@@ -56,7 +56,7 @@ namespace RentACar.WebApi.Controllers
             var result = carService.GetAllImagesById(id);
             if (result.IsSuccess)
             {
-                return Ok(result.Data);
+                return Ok(result);
             }
             return BadRequest(result.Message);
         }

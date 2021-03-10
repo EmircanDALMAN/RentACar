@@ -12,9 +12,11 @@ import {appRoutes} from './routes';
 import {RouterModule} from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ContentComponent } from './components/content/content.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, CarComponent, CarFilterPipe, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, NavComponent, CarComponent, CarFilterPipe, LoginComponent, RegisterComponent, ContentComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent],

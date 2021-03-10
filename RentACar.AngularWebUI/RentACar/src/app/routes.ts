@@ -5,5 +5,5 @@ import {LoginComponent} from './components/login/login.component';
 export const appRoutes: Routes = [
   {path: 'cars', component: CarComponent},
   {path: 'login', component: LoginComponent},
-  { path: '**', redirectTo: 'cars', pathMatch: 'full' }
+  // { path: '**', redirectTo: 'cars', pathMatch: 'full' }
 ];

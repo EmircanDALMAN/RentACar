@@ -1,6 +1,6 @@
-export class Photo {
-  id!: number;
-  carId!: number;
-  imagePath!: string;
-  createdDate!: Date;
+export interface Photo {
+  id: number;
+  carId: number;
+  imagePath: string;
+  createdDate: Date;
 }
