@@ -84,7 +84,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("detailsbycolor")]
+        [HttpGet("detailsbycolorid")]
         public IActionResult GetCarsByColor(int id)
         {
 
@@ -96,7 +96,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("detailsbybrand")]
+        [HttpGet("detailsbybrandid")]
         public IActionResult GetCarsByBrand(int id)
         {
 

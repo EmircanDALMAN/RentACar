@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\WebAPI\\WebAPI.csproj": {}
+    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Business\\Business.csproj": {
+    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Business\\Business.csproj",
+        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Business\\Business.csproj",
+        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Business\\Business.csproj",
         "packagesPath": "C:\\Users\\emiq1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Business\\obj\\",
+        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Entities\\Entities.csproj"
+              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj"
               }
             }
           }
@@ -88,14 +88,14 @@
         }
       }
     },
-    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Core\\Core.csproj": {
+    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\emiq1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Core\\obj\\",
+        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -185,14 +185,14 @@
         }
       }
     },
-    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\emiq1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -213,11 +213,11 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Core\\Core.csproj"
+              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj"
               },
-              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Entities\\Entities.csproj"
+              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj"
               }
             }
           }
@@ -257,14 +257,14 @@
         }
       }
     },
-    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Entities\\Entities.csproj": {
+    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\emiq1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -285,8 +285,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Core\\Core.csproj"
+              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj"
               }
             }
           }
@@ -322,14 +322,14 @@
         }
       }
     },
-    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\WebAPI\\WebAPI.csproj": {
+    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\WebAPI\\WebAPI.csproj",
+        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\emiq1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -350,17 +350,17 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Business\\Business.csproj": {
-                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Business\\Business.csproj"
+              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Business\\Business.csproj": {
+                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Business\\Business.csproj"
               },
-              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Core\\Core.csproj"
+              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj"
               },
-              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Entities\\Entities.csproj"
+              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj"
               }
             }
           }
