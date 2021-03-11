@@ -1,0 +1,82 @@
+CREATE TABLE [dbo].[Brands] (
+    [BrandId]   INT           IDENTITY (1, 1) NOT NULL,
+    [BrandName] NVARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([BrandId] ASC)
+);
+CREATE TABLE [dbo].[CarImages] (
+    [Id]        INT            IDENTITY (1, 1) NOT NULL,
+    [CarId]     INT            NULL,
+    [ImagePath] NVARCHAR (MAX) NULL,
+    [Date]      DATE           NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+CREATE TABLE [dbo].[Cars] (
+    [Id]          INT          IDENTITY (1, 1) NOT NULL,
+    [BrandId]     INT          NOT NULL,
+    [ColorId]     INT          NOT NULL,
+    [ModelYear]   INT          NOT NULL,
+    [DailyPrice]  DECIMAL (18) NOT NULL,
+    [Description] NTEXT        NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+CREATE TABLE [dbo].[Colors] (
+    [ColorId]   INT           IDENTITY (1, 1) NOT NULL,
+    [ColorName] NVARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([ColorId] ASC)
+);
+CREATE TABLE [dbo].[Customers] (
+    [Id]          INT            IDENTITY (1, 1) NOT NULL,
+    [UserId]      INT            NOT NULL,
+    [CompanyName] NVARCHAR (100) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+    UNIQUE NONCLUSTERED ([UserId] ASC)
+);
+CREATE TABLE [dbo].[OperationsClaims] (
+    [Id]   INT           IDENTITY (1, 1) NOT NULL,
+    [Name] VARCHAR (250) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+CREATE TABLE [dbo].[Rentals] (
+    [Id]         INT  IDENTITY (1, 1) NOT NULL,
+    [CarId]      INT  NOT NULL,
+    [CustomerId] INT  NOT NULL,
+    [RentDate]   DATE NOT NULL,
+    [ReturnDate] DATE NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+CREATE TABLE [dbo].[UserOperationsClaims] (
+    [Id]               INT IDENTITY (1, 1) NOT NULL,
+    [UserId]           INT NOT NULL,
+    [OperationClaimId] INT NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+CREATE TABLE [dbo].[Users] (
+    [Id]           INT            IDENTITY (1, 1) NOT NULL,
+    [FirstName]    NVARCHAR (100) NOT NULL,
+    [LastName]     NVARCHAR (100) NOT NULL,
+    [Email]        NVARCHAR (100) NOT NULL,
+    [PasswordSalt] BINARY (128)   NOT NULL,
+    [PasswordHash] BINARY (128)   NOT NULL,
+    [Status]       BIT            NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+    UNIQUE NONCLUSTERED ([Email] ASC)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
