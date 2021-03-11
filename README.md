@@ -6,7 +6,7 @@ Genel olarak proje katmanlı mimariye uygun şekilde tasarlanıp OOP olarak enti
 - [DataAccess](https://github.com/Kontorta16/RentACar/tree/master/DataAccess):Veritabanı CRUD işlemleri gerçekleştirmek için oluşturulan Data Access Katmanı'nda Abstract ve Concrete olmak üzere iki adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur. 
 - [Entites](https://github.com/Kontorta16/RentACar/tree/master/Entities):Veritabanı nesneleri için oluşturulmuş Entities Katmanı'nda Abstract ve Concrete olmak üzere iki adet klasör oluşturuldu ancak abstract klasörü core katmanına referans vermesi gerektiğinden dolayı core katmanına taşındı(Core katmanı ortak katmandır hiçbir yerden referans alamaz). Abstract klasörü soyut nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur. 
 - [WebAPI](https://github.com/Kontorta16/RentACar/tree/master/WebAPI) 
-- [WebUI](https://github.com/Kontorta16/RentACar/tree/master/RentACar.AngularWebUI):Proje'de Frontend için Angular kullanıldı.
+- [WebUI](https://github.com/Kontorta16/RentACarAngular/tree/main/RentACar):Proje'de Frontend için Angular kullanıldı.
 
 #### Kullanılan Teknikler
                 
