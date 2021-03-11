@@ -14,9 +14,13 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ContentComponent } from './components/content/content.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { ServiceComponent } from './components/service/service.component';
+import { HowweworkComponent } from './components/howwework/howwework.component';
+import { CustomercommentsComponent } from './components/customercomments/customercomments.component';
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, CarComponent, CarFilterPipe, LoginComponent, RegisterComponent, ContentComponent, FooterComponent],
+  declarations: [AppComponent, NavComponent, CarComponent, CarFilterPipe, LoginComponent, RegisterComponent, ContentComponent, FooterComponent, BlogComponent, ServiceComponent, HowweworkComponent, CustomercommentsComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent],

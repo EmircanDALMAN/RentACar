@@ -1,15 +1,4 @@
-.card-body img {
-  display: block;
-  width: 100%;
-  max-height: 300px;
-}
-.opacity{
-  background-color: rgba(255, 0, 0, 0.5)!important;
-}
-.container a{
-  color: #ebebeb !important;
-}
-.far.fa-user {
-  width: 100px;
-  height: 40px;
+
+*{
+  font-size: 18px;
 }

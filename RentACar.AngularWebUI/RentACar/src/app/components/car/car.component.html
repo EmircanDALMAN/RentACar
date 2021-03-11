@@ -1,22 +1,55 @@
-<div class="container">
-  <div class="form-group mt-5">
-    <input class="form-control" type="text" id="carName" placeholder="Aranacak Kelime" [(ngModel)]="filterText">
-    <div *ngIf="filterText!=''" class="mt-2">Aranan Kelime: <strong>{{filterText}}</strong></div>
-  </div>
-  <div *ngIf="dataLoaded==false" class="spinner-border text-info" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="row">
-    <div *ngFor="let car of cars | carFilter:filterText" class="col-md-6 mt-50">
-      <div class="card-body">
-        <img src="https://www.otoshops.com/cms/uploads/18/20180525155658/HaberOrtaarac-segmentleri.jpg"
-             class="img-fluid card-img lazyloaded" >
-        <p class="card-text pt-3">{{car.description}}</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-between">
-          <button class="btn btn-outline-dark me-md-2" type="button">Hemen Şimdi Kirala</button>
-          <button class="btn btn-outline-success" type="button">Detaya Git</button>
-        </div>
+<div class="site-section pt-0 pb-0 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+
+        <form class="trip-form">
+          <div class="row align-items-center mb-4">
+            <div class="col-md-6">
+              <h3 class="m-0">Begin your trip here</h3>
+            </div>
+            <div class="col-md-6 text-md-right">
+              <span class="text-primary">32</span> <span>cars available</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-3">
+              <label for="cf-1">Where you from</label>
+              <input type="text" id="cf-1" placeholder="Your pickup address" class="form-control">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="cf-2">Where you go</label>
+              <input type="text" id="cf-2" placeholder="Your drop-off address" class="form-control">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="cf-3">Journey date</label>
+              <input type="text" id="cf-3" placeholder="Your pickup address" class="form-control datepicker px-3">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="cf-4">Return date</label>
+              <input type="text" id="cf-4" placeholder="Your pickup address" class="form-control datepicker px-3">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <input type="submit" value="Submit" class="btn btn-primary">
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+

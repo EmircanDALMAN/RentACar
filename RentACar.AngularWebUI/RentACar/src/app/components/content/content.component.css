@@ -1,0 +1,13 @@
+.feature-car-rent-box-1 {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  color: #ebebeb;
+  backdrop-filter: brightness(97%);
+}
+.ftco-cover-1 {
+  background-image: url('src/assets/images/hero_1.jpg');
+}
+
+.nissan {
+  color: #ebebeb;
+  text-align: center;
+}
