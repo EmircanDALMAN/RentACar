@@ -9,11 +9,11 @@ using System.Linq.Expressions;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfRentalDal : EfEntityRepositoryBase<Rental, ReCapContext>, IRentalDal
+    public class EfRentalDal : EfEntityRepositoryBase<Rental, RentACarDbContext>, IRentalDal
     {
         public List<RentalDetailDto> GetRentalDetails(Expression<Func<Rental, bool>> filter = null)
         {
-            using (ReCapContext context = new ReCapContext())
+            using (RentACarDbContext context = new RentACarDbContext())
             {
                 var result = from r in filter == null ? context.Rentals : context.Rentals.Where(filter)
                              join c in context.Cars

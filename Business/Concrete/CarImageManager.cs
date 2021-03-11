@@ -26,32 +26,32 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
-        public IDataResult<List<CarImage>> GetAll()
+        public IDataResult<List<Image>> GetAll()
         {
-            return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll());
+            return new SuccessDataResult<List<Image>>(_carImageDal.GetAll());
         }
 
         [CacheAspect]
         [PerformanceAspect(5)]
-        public IDataResult<CarImage> Get(int id)
+        public IDataResult<Image> Get(int id)
         {
             var carImage = _carImageDal.Get(ci => ci.Id == id);
-            if (carImage == null) return new ErrorDataResult<CarImage>(Messages.CarImageNotFound);
-            return new SuccessDataResult<CarImage>(carImage);
+            if (carImage == null) return new ErrorDataResult<Image>(Messages.CarImageNotFound);
+            return new SuccessDataResult<Image>(carImage);
         }
 
-        public IDataResult<List<CarImage>> GetByCarId(int carId)
+        public IDataResult<List<Image>> GetByCarId(int carId)
         {
             var result = _carImageDal.GetAll(ci => ci.CarId == carId);
-            if (result.Any()) return new SuccessDataResult<List<CarImage>>(result);
-            return new SuccessDataResult<List<CarImage>>(new List<CarImage>
+            if (result.Any()) return new SuccessDataResult<List<Image>>(result);
+            return new SuccessDataResult<List<Image>>(new List<Image>
             {
-                new CarImage{ ImagePath = "default.jpg", Date = DateTime.Now }
+                new Image{ ImagePath = "default.jpg", Date = DateTime.Now }
             });
         }
         //[SecuredOperation("CarImage.Add")]
         [ValidationAspect(typeof(CarImageValidator))]
-        public IResult Add(IFormFile file, CarImage carImage)
+        public IResult Add(IFormFile file, Image carImage)
         {
             var result = BusinessRules.Run(CheckCarImagesCount(carImage.CarId));
             if (result != null) return result;
@@ -63,7 +63,7 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(CarImageValidator))]
         //[SecuredOperation("CarImage.Update")]
-        public IResult Update(IFormFile file, CarImage carImage)
+        public IResult Update(IFormFile file, Image carImage)
         {
             var entity = _carImageDal.Get(ci => ci.Id == carImage.Id);
             if (entity == null) return new ErrorResult(Messages.CarImageNotFound);
@@ -75,7 +75,7 @@ namespace Business.Concrete
         }
 
         //[SecuredOperation("CarImage.Delete")]
-        public IResult Delete(CarImage carImage)
+        public IResult Delete(Image carImage)
         {
             var entity = _carImageDal.Get(ci => ci.Id == carImage.Id);
             if (entity == null) return new ErrorResult(Messages.CarImageNotFound);

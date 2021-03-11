@@ -5,11 +5,11 @@ using Core.Entities.Concrete;
 using DataAccess.Abstract;
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfUserDal : EfEntityRepositoryBase<User, ReCapContext>, IUserDal
+    public class EfUserDal : EfEntityRepositoryBase<User, RentACarDbContext>, IUserDal
     {
         public List<OperationClaim> GetClaims(User user)
         {
-            using (var context = new ReCapContext())
+            using (var context = new RentACarDbContext())
             {
                 var result = from operationClaim in context.OperationsClaims
                     join userOperationClaim in context.UserOperationsClaims

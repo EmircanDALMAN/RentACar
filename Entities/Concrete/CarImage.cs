@@ -3,7 +3,7 @@ using Core.Entities;
 
 namespace Entities.Concrete
 {
-    public class CarImage : IEntity
+    public class Image : IEntity
     {
         public int Id { get; set; }
         public int CarId { get; set; }

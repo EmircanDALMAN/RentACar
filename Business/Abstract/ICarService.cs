@@ -14,6 +14,6 @@ namespace Business.Abstract
         IResult Delete(Car car);
         IDataResult<Car> GetById(int carId);
         IDataResult<List<Car>> GetAll();
-        IDataResult<List<CarDetailDto>> GetCarDetails(Expression<Func<Car, bool>> filter = null);
+        IDataResult<List<DetailDto>> GetCarDetails(Expression<Func<Car, bool>> filter = null);
     }
 }

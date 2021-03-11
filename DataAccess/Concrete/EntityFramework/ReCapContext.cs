@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class ReCapContext: DbContext
+    public class RentACarDbContext: DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -18,7 +18,7 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<User> Users { get; set; } 
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Rental> Rentals { get; set; }
-        public DbSet<CarImage> CarImages { get; set; }
+        public DbSet<Image> CarImages { get; set; }
         public DbSet<OperationClaim> OperationsClaims { get; set; }
         public DbSet<UserOperationClaim> UserOperationsClaims { get; set; }
 

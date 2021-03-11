@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj": {}
+    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj": {
+    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\emiq1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\obj\\",
+        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\Rent A Car\\RentACar\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
