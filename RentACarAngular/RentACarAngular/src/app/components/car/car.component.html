@@ -1,0 +1,49 @@
+<div *ngIf="error === 'HttpErrorResponse'" class="alert alert-danger alert-dismissible" role="alert">
+  <strong>OOOPS!</strong> Bağlantı Hatası!
+</div>
+
+<div *ngIf="dataLoaded==true && cars.length <= 0" class="alert alert-danger alert-dismissible" role="alert"
+     id="myAlert">
+  <strong> Şuanda Araç Bulunamadı</strong>
+</div>
+
+<div class="row" *ngIf="dataLoaded==true && cars.length>0" style="max-width: 100%;">
+  <div class="cars">
+    <div *ngFor="let car of cars" class="card" style="width: 31rem; float: right; ">
+      <div class="imgBx">
+        <img src="https://localhost:5001/{{car.imagePath}}"
+             class="card-img-top">
+      </div>
+      <div class="contentBx">
+        <div class="content">
+          <div class="row">
+            <div class="col-md-6">MARKA</div>
+            <div class="col-md-6" style="text-align: right">{{car.brandName | uppercase}}</div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-6">RENK</div>
+            <div class="col-md-6" style="text-align: right">{{car.colorName | uppercase}}</div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-6">MODEL YILI</div>
+            <div class="col-md-6" style="text-align: right">{{car.modelYear}}</div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-6">GÜNLÜK FİYAT</div>
+            <div class="col-md-6" style="text-align: right">{{car.dailyPrice}}
+              <fa-icon [icon]="faLira"></fa-icon>
+            </div>
+          </div>
+          <hr>
+          <button routerLink="/car/details/{{car.id}}" type="button"
+                  class="btn btn-outline-primary btnCarDetail">
+            <div class="text">Detaylar</div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

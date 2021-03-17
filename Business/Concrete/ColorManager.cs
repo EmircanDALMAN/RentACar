@@ -24,7 +24,6 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(ColorValidator))]
         [CacheRemoveAspect("IColorService.Get")]
-        [SecuredOperation("Color.Add")]
         public IResult Add(Color color)
         {
             if (color.ColorName.Length <= 2)
@@ -36,7 +35,6 @@ namespace Business.Concrete
 
         }
 
-        [SecuredOperation("Color.Delete")]
         public IResult Delete(Color color)
         {
             _colorDal.Delete(color);
@@ -46,10 +44,6 @@ namespace Business.Concrete
         [CacheAspect]
         public IDataResult<List<Color>> GetAll()
         {
-            if (DateTime.Now.Hour == 00)
-            {
-                return new ErrorDataResult<List<Color>>(Messages.MaintenanceTime);
-            }
 
             return new SuccessDataResult<List<Color>>(_colorDal.GetAll(), Messages.ColorListed);
         }
@@ -58,14 +52,9 @@ namespace Business.Concrete
         [PerformanceAspect(5)]
         public IDataResult<Color> GetById(int id)
         {
-            if (DateTime.Now.Hour == 00)
-            {
-                return new ErrorDataResult<Color>(Messages.MaintenanceTime);
-            }
             return new SuccessDataResult<Color>(_colorDal.Get(c => c.ColorId == id));
         }
 
-        [SecuredOperation("Color.Update")]
         public IResult Update(Color color)
         {
             _colorDal.Update(color);

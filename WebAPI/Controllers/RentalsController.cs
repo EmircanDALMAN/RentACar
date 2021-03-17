@@ -8,7 +8,7 @@ namespace WebAPI.Controllers
     [ApiController]
     public class RentalsController : ControllerBase
     {
-        private readonly IRentalService _rentalService;
+        IRentalService _rentalService;
 
         public RentalsController(IRentalService rentalService)
         {
@@ -81,7 +81,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("detailsbycarid")]
+        [HttpGet("detailsbycar")]
         public IActionResult GetRentalByCar(int id)
         {
 
@@ -93,7 +93,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("detailsbycustomerid")]
+        [HttpGet("detailsbycustomer")]
         public IActionResult GetRentalByCustomer(int id)
         {
 

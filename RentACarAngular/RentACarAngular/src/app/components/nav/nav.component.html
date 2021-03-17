@@ -1,0 +1,25 @@
+
+<nav class="navbar navbar-expand-lg">
+  <div class="logo">
+    <a href="/"> <img src="assets/images/logo.svg">  </a>
+  </div>
+  <div class="container">
+    <div class="menu">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li><a routerLink="/" data-hover="ANASAYFA" class="nav-link">ANASAYFA</a></li>
+        <li><a routerLink="/brands" data-hover="MARKALAR" class="nav-link">MARKALAR</a></li>
+        <li><a routerLink="/cars" data-hover="ARABALAR" class="nav-link">ARABALAR</a></li>
+        <li><a routerLink="/colors" data-hover="RENKLER" class="nav-link">RENKLER</a></li>
+        <li><a routerLink="/customers" data-hover="MÜŞTERİLER" class="nav-link">MÜŞTERİLER</a></li>
+        <li><a routerLink="/rentals" data-hover="KİRALANANLAR" class="nav-link">KİRALANANLAR</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="icons">
+    <ul>
+      <li> <a target="_blank" href="https://github.com/ExorTek"> <fa-icon [icon]="githubIcon" class="fa-2x instagramIcon"></fa-icon> </a></li>
+      <li> <a target="_blank" href="https://www.instagram.com/mmetdemirel/"><fa-icon [icon]="instagramIcon"  class="fa-2x githubIcon"></fa-icon></a></li>
+      <li> <a routerLink="/login"><fa-icon [icon]="userIcon" class="fa-2x userIcon"></fa-icon> </a></li>
+    </ul>
+  </div>
+</nav>

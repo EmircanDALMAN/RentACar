@@ -1,0 +1,9 @@
+.content{
+  width: 100%;
+  height: 35em !important;
+  background-image: url('src/assets/images/hero_1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

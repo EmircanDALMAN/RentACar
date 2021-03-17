@@ -1,0 +1,121 @@
+* {
+  font-family: 'Montserrat', sans-serif !important;
+}
+section:nth-child(2){
+  padding-top: 10px;
+}
+section:nth-child(3){
+  padding-top: 10px;
+}
+.cars{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cars .card{
+  position: relative;
+  height: 380px;
+  margin: 15px;
+  overflow: hidden;
+}
+.cars .card .imgBx,
+.cars .card .contentBx
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.cars .card .imgBx img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cars .card .contentBx::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00021f;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: right;
+  transition-delay: 0.2s;
+}
+.cars .card:hover .contentBx::before {
+  transform: scaleX(1);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: left;
+  transition-delay: 0s;
+}
+.cars .card:hover .contentBx{
+  display: flex;
+}
+.cars .card .contentBx .content{
+  position: absolute;
+  z-index: 1;
+  transition: 0.5s;
+  transform: translateX(-500px);
+  transition-delay: 0s;
+  width: 90%;
+  overflow: hidden;
+  padding-left: 10%;
+}
+.cars .card:hover .contentBx .content{
+  transform: translateX(0px);
+  transition-delay: 0.2s;
+}
+.cars .card .contentBx .content li{
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2em;
+}
+.content .row:nth-child(1){
+  color: #ebebeb;
+  font-size: 1.2em;
+  padding-top: 1.5em;
+}
+.content .row{
+  color: #ebebeb;
+  font-size: 1.2em;
+  padding-top: 0.3em;
+}
+hr{
+  color: #ebebeb;
+}
+.btnCarDetail {
+  border: 1px solid #ebebeb;
+  border-radius: 5px;
+  width: 100%;
+  display: block;
+  color: #ebebeb !important;
+  background: linear-gradient(to right, #E60019 50%, #00021f 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .5s ease-out;
+}
+
+.btnCarDetail:hover {
+  background-position: left bottom;
+}
+
+.text {
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 30px;
+  transition: all .6s ease-out;
+  display: block;
+}
+
+.text:hover {
+  color: white;
+}

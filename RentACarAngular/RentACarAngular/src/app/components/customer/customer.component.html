@@ -1,0 +1,32 @@
+
+
+<div *ngIf="dataLoaded==true && customers.length <= 0" class="alert alert-danger alert-dismissible" role="alert" id="myAlert">
+  <strong>Başarısız</strong> Şuanda Müşteri Bulunamadı
+</div>
+
+<div *ngIf="error === 'HttpErrorResponse'" class="alert alert-danger alert-dismissible" role="alert">
+  <strong>OOOPS!</strong> Bağlantı Hatası!
+</div>
+
+<div *ngIf="dataLoaded==true && customers.length > 0" class="container">
+
+  <table class="table table-info">
+    <thead>
+    <tr>
+      <th scope="col">Müşteri ID</th>
+      <th scope="col">Kullanıcı ID</th>
+      <th scope="col">Şirket Adı</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{customer.id}}</td>
+      <td>{{customer.userId}}</td>
+      <td>{{customer.companyName}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="dataLoaded==false || customers.length <= 0">
+  <app-loading></app-loading>
+</div>

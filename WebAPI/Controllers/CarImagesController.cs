@@ -7,17 +7,17 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ImagesController : ControllerBase
+    public class CarImagesController : ControllerBase
     {
         private readonly ICarImageService _carImageService;
 
-        public ImagesController(ICarImageService carImageService)
+        public CarImagesController(ICarImageService carImageService)
         {
             _carImageService = carImageService;
         }
 
         [HttpPost]
-        public IActionResult Add([FromForm]IFormFile file, [FromForm] Image carImage)
+        public IActionResult Add([FromForm]IFormFile file, [FromForm] CarImage carImage)
         {
             var result = _carImageService.Add(file,carImage);
             if (!result.Success) 
@@ -26,7 +26,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut]
-        public IActionResult Update([FromForm] IFormFile file,[FromForm] Image carImage)
+        public IActionResult Update([FromForm] IFormFile file,[FromForm] CarImage carImage)
         {
             var result = _carImageService.Update(file,carImage);
             if (!result.Success)
@@ -35,7 +35,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpDelete]
-        public IActionResult Delete([FromForm] Image carImage)
+        public IActionResult Delete([FromForm] CarImage carImage)
         {
             var result = _carImageService.Delete(carImage);
             if (!result.Success) 

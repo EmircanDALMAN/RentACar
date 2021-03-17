@@ -7,15 +7,15 @@ namespace Core.Utilities.FileHelper
     public class FileHelper
     {
         private static string _wwwRoot = "wwwroot";
-
-        public static string SaveImageFile(string fileName, IFormFile extension)
+        
+        public static string SaveImageFile(string fileName,IFormFile extension)
         {
-            var resimUzantisi = Path.GetExtension(extension.FileName);
-            var yeniResimAdi = string.Format("{0:D}{1}", Guid.NewGuid(), resimUzantisi);
-            var imageKlasoru = Path.Combine(_wwwRoot, fileName);
-            var tamResimYolu = Path.Combine(imageKlasoru, yeniResimAdi);
-            var webResimYolu = string.Format("/" + fileName + "/{0}", yeniResimAdi);
-            if (!Directory.Exists(imageKlasoru))
+            string resimUzantisi = Path.GetExtension(extension.FileName); 
+            string yeniResimAdi = string.Format("{0:D}{1}", Guid.NewGuid(), resimUzantisi);
+            string imageKlasoru = Path.Combine(_wwwRoot, fileName);
+            string tamResimYolu = Path.Combine(imageKlasoru, yeniResimAdi); 
+            string webResimYolu = string.Format("/"+ fileName + "/{0}", yeniResimAdi);
+            if(!Directory.Exists(imageKlasoru))
                 Directory.CreateDirectory(imageKlasoru);
 
             using (var fileStream = File.Create(tamResimYolu))
@@ -28,10 +28,13 @@ namespace Core.Utilities.FileHelper
 
         public static bool DeleteImageFile(string fileName)
         {
-            var fullPath = Path.Combine(fileName);
-            if (!File.Exists(_wwwRoot + fullPath)) return false;
-            File.Delete(_wwwRoot + fullPath);
-            return true;
+            string fullPath = Path.Combine(fileName);
+            if (File.Exists(_wwwRoot + fullPath))
+            {
+                File.Delete(_wwwRoot + fullPath);
+                return true;
+            }
+            return false;
         }
     }
 }

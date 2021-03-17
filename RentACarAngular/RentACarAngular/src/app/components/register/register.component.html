@@ -1,0 +1,29 @@
+<body>
+
+<form action="index.html" class="login-form">
+  <h2>Kayıt</h2>
+  <div class="txtb">
+    <input type="text">
+    <span data-placeholder="Adınız"></span>
+  </div>
+  <div class="txtb">
+    <input type="text">
+    <span data-placeholder="Soyadınız"></span>
+  </div>
+  <div class="txtb">
+    <input type="email" [required]="checkEmailRequired()">
+    <span data-placeholder="Email"></span>
+  </div>
+
+  <div class="txtb">
+    <input type="password">
+    <span data-placeholder="Şifre"></span>
+  </div>
+
+
+  <input type="submit" class="logbtn" value="Kayıt Ol">
+
+  <div class="bottom-text"> Hesabın var mı? <a routerLink="/login">Giriş</a></div>
+
+</form>
+</body>

@@ -1,0 +1,106 @@
+* {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.navbar {
+  background-color: rgb(0, 0, 0);
+  font-size: 1.2em;
+}
+
+.container {
+  width: auto;
+}
+.logo img {
+  width: 200px;
+  height: 90px;
+  padding-top: 28px;
+}
+.menu ul li a {
+  font-size: 0.9em;
+  margin-left: 0.8em;
+}
+.menu {
+  text-align: center;
+  text-transform: uppercase;
+}
+.menu * {
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.menu li {
+  display: inline-block;
+  list-style: outside none none;
+  overflow: hidden;
+}
+.menu a {
+  padding: 0.3em 0;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  display: inline-block;
+  letter-spacing: 1px;
+  margin: 0;
+  text-decoration: none;
+}
+.menu a:before,
+.menu a:after {
+  position: absolute;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.menu a:before {
+  bottom: 100%;
+  display: block;
+  height: 3px;
+  width: 100%;
+  content: "";
+  background-color: #8E44AD;
+}
+.menu a:after {
+  padding: 0.3em 0;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  content: attr(data-hover);
+  color: white;
+  white-space: nowrap;
+}
+
+.menu li:hover a,
+.menu .current a {
+  transform: translateY(100%);
+}
+
+.icons{
+  width: 250px;
+  height: 90px;
+}
+.icons ul{
+  list-style-type: none;
+}
+.userIcon{
+  padding-right: 0.3em;
+}
+.instagramIcon{
+  margin-right: 1em;
+}
+.githubIcon{
+  margin-right: 0.5em;
+}
+.userIcon{
+  margin-right: 1em;
+}
+fa-icon{
+  position:relative;
+  float: right;
+  padding-top: 18px;
+  color: #ebebeb;
+}
+
+
+
+
+
+
+
