@@ -1,0 +1,66 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <div class="row">
+              <div class="col-xs-6">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="panel-body">
+          <div *ngFor="let cartItem of cartItems" class="row" style="max-width: 100%;">
+            <div class="col-xs-2"><img style="max-width: 100%; height: 400px;" src="https://localhost:5001/{{cartItem.car.imagePath}}">
+            </div>
+            <div class="col-xs-4">
+              <h4 class="product-name"><strong>{{cartItem.car.brandName}}</strong></h4>
+              <h4><small>{{cartItem.car.description}}</small></h4>
+            </div>
+            <div class="col-xs-6">
+              <div class="col-xs-6 text-right">
+                <h6><strong>{{cartItem.car.dailyPrice}}</strong></h6>
+              </div>
+              <div class="col-xs-4">
+                <input type="text" class="form-control input-sm" value="1">
+              </div>
+              <div class="col-xs-2">
+                <button type="button" class="btn btn-link btn-xs">
+                  <span class="glyphicon glyphicon-trash"> </span>
+                </button>
+              </div>
+              <button (click)="changeRentCar(cartItem.car.id)" type="button" class="btn btn-success btn-block"> Ödemeye Git </button>
+            </div>
+          </div>
+          <hr>
+          <hr>
+        </div>
+        <div class="panel-footer">
+          <div class="row text-center">
+            <div class="col-xs-9">
+              <h4 class="text-right">Toplam Fiyat<strong></strong></h4>
+            </div>
+            <div class="col-xs-3">
+            </div>
+            <form class="form-inline">
+              <div class="form-group">
+                <div class="input-group">
+                  <input class="form-control" placeholder="yyyy-mm-dd"
+                         name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker"
+                         required="required"  >
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
