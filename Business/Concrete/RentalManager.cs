@@ -26,7 +26,7 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(RentalValidator))]
         [CacheRemoveAspect("IRentalService.Get")]
-        [SecuredOperation("Rental.Add")]
+        //[SecuredOperation("Rental.Add")]
         public IResult Add(Rental rental)
         {
             if (rental.ReturnDate == null && _rentalDal.GetRentalDetails(I => I.CarId == rental.CarId).Count > 0)
@@ -57,20 +57,12 @@ namespace Business.Concrete
         [PerformanceAspect(5)]
         public IDataResult<Rental> GetById(int id)
         {
-            if (DateTime.Now.Hour == 00)
-            {
-                return new ErrorDataResult<Rental>(Messages.MaintenanceTime);
-            }
             return new SuccessDataResult<Rental>(_rentalDal.Get(b => b.Id == id));
         }
 
         [CacheAspect]
         public IDataResult<List<RentalDetailDto>> GetRentalDetails(Expression<Func<Rental, bool>> filter = null)
         {
-            if (DateTime.Now.Hour == 00)
-            {
-                return new ErrorDataResult<List<RentalDetailDto>>(Messages.MaintenanceTime);
-            }
             return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetails());
         }
 

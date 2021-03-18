@@ -24,7 +24,7 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(UserValidator))]
         [CacheRemoveAspect("IUserService.Get")]
-        [SecuredOperation("User.Add")]
+        //[SecuredOperation("User.Add")]
         public IResult Add(User user)
         {
             _userDal.Add(user);

@@ -27,10 +27,11 @@ namespace DataAccess.Concrete.EntityFramework
                              select new RentalDetailDto
                              {
                                  Id = r.Id,
+                                 CarId = c.Id,
                                  BrandName = b.BrandName,
                                  CustomerName = cu.CompanyName,
                                  UserName = $"{u.FirstName} {u.LastName}",
-                                 RentDate = r.RentDate,
+                                 RentDate = DateTime.Now,
                                  ReturnDate = r.ReturnDate
                              };
                 return result.ToList();
