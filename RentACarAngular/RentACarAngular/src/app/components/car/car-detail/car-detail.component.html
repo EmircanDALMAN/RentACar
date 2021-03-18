@@ -20,6 +20,6 @@
     <p class="card-text"><b>Fiyat:</b> {{car.dailyPrice}}
       <fa-icon [icon]="faLira"></fa-icon>
     </p>
-    <a href="#" class="btn btn-primary">Kirala</a>
+    <a (click)="addToCart(car)" class="btn btn-primary">Kirala</a>
   </div>
 </div>

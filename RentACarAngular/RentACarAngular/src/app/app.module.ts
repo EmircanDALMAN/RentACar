@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -28,11 +29,26 @@ import {CarEditComponent} from './components/car/car-edit/car-edit.component';
 import {CarDetailComponent} from './components/car/car-detail/car-detail.component';
 import {NgbAlertModule, NgbModule, NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 
+import {ToastrModule} from 'ngx-toastr';
+import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
+import { CartComponent } from './components/cart/cart.component';
 @NgModule({
   declarations: [AppComponent, NavComponent, CarFilterPipe, LoginComponent, RegisterComponent, ContentComponent, BrandComponent, CarComponent,
     ColorComponent, CustomerComponent, RentalComponent, LoadingComponent, ChangePasswordComponent, FooterComponent, HowWeWorkComponent, AboutComponent,
-    ContactComponent, CarEditComponent, CarDetailComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbPaginationModule, NgbAlertModule, FormsModule, FontAwesomeModule, RouterModule.forRoot(appRoutes), NgbModule],
+    ContactComponent, CarEditComponent, CarDetailComponent, CartSummaryComponent, CartComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ToastrModule.forRoot({positionClass:"toast-bottom-right"}),
+    NgbPaginationModule,
+    NgbAlertModule,
+    FormsModule,
+    FontAwesomeModule,
+    RouterModule.forRoot(appRoutes),
+    NgbModule,
+    BrowserAnimationsModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

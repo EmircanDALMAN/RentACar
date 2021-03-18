@@ -11,11 +11,13 @@ import {ChangePasswordComponent} from './components/change-password/change-passw
 import {AboutComponent} from './components/about/about.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {CarDetailComponent} from './components/car/car-detail/car-detail.component';
+import {CartComponent} from './components/cart/cart.component';
 
 export const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'about', component: AboutComponent},
+  {path: 'cart', component: CartComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'changepassword', component: ChangePasswordComponent},
   {path: 'content', component: ContentComponent},

@@ -7,9 +7,17 @@
   <strong> Şuanda Araç Bulunamadı</strong>
 </div>
 
+<div class="mb-3">
+  <label for="filterText" class="form-label"></label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="arama ifadesi giriniz">
+</div>
+<div *ngIf="filterText.length>2" class="alert alert-success">
+  {{filterText}} aradınız.
+</div>
+
 <div class="row" *ngIf="dataLoaded==true && cars.length>0" style="max-width: 100%;">
   <div class="cars">
-    <div *ngFor="let car of cars" class="card" style="width: 31rem; float: right; ">
+    <div *ngFor="let car of cars | carFilter:filterText " class="card" style="width: 31rem; float: right; " >
       <div class="imgBx">
         <img src="https://localhost:5001/{{car.imagePath}}"
              class="card-img-top">
