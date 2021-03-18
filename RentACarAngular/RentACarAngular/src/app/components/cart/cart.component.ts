@@ -15,6 +15,7 @@ export class CartComponent implements OnInit {
 
   cartItems: CartItem[] = [];
   model: NgbDateStruct;
+  totalPrice: number = 0;
   rentalResponse: Rental[];
   returnDate: string;
   now = new Date();
@@ -26,13 +27,13 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCart();
+    this.cartItems.forEach(v => {
+      this.totalPrice += v.car.dailyPrice;
+    });
   }
 
   getCart() {
     this.cartItems = this.cartService.list();
-  }
-
-  goPayment() {
   }
 
   changeRentCar(id: number) {
@@ -44,11 +45,9 @@ export class CartComponent implements OnInit {
           this.toastrService.error(this.rentalResponse[this.findIndex()].brandName + ' Şuan Kirada');
         }
       });
+    } else {
+      this.toastrService.error('Tarih Alanı Boş Bırakılamaz');
     }
-    else{
-      this.toastrService.error('error');
-    }
-
   }
 
   findIndex() {
@@ -57,12 +56,13 @@ export class CartComponent implements OnInit {
 
   dateSetting(): boolean {
     var deger = new Date(this.returnDate.toString()).toLocaleDateString();
-    var splitted2 = deger.split('.', 3);
-    var month = splitted2[1];
+    var splitted = deger.split('.', 3);
+    var month = splitted[1];
     var splitted3 = month.slice(1, 2);
-    if (this.model.year.toString() === splitted2[2].toString()) {
+    if(this.model.year.toString() === splitted[2].toString())
+    {
       if (this.model.month.toString() === splitted3.toString()) {
-        if (this.model.day.toString() === splitted2[0].toString()) {
+        if (this.model.day.toString() === splitted[0].toString()) {
           return false;
         }
         return true;

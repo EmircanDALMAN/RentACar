@@ -12,16 +12,20 @@ using System.Linq.Expressions;
 using Business.BusinessAspects.Autofac;
 using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Performance;
+using Core.Aspects.Autofac.Transaction;
+using Core.Entities.Concrete;
 
 namespace Business.Concrete
 {
     public class RentalManager : IRentalService
     {
         private readonly IRentalDal _rentalDal;
+        private IPaymentService _paymentService;
 
-        public RentalManager(IRentalDal rentalDal)
+        public RentalManager(IRentalDal rentalDal, IPaymentService paymentService)
         {
             _rentalDal = rentalDal;
+            _paymentService = paymentService;
         }
 
         [ValidationAspect(typeof(RentalValidator))]
@@ -35,7 +39,13 @@ namespace Business.Concrete
             _rentalDal.Add(rental);
             return new SuccessResult(Messages.RentalAdded);
         }
-
+        [TransactionScopeAspect]
+        public IResult TransactionalOperation(Rental rental)
+        {
+            _rentalDal.Add(rental);
+            _paymentService.MakePayment(new FakeCreditCardModel());
+            return new SuccessResult(Messages.CarRentalSuccess);
+        }
         [SecuredOperation("Rental.Delete")]
         public IResult Delete(Rental rental)
         {

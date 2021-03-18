@@ -17,6 +17,9 @@ namespace Business.DependecyResolvers.Autofac
             builder.RegisterType<BrandManager>().As<IBrandService>().SingleInstance();
             builder.RegisterType<EfBrandDal>().As<IBrandDal>().SingleInstance();
 
+            builder.RegisterType<PaymentManager>().As<IPaymentService>();
+            
+
             builder.RegisterType<CarManager>().As<ICarService>().SingleInstance();
             builder.RegisterType<EfCarDal>().As<ICarDal>().SingleInstance();
 

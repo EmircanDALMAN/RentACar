@@ -40,7 +40,7 @@ namespace WebAPI.Controllers
         [HttpPost("add")]
         public IActionResult Add(Rental rental)
         {
-            var result = _rentalService.Add(rental);
+            var result = _rentalService.TransactionalOperation(rental);
             if (result.Success)
             {
                 return Ok(result);

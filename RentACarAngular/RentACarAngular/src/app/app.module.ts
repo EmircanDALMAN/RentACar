@@ -32,10 +32,11 @@ import {NgbAlertModule, NgbModule, NgbPaginationModule} from '@ng-bootstrap/ng-b
 import {ToastrModule} from 'ngx-toastr';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 import { CartComponent } from './components/cart/cart.component';
+import { PaymentComponent } from './components/payment/payment.component';
 @NgModule({
   declarations: [AppComponent, NavComponent, CarFilterPipe, LoginComponent, RegisterComponent, ContentComponent, BrandComponent, CarComponent,
     ColorComponent, CustomerComponent, RentalComponent, LoadingComponent, ChangePasswordComponent, FooterComponent, HowWeWorkComponent, AboutComponent,
-    ContactComponent, CarEditComponent, CarDetailComponent, CartSummaryComponent, CartComponent],
+    ContactComponent, CarEditComponent, CarDetailComponent, CartSummaryComponent, CartComponent, PaymentComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
