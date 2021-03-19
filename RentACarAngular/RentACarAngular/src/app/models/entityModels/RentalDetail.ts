@@ -1,5 +1,6 @@
+import {NgbDate} from '@ng-bootstrap/ng-bootstrap';
+
 export class RentalDetail {
-  id: number;
   carId: number;
   customerId: number;
   returnDate: Date;

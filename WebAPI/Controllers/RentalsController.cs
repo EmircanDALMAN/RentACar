@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Core.Aspects.Autofac.Transaction;
 using Entities.Concrete;
+using Entities.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -9,10 +11,12 @@ namespace WebAPI.Controllers
     public class RentalsController : ControllerBase
     {
         IRentalService _rentalService;
+        private IPaymentService _paymentService;
 
-        public RentalsController(IRentalService rentalService)
+        public RentalsController(IRentalService rentalService, IPaymentService paymentService)
         {
             _rentalService = rentalService;
+            _paymentService = paymentService;
         }
 
         [HttpGet]
@@ -38,14 +42,35 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Rental rental)
+        public IActionResult Add(RentalPaymentDto rentalPaymentDto)
         {
-            var result = _rentalService.TransactionalOperation(rental);
-            if (result.Success)
+            var paymentResult = _paymentService.MakePayment(rentalPaymentDto.FakeCreditCardModel);
+            if (!paymentResult.Success)
             {
-                return Ok(result);
+                return BadRequest(paymentResult);
             }
-            return BadRequest(result);
+            var result = _rentalService.Add(rentalPaymentDto.Rental);
+
+            if (result.Success)
+                return Ok(result);
+
+            return BadRequest(result.Message);
+        }
+
+        [HttpPost("paymentadd")]
+        public IActionResult PaymentAdd(RentalPaymentDto rentalPaymentDto)
+        {
+            var paymentResult = _paymentService.MakePayment(rentalPaymentDto.FakeCreditCardModel);
+            if (!paymentResult.Success)
+            {
+                return BadRequest(paymentResult);
+            }
+            var result = _rentalService.Add(rentalPaymentDto.Rental);
+
+            if (result.Success)
+                return Ok(result);
+
+            return BadRequest(result.Message);
         }
 
         [HttpPost("delete")]

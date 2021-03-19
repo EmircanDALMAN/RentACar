@@ -33,8 +33,8 @@
                   <span class="glyphicon glyphicon-trash"> </span>
                 </button>
               </div>
-              <button (click)="changeRentCar(cartItem.car.id)"
-                      routerLink="/payment/{{totalPrice}}/{{cartItem.car.id}}/{{this.model.year}}/{{this.model.month}}/{{this.model.day}}"
+              <button (click)="createRental()"
+                      routerLink="/payment/"
                       type="button" class="btn btn-success btn-block"> Ödemeye Git
               </button>
             </div>

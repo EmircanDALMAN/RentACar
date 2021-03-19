@@ -154,19 +154,19 @@
               <i class="fa fa-cc-discover" style="color:orange;"></i>
             </div>
             <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+            <input type="text" [(ngModel)]="fakeCreditCard.cardHolderName" id="cname" name="cardname" placeholder="John More Doe">
             <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <input type="text" [(ngModel)]="fakeCreditCard.cardNumber" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
             <label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+            <input type="text" [(ngModel)]="fakeCreditCard.expirationMonth" id="expmonth" name="expmonth" placeholder="September">
             <div class="row">
-              <div class="col-50">
+              <div class="col-50" >
                 <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2018">
+                <input type="text" [(ngModel)]="fakeCreditCard.expirationYear" id="expyear" name="expyear" placeholder="2018">
               </div>
               <div class="col-50">
                 <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="352">
+                <input type="text" [(ngModel)]="fakeCreditCard.cvv" id="cvv" name="cvv" placeholder="352">
               </div>
             </div>
           </div>
@@ -175,7 +175,7 @@
         <label>
           <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
         </label>
-        <button (click)="addRental(rental)" value="Continue to checkout" class="btn"></button>
+        <button (click)="addRental(rental, fakeCreditCard)" value="Continue to checkout" class="btn"></button>
       </form>
     </div>
   </div>

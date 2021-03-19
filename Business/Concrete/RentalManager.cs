@@ -43,7 +43,6 @@ namespace Business.Concrete
         public IResult TransactionalOperation(Rental rental)
         {
             _rentalDal.Add(rental);
-            _paymentService.MakePayment(new FakeCreditCardModel());
             return new SuccessResult(Messages.CarRentalSuccess);
         }
         [SecuredOperation("Rental.Delete")]

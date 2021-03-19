@@ -19,7 +19,7 @@ export const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'about', component: AboutComponent},
   {path: 'cart', component: CartComponent},
-  {path: 'payment/:totalPrice/:id/:year/:month/:day', component: PaymentComponent},
+  {path: 'payment/:myrental', component: PaymentComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'changepassword', component: ChangePasswordComponent},
   {path: 'content', component: ContentComponent},

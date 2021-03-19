@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {RentalService} from '../../services/rental.service';
 import {RentalDetail} from '../../models/entityModels/RentalDetail';
 import {ToastrService} from 'ngx-toastr';
+import {FakeCreditCard} from '../../models/entityModels/fakeCreditCard';
 
 @Component({
   selector: 'app-payment',
@@ -18,6 +19,13 @@ export class PaymentComponent implements OnInit {
   month: number;
   day: number;
   rental: RentalDetail = new RentalDetail();
+  fakeCreditCard: FakeCreditCard = new class implements FakeCreditCard {
+    cardHolderName: string;
+    cardNumber: string;
+    cvv: string;
+    expirationMonth: number;
+    expirationYear: number;
+  }
 
   constructor(private activatedRoute: ActivatedRoute,
               private rentalService: RentalService,
@@ -25,24 +33,21 @@ export class PaymentComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.activatedRoute.params.subscribe(params => {
-      this.totalPrice = params['totalPrice'];
-      this.carId = params['id'];
-      this.year = params['year'];
-      this.month = params['month'];
-      this.day = params['day'];
-      this.rental.carId = this.carId;
-      this.rental.customerId = 1;
-      this.rental.returnDate = new Date(params['year'], params['month'], params['day']);
+      if(params["myrental"]){
+        this.rental = JSON.parse(params['myrental']);
+      }
     });
   }
 
-  addRental(rental: RentalDetail) {
-    this.rentalService.addRental(rental);
+  addRental(rental: RentalDetail,fakeCreditCard:FakeCreditCard) {
+    this.rentalService.addRental(rental, fakeCreditCard).subscribe(response=>{
+      this.toastrService.success(response.message.toString());
+    });
     this.toastrService.success('Araç kiralandı');
   }
 }
-
 
 
 

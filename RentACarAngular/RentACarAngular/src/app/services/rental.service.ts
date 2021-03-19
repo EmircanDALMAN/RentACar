@@ -5,6 +5,8 @@ import {ListResponseModel} from '../models/responseModels/listResponseModel';
 import {Rental} from '../models/entityModels/rental';
 import {environment} from '../../environments/environment';
 import {RentalDetail} from '../models/entityModels/RentalDetail';
+import {FakeCreditCard} from '../models/entityModels/fakeCreditCard';
+import {ResponseModel} from '../models/responseModels/responseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +26,25 @@ export class RentalService {
     (this.apiUrl + 'detailsbycar?id=' + id);
   }
 
-  addRental(rental: RentalDetail): Observable<ListResponseModel<RentalDetail>> {
-    return this.httpClient.post<ListResponseModel<RentalDetail>>(this.apiUrl + 'add', rental);
+  addRental(rental: RentalDetail, fakeCreditCard: FakeCreditCard): Observable<ResponseModel> {
+    console.log(fakeCreditCard);
+    return this.httpClient.post<ResponseModel>
+    (this.apiUrl + 'add',
+      {
+        rental:
+          {
+            'carId': rental.carId,
+            'customerId': rental.customerId,
+            'returnDate': rental.returnDate
+          },
+        fakeCreditCardModel:
+          {
+          'cardNumber': fakeCreditCard.cardNumber,
+          'cardHolderName': fakeCreditCard.cardHolderName,
+          'expirationYear': parseInt(fakeCreditCard.expirationYear.toString()),
+          'expirationMonth': parseInt(fakeCreditCard.expirationMonth.toString()),
+          'cvv': fakeCreditCard.cvv
+        }
+      });
   }
 }
