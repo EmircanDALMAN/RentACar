@@ -39,17 +39,14 @@ export class CartComponent implements OnInit {
     });
     this.rentalService.getRentalByCar(this.cartItems[this.cartItems.length - 1].car.id).subscribe(response => {
       this.rentalResponse = response.data;
-      console.log(this.rentalResponse);
       this.carDetailReturnDate = this.rentalResponse[this.rentalResponse.length - 1].returnDate;
-      console.log(this.carDetailReturnDate);
     });
   }
 
   createRental() {
-    if(!this.checkCarReturnDate()){
+    if (!this.checkCarReturnDate()) {
       this.router.navigate(['/cart']);
-    }
-    else if (this.checkCarReturnDate()){
+    } else if (this.checkCarReturnDate()) {
       let MyRental: RentalDetail = {
         returnDate: new Date(this.model.year, this.model.month - 1, this.model.day + 1),
         carId: this.cartItems[0].car.id,
@@ -68,6 +65,7 @@ export class CartComponent implements OnInit {
       var year = parseInt(fullDate[0]);
       var date1 = new Date(year, month, day);
       var date2 = new Date(this.model.year, this.model.month, this.model.day);
+      this.totalPrice = this.totalPrice * (date2.getUTCDate() - date1.getUTCDate());
       if (date1.getUTCDate() >= date2.getUTCDate()) {
         this.toastrService.error('Araç bu tarihte kiradadır!');
         return false;

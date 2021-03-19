@@ -33,7 +33,7 @@ namespace Business.Concrete
         public IResult Add(Rental rental)
         {
             if (rental.ReturnDate == null && 
-                _rentalDal.GetRentalDetails(rental.CarId).Count > 0)
+                _rentalDal.GetRentalDetailsById(rental.CarId).Count > 0)
                 return new ErrorResult(Messages.NoReturnDate);
 
             _rentalDal.Add(rental);
@@ -69,9 +69,15 @@ namespace Business.Concrete
             return new SuccessDataResult<Rental>(_rentalDal.Get(b => b.Id == id));
         }
 
-        public IDataResult<List<RentalDetailDto>> GetRentalDetails(int id)
+        public IDataResult<List<RentalDetailDto>> GetRentalDetailsById(int id)
         {
-            return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetails(id));
+            return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetailsById(id));
+        }
+
+        public IDataResult<List<RentalDetailDto>> GetRentalDetails()
+        {
+            return new SuccessDataResult<List<RentalDetailDto>>
+                (_rentalDal.GetRentalDetails());
         }
 
         [SecuredOperation("Rental.Update")]
