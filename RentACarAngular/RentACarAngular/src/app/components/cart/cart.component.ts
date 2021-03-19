@@ -24,6 +24,8 @@ export class CartComponent implements OnInit {
   now = new Date();
   baseUrl = environment.baseUrl;
   carDetailReturnDate: Date;
+  date1: number;
+  date2: number;
 
   constructor(private cartService: CartService,
               private rentalService: RentalService,
@@ -65,6 +67,8 @@ export class CartComponent implements OnInit {
       var year = parseInt(fullDate[0]);
       var date1 = new Date(year, month, day);
       var date2 = new Date(this.model.year, this.model.month, this.model.day);
+      this.date1 = date1.getUTCDate();
+      this.date2 = date2.getUTCDate();
       this.totalPrice = this.totalPrice * (date2.getUTCDate() - date1.getUTCDate());
       if (date1.getUTCDate() >= date2.getUTCDate()) {
         this.toastrService.error('Araç bu tarihte kiradadır!');
@@ -72,6 +76,19 @@ export class CartComponent implements OnInit {
       }
     }
     return true;
+  }
+  calculatePrice() {
+    if (this.carDetailReturnDate != undefined) {
+      var fullDate = this.carDetailReturnDate.toString().split('-', 3);
+      var day = parseInt(fullDate[2]);
+      var month = parseInt(fullDate[1]);
+      var year = parseInt(fullDate[0]);
+      var date1 = new Date(year, month, day);
+      var date2 = new Date(this.model.year, this.model.month, this.model.day);
+      var difference = date1.getTime() - date2.getTime();
+      var numberOfDays = Math.ceil(difference / (1000 * 3600 * 24));
+      this.totalPrice = numberOfDays * this.cartItems[this.cartItems.length - 1].car.dailyPrice;
+    }
   }
 
   getCart() {

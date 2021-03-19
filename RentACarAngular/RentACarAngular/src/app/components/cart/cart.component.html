@@ -43,8 +43,9 @@
                 <div class="form-group">
                   <div class="input-group">
                     <input class="form-control" placeholder="yyyy-mm-dd"
-                           name="dp" [(ngModel)]="model" (change)="calculatePrice()" ngbDatepicker
+                           name="dp" [(ngModel)]="model" ngbDatepicker
                            #d="ngbDatepicker">
+                    <button (click)="calculatePrice()">Hesapla</button>
                     <div class="input-group-append">
                       <button class="icon-calendar" (click)="d.toggle()" type="button">Kiralama Tarihi</button>
                     </div>
