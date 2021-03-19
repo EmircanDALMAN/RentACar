@@ -57,22 +57,6 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message);
         }
 
-        [HttpPost("paymentadd")]
-        public IActionResult PaymentAdd(RentalPaymentDto rentalPaymentDto)
-        {
-            var paymentResult = _paymentService.MakePayment(rentalPaymentDto.FakeCreditCardModel);
-            if (!paymentResult.Success)
-            {
-                return BadRequest(paymentResult);
-            }
-            var result = _rentalService.Add(rentalPaymentDto.Rental);
-
-            if (result.Success)
-                return Ok(result);
-
-            return BadRequest(result.Message);
-        }
-
         [HttpPost("delete")]
         public IActionResult Delete(Rental rental)
         {
