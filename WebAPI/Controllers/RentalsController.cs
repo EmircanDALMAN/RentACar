@@ -10,8 +10,8 @@ namespace WebAPI.Controllers
     [ApiController]
     public class RentalsController : ControllerBase
     {
-        IRentalService _rentalService;
-        private IPaymentService _paymentService;
+        private readonly IRentalService _rentalService;
+        private readonly IPaymentService _paymentService;
 
         public RentalsController(IRentalService rentalService, IPaymentService paymentService)
         {

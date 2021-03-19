@@ -118,7 +118,7 @@
 <div class="row">
   <div class="col-75">
     <div class="container">
-      <form method="post">
+      <form [formGroup]="rentalForm" method="post">
 
         <div class="row">
           <div class="col-50">
@@ -154,19 +154,50 @@
               <i class="fa fa-cc-discover" style="color:orange;"></i>
             </div>
             <label for="cname">Name on Card</label>
-            <input type="text" [(ngModel)]="fakeCreditCard.cardHolderName" id="cname" name="cardname" placeholder="John More Doe">
+            <input type="text" formControlName="cardHolderName"
+                   [(ngModel)]="fakeCreditCard.cardHolderName" id="cname"
+                   name="cardname" placeholder="John More Doe">
+            <div  class="alert alert-danger"
+                  *ngIf="rentalForm.get('cardHolderName').hasError('required') &&
+                  rentalForm.get('cardHolderName').dirty">Kart Adı Zorunludur!</div>
+
             <label for="ccnum">Credit card number</label>
-            <input type="text" [(ngModel)]="fakeCreditCard.cardNumber" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <input type="text" formControlName="cardNumber"
+                   [(ngModel)]="fakeCreditCard.cardNumber" id="ccnum"
+                   name="cardnumber" placeholder="1111-2222-3333-4444">
+            <div  class="alert alert-danger"
+                  *ngIf="rentalForm.get('cardNumber').hasError('required') &&
+                  rentalForm.get('cardNumber').dirty">Kart Numarası Zorunludur</div>
+
             <label for="expmonth">Exp Month</label>
-            <input type="text" [(ngModel)]="fakeCreditCard.expirationMonth" id="expmonth" name="expmonth" placeholder="September">
+            <input type="text" formControlName="expirationMonth"
+                   [(ngModel)]="fakeCreditCard.expirationMonth" id="expmonth"
+                   name="expmonth" placeholder="September">
+            <div  class="alert alert-danger"
+                  *ngIf="rentalForm.get('expirationMonth').hasError('required') &&
+                  rentalForm.get('expirationMonth').dirty">Geçerlilik Ayı Boş Bırakılamaz</div>
+
             <div class="row">
-              <div class="col-50" >
+              <div class="col-50">
                 <label for="expyear">Exp Year</label>
-                <input type="text" [(ngModel)]="fakeCreditCard.expirationYear" id="expyear" name="expyear" placeholder="2018">
+                <input type="text" formControlName="expirationYear"
+                       [(ngModel)]="fakeCreditCard.expirationYear" id="expyear"
+                       name="expyear" placeholder="2018">
+                <div  class="alert alert-danger"
+                      *ngIf="rentalForm.get('expirationYear').hasError('required') &&
+                  rentalForm.get('expirationYear').dirty">Geçerlilik Yılı Boş Bırakılamaz</div>
+
+
               </div>
               <div class="col-50">
                 <label for="cvv">CVV</label>
-                <input type="text" [(ngModel)]="fakeCreditCard.cvv" id="cvv" name="cvv" placeholder="352">
+                <input type="text" formControlName="cvv"
+                       [(ngModel)]="fakeCreditCard.cvv" id="cvv"
+                       name="cvv" placeholder="352">
+                <div  class="alert alert-danger"
+                      *ngIf="rentalForm.get('cvv').hasError('required') &&
+                  rentalForm.get('cvv').dirty">Cvv Boş Bırakılamaz</div>
+
               </div>
             </div>
           </div>
@@ -175,7 +206,7 @@
         <label>
           <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
         </label>
-        <button (click)="addRental(rental, fakeCreditCard)" value="Continue to checkout" class="btn"></button>
+        <button (click)="addRental(rental, fakeCreditCard)" [disabled]="!rentalForm.valid" class="btn">Ödemeyi Tamamla</button>
       </form>
     </div>
   </div>

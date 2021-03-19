@@ -4,6 +4,7 @@ import {RentalService} from '../../services/rental.service';
 import {RentalDetail} from '../../models/entityModels/RentalDetail';
 import {ToastrService} from 'ngx-toastr';
 import {FakeCreditCard} from '../../models/entityModels/fakeCreditCard';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-payment',
@@ -19,30 +20,44 @@ export class PaymentComponent implements OnInit {
   month: number;
   day: number;
   rental: RentalDetail = new RentalDetail();
-  fakeCreditCard: FakeCreditCard = new class implements FakeCreditCard {
-    cardHolderName: string;
-    cardNumber: string;
-    cvv: string;
-    expirationMonth: number;
-    expirationYear: number;
-  }
+  fakeCreditCard: FakeCreditCard = new FakeCreditCard();
+  rentalForm: FormGroup;
 
   constructor(private activatedRoute: ActivatedRoute,
               private rentalService: RentalService,
-              private toastrService: ToastrService) {
+              private toastrService: ToastrService,
+              private formBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
-
+    this.createForm();
     this.activatedRoute.params.subscribe(params => {
-      if(params["myrental"]){
+      if (params['myrental']) {
         this.rental = JSON.parse(params['myrental']);
       }
     });
   }
 
-  addRental(rental: RentalDetail,fakeCreditCard:FakeCreditCard) {
-    this.rentalService.addRental(rental, fakeCreditCard).subscribe(response=>{
+  createForm() {
+    this.rentalForm = this.formBuilder.group({
+      cardHolderName: ['', Validators.required],
+      cardNumber: ['', Validators.required],
+      expirationMonth: ['', Validators.required],
+      expirationYear: ['', Validators.required],
+      cvv: ['', Validators.required]
+
+
+      // cardHolderName: ['', Validators.required, Validators.maxLength(50)],
+      // cardNumber: ['', Validators.required, Validators.maxLength(16), Validators.minLength(16)],
+      // expirationMonth: ['', Validators.required, Validators.min(1), Validators.max(12)],
+      // expirationYear: ['', Validators.required, Validators.min(new Date().getFullYear()),
+      //   Validators.max(new Date().getUTCFullYear() + 30)],
+      // cvv: ['', Validators.required,Validators.minLength(3),Validators.maxLength(3)],
+    });
+  }
+
+  addRental(rental: RentalDetail, fakeCreditCard: FakeCreditCard) {
+    this.rentalService.addRental(rental, fakeCreditCard).subscribe(response => {
       this.toastrService.success(response.message.toString());
     });
     this.toastrService.success('Araç kiralandı');

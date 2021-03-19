@@ -13,15 +13,19 @@ export class CartService {
   }
 
   addToCart(car: Car) {
-    let item = CartItems.find(c => c.car.id === car.id);
-    if (item) {
-      this.toastrService.error('Araç Zaten Sepetinizde Mevcut');
+    if (this.list().length > 0) {
+      this.toastrService.error('En Fazla 1 Araç Ekleyebilirsiniz');
     } else {
+      let item = CartItems.find(c => c.car.id === car.id);
       let cartItem = new CartItem();
-      cartItem.car = car;
-      cartItem.quantity = 1;
-      CartItems.push(cartItem);
-      this.toastrService.success('Sepete Eklendi', car.brandName);
+      if (item) {
+        this.toastrService.error('Arac Zaten Sepetinizde Mevcut');
+      } else {
+        cartItem.car = car;
+        cartItem.quantity = 1;
+        CartItems.push(cartItem);
+        this.toastrService.success(car.brandName + ' ' + car.description, 'Sepete Eklendi');
+      }
     }
   }
 

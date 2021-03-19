@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CartService} from '../../services/cart.service';
 import {CartItem} from '../../models/entityModels/cartItem';
-import {NgbDate, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import {NgbDate} from '@ng-bootstrap/ng-bootstrap';
 import {RentalService} from '../../services/rental.service';
 import {Rental} from '../../models/entityModels/rental';
 import {ToastrService} from 'ngx-toastr';
@@ -16,7 +16,7 @@ import {Router} from '@angular/router';
 export class CartComponent implements OnInit {
 
   cartItems: CartItem[] = [];
-  model = new NgbDate(new Date().getFullYear(),new Date().getMonth()+1,new Date().getDate())
+  model = new NgbDate(new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate());
   totalPrice: number = 0;
   rentalResponse: Rental[];
   returnDate: Date;
@@ -25,8 +25,8 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService,
               private rentalService: RentalService,
               private toastrService: ToastrService,
-              private router:Router,
-              ) {
+              private router: Router,
+  ) {
   }
 
   ngOnInit(): void {
@@ -35,15 +35,17 @@ export class CartComponent implements OnInit {
       this.totalPrice += v.car.dailyPrice;
     });
   }
-  createRental(){
-    let MyRental:RentalDetail = {
-      returnDate: new Date(this.model.year,this.model.month,this.model.day),
+
+  createRental() {
+    let MyRental: RentalDetail = {
+      returnDate: new Date(this.model.year, this.model.month, this.model.day),
       carId: 1,
       customerId: 1
-    }
+    };
     this.router.navigate(['/payment/', JSON.stringify(MyRental)]);
-    this.toastrService.info("Ödeme sayfasına yönlendiriliyorsunuz...", "Ödeme İşlemleri");
+    this.toastrService.info('Ödeme sayfasına yönlendiriliyorsunuz...', 'Ödeme İşlemleri');
   }
+
   getCart() {
     this.cartItems = this.cartService.list();
   }
@@ -71,8 +73,7 @@ export class CartComponent implements OnInit {
     var splitted = deger.split('.', 3);
     var month = splitted[1];
     var splitted3 = month.slice(1, 2);
-    if(this.model.year.toString() === splitted[2].toString())
-    {
+    if (this.model.year.toString() === splitted[2].toString()) {
       if (this.model.month.toString() === splitted3.toString()) {
         if (this.model.day.toString() === splitted[0].toString()) {
           return false;

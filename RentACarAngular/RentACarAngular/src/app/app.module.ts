@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -37,19 +37,20 @@ import { PaymentComponent } from './components/payment/payment.component';
   declarations: [AppComponent, NavComponent, CarFilterPipe, LoginComponent, RegisterComponent, ContentComponent, BrandComponent, CarComponent,
     ColorComponent, CustomerComponent, RentalComponent, LoadingComponent, ChangePasswordComponent, FooterComponent, HowWeWorkComponent, AboutComponent,
     ContactComponent, CarEditComponent, CarDetailComponent, CartSummaryComponent, CartComponent, PaymentComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ToastrModule.forRoot({positionClass:"toast-bottom-right"}),
-    NgbPaginationModule,
-    NgbAlertModule,
-    FormsModule,
-    FontAwesomeModule,
-    RouterModule.forRoot(appRoutes),
-    NgbModule,
-    BrowserAnimationsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        ToastrModule.forRoot({positionClass: 'toast-bottom-right'}),
+        NgbPaginationModule,
+        NgbAlertModule,
+        FormsModule,
+        FontAwesomeModule,
+        RouterModule.forRoot(appRoutes),
+        NgbModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })

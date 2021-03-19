@@ -7,7 +7,6 @@ import {ToastrService} from 'ngx-toastr';
 import {CartService} from '../../../services/cart.service';
 import {RentalService} from '../../../services/rental.service';
 import {Rental} from '../../../models/entityModels/rental';
-import DateTimeFormat = Intl.DateTimeFormat;
 
 @Component({
   selector: 'app-car-detail',
@@ -16,7 +15,6 @@ import DateTimeFormat = Intl.DateTimeFormat;
 })
 export class CarDetailComponent implements OnInit {
   carDetails: Car[];
-  //carImages:CarImage[]=[];
   faLira = faLiraSign;
   rentalDetail: Rental[];
 
@@ -40,17 +38,8 @@ export class CarDetailComponent implements OnInit {
   addToCart(car: Car) {
     this.rentalService.getRentalByCar(car.id).subscribe(response => {
       this.rentalDetail = response.data;
-      console.log(this.rentalDetail[this.getCarRentalDetail()].returnDate);
-      console.log(Date)
     });
       this.cartService.addToCart(car);
-  }
-
-  getCarRentalDetail() {
-    return this.rentalDetail.length - 1;
-  }
-
-  getRentals(id: number) {
   }
 
   getCarDetail(carId: number) {
