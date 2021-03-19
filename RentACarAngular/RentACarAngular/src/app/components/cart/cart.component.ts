@@ -7,6 +7,7 @@ import {Rental} from '../../models/entityModels/rental';
 import {ToastrService} from 'ngx-toastr';
 import {RentalDetail} from '../../models/entityModels/RentalDetail';
 import {Router} from '@angular/router';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-cart',
@@ -16,11 +17,13 @@ import {Router} from '@angular/router';
 export class CartComponent implements OnInit {
 
   cartItems: CartItem[] = [];
-  model = new NgbDate(new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate());
+  model = new NgbDate(new Date().getUTCFullYear(), new Date().getUTCMonth(), new Date().getUTCDate());
   totalPrice: number = 0;
   rentalResponse: Rental[];
   returnDate: Date;
   now = new Date();
+  baseUrl = environment.baseUrl;
+  carDetailReturnDate: Date;
 
   constructor(private cartService: CartService,
               private rentalService: RentalService,
@@ -34,54 +37,47 @@ export class CartComponent implements OnInit {
     this.cartItems.forEach(v => {
       this.totalPrice += v.car.dailyPrice;
     });
+    this.rentalService.getRentalByCar(this.cartItems[this.cartItems.length - 1].car.id).subscribe(response => {
+      this.rentalResponse = response.data;
+      console.log(this.rentalResponse);
+      this.carDetailReturnDate = this.rentalResponse[this.rentalResponse.length - 1].returnDate;
+      console.log(this.carDetailReturnDate);
+    });
   }
 
   createRental() {
-    let MyRental: RentalDetail = {
-      returnDate: new Date(this.model.year, this.model.month, this.model.day),
-      carId: 1,
-      customerId: 1
-    };
-    this.router.navigate(['/payment/', JSON.stringify(MyRental)]);
-    this.toastrService.info('Ödeme sayfasına yönlendiriliyorsunuz...', 'Ödeme İşlemleri');
+    if(!this.checkCarReturnDate()){
+      this.router.navigate(['/cart']);
+    }
+    else if (this.checkCarReturnDate()){
+      let MyRental: RentalDetail = {
+        returnDate: new Date(this.model.year, this.model.month - 1, this.model.day + 1),
+        carId: this.cartItems[0].car.id,
+        customerId: 1
+      };
+      this.router.navigate(['/payment/', JSON.stringify(MyRental)]);
+      this.toastrService.info('Ödeme sayfasına yönlendiriliyorsunuz...', 'Ödeme İşlemleri');
+    }
+  }
+
+  checkCarReturnDate(): boolean {
+    if (this.carDetailReturnDate != undefined) {
+      var fullDate = this.carDetailReturnDate.toString().split('-', 3);
+      var day = parseInt(fullDate[2]);
+      var month = parseInt(fullDate[1]);
+      var year = parseInt(fullDate[0]);
+      var date1 = new Date(year, month, day);
+      var date2 = new Date(this.model.year, this.model.month, this.model.day);
+      if (date1.getUTCDate() >= date2.getUTCDate()) {
+        this.toastrService.error('Araç bu tarihte kiradadır!');
+        return false;
+      }
+    }
+    return true;
   }
 
   getCart() {
     this.cartItems = this.cartService.list();
   }
 
-  changeRentCar(id: number) {
-    if (this.model !== undefined) {
-      this.rentalService.getRentalByCar(id).subscribe(response => {
-        this.rentalResponse = response.data;
-        this.returnDate = this.rentalResponse[this.findIndex()].returnDate;
-        if (!this.dateSetting()) {
-          this.toastrService.error(this.rentalResponse[this.findIndex()].brandName + ' Şuan Kirada');
-        }
-      });
-    } else {
-      this.toastrService.error('Tarih Alanı Boş Bırakılamaz');
-    }
-  }
-
-  findIndex() {
-    return this.rentalResponse.length - 1;
-  }
-
-  dateSetting(): boolean {
-    var deger = new Date(this.returnDate.toString()).toLocaleDateString();
-    var splitted = deger.split('.', 3);
-    var month = splitted[1];
-    var splitted3 = month.slice(1, 2);
-    if (this.model.year.toString() === splitted[2].toString()) {
-      if (this.model.month.toString() === splitted3.toString()) {
-        if (this.model.day.toString() === splitted[0].toString()) {
-          return false;
-        }
-        return true;
-      }
-      return true;
-    }
-    return true;
-  }
 }

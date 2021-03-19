@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {CarService} from 'src/app/services/car.service';
 import {Car} from '../../../models/entityModels/car';
 import {faLiraSign} from '@fortawesome/free-solid-svg-icons';
@@ -23,7 +23,8 @@ export class CarDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService,
     private cartService: CartService,
-    private rentalService: RentalService
+    private rentalService: RentalService,
+    private router: Router
   ) {
   }
 
@@ -40,6 +41,7 @@ export class CarDetailComponent implements OnInit {
       this.rentalDetail = response.data;
     });
       this.cartService.addToCart(car);
+      this.router.navigate(['/cart'])
   }
 
   getCarDetail(carId: number) {

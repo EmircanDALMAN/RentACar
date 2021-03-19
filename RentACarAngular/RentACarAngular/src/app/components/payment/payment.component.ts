@@ -58,9 +58,8 @@ export class PaymentComponent implements OnInit {
 
   addRental(rental: RentalDetail, fakeCreditCard: FakeCreditCard) {
     this.rentalService.addRental(rental, fakeCreditCard).subscribe(response => {
-      this.toastrService.success(response.message.toString());
+      this.toastrService.success('Araç kiralandı');
     });
-    this.toastrService.success('Araç kiralandı');
   }
 }
 
