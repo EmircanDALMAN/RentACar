@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ColorService} from "../../services/color.service";
 import {Color} from "../../models/entityModels/color";
+import {Filters} from '../../models/entityModels/filters';
 
 @Component({
   selector: 'app-color',
@@ -12,6 +13,10 @@ export class ColorComponent implements OnInit {
   colors: Color[] = [];
   dataLoaded = false;
   error = '';
+  currentColor: Color;
+  allColor?: Color;
+  Filters = { brandId: '', colorId: '' };
+
   constructor(private colorService: ColorService) {
   }
 
@@ -27,5 +32,12 @@ export class ColorComponent implements OnInit {
       this.error = error.name;
     })
   }
-
+  setCurrentColor() {
+    this.currentColor !== undefined
+      ? (Filters.colorId = this.currentColor.colorId.toString())
+      : (Filters.colorId = '');
+  }
+  allColorsSelected() {
+    return this.currentColor == undefined ? true : false;
+  }
 }

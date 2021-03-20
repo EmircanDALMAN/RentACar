@@ -31,6 +31,7 @@ export const appRoutes: Routes = [
   {path:"cars/brand/:brandId", component:CarComponent},
   {path:"cars/color/:colorId", component:CarComponent},
   { path: "car/details/:carId", component: CarDetailComponent },
+  { path: 'cars/brand/:brandId/color/:colorId', component: CarComponent },
   {path: '', component: CarComponent},
   {path: '**', redirectTo: 'content', pathMatch: 'full'}
 ];

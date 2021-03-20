@@ -8,12 +8,25 @@
 <!--  <strong>OOOPS!</strong> Bağlantı Hatası!-->
 <!--</div>-->
 
-<div class="content" style="margin-top: 2em;">
-  <ul class="snip1155">
-    <li *ngFor="let color of colors"><a routerLink="cars/color/{{color.colorId}}">
-      {{color.colorName}}</a><hr></li>
-  </ul>
-</div>
+<!--<div class="content" style="margin-top: 2em;">-->
+<!--  <ul class="snip1155">-->
+<!--    <li *ngFor="let color of colors"><a routerLink="cars/color/{{color.colorId}}">-->
+<!--      {{color.colorName}}</a><hr></li>-->
+<!--  </ul>-->
+<!--</div>-->
 <!--<div *ngIf="dataLoaded==false || colors.length <= 0">-->
 <!--  <app-loading></app-loading>-->
 <!--</div>-->
+<select
+  [(ngModel)]="currentColor"
+  (change)="setCurrentColor()"
+  class="form-select mb-1"
+  aria-label="Default select example"
+>
+  <option [selected]="allColorsSelected()" [ngValue]="allColor">
+    Tüm Araçları Getir
+  </option>
+  <option *ngFor="let color of colors" [ngValue]="color">
+    {{ color.colorName }}
+  </option>
+</select>

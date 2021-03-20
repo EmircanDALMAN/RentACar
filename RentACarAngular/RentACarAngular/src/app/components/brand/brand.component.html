@@ -7,26 +7,26 @@
 <!--  <strong>OOOPS!</strong> Bağlantı Hatası!-->
 <!--</div>-->
 
-<!--  <table class="table" style="text-align: center">-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--      <th scope="col">Marka Adı</th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    <tr *ngFor="let brand of brands">-->
-<!--      <td>{{brand.brandName}}</td>-->
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--  </table>-->
-<div class="content" style="margin-top: 2em;">
-  <ul class="snip1155">
-    <li ><a routerLink="cars/">Tüm Araçlar</a><hr></li>
-    <li *ngFor="let brand of brands"><a routerLink="cars/brand/{{brand.brandId}}">
-                      {{brand.brandName}}</a><hr></li>
-  </ul>
-</div>
-
 <!--<div *ngIf="dataLoaded==false || brands.length <= 0 ">-->
 <!--  <app-loading></app-loading>-->
 <!--</div>-->
+<!--<div class="content" style="margin-top: 2em;">-->
+<!--  <ul class="snip1155">-->
+<!--    <li ><a routerLink="cars/">Tüm Araçlar</a><hr></li>-->
+<!--    <li *ngFor="let brand of brands"><a routerLink="cars/brand/{{brand.brandId}}">-->
+<!--                      {{brand.brandName}}</a><hr></li>-->
+<!--  </ul>-->
+<!--</div>-->
+
+<select
+  (change)="setCurrentBrand()"
+  [(ngModel)]="currentBrand"
+  class="form-select mb-1"
+  aria-label="Default select example">
+  <option [selected]="allBrandSelected()" [ngValue]="allBrand">
+    Tüm Araçları Getir
+  </option>
+  <option *ngFor="let brand of brands" [ngValue]="brand">
+    {{ brand.brandName }}
+  </option>
+</select>

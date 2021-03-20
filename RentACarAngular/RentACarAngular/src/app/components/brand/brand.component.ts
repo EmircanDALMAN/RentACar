@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {BrandService} from '../../services/brand.service';
 import {Brand} from '../../models/entityModels/brand';
+import {Filters} from '../../models/entityModels/filters';
 
 declare var $: any;
-import {timer} from 'rxjs';
 
 
 @Component({
@@ -16,6 +16,9 @@ export class BrandComponent implements OnInit {
   brands: Brand[] = [];
   dataLoaded = false;
   error = '';
+  currentBrand: Brand;
+  allBrand?: Brand;
+  Filters = {};
 
   constructor(private brandService: BrandService) {
   }
@@ -32,4 +35,13 @@ export class BrandComponent implements OnInit {
       this.error = error.name;
     });
   }
+  setCurrentBrand() {
+    this.currentBrand !== undefined
+      ? (Filters.brandId = this.currentBrand.brandId.toString())
+      : (Filters.brandId = '');
+  }
+  allBrandSelected() {
+    return this.currentBrand === undefined ? true : false;
+  }
 }
+

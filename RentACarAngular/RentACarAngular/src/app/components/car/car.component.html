@@ -19,7 +19,7 @@
   <div class="cars">
     <div *ngFor="let car of cars | carFilter:filterText " class="card" style="width: 31rem; float: right; " >
       <div class="imgBx">
-        <img src="https://localhost:5001/{{car.imagePath}}"
+        <img src="{{baseUrl}}{{car.imagePath}}"
              class="card-img-top">
       </div>
       <div class="contentBx">
