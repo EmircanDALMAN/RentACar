@@ -5,7 +5,6 @@
       Sepetiniz
     </div>
     <div class="card-body" *ngFor="let cartItem of cartItems">
-      <!-- PRODUCT -->
       <div class="row">
         <div class="col-12 col-sm-12 col-md-2 text-center">
           <img class="img-responsive" src="{{baseUrl}}/{{cartItem.car.imagePath}}" alt="prewiew"
@@ -28,13 +27,12 @@
           </div>
           <div class="col-2 col-sm-2 col-md-2 text-right">
             <button class="btn btn-outline-danger btn-xs">
-              <i class="fa fa-trash" aria-hidden="true"></i>
+              <fa-icon [icon]="removeIcon" (click)="removeFromCart(cartItem.car)"></fa-icon>
             </button>
           </div>
         </div>
       </div>
       <hr>
-      <!-- END PRODUCT -->
       <div style="background-color: transparent">
         <div class="coupon col-md-5 col-sm-5 no-padding-left pull-left">
           <div class="row">
@@ -43,7 +41,7 @@
                 <div class="form-group">
                   <div class="input-group">
                     <input class="form-control" placeholder="yyyy-mm-dd"
-                           name="dp" [(ngModel)]="model" ngbDatepicker
+                           name="dp" (change)="calculatePrice()" [(ngModel)]="model" ngbDatepicker
                            #d="ngbDatepicker">
                     <button (click)="calculatePrice()">Hesapla</button>
                     <div class="input-group-append">

@@ -43,8 +43,7 @@ export class CarDetailComponent implements OnInit {
       this.rentalDetail = response.data;
     });
     if (this.cartService.list().length > 0) {
-      this.toastrService.error('İstenilen Araç Eklenemedi: '+this.cartService.list()[this.cartService.list().length-1].car.brandName + " "+
-        this.cartService.list()[this.cartService.list().length-1].car.description,'Şu Anda Başka Bir Araç var');
+
       this.router.navigate(['/cart'])
     }
     this.cartService.addToCart(car);

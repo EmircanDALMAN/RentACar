@@ -9,6 +9,7 @@ import {RentalDetail} from '../../models/entityModels/RentalDetail';
 import {Rental} from '../../models/entityModels/rental';
 import {Car} from '../../models/entityModels/car';
 import {CartItem} from '../../models/entityModels/cartItem';
+import {faExclamation} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-cart',
@@ -24,8 +25,7 @@ export class CartComponent implements OnInit {
   date: string;
   totalPrice: number = 0;
   carDetailReturnDate: Date;
-  date1: number;
-  date2: number;
+  removeIcon = faExclamation;
 
   constructor(private cartService: CartService, private rentalService: RentalService,
               private  toastrService: ToastrService, private router: Router) {
@@ -40,9 +40,7 @@ export class CartComponent implements OnInit {
       this.totalPrice = this.cartItems[this.cartItems.length - 1].car.dailyPrice;
       this.rentalService.getRentalByCar(this.cartItems[this.cartItems.length - 1].car.id).subscribe(response => {
         this.rentalResponse = response.data;
-        if (this.rentalResponse.forEach(p => p.returnDate) != undefined) {
-          this.carDetailReturnDate = this.rentalResponse[this.rentalResponse.length - 1].returnDate;
-        }
+        this.carDetailReturnDate = this.rentalResponse[this.rentalResponse.length - 1].returnDate;
       });
     }
   }
@@ -73,9 +71,6 @@ export class CartComponent implements OnInit {
       var year = parseInt(fullDate[0]);
       var date1 = new Date(year, month, day);
       var date2 = new Date(this.model.year, this.model.month, this.model.day);
-      this.date1 = date1.getUTCDate();
-      this.date2 = date2.getUTCDate();
-      this.totalPrice = this.totalPrice * (date2.getUTCDate() - date1.getUTCDate());
       if (date1.getUTCDate() >= date2.getUTCDate()) {
         this.toastrService.error('Araç bu tarihte kiradadır!');
         return false;
@@ -86,23 +81,14 @@ export class CartComponent implements OnInit {
 
   calculatePrice() {
     var date1 = new Date(this.now.getFullYear(), this.now.getMonth(), this.now.getDate());
-    var date2 = new Date(this.model.year, this.model.month -1 , this.model.day);
+    var date2 = new Date(this.model.year, this.model.month - 1, this.model.day);
     var timeDifference = Math.abs(date2.getTime() - date1.getTime());
     var dayDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
-
-    console.log(dayDifference);
-    if (dayDifference < date1.getDate()) {
-      this.toastrService.error('Geçmiş Tarihe Araç Kiralayamazsınız');
-    } else if (dayDifference === 0) {
-      this.toastrService.error('Bugün Araç Teslim Edemezsiniz');
-    } else {
-      this.totalPrice = dayDifference * this.cartItems[this.cartItems.length - 1].car.dailyPrice;
-    }
+    this.totalPrice = dayDifference * this.cartItems[this.cartItems.length - 1].car.dailyPrice;
   }
 
   removeFromCart(car: Car) {
     this.cartService.removeFromCart(car);
-    this.toastrService.error(car.brandName + ' ' + car.description, 'Başarıyla Kaldırıldı');
     if (this.cartService.list().length == 0) {
       this.toastrService.info('Anasayfa\'ya Yönlendiriliyor...');
       this.router.navigate(['/']);
