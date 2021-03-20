@@ -9,10 +9,11 @@
 
 <div class="mb-3">
   <label for="filterText" class="form-label"></label>
-  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="arama ifadesi giriniz">
+  <input type="text" [(ngModel)]="filterText" (ngModelChange)="changeFilterTextSize(filterText)" class="form-control"
+         id="filterText" placeholder="Arama İfadesini Giriniz">
 </div>
 <div *ngIf="filterText.length>2" class="alert alert-success">
-  {{filterText}} aradınız.
+  {{filterText | uppercase}} aradınız.
 </div>
 
 <div class="row" *ngIf="dataLoaded==true && cars.length>0" style="max-width: 100%;">

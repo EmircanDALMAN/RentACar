@@ -15,14 +15,13 @@ export class CarComponent implements OnInit {
   cars: Car[] = [];
   dataLoaded = false;
   error = '';
-  filterText = '';
+  filterText = '' ;
   faLira = faLiraSign;
   carImages: CarImage[] = [];
   baseUrl=environment.baseUrl;
 
   constructor(private carService: CarService, private activatedRoute: ActivatedRoute) {
   }
-
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       if (params['brandId'] && params['colorId'])
@@ -32,6 +31,7 @@ export class CarComponent implements OnInit {
       else this.getCars();
     })
   }
+
 
   getCarByBrandAndColor(brandId: number, colorId: number) {
     this.carService
@@ -63,6 +63,10 @@ export class CarComponent implements OnInit {
       this.cars = response.data
       this.dataLoaded = true;
     })
+  }
+
+  changeFilterTextSize(filterText:string){
+    this.filterText = filterText.toLocaleUpperCase();
   }
 }
 

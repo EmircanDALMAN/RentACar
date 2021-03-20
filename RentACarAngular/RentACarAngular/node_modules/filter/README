@@ -1,0 +1,80 @@
+  __ _ _ _            
+ / _(_) | |_ ___ _ __ 
+| |_| | | __/ _ \ '__|
+|  _| | | ||  __/ |   
+|_| |_|_|\__\___|_|   
+
+----------------------
+
+USAGE'
+-----
+
+var Filter = require('filter');
+
+/*
+ * Create a filter fast. Put the write method in the arguments.
+ */
+var my_filter = new Filter(function (data) {
+  data.replace('foo', 'bar');
+
+  // Just emit a data event to pass the data on.
+  this.emit('data', data);
+});
+
+/*
+ * Or you can overwrite the write method yourself.
+ */
+var my_filter = new Filter;
+
+my_filter.write = function (data) {
+  data = data.replace('foo', 'bar');
+
+  // Just emit a data event to pass the data on.
+  this.emit('data', data);
+};
+
+/*
+ * Or make a new constructor altogether!
+ */
+var util = require('util');
+
+var CoffeeFilter = function () {
+  this.replace = 'coffee';
+  this.with    = 'water';
+
+  // Make sure to call the Filter constructor.
+  Filter.call(this);
+};
+
+// Inherit methods.
+util.inherits(CoffeeFilter, Filter);
+
+// Then overwrite the write method.
+CoffeeFilter.prototype.write = function (data) {
+  data = data.replace(this.replace, this.with);
+
+  this.emit('data', data);
+};
+
+// Create a instance
+var coffee_filter = new CoffeeFilter;
+
+/**
+ * Some example pipe action.
+ *
+ * Will read from java.txt, replace Java with Node, then save to node.txt -
+ * all in real time!
+ */
+var fs = require('fs');
+
+var read_stream  = fs.createReadStream('/home/guy/java.txt'),
+    write_stream = fs.createWriteStream('/home/guy/node.txt');
+
+var filter = new Filter(function (data) {
+  this.emit('data', data.replace(/java/gi, 'node'));
+});
+
+read_stream.setEncoding('utf8');
+
+read_stream.pipe(filter);
+filter.pipe(write_stream);
