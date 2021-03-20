@@ -20,8 +20,8 @@ export class CartComponent implements OnInit {
   cartItems: CartItem[] = [];
   baseUrl = environment.baseUrl;
   model = new NgbDate(new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate());
-  rentalResponse: Rental[];
   now = new Date();
+  rentalResponse: Rental[];
   date: string;
   totalPrice: number = 0;
   carDetailReturnDate: Date;
@@ -39,8 +39,10 @@ export class CartComponent implements OnInit {
     } else {
       this.totalPrice = this.cartItems[this.cartItems.length - 1].car.dailyPrice;
       this.rentalService.getRentalByCar(this.cartItems[this.cartItems.length - 1].car.id).subscribe(response => {
-        this.rentalResponse = response.data;
-        this.carDetailReturnDate = this.rentalResponse[this.rentalResponse.length - 1].returnDate;
+        if (response.data.length != 0) {
+          this.rentalResponse = response.data;
+          this.carDetailReturnDate = this.rentalResponse[this.rentalResponse.length - 1].returnDate;
+        }
       });
     }
   }
@@ -71,8 +73,32 @@ export class CartComponent implements OnInit {
       var year = parseInt(fullDate[0]);
       var date1 = new Date(year, month, day);
       var date2 = new Date(this.model.year, this.model.month, this.model.day);
-      if (date1.getUTCDate() >= date2.getUTCDate()) {
+      console.log(date1);
+      console.log(date2);
+      if (date1.getFullYear() > date2.getFullYear()) {
         this.toastrService.error('Araç bu tarihte kiradadır!');
+        return false;
+      } else if (date1.getFullYear() == date2.getFullYear() && date1.getMonth() > date2.getMonth()) {
+        this.toastrService.error('Araç bu tarihte kiradadır!');
+        return false;
+      } else if (date1.getFullYear() == date2.getFullYear() && date1.getMonth() == date2.getMonth()
+        && date1.getDate() >= date2.getDate()) {
+        this.toastrService.error('Araç bu tarihte kiradadır!');
+        return false;
+      }
+
+    } else {
+      if (this.now.getFullYear() > this.model.year) {
+        this.toastrService.error('Geçmişe Araç Alınamaz');
+        return false;
+      } else if (this.now.getFullYear() == this.model.year && this.now.getMonth() > this.model.month) {
+        this.toastrService.error('Geçmişe Araç Alınamaz');
+        return false;
+      } else if (this.now.getDate() == this.model.day) {
+        this.toastrService.error('Bugün Teslim Edilmek Şartıyla Araç Alınamaz');
+        return false;
+      } else if (this.now.getFullYear() == this.model.year && this.now.getDate() > this.model.day) {
+        this.toastrService.error('Geçmişe Araç Alınamaz');
         return false;
       }
     }
@@ -80,7 +106,7 @@ export class CartComponent implements OnInit {
   }
 
   calculatePrice() {
-    var date1 = new Date(this.now.getFullYear(), this.now.getMonth(), this.now.getDate());
+    var date1 = new Date(this.now.getUTCFullYear(), this.now.getUTCMonth(), this.now.getUTCDate());
     var date2 = new Date(this.model.year, this.model.month - 1, this.model.day);
     var timeDifference = Math.abs(date2.getTime() - date1.getTime());
     var dayDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
