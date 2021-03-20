@@ -28,7 +28,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  BrandName = b.BrandName,
                                  CustomerName = cu.CompanyName,
                                  UserName = $"{u.FirstName} {u.LastName}",
-                                 RentDate = r.RentDate,
+                                 RentDate = DateTime.Now,
                                  ReturnDate = r.ReturnDate
                              };
                 return result.ToList();
@@ -52,7 +52,7 @@ namespace DataAccess.Concrete.EntityFramework
                         BrandName = b.BrandName,
                         CustomerName = cu.CompanyName,
                         UserName = $"{u.FirstName} {u.LastName}",
-                        RentDate = r.RentDate,
+                        RentDate = DateTime.Now,
                         ReturnDate = r.ReturnDate
                     };
                 return result.ToList();
