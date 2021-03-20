@@ -2,7 +2,7 @@
   <ng-template ngbSlide *ngFor="let car of carDetails">
     <div class="picsum-img-wrapper">
       <img class="d-block w-100" style="width: 900px; height: 700px;"
-           src="https://localhost:5001/{{car.imagePath}}">
+           src="{{apiUrl}}{{car.imagePath}}">
     </div>
   </ng-template>
 </ngb-carousel>
@@ -20,6 +20,6 @@
     <p class="card-text"><b>Fiyat:</b> {{car.dailyPrice}}
       <fa-icon [icon]="faLira"></fa-icon>
     </p>
-    <a (click)="addToCart(car)" class="btn btn-primary">Kirala</a>
+    <a (click)="addCart(car)" class="btn btn-primary">Kirala</a>
   </div>
 </div>
