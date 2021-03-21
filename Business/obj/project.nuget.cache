@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9f7n7wSlB0CcR0vFnzkBNOR3B4y06abRzRZ44cM0wYxIen0XnuisSvgMs+C60rtXxZ0SlF3O/fglY8djZ4S40Q==",
+  "dgSpecHash": "XLOEr1WmkTYq0yNZQYAdQCFvjTp4LeRv+cso5/RwcyqcmZTRI3wZI1lgRTUdb3/Oyw4QTvdS0VGhV1NJf73NDg==",
   "success": true,
   "projectFilePath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Business\\Business.csproj",
   "expectedPackageFiles": [
@@ -43,6 +43,7 @@
     "C:\\Users\\emiq1\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\emiq1\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

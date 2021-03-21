@@ -33,10 +33,13 @@ import {ToastrModule} from 'ngx-toastr';
 import { CartComponent } from './components/cart/cart.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { CarAddComponent } from './components/car/car-add/car-add.component';
+import { BrandAddComponent } from './components/brand/brand-add/brand-add.component';
+import { ColorAddComponent } from './components/color/color-add/color-add.component';
 @NgModule({
   declarations: [AppComponent, NavComponent, CarFilterPipe, LoginComponent, RegisterComponent, ContentComponent, BrandComponent, CarComponent,
     ColorComponent, CustomerComponent, RentalComponent, LoadingComponent, ChangePasswordComponent, FooterComponent, HowWeWorkComponent, AboutComponent,
-    ContactComponent, CarEditComponent, CarDetailComponent, CartComponent, PaymentComponent, FilterComponent],
+    ContactComponent, CarEditComponent, CarDetailComponent, CartComponent, PaymentComponent, FilterComponent, CarAddComponent, BrandAddComponent, ColorAddComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,

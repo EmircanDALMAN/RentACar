@@ -5,6 +5,8 @@ import {RentalDetail} from '../../models/entityModels/RentalDetail';
 import {ToastrService} from 'ngx-toastr';
 import {FakeCreditCard} from '../../models/entityModels/fakeCreditCard';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {faAddressCard, faCity, faEnvelope, faRoad, faUser} from '@fortawesome/free-solid-svg-icons';
+import {faCcMastercard} from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-payment',
@@ -12,6 +14,12 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
+  userIcon=faUser;
+  mailIcon=faEnvelope;
+  addressIcon=faAddressCard;
+  cityIcon=faCity;
+  streetIcon=faRoad;
+  masterCardIcon=faCcMastercard;
 
   totalPrice: number = 0;
   returnDate: Date;
@@ -22,6 +30,7 @@ export class PaymentComponent implements OnInit {
   rental: RentalDetail = new RentalDetail();
   fakeCreditCard: FakeCreditCard = new FakeCreditCard();
   rentalForm: FormGroup;
+
 
   constructor(private activatedRoute: ActivatedRoute,
               private rentalService: RentalService,

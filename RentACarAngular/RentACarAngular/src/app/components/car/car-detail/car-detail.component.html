@@ -1,8 +1,7 @@
 <ngb-carousel>
   <ng-template ngbSlide *ngFor="let car of carDetails">
-    <div class="picsum-img-wrapper">
-      <img class="d-block w-100" style="width: 900px; height: 700px;"
-           src="{{apiUrl}}{{car.imagePath}}">
+    <div class="picsum-img-wrapper" style="max-width: 80%;">
+      <img class="d-block w-100" style="width: 900px; padding-left: 20%; height: 700px;" src="{{apiUrl}}{{car.imagePath}}">
     </div>
   </ng-template>
 </ngb-carousel>
@@ -11,12 +10,12 @@
 
 <div class="card" *ngFor="let car of carDetails; let i = index">
   <div class="card-body" *ngIf="i<1">
-    <h5 class="card-title">{{car.brandName}} {{car.description}}</h5>
+    <h5 class="card-title" style="text-align: center">{{car.brandName}}</h5>
     <hr>
     <p class="card-text"><b>Marka:</b> {{car.brandName}}</p>
-    <p class="card-text"><b>Model:</b> {{car.description}}</p>
+    <p class="card-text"><b>Model Yılı:</b> {{car.modelYear}}</p>
+    <p class="card-text"><b>Açıklama:</b> {{car.description}}</p>
     <p class="card-text"><b>Renk:</b>{{car.colorName}}</p>
-    <p class="card-text"><b>Yıl:</b>{{car.modelYear}}</p>
     <p class="card-text"><b>Fiyat:</b> {{car.dailyPrice}}
       <fa-icon [icon]="faLira"></fa-icon>
     </p>

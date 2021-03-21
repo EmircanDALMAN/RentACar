@@ -9,7 +9,7 @@ import {RentalDetail} from '../../models/entityModels/RentalDetail';
 import {Rental} from '../../models/entityModels/rental';
 import {Car} from '../../models/entityModels/car';
 import {CartItem} from '../../models/entityModels/cartItem';
-import {faExclamation} from '@fortawesome/free-solid-svg-icons';
+import {faExclamation, faLiraSign} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-cart',
@@ -26,6 +26,7 @@ export class CartComponent implements OnInit {
   totalPrice: number = 0;
   carDetailReturnDate: Date;
   removeIcon = faExclamation;
+  priceIcon = faLiraSign;
 
   constructor(private cartService: CartService, private rentalService: RentalService,
               private  toastrService: ToastrService, private router: Router) {
@@ -73,8 +74,6 @@ export class CartComponent implements OnInit {
       var year = parseInt(fullDate[0]);
       var date1 = new Date(year, month, day);
       var date2 = new Date(this.model.year, this.model.month, this.model.day);
-      console.log(date1);
-      console.log(date2);
       if (date1.getFullYear() > date2.getFullYear()) {
         this.toastrService.error('Araç bu tarihte kiradadır!');
         return false;

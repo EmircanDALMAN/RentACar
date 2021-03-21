@@ -1,0 +1,157 @@
+/** {*/
+/*  padding:0;*/
+/*  margin:0;*/
+/*}*/
+/*body {*/
+/*  font-family:Verdana, Geneva, sans-serif;*/
+/*  font-size:14px;*/
+/*  background:#f2f2f2;*/
+/*}*/
+/*.bg_img {*/
+/*  background-size:cover;*/
+/*  background-attachment:fixed;*/
+/*  -webkit-filter: blur(8px);*/
+/*  -moz-filter: blur(8px);*/
+/*  -o-filter: blur(8px);*/
+/*  -ms-filter: blur(8px);*/
+/*  filter: blur(8px);*/
+/*  position:absolute;*/
+/*  top:0;*/
+/*  left:0;*/
+/*  height:100%;*/
+/*  width:100%;*/
+/*  z-index:0;*/
+/*}*/
+/*.clearfix:after {*/
+/*  content: "";*/
+/*  display: block;*/
+/*  clear: both;*/
+/*  visibility: hidden;*/
+/*  height: 0;*/
+/*}*/
+/*.form_wrapper {*/
+/*  background:#fff;*/
+/*  width:500px;*/
+/*  max-width:100%;*/
+/*  box-sizing:border-box;*/
+/*  padding:15px;*/
+/*  margin:10% auto 0;*/
+/*  position:relative;*/
+/*  z-index:1;*/
+/*  -webkit-box-shadow:0 23px 4px -21px rgba(0, 0, 0, 0.9);*/
+/*  -moz-box-shadow:0 23px 4px -21px rgba(0, 0, 0, 0.9);*/
+/*  box-shadow:0 23px 4px -21px rgba(0, 0, 0, 0.9);*/
+/*}*/
+/*.form_container {*/
+/*  padding:15px;*/
+/*  border:1px dashed #ccc;*/
+/*}*/
+/*.form_wrapper h2 {*/
+/*  font-size:1.5em;*/
+/*  line-height:1.5em;*/
+/*  margin:0;*/
+/*}*/
+/*.form_wrapper .title_container {*/
+/*  text-align:center;*/
+/*  margin:-15px -15px 15px;*/
+/*  padding:15px 0;*/
+/*  border-bottom:1px dashed #ccc;*/
+/*}*/
+/*.form_wrapper h3 {*/
+/*  font-size:1.1em;*/
+/*  font-weight:normal;*/
+/*  line-height:1.5em;*/
+/*  margin:0;*/
+/*}*/
+/*.form_wrapper .row {*/
+/*  margin:10px -15px;*/
+/*}*/
+/*.form_wrapper .row > div {*/
+/*  padding:0 15px;*/
+/*  box-sizing:border-box;*/
+/*}*/
+/*.form_wrapper .col_half {*/
+/*  width:50%;*/
+/*  float:left;*/
+/*}*/
+/*.form_wrapper label {*/
+/*  display:block;*/
+/*  margin:0 0 5px;*/
+/*}*/
+/*.form_wrapper .input_field, .form_wrapper .textarea_field {*/
+/*  position:relative;*/
+/*}*/
+/*.form_wrapper .input_field > span, .form_wrapper .textarea_field > span {*/
+/*  position:absolute;*/
+/*  left:0;*/
+/*  top:0;*/
+/*  color:#333;*/
+/*  height:100%;*/
+/*  border-right:1px solid #ccc;*/
+/*  text-align:center;*/
+/*  width:30px;*/
+/*}*/
+/*.form_wrapper .textarea_field > span {*/
+/*  border-bottom:1px solid #ccc;*/
+/*  max-height:35px;*/
+/*}*/
+/*.form_wrapper .input_field > span > i, .form_wrapper .textarea_field > span > i {*/
+/*  padding-top:12px;*/
+/*}*/
+/*.form_wrapper input[type="text"], .form_wrapper input[type="email"], .form_wrapper input[type="tel"], textarea {*/
+/*  width:100%;*/
+/*  padding:10px 10px 10px 35px;*/
+/*  border:1px solid #ccc;*/
+/*  box-sizing:border-box;*/
+/*  outline:none;*/
+/*  -webkit-transition: all 0.30s ease-in-out;*/
+/*  -moz-transition: all 0.30s ease-in-out;*/
+/*  -ms-transition: all 0.30s ease-in-out;*/
+/*  transition: all 0.30s ease-in-out;*/
+/*}*/
+/*.form_wrapper textarea {*/
+/*  height:8em;*/
+/*}*/
+/*.form_wrapper input[type="text"]:focus, .form_wrapper input[type="email"]:focus, .form_wrapper input[type="tel"]:focus, textarea:focus {*/
+/*  -webkit-box-shadow:0 0 2px 1px rgba(255, 169, 0, 0.5);*/
+/*  -moz-box-shadow:0 0 2px 1px rgba(255, 169, 0, 0.5);*/
+/*  box-shadow:0 0 2px 1px rgba(255, 169, 0, 0.5);*/
+/*  border:1px solid #f5ba1a;*/
+/*}*/
+/*.form_wrapper input[type="submit"] {*/
+/*  background:#f5ba1a;*/
+/*  height:50px;*/
+/*  line-height:50px;*/
+/*  width:100%;*/
+/*  border:none;*/
+/*  outline:none;*/
+/*  cursor:pointer;*/
+/*  color:#fff;*/
+/*  font-size:1.2em;*/
+/*  -webkit-transition: all 0.30s ease-in-out;*/
+/*  -moz-transition: all 0.30s ease-in-out;*/
+/*  -ms-transition: all 0.30s ease-in-out;*/
+/*  transition: all 0.30s ease-in-out;*/
+/*}*/
+/*.form_wrapper input[type="submit"]:hover, .form_wrapper input[type="submit"]:focus {*/
+/*  background:#daa106;*/
+/*}*/
+/*.credit{*/
+/*  position:relative;*/
+/*  z-index:1;*/
+/*  text-align:center;*/
+/*  padding:15px;*/
+/*  color:#f5ba1a;*/
+/*}*/
+/*.credit a{*/
+/*  color:#daa106;*/
+/*}*/
+/*@media (max-width: 600px) {*/
+/*  .form_wrapper .col_half {*/
+/*    width:100%;*/
+/*    float:none;*/
+/*  }*/
+/*  .form_wrapper label {*/
+/*    margin:10px 0;*/
+/*  }*/
+/*}*/

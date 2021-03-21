@@ -4,17 +4,23 @@ import {Observable} from 'rxjs';
 import {ListResponseModel} from '../models/responseModels/listResponseModel';
 import {Brand} from '../models/entityModels/brand';
 import {environment} from "../../environments/environment";
+import {ResponseModel} from '../models/responseModels/responseModel';
+import {Car} from '../models/entityModels/car';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BrandService {
 
-  apiUrl = environment.apiUrl + "brands";
+  apiUrl = environment.apiUrl + "brands/";
 
   constructor(private httpClient:HttpClient) { }
 
   getBrands():Observable<ListResponseModel<Brand>>{
     return this.httpClient.get<ListResponseModel<Brand>>(this.apiUrl);
+  }
+
+  addBrand(brand:Brand):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'add',brand);
   }
 }

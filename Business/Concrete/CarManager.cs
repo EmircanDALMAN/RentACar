@@ -12,6 +12,7 @@ using System.Linq.Expressions;
 using Business.BusinessAspects.Autofac;
 using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Performance;
+using Core.CrossCuttingConcerns.Validation;
 
 namespace Business.Concrete
 {
@@ -26,14 +27,14 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(CarValidator))]
         [CacheRemoveAspect("ICarService.Get")]
-        [SecuredOperation("Car.Add")]
+        //[SecuredOperation("Car.Add")]
         public IResult Add(Car car)
         {
             _carDal.Add(car);
             return new SuccessResult(Messages.CarAdded);
 
         }
-        [SecuredOperation("Car.Delete")]
+        //[SecuredOperation("Car.Delete")]
         public IResult Delete(Car car)
         {
             _carDal.Delete(car);
@@ -66,7 +67,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetailById(carId));
         }
 
-        public IDataResult<List<CarDetailDto>> GetCarBrandandColor(int brandId, int colorId)
+        public IDataResult<List<CarDetailDto>> GetCarBrandAndColor(int brandId, int colorId)
         {
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(p=>p.BrandId==brandId && p.ColorId==colorId));
         }

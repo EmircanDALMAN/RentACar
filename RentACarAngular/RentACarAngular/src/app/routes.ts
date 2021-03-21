@@ -13,25 +13,45 @@ import {ContactComponent} from './components/contact/contact.component';
 import {CarDetailComponent} from './components/car/car-detail/car-detail.component';
 import {CartComponent} from './components/cart/cart.component';
 import {PaymentComponent} from './components/payment/payment.component';
+import {CarAddComponent} from './components/car/car-add/car-add.component';
+import {BrandAddComponent} from './components/brand/brand-add/brand-add.component';
+import {ColorAddComponent} from './components/color/color-add/color-add.component';
 
 export const appRoutes: Routes = [
+  //Users
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'cart', component: CartComponent},
-  {path: 'payment/:myrental', component: PaymentComponent},
-  {path: 'contact', component: ContactComponent},
   {path: 'changepassword', component: ChangePasswordComponent},
-  {path: 'content', component: ContentComponent},
-  {path: 'brands', component: BrandComponent},
-  {path: 'cars', component: CarComponent},
-  {path: 'colors', component: ColorComponent},
   {path: 'customers', component: CustomerComponent},
-  {path: 'rentals', component: RentalComponent},
+
+  //Colors
+  {path: 'colors', component: ColorComponent},
+  {path: 'colors/add', component: ColorAddComponent},
+
+  //Brands
+  {path: 'brands', component: BrandComponent},
+  {path: 'brands/add', component: BrandAddComponent},
+
+  //Cars
+  {path: 'cars', component: CarComponent},
+  {path: 'cars/add', component: CarAddComponent},
   {path:"cars/brand/:brandId", component:CarComponent},
   {path:"cars/color/:colorId", component:CarComponent},
-  { path: "car/details/:carId", component: CarDetailComponent },
-  { path: 'cars/brand/:brandId/color/:colorId', component: CarComponent },
+  {path: "car/details/:carId", component: CarDetailComponent },
+  {path: 'cars/brand/:brandId/color/:colorId', component: CarComponent },
+
+  //Rentals
+  {path: 'rentals', component: RentalComponent},
+
+  //Payment
+  {path: 'payment/:myrental', component: PaymentComponent},
+  {path: 'cart', component: CartComponent},
+
+  //Others
+  {path: 'about', component: AboutComponent},
+  {path: 'contact', component: ContactComponent},
+  {path: 'content', component: ContentComponent},
   {path: '', component: CarComponent},
   {path: '**', redirectTo: 'content', pathMatch: 'full'}
+
 ];
