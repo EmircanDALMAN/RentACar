@@ -1,1 +1,0 @@
-{"version":3,"file":"buttons.module.d.ts","sources":["buttons.module.d.ts"],"names":[],"mappings":";;;;AAAA;AACA;AACA;AACA;;;;AACA","sourcesContent":["export { NgbButtonLabel } from './label';\nexport { NgbCheckBox } from './checkbox';\nexport { NgbRadio, NgbRadioGroup } from './radio';\nexport declare class NgbButtonsModule {\n}\n"]}

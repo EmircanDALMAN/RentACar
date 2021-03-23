@@ -1,1 +1,0 @@
-{"version":3,"file":"toast.module.d.ts","sources":["toast.module.d.ts"],"names":[],"mappings":";;;AAAA;AACA;AACA;;;;AACA","sourcesContent":["export { NgbToast, NgbToastHeader } from './toast';\nexport { NgbToastConfig, NgbToastOptions } from './toast-config';\nexport declare class NgbToastModule {\n}\n"]}

@@ -1,1 +1,0 @@
-{"version":3,"file":"alert.module.d.ts","sources":["alert.module.d.ts"],"names":[],"mappings":";;;AAAA;AACA;AACA;;;;AACA","sourcesContent":["export { NgbAlert } from './alert';\nexport { NgbAlertConfig } from './alert-config';\nexport declare class NgbAlertModule {\n}\n"]}

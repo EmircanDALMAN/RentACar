@@ -1,4 +1,0 @@
-export { NgbRating } from './rating';
-export { NgbRatingConfig } from './rating-config';
-export declare class NgbRatingModule {
-}

@@ -1,1 +1,0 @@
-{"version":3,"file":"label.d.ts","sources":["label.d.ts"],"names":[],"mappings":";AAAA;AACA;AACA;AACA;;;AACA","sourcesContent":["export declare class NgbButtonLabel {\n    active: boolean;\n    disabled: boolean;\n    focused: boolean;\n}\n"]}

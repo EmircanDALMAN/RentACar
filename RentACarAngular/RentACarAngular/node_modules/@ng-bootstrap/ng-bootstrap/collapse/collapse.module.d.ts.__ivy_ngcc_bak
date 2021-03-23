@@ -1,4 +1,0 @@
-export { NgbCollapse } from './collapse';
-export { NgbCollapseConfig } from './collapse-config';
-export declare class NgbCollapseModule {
-}

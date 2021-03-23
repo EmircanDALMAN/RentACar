@@ -1,1 +1,0 @@
-{"version":3,"file":"dropdown.module.d.ts","sources":["dropdown.module.d.ts"],"names":[],"mappings":";;AAAA;AACA;AACA;;;;AACA","sourcesContent":["export { NgbDropdown, NgbDropdownAnchor, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownItem, NgbNavbar } from './dropdown';\nexport { NgbDropdownConfig } from './dropdown-config';\nexport declare class NgbDropdownModule {\n}\n"]}

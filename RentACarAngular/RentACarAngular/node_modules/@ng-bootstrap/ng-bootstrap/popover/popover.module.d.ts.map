@@ -1,1 +1,0 @@
-{"version":3,"file":"popover.module.d.ts","sources":["popover.module.d.ts"],"names":[],"mappings":";;;AAAA;AACA;AACA;AACA;;;;AACA","sourcesContent":["export { NgbPopover } from './popover';\nexport { NgbPopoverConfig } from './popover-config';\nexport { Placement } from '../util/positioning';\nexport declare class NgbPopoverModule {\n}\n"]}
