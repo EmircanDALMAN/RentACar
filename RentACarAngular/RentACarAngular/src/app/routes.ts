@@ -16,6 +16,9 @@ import {PaymentComponent} from './components/payment/payment.component';
 import {CarAddComponent} from './components/car/car-add/car-add.component';
 import {BrandAddComponent} from './components/brand/brand-add/brand-add.component';
 import {ColorAddComponent} from './components/color/color-add/color-add.component';
+import {CarEditComponent} from './components/car/car-edit/car-edit.component';
+import {ColorEditComponent} from './components/color/color-edit/color-edit.component';
+import {BrandEditComponent} from './components/brand/brand-edit/brand-edit.component';
 
 export const appRoutes: Routes = [
   //Users
@@ -27,14 +30,17 @@ export const appRoutes: Routes = [
   //Colors
   {path: 'colors', component: ColorComponent},
   {path: 'colors/add', component: ColorAddComponent},
+  {path: 'colors/update/:id', component: ColorEditComponent},
 
   //Brands
   {path: 'brands', component: BrandComponent},
   {path: 'brands/add', component: BrandAddComponent},
+  {path: 'brands/update/:id', component: BrandEditComponent},
 
   //Cars
   {path: 'cars', component: CarComponent},
   {path: 'cars/add', component: CarAddComponent},
+  {path: 'cars/update/:id', component: CarEditComponent},
   {path:"cars/brand/:brandId", component:CarComponent},
   {path:"cars/color/:colorId", component:CarComponent},
   {path: "car/details/:carId", component: CarDetailComponent },

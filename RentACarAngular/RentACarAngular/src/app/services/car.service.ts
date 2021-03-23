@@ -43,5 +43,8 @@ export class CarService {
   addCar(car: Car):Observable<ResponseModel> {
     return this.httpClient.post<ResponseModel>(this.apiUrl + 'cars/add', car);
   }
+  updateCar(car:Car):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'cars/update',car);
+  }
 }
 

@@ -31,8 +31,8 @@ namespace DataAccess.Concrete.EntityFramework
                                   ImagePath = im.ImagePath,
                                   ImageId = im.Id
                               }).ToList();
-                return result.GroupBy(p => p.Id)
-                    .Select(p => p.FirstOrDefault()).ToList();
+                return result.GroupBy(c => c.Id)
+                    .Select(c => c.FirstOrDefault()).ToList();
             }
         }
 

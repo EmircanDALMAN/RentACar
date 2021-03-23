@@ -36,10 +36,12 @@ import { FilterComponent } from './components/filter/filter.component';
 import { CarAddComponent } from './components/car/car-add/car-add.component';
 import { BrandAddComponent } from './components/brand/brand-add/brand-add.component';
 import { ColorAddComponent } from './components/color/color-add/color-add.component';
+import { ColorEditComponent } from './components/color/color-edit/color-edit.component';
+import { BrandEditComponent } from './components/brand/brand-edit/brand-edit.component';
 @NgModule({
   declarations: [AppComponent, NavComponent, CarFilterPipe, LoginComponent, RegisterComponent, ContentComponent, BrandComponent, CarComponent,
     ColorComponent, CustomerComponent, RentalComponent, LoadingComponent, ChangePasswordComponent, FooterComponent, HowWeWorkComponent, AboutComponent,
-    ContactComponent, CarEditComponent, CarDetailComponent, CartComponent, PaymentComponent, FilterComponent, CarAddComponent, BrandAddComponent, ColorAddComponent],
+    ContactComponent, CarEditComponent, CarDetailComponent, CartComponent, PaymentComponent, FilterComponent, CarAddComponent, BrandAddComponent, ColorAddComponent, ColorEditComponent, BrandEditComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,

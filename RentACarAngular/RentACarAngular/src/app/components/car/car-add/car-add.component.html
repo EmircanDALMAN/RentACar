@@ -4,16 +4,21 @@
       <div class="card-header"><h5 class="card-title">Yeni Araç Ekle</h5></div>
       <div class="card-body">
         <form [formGroup]="carAddForm">
-          <div class="mb-3 row">
-            <label for="brandId" class="col-sm-2 col-form-label">Marka ID</label>
-            <div class="col-sm-10">
-              <input type="number" id="brandId" formControlName="brandId" class="form-control" placeholder="Marka ID"/>
+          <div class="mb-3">
+            <div class="form-group">
+              <label>Marka Seçiniz</label>
+              <select class="form-control" formControlName="brandId">
+                <option *ngFor="let brand of brands" [ngValue]="brand.brandId">{{brand.brandName}}</option>
+              </select>
             </div>
           </div>
-          <div class="mb-3 row">
-            <label for="colorId" class="col-sm-2 col-form-label">Renk ID</label>
-            <div class="col-sm-10">
-              <input type="number" id="colorId" formControlName="colorId" class="form-control" placeholder="Renk ID"/>
+
+          <div class="mb-3">
+            <div class="form-group">
+              <label>Renk Seçiniz</label>
+              <select class="form-control" formControlName="colorId">
+                <option *ngFor="let color of colors" [ngValue]="color.colorId">{{color.colorName}}</option>
+              </select>
             </div>
           </div>
           <div class="mb-3 row">
@@ -45,52 +50,3 @@
     </div>
   </div>
 </div>
-
-<!--<div class="bg_img"></div>-->
-<!--<div class="form_wrapper">-->
-<!--  <div class="form_container">-->
-<!--    <div class="title_container">-->
-<!--      <h2>Clean and Responsive Contact Form</h2>-->
-<!--      <h3>Created with pure CSS Only!</h3>-->
-<!--    </div>-->
-<!--    <form>-->
-<!--      <div class="row clearfix">-->
-<!--        <div class="col_half">-->
-<!--          <label>First name</label>-->
-<!--          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>-->
-<!--            <input type="text" name="first_name" placeholder="John" required />-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="col_half">-->
-<!--          <label>Last name</label>-->
-<!--          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>-->
-<!--            <input type="text" name="last_name" placeholder="Doe" />-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="row clearfix">-->
-<!--        <div class="col_half">-->
-<!--          <label>Email</label>-->
-<!--          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>-->
-<!--            <input type="email" name="email" placeholder="johndoe@gmail.com" required />-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="col_half">-->
-<!--          <label>Phone</label>-->
-<!--          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-phone"></i></span>-->
-<!--            <input type="tel" name="phone" placeholder="Phone no" pattern="[0-9]{10}" />-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="row clearfix">-->
-<!--        <div>-->
-<!--          <label>Comments</label>-->
-<!--          <div class="textarea_field"> <span><i aria-hidden="true" class="fa fa-comment"></i></span>-->
-<!--            <textarea cols="46" rows="3" name="comments"></textarea>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <input class="button" type="submit" value="Sumbit" />-->
-<!--    </form>-->
-<!--  </div>-->
-<!--</div>-->

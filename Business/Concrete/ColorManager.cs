@@ -22,7 +22,6 @@ namespace Business.Concrete
             _colorDal = colorDal;
         }
 
-        [ValidationAspect(typeof(ColorValidator))]
         [CacheRemoveAspect("IColorService.Get")]
         public IResult Add(Color color)
         {
