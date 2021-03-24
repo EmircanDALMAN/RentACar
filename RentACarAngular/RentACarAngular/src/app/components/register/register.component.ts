@@ -3,6 +3,7 @@ import * as $ from 'jquery';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
 import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,8 +15,9 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-              private toastrService:ToastrService,
-              private authService:AuthService) {
+              private toastrService: ToastrService,
+              private authService: AuthService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -25,17 +27,19 @@ export class RegisterComponent implements OnInit {
 
   createRegisterForm() {
     this.registerForm = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
 
-  login() {
+  register() {
     if (this.registerForm.valid) {
       let registerModel = Object.assign({}, this.registerForm.value);
-      this.authService.login(registerModel).subscribe(response => {
-          localStorage.setItem('token', response.data.token);
+      this.authService.register(registerModel).subscribe(response => {
           this.toastrService.info(response.message);
+          this.router.navigate(['login']);
         }, error => {
           this.toastrService.error(error.error);
         }
