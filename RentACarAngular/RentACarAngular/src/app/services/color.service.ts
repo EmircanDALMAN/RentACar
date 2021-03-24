@@ -6,6 +6,7 @@ import {Color} from '../models/entityModels/color';
 import {environment} from '../../environments/environment';
 import {ResponseModel} from '../models/responseModels/responseModel';
 import {Brand} from '../models/entityModels/brand';
+import {SingleResponseModel} from '../models/responseModels/singleResponseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,8 @@ export class ColorService {
     return this.httpClient.get<ListResponseModel<Color>>(this.apiUrl);
   }
 
-  getColorById(id: number): Observable<ListResponseModel<Color>> {
-    return this.httpClient.get<ListResponseModel<Color>>(this.apiUrl + 'id?id=' + id);
+  getColorById(id: number): Observable<SingleResponseModel<Color>> {
+    return this.httpClient.get<SingleResponseModel<Color>>(this.apiUrl + 'id?id=' + id);
   }
 
   updateColor(color: Color): Observable<ResponseModel> {

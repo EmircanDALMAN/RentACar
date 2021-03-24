@@ -12,7 +12,7 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class ColorEditComponent implements OnInit {
 
-  colors: Color[] = [];
+  color: Color;
   colorUpdateForm: FormGroup;
   colorId: number;
 
@@ -49,7 +49,7 @@ export class ColorEditComponent implements OnInit {
   }
   getColorById(id: number) {
     this.colorService.getColorById(id).subscribe(response => {
-      this.colors = response.data;
+      this.color = response.data;
       console.log(response);
     });
   }

@@ -1,30 +1,61 @@
-import { Component, OnInit } from '@angular/core';
-import {faKey, faUser} from '@fortawesome/free-solid-svg-icons';
 import * as $ from 'jquery';
+import {Component, OnInit} from '@angular/core';
+import {faKey, faUser} from '@fortawesome/free-solid-svg-icons';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../../services/auth.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
-
-  constructor() { }
-
+  loginForm: FormGroup;
   keyIcon = faKey;
   userIcon = faUser;
-  ngOnInit(): void {
-      this.animation();
+
+  constructor(private formBuilder: FormBuilder,
+              private authService: AuthService,
+              private toastrService: ToastrService) {
   }
-  animation(){
-    $(".txtb input").on("focus",function(){
-      $(this).addClass("focus");
+
+  ngOnInit(): void {
+    this.animation();
+    this.createLoginForm();
+  }
+
+  createLoginForm() {
+    this.loginForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
+
+  login() {
+    if (this.loginForm.valid) {
+      let loginModel = Object.assign({}, this.loginForm.value);
+      this.authService.login(loginModel).subscribe(response => {
+          localStorage.setItem('token', response.data.token);
+          this.toastrService.info(response.message);
+        }, error => {
+          this.toastrService.error(error.error);
+        }
+      );
+    }
+  }
+
+  animation() {
+    $('.txtb input').on('focus', function() {
+      $(this).addClass('focus');
     });
 
-    $(".txtb input").on("blur",function(){
-      if($(this).val() == "")
-        $(this).removeClass("focus");
+    $('.txtb input').on('blur', function() {
+      if ($(this).val() == '') {
+        $(this).removeClass('focus');
+      }
     });
   }
 }

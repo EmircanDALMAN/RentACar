@@ -11,7 +11,7 @@ import {BrandService} from '../../../services/brand.service';
   styleUrls: ['./brand-edit.component.css']
 })
 export class BrandEditComponent implements OnInit {
-  brands: Brand[] = [];
+  brand: Brand;
   brandUpdateForm: FormGroup;
   brandId: number;
 
@@ -48,7 +48,7 @@ export class BrandEditComponent implements OnInit {
   }
   getBrandById(id: number) {
     this.brandService.getBrandById(id).subscribe(response => {
-      this.brands = response.data;
+      this.brand = response.data;
     });
   }
 

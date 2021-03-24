@@ -5,7 +5,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {NavComponent} from './components/nav/nav.component';
 import {CarFilterPipe} from './pipes/car-filter.pipe';
 import {appRoutes} from './routes';
@@ -30,33 +30,37 @@ import {CarDetailComponent} from './components/car/car-detail/car-detail.compone
 import {NgbAlertModule, NgbModule, NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {ToastrModule} from 'ngx-toastr';
-import { CartComponent } from './components/cart/cart.component';
-import { PaymentComponent } from './components/payment/payment.component';
-import { FilterComponent } from './components/filter/filter.component';
-import { CarAddComponent } from './components/car/car-add/car-add.component';
-import { BrandAddComponent } from './components/brand/brand-add/brand-add.component';
-import { ColorAddComponent } from './components/color/color-add/color-add.component';
-import { ColorEditComponent } from './components/color/color-edit/color-edit.component';
-import { BrandEditComponent } from './components/brand/brand-edit/brand-edit.component';
+import {CartComponent} from './components/cart/cart.component';
+import {PaymentComponent} from './components/payment/payment.component';
+import {FilterComponent} from './components/filter/filter.component';
+import {CarAddComponent} from './components/car/car-add/car-add.component';
+import {BrandAddComponent} from './components/brand/brand-add/brand-add.component';
+import {ColorAddComponent} from './components/color/color-add/color-add.component';
+import {ColorEditComponent} from './components/color/color-edit/color-edit.component';
+import {BrandEditComponent} from './components/brand/brand-edit/brand-edit.component';
+import {AuthInterceptor} from './interceptors/auth.interceptor';
+
 @NgModule({
   declarations: [AppComponent, NavComponent, CarFilterPipe, LoginComponent, RegisterComponent, ContentComponent, BrandComponent, CarComponent,
     ColorComponent, CustomerComponent, RentalComponent, LoadingComponent, ChangePasswordComponent, FooterComponent, HowWeWorkComponent, AboutComponent,
     ContactComponent, CarEditComponent, CarDetailComponent, CartComponent, PaymentComponent, FilterComponent, CarAddComponent, BrandAddComponent, ColorAddComponent, ColorEditComponent, BrandEditComponent],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        ToastrModule.forRoot({positionClass: 'toast-bottom-right'}),
-        NgbPaginationModule,
-        NgbAlertModule,
-        FormsModule,
-        FontAwesomeModule,
-        RouterModule.forRoot(appRoutes),
-        NgbModule,
-        BrowserAnimationsModule,
-        ReactiveFormsModule
-    ],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ToastrModule.forRoot({positionClass: 'toast-bottom-right'}),
+    NgbPaginationModule,
+    NgbAlertModule,
+    FormsModule,
+    FontAwesomeModule,
+    RouterModule.forRoot(appRoutes),
+    NgbModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule
+  ],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {

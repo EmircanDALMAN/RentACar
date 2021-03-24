@@ -5,6 +5,7 @@ import {ListResponseModel} from '../models/responseModels/listResponseModel';
 import {Brand} from '../models/entityModels/brand';
 import {environment} from '../../environments/environment';
 import {ResponseModel} from '../models/responseModels/responseModel';
+import {SingleResponseModel} from '../models/responseModels/singleResponseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,7 @@ export class BrandService {
     return this.httpClient.post<ResponseModel>(this.apiUrl + 'update', brand);
   }
 
-  getBrandById(id: number): Observable<ListResponseModel<Brand>> {
-    return this.httpClient.get<ListResponseModel<Brand>>(this.apiUrl + 'id?id='+ id);
+  getBrandById(id: number): Observable<SingleResponseModel<Brand>> {
+    return this.httpClient.get<SingleResponseModel<Brand>>(this.apiUrl + 'id?id='+ id);
   }
 }
