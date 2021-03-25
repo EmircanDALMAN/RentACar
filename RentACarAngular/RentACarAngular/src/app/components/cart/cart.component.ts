@@ -74,30 +74,21 @@ export class CartComponent implements OnInit {
       var year = parseInt(fullDate[0]);
       var date1 = new Date(year, month, day);
       var date2 = new Date(this.model.year, this.model.month, this.model.day);
-      if (date1.getFullYear() > date2.getFullYear()) {
-        this.toastrService.error('Araç bu tarihte kiradadır!');
-        return false;
-      } else if (date1.getFullYear() == date2.getFullYear() && date1.getMonth() > date2.getMonth()) {
-        this.toastrService.error('Araç bu tarihte kiradadır!');
-        return false;
-      } else if (date1.getFullYear() == date2.getFullYear() && date1.getMonth() == date2.getMonth()
+      if (date1.getFullYear() > date2.getFullYear()
+      || date1.getFullYear() == date2.getFullYear() && date1.getMonth() > date2.getMonth()
+      || date1.getFullYear() == date2.getFullYear() && date1.getMonth() == date2.getMonth()
         && date1.getDate() >= date2.getDate()) {
         this.toastrService.error('Araç bu tarihte kiradadır!');
         return false;
       }
-
     } else {
-      if (this.now.getFullYear() > this.model.year) {
+      if (this.now.getFullYear() > this.model.year
+      || this.now.getFullYear() == this.model.year && this.now.getMonth() > this.model.month
+      || this.now.getFullYear() == this.model.year && this.now.getDate() > this.model.day) {
         this.toastrService.error('Geçmişe Araç Alınamaz');
         return false;
-      } else if (this.now.getFullYear() == this.model.year && this.now.getMonth() > this.model.month) {
-        this.toastrService.error('Geçmişe Araç Alınamaz');
-        return false;
-      } else if (this.now.getDate() == this.model.day) {
+      }  else if (this.now.getDate() == this.model.day) {
         this.toastrService.error('Bugün Teslim Edilmek Şartıyla Araç Alınamaz');
-        return false;
-      } else if (this.now.getFullYear() == this.model.year && this.now.getDate() > this.model.day) {
-        this.toastrService.error('Geçmişe Araç Alınamaz');
         return false;
       }
     }
