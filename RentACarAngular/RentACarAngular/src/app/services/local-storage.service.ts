@@ -17,6 +17,10 @@ export class LocalStorageService {
     }
   }
 
+  clearAll() {
+    localStorage.clear();
+  }
+
   setItem(key: string, value: string) {
     if (this.getItem(key) == null) {
       localStorage.setItem(key, value);

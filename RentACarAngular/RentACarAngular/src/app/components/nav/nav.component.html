@@ -26,7 +26,8 @@
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
                 data-bs-toggle="dropdown" aria-expanded="false">{{fullName}} </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" routerLink="user/{{id}}">Action</a></li>
+          <li><a class="dropdown-item" routerLink="user/{{id}}">Bilgilerimi Düzenle</a></li>
+          <li><a (click)="clearAllStorage()" class="dropdown-item" routerLink="/">Çıkış Yap</a></li>
         </ul>
       </div>
     </ul>

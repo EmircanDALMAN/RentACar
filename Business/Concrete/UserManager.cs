@@ -42,10 +42,6 @@ namespace Business.Concrete
         [CacheAspect]
         public IDataResult<List<User>> GetAll()
         {
-            if (DateTime.Now.Hour == 00)
-            {
-                return new ErrorDataResult<List<User>>(Messages.MaintenanceTime);
-            }
             return new SuccessDataResult<List<User>>(_userDal.GetAll(), Messages.UserListed);
         }
 

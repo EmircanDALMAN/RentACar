@@ -61,6 +61,24 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
+        public IResult Update(User user, string password)
+        {
+            byte[] passwordHash, passwordSalt;
+            HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
+            var updatedUser = new User
+            {
+                Id = user.Id,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                PasswordHash = passwordHash,
+                PasswordSalt = passwordSalt,
+                Status = user.Status,
+            };
+            _userService.Update(updatedUser);
+            return new SuccessResult(Messages.UserUpdated);
+        }
+
         public IDataResult<AccessToken> CreateAccessToken(User user)
         {
             var claims = _userService.GetClaims(user).Data;

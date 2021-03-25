@@ -63,10 +63,10 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(User user)
+        public IActionResult Update(UserForUpdateDto userForUpdateDto)
         {
-            var result = _authService.Update(user, "12345678");
-            
+            var result = _authService.Update(userForUpdateDto.User, userForUpdateDto.Password);
+
             if (result.Success)
             {
                 return Ok(result);

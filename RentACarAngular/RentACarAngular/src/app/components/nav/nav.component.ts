@@ -14,8 +14,8 @@ export class NavComponent implements OnInit {
   githubIcon = faGithub;
   instagramIcon = faInstagram;
   userIcon = faUser;
-  fullName:string;
-  id:string;
+  fullName: string;
+  id: string;
 
   constructor(private localStorageService: LocalStorageService) {
   }
@@ -23,16 +23,19 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  checkUserLogin():boolean {
+  checkUserLogin(): boolean {
     var user = this.localStorageService.getItem('fullName');
     var id = this.localStorageService.getItem('id');
     if (user == null) {
       return false;
-    }
-    else{
+    } else {
       this.fullName = user;
       this.id = id;
       return true;
     }
+  }
+
+  clearAllStorage() {
+    this.localStorageService.clearAll();
   }
 }
