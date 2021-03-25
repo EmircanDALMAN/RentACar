@@ -10,10 +10,12 @@ namespace WebAPI.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly IAuthService _authService;
 
-        public UsersController(IUserService userService)
+        public UsersController(IUserService userService, IAuthService authService)
         {
             _userService = userService;
+            _authService = authService;
         }
 
         [HttpGet]
@@ -26,7 +28,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
-        
+
         [HttpGet("id")]
         public IActionResult GetById(int id)
         {
@@ -63,7 +65,8 @@ namespace WebAPI.Controllers
         [HttpPost("update")]
         public IActionResult Update(User user)
         {
-            var result = _userService.Update(user);
+            var result = _authService.Update(user, "12345678");
+            
             if (result.Success)
             {
                 return Ok(result);

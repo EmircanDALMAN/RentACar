@@ -3,6 +3,6 @@ export class User {
   email: string;
   firstName: string;
   lastName: string;
-  passwordSalt:string;
-  passwordHash:string;
+  password:string;
+  status:boolean;
 }

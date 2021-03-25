@@ -48,8 +48,6 @@ export class LoginComponent implements OnInit {
           this.userService.getUser(loginModel.email).subscribe(response => {
             this.localStorageService.setItem('fullName', response.data.firstName + response.data.lastName);
             this.localStorageService.setItem('firstName', response.data.firstName);
-            this.localStorageService.setItem('passwordHash', response.data.passwordHash);
-            this.localStorageService.setItem('passwordSalt', response.data.passwordSalt);
             this.localStorageService.setItem('lastName', response.data.lastName);
             this.localStorageService.setItem('email', response.data.email);
             this.localStorageService.setItem('id', response.data.id.toString());

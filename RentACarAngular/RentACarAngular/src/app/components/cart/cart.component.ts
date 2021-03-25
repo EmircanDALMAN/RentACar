@@ -10,6 +10,7 @@ import {Rental} from '../../models/entityModels/rental';
 import {Car} from '../../models/entityModels/car';
 import {CartItem} from '../../models/entityModels/cartItem';
 import {faExclamation, faLiraSign} from '@fortawesome/free-solid-svg-icons';
+import {LocalStorageService} from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-cart',
@@ -29,7 +30,8 @@ export class CartComponent implements OnInit {
   priceIcon = faLiraSign;
 
   constructor(private cartService: CartService, private rentalService: RentalService,
-              private  toastrService: ToastrService, private router: Router) {
+              private  toastrService: ToastrService, private router: Router,
+              private localStorageService: LocalStorageService) {
   }
 
   ngOnInit(): void {
@@ -59,7 +61,7 @@ export class CartComponent implements OnInit {
       let myRental: RentalDetail = {
         returnDate: new Date(this.model.year, this.model.month - 1, this.model.day + 1),
         carId: this.cartItems[0].car.id,
-        customerId: 1
+        customerId: parseInt(this.localStorageService.getItem('id'))
       };
       this.router.navigate(['/payment/', JSON.stringify(myRental)]);
       this.toastrService.info('Ödeme sayfasına yönlendiriliyorsunuz...', 'Ödeme İşlemleri');

@@ -28,8 +28,8 @@ export class UserComponent implements OnInit {
       email: ['', Validators.required],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      passwordHash: [this.localStorageService.getItem('passwordHash')],
-      passwordSalt: [this.localStorageService.getItem('passwordSalt')],
+      status: [true],
+      password: ['12345678']
     });
   }
 
