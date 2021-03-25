@@ -87,7 +87,8 @@
 
         </div>
         <label>
-          <input type="checkbox" checked="checked" name="sameadr"> Adres Bilgilerimi Kaydet
+          <input type="text" placeholder="Kredi Kart İsmi">
+          <input type="checkbox" id="saveCreditCard" checked="checked" name="sameadr">Kredi Kartı Bilgilerimi Kaydet
         </label>
         <button (click)="addRental(rental, fakeCreditCard)"
                 [disabled]="!rentalForm.valid" class="btn">Ödemeyi Tamamla</button>

@@ -1,6 +1,8 @@
 ﻿using Core.Utilities.Results;
 using System.Collections.Generic;
 using Core.Entities.Concrete;
+using Entities.DTOs;
+
 namespace Business.Abstract
 {
     public interface IUserService
@@ -13,5 +15,6 @@ namespace Business.Abstract
 
         IDataResult<List<OperationClaim>> GetClaims(User user);
         IDataResult<User> GetByMail(string email);
+        IDataResult<UserFindeksDto> GetUserFindeks(UserFindeksDto userFindeksDto);
     }
 }

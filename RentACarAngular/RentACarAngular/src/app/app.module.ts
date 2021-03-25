@@ -40,11 +40,12 @@ import {ColorEditComponent} from './components/color/color-edit/color-edit.compo
 import {BrandEditComponent} from './components/brand/brand-edit/brand-edit.component';
 import {AuthInterceptor} from './interceptors/auth.interceptor';
 import {ErrorInterceptor} from './interceptors/error.interceptor';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [AppComponent, NavComponent, CarFilterPipe, LoginComponent, RegisterComponent, ContentComponent, BrandComponent, CarComponent,
     ColorComponent, CustomerComponent, RentalComponent, LoadingComponent, ChangePasswordComponent, FooterComponent, HowWeWorkComponent, AboutComponent,
-    ContactComponent, CarEditComponent, CarDetailComponent, CartComponent, PaymentComponent, FilterComponent, CarAddComponent, BrandAddComponent, ColorAddComponent, ColorEditComponent, BrandEditComponent],
+    ContactComponent, CarEditComponent, CarDetailComponent, CartComponent, PaymentComponent, FilterComponent, CarAddComponent, BrandAddComponent, ColorAddComponent, ColorEditComponent, BrandEditComponent, UserComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -7,6 +7,21 @@
 </ngb-carousel>
 
 <br>
+<Form [formGroup]="userFindeksForm">
+  <div class="mb-3">
+    <div class="form-group">
+      <label>Tc Kimlik Numaranız</label>
+      <input type="text" formControlName="tcNo">
+    </div>
+  </div>
+  <div class="mb-3">
+    <div class="form-group">
+      <label>Doğum Yılınız</label>
+      <input type="text" formControlName="dateYear">
+    </div>
+  </div>
+  <button (click)="getUserFindeks()">Puanımı Hesapla</button>
+</Form>
 
 <div class="card" *ngFor="let car of carDetails; let i = index">
   <div class="card-body" *ngIf="i<1">
@@ -19,6 +34,6 @@
     <p class="card-text"><b>Fiyat:</b> {{car.dailyPrice}}
       <fa-icon [icon]="faLira"></fa-icon>
     </p>
-    <a (click)="addCart(car)" class="btn btn-primary">Kirala</a>
+    <button  (click)="addCart(car)" class="btn btn-primary">Kirala</button>
   </div>
 </div>

@@ -38,12 +38,12 @@ export class RentalService {
           },
         fakeCreditCardModel:
           {
-          'cardNumber': fakeCreditCard.cardNumber,
-          'cardHolderName': fakeCreditCard.cardHolderName,
-          'expirationYear': parseInt(fakeCreditCard.expirationYear.toString()),
-          'expirationMonth': parseInt(fakeCreditCard.expirationMonth.toString()),
-          'cvv': fakeCreditCard.cvv
-        }
+            'cardNumber': fakeCreditCard.cardNumber,
+            'cardHolderName': fakeCreditCard.cardHolderName,
+            'expirationYear': parseInt(fakeCreditCard.expirationYear.toString()),
+            'expirationMonth': parseInt(fakeCreditCard.expirationMonth.toString()),
+            'cvv': fakeCreditCard.cvv
+          }
       });
   }
 }

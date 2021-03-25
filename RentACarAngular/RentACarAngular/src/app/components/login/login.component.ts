@@ -5,6 +5,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../services/auth.service';
 import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
+import {LocalStorageService} from '../../services/local-storage.service';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +23,9 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private authService: AuthService,
               private toastrService: ToastrService,
-              private router: Router) {
+              private router: Router,
+              private localStorageService: LocalStorageService,
+              private userService: UserService) {
   }
 
   ngOnInit(): void {
@@ -40,7 +44,16 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       let loginModel = Object.assign({}, this.loginForm.value);
       this.authService.login(loginModel).subscribe(response => {
-          localStorage.setItem('token', response.data.token);
+          this.localStorageService.setItem('token', response.data.token);
+          this.userService.getUser(loginModel.email).subscribe(response => {
+            this.localStorageService.setItem('fullName', response.data.firstName + response.data.lastName);
+            this.localStorageService.setItem('firstName', response.data.firstName);
+            this.localStorageService.setItem('passwordHash', response.data.passwordHash);
+            this.localStorageService.setItem('passwordSalt', response.data.passwordSalt);
+            this.localStorageService.setItem('lastName', response.data.lastName);
+            this.localStorageService.setItem('email', response.data.email);
+            this.localStorageService.setItem('id', response.data.id.toString());
+          });
           this.toastrService.info(response.message);
           this.router.navigate(['/']);
         }, error => {

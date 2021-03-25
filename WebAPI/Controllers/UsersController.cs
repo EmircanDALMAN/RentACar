@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Microsoft.AspNetCore.Mvc;
 using Core.Entities.Concrete;
+using Entities.DTOs;
 
 namespace WebAPI.Controllers
 {
@@ -25,7 +26,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
-
+        
         [HttpGet("id")]
         public IActionResult GetById(int id)
         {
@@ -67,6 +68,30 @@ namespace WebAPI.Controllers
             {
                 return Ok(result);
             }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getuserbyemail")]
+        public IActionResult GetUserByEmail(string email)
+        {
+            var result = _userService.GetByMail(email);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
+
+        [HttpPost("getuserfindeks")]
+        public IActionResult GetUserFindeks(UserFindeksDto userFindeksDto)
+        {
+            var result = _userService.GetUserFindeks(userFindeksDto);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
             return BadRequest(result);
         }
     }

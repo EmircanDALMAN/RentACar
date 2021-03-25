@@ -17,9 +17,18 @@
   </div>
   <div class="icons">
     <ul>
-      <li> <a target="_blank" href="https://github.com/ExorTek"> <fa-icon [icon]="githubIcon" class="fa-2x instagramIcon"></fa-icon> </a></li>
-      <li> <a target="_blank" href="https://www.instagram.com/mmetdemirel/"><fa-icon [icon]="instagramIcon"  class="fa-2x githubIcon"></fa-icon></a></li>
-      <li> <a routerLink="/login"><fa-icon [icon]="userIcon" class="fa-2x userIcon"></fa-icon> </a></li>
+      <li> <a target="_blank" href="https://github.com/Kontorta16">
+        <fa-icon [icon]="githubIcon" class="fa-2x instagramIcon"></fa-icon> </a></li>
+      <li> <a target="_blank" href="https://www.instagram.com/emircan.dalmn/">
+        <fa-icon [icon]="instagramIcon"  class="fa-2x githubIcon"></fa-icon></a></li>
+      <li *ngIf="!checkUserLogin()"> <a routerLink="/login"><fa-icon [icon]="userIcon" class="fa-2x userIcon"></fa-icon> </a></li>
+      <div *ngIf="checkUserLogin()" class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                data-bs-toggle="dropdown" aria-expanded="false">{{fullName}} </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" routerLink="user/{{id}}">Action</a></li>
+        </ul>
+      </div>
     </ul>
   </div>
 </nav>

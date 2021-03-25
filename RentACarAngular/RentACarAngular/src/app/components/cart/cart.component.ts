@@ -55,13 +55,13 @@ export class CartComponent implements OnInit {
   createRental() {
     if (!this.checkCarReturnDate()) {
       this.router.navigate(['/cart']);
-    } else if (this.checkCarReturnDate()) {
-      let MyRental: RentalDetail = {
+    } else {
+      let myRental: RentalDetail = {
         returnDate: new Date(this.model.year, this.model.month - 1, this.model.day + 1),
         carId: this.cartItems[0].car.id,
         customerId: 1
       };
-      this.router.navigate(['/payment/', MyRental]);
+      this.router.navigate(['/payment/', JSON.stringify(myRental)]);
       this.toastrService.info('Ödeme sayfasına yönlendiriliyorsunuz...', 'Ödeme İşlemleri');
     }
   }
@@ -75,19 +75,19 @@ export class CartComponent implements OnInit {
       var date1 = new Date(year, month, day);
       var date2 = new Date(this.model.year, this.model.month, this.model.day);
       if (date1.getFullYear() > date2.getFullYear()
-      || date1.getFullYear() == date2.getFullYear() && date1.getMonth() > date2.getMonth()
-      || date1.getFullYear() == date2.getFullYear() && date1.getMonth() == date2.getMonth()
+        || date1.getFullYear() == date2.getFullYear() && date1.getMonth() > date2.getMonth()
+        || date1.getFullYear() == date2.getFullYear() && date1.getMonth() == date2.getMonth()
         && date1.getDate() >= date2.getDate()) {
         this.toastrService.error('Araç bu tarihte kiradadır!');
         return false;
       }
     } else {
       if (this.now.getFullYear() > this.model.year
-      || this.now.getFullYear() == this.model.year && this.now.getMonth() > this.model.month
-      || this.now.getFullYear() == this.model.year && this.now.getDate() > this.model.day) {
+        || this.now.getFullYear() == this.model.year && this.now.getMonth() > this.model.month
+        || this.now.getFullYear() == this.model.year && this.now.getDate() > this.model.day) {
         this.toastrService.error('Geçmişe Araç Alınamaz');
         return false;
-      }  else if (this.now.getDate() == this.model.day) {
+      } else if (this.now.getDate() == this.model.day) {
         this.toastrService.error('Bugün Teslim Edilmek Şartıyla Araç Alınamaz');
         return false;
       }

@@ -20,6 +20,7 @@ import {CarEditComponent} from './components/car/car-edit/car-edit.component';
 import {ColorEditComponent} from './components/color/color-edit/color-edit.component';
 import {BrandEditComponent} from './components/brand/brand-edit/brand-edit.component';
 import {LoginGuard} from './guards/login.guard';
+import {UserComponent} from './components/user/user.component';
 
 export const appRoutes: Routes = [
   //Users
@@ -27,6 +28,7 @@ export const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'changepassword', component: ChangePasswordComponent},
   {path: 'customers', component: CustomerComponent},
+  {path: 'user/:id', component: UserComponent},
 
   //Colors
   {path: 'colors', component: ColorComponent},
@@ -52,7 +54,7 @@ export const appRoutes: Routes = [
 
   //Payment
   {path: 'payment/:myrental', component: PaymentComponent},
-  {path: 'cart', component: CartComponent},
+  {path: 'cart', component: CartComponent, canActivate: [LoginGuard]},
 
   //Others
   {path: 'about', component: AboutComponent},

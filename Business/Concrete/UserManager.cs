@@ -10,6 +10,7 @@ using Business.BusinessAspects.Autofac;
 using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Performance;
 using Core.Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -71,11 +72,21 @@ namespace Business.Concrete
             return new SuccessDataResult<List<OperationClaim>>(_userDal.GetClaims(user));
         }
 
-        [CacheAspect]
-        [PerformanceAspect(5)]
         public IDataResult<User> GetByMail(string email)
         {
-            return new SuccessDataResult<User>(_userDal.Get(u => u.Email == email));
+            var user = _userDal.Get(u => u.Email == email);
+            return new SuccessDataResult<User>(user);
+        }
+
+        public IDataResult<UserFindeksDto> GetUserFindeks(UserFindeksDto userFindeksDto)
+        {
+            UserFindeksDto userFindeks = new UserFindeksDto
+            {
+                TcNo = userFindeksDto.TcNo,
+                DateYear = userFindeksDto.DateYear,
+                UserFindeks = 1200
+            };
+            return new SuccessDataResult<UserFindeksDto>(userFindeks);
         }
     }
 }

@@ -26,6 +26,7 @@ namespace DataAccess.Concrete.EntityFramework
                                   DailyPrice = p.DailyPrice,
                                   Description = p.Description,
                                   ModelYear = p.ModelYear,
+                                  FindeksScore = p.FindeksScore,
                                   Id = p.Id,
                                   Date = im.Date,
                                   ImagePath = im.ImagePath,
@@ -52,6 +53,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  DailyPrice = p.DailyPrice,
                                  Description = p.Description,
                                  ModelYear = p.ModelYear,
+                                 FindeksScore = p.FindeksScore,
                                  Id = p.Id,
                                  Date = im.Date,
                                  ImagePath = im.ImagePath,
@@ -78,6 +80,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  DailyPrice = car.DailyPrice,
                                  ModelYear = car.ModelYear,
                                  Description = car.Description,
+                                 FindeksScore = car.FindeksScore,
                                  Date = im.Date,
                                  ImagePath = im.ImagePath,
                                  ImageId = im.Id
