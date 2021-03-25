@@ -61,7 +61,7 @@ export class CartComponent implements OnInit {
         carId: this.cartItems[0].car.id,
         customerId: 1
       };
-      this.router.navigate(['/payment/', JSON.stringify(MyRental)]);
+      this.router.navigate(['/payment/', MyRental]);
       this.toastrService.info('Ödeme sayfasına yönlendiriliyorsunuz...', 'Ödeme İşlemleri');
     }
   }

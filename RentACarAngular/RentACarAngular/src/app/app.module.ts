@@ -39,6 +39,7 @@ import {ColorAddComponent} from './components/color/color-add/color-add.componen
 import {ColorEditComponent} from './components/color/color-edit/color-edit.component';
 import {BrandEditComponent} from './components/brand/brand-edit/brand-edit.component';
 import {AuthInterceptor} from './interceptors/auth.interceptor';
+import {ErrorInterceptor} from './interceptors/error.interceptor';
 
 @NgModule({
   declarations: [AppComponent, NavComponent, CarFilterPipe, LoginComponent, RegisterComponent, ContentComponent, BrandComponent, CarComponent,
@@ -59,7 +60,8 @@ import {AuthInterceptor} from './interceptors/auth.interceptor';
     ReactiveFormsModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
   ],
   bootstrap: [AppComponent],
 })

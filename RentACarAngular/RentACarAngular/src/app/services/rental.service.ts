@@ -26,6 +26,7 @@ export class RentalService {
   }
 
   addRental(rental: RentalDetail, fakeCreditCard: FakeCreditCard): Observable<ResponseModel> {
+    //TODO request düzenlenecek
     return this.httpClient.post<ResponseModel>
     (this.apiUrl + 'add',
       {
