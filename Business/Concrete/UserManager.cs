@@ -39,20 +39,14 @@ namespace Business.Concrete
             return new SuccessResult(Messages.UserDeleted);
         }
 
-        [CacheAspect]
         public IDataResult<List<User>> GetAll()
         {
             return new SuccessDataResult<List<User>>(_userDal.GetAll(), Messages.UserListed);
         }
 
-        [CacheAspect]
         [PerformanceAspect(5)]
         public IDataResult<User> GetById(int id)
         {
-            if (DateTime.Now.Hour == 00)
-            {
-                return new ErrorDataResult<User>(Messages.MaintenanceTime);
-            }
             return new SuccessDataResult<User>(_userDal.Get(b => b.Id == id));
         }
 
@@ -62,7 +56,6 @@ namespace Business.Concrete
             return new SuccessResult(Messages.UserUpdated);
         }
 
-        [CacheAspect]
         public IDataResult<List<OperationClaim>> GetClaims(User user)
         {
             return new SuccessDataResult<List<OperationClaim>>(_userDal.GetClaims(user));
@@ -76,11 +69,12 @@ namespace Business.Concrete
 
         public IDataResult<UserFindeksDto> GetUserFindeks(UserFindeksDto userFindeksDto)
         {
+            Random random = new Random();
             UserFindeksDto userFindeks = new UserFindeksDto
             {
                 TcNo = userFindeksDto.TcNo,
                 DateYear = userFindeksDto.DateYear,
-                UserFindeks = 1200
+                UserFindeks = random.Next(1, 1900),
             };
             return new SuccessDataResult<UserFindeksDto>(userFindeks);
         }

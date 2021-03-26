@@ -15,8 +15,6 @@ export class ColorComponent implements OnInit {
   error = '';
   currentColor: Color;
   allColor?: Color;
-  Filters = { brandId: '', colorId: '' };
-
   constructor(private colorService: ColorService) {
   }
 

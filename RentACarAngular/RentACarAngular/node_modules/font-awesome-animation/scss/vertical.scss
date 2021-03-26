@@ -1,0 +1,27 @@
+$faa-vertical-speed: 2s;
+@keyframes vertical {
+  0%, 8%, 16% {
+    transform: translate(0,-3px);
+  }
+  4%, 12%, 20% {
+    transform: translate(0,3px);
+  }
+  22%, 100% {
+    transform: translate(0,0);
+  }
+}
+.faa-vertical.animated,
+.faa-vertical.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-vertical {
+  animation: vertical $faa-vertical-speed ease infinite;
+}
+.faa-vertical.animated.faa-fast,
+.faa-vertical.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-vertical.faa-fast {
+  animation: vertical ($faa-vertical-speed * $faa-speed-coeff-fast) ease infinite;
+}
+.faa-vertical.animated.faa-slow,
+.faa-vertical.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-vertical.faa-slow {
+  animation: vertical ($faa-vertical-speed * $faa-speed-coeff-slow) ease infinite;
+}

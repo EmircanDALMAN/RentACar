@@ -1,0 +1,1 @@
+{"version":3,"file":"ngb-config.d.ts","sources":["ngb-config.d.ts"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;;AACA;AACA;;AACA","sourcesContent":["/**\n * Global ng-bootstrap config\n *\n * @since 8.0.0\n */\nexport declare class NgbConfig {\n    animation: boolean;\n}\n"]}

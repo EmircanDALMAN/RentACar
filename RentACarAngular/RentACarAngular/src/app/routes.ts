@@ -28,7 +28,7 @@ export const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'changepassword', component: ChangePasswordComponent},
   {path: 'customers', component: CustomerComponent},
-  {path: 'user/:id', component: UserComponent},
+  {path: 'user/:id', component: UserComponent, canActivate: [LoginGuard]},
 
   //Colors
   {path: 'colors', component: ColorComponent},

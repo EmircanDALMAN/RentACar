@@ -1,0 +1,1 @@
+{"version":3,"file":"tooltip.module.d.ts","sources":["tooltip.module.d.ts"],"names":[],"mappings":";;AAAA;AACA;AACA;AACA;;;;AACA","sourcesContent":["export { NgbTooltipConfig } from './tooltip-config';\nexport { NgbTooltip } from './tooltip';\nexport { Placement } from '../util/positioning';\nexport declare class NgbTooltipModule {\n}\n"]}
