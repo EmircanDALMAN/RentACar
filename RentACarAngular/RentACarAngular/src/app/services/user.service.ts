@@ -6,6 +6,8 @@ import {SingleResponseModel} from '../models/responseModels/singleResponseModel'
 import {environment} from '../../environments/environment';
 import {User} from '../models/entityModels/user';
 import {ResponseModel} from '../models/responseModels/responseModel';
+import {ListResponseModel} from '../models/responseModels/listResponseModel';
+import {UserClaimsModel} from '../models/entityModels/userClaimsModel';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +28,6 @@ export class UserService {
   }
 
   updateUser(user: User): Observable<ResponseModel> {
-
     return this.httpClient.post<ResponseModel>(this.apiUrl + 'update',
       {
         user:
@@ -35,10 +36,14 @@ export class UserService {
             'firstName': user.firstName,
             'lastName': user.lastName,
             'email': user.email,
-            'status':user.status
+            'status': user.status
           },
         password: user.password
       }
     );
+  }
+
+  getUserClaims(id: number): Observable<ListResponseModel<UserClaimsModel>> {
+    return this.httpClient.post<ListResponseModel<UserClaimsModel>>(this.apiUrl + 'getuserclaims', {id: id});
   }
 }

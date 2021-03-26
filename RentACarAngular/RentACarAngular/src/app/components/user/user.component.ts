@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../../services/user.service';
 import {ToastrService} from 'ngx-toastr';
 import {LocalStorageService} from '../../services/local-storage.service';
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -18,7 +18,7 @@ export class UserComponent implements OnInit {
               private toastrService: ToastrService,
               private localStorageService: LocalStorageService,
               private activatedRoute: ActivatedRoute,
-              private router:Router) {
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -26,9 +26,9 @@ export class UserComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       if (parseInt(this.localStorageService.getItem('id')) != params['id']) {
         this.toastrService.info('Bu Hesabı Düzenlemeye Yetkiniz Yoktur. Yönlendiriliyorsunuz..');
-        this.router.navigate(['/'])
+        this.router.navigate(['/']);
       }
-    })
+    });
   }
 
   createUserUpdateForm() {

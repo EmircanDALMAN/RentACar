@@ -21,6 +21,8 @@ import {ColorEditComponent} from './components/color/color-edit/color-edit.compo
 import {BrandEditComponent} from './components/brand/brand-edit/brand-edit.component';
 import {LoginGuard} from './guards/login.guard';
 import {UserComponent} from './components/user/user.component';
+import {ModeratorGuard} from './guards/moderator.guard';
+import {AdminGuard} from './guards/admin.guard';
 
 export const appRoutes: Routes = [
   //Users
@@ -32,18 +34,18 @@ export const appRoutes: Routes = [
 
   //Colors
   {path: 'colors', component: ColorComponent},
-  {path: 'colors/add', component: ColorAddComponent, canActivate: [LoginGuard]},
-  {path: 'colors/update/:id', component: ColorEditComponent, canActivate: [LoginGuard]},
+  {path: 'colors/add', component: ColorAddComponent, canActivate: [LoginGuard, ModeratorGuard]},
+  {path: 'colors/update/:id', component: ColorEditComponent, canActivate: [LoginGuard, ModeratorGuard]},
 
   //Brands
   {path: 'brands', component: BrandComponent},
-  {path: 'brands/add', component: BrandAddComponent, canActivate: [LoginGuard]},
-  {path: 'brands/update/:id', component: BrandEditComponent, canActivate: [LoginGuard]},
+  {path: 'brands/add', component: BrandAddComponent, canActivate: [LoginGuard, ModeratorGuard]},
+  {path: 'brands/update/:id', component: BrandEditComponent, canActivate: [LoginGuard, ModeratorGuard]},
 
   //Cars
   {path: 'cars', component: CarComponent},
-  {path: 'cars/add', component: CarAddComponent, canActivate: [LoginGuard]},
-  {path: 'cars/update/:id', component: CarEditComponent, canActivate: [LoginGuard]},
+  {path: 'cars/add', component: CarAddComponent, canActivate: [LoginGuard, ModeratorGuard]},
+  {path: 'cars/update/:id', component: CarEditComponent, canActivate: [LoginGuard, ModeratorGuard]},
   {path: 'cars/brand/:brandId', component: CarComponent},
   {path: 'cars/color/:colorId', component: CarComponent},
   {path: 'car/details/:carId', component: CarDetailComponent},

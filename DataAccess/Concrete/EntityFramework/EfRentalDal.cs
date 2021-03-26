@@ -16,7 +16,7 @@ namespace DataAccess.Concrete.EntityFramework
             using (RentACarDbContext context = new RentACarDbContext())
             {
                 var result = 
-                    from r in context.Rentals.Where(c=>c.CarId==id)
+                    from r in context.Rentals.Where(r=>r.CarId==id)
                              join c in context.Cars on r.CarId equals c.Id
                              join cu in context.Customers on r.CustomerId equals cu.Id
                              join b in context.Brands on c.BrandId equals b.BrandId

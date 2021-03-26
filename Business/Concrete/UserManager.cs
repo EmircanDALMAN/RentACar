@@ -78,5 +78,6 @@ namespace Business.Concrete
             };
             return new SuccessDataResult<UserFindeksDto>(userFindeks);
         }
+
     }
 }
