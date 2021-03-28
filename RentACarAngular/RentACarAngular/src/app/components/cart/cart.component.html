@@ -1,10 +1,10 @@
-<div class="container">
+<div *ngIf="cartItem" class="container">
   <div class="card shopping-cart">
     <div class="card-header bg-dark text-light">
       <fa-icon [icon]="cartIcon"></fa-icon>
       Sepetiniz
     </div>
-    <div class="card-body" *ngFor="let cartItem of cartItems">
+    <div class="card-body">
       <div class="row">
         <div class="col-12 col-sm-12 col-md-2 text-center">
           <img class="img-responsive" src="{{baseUrl}}/{{cartItem.car.imagePath}}" alt="prewiew"

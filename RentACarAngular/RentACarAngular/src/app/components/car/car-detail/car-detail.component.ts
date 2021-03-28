@@ -81,12 +81,9 @@ export class CarDetailComponent implements OnInit {
     if (this.checkUserFindeks()) {
       this.rentalService.getRentalByCar(car.id).subscribe(response => {
         this.rentalDetail = response.data;
-      });
-      if (this.cartService.list().length > 0) {
+        this.cartService.addToCart(car);
         this.router.navigate(['/cart']);
-      }
-      this.cartService.addToCart(car);
-      this.router.navigate(['/cart']);
+      });
     }
   }
 }

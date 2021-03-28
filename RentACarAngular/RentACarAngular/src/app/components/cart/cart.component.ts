@@ -8,9 +8,9 @@ import {Router} from '@angular/router';
 import {RentalDetail} from '../../models/entityModels/RentalDetail';
 import {Rental} from '../../models/entityModels/rental';
 import {Car} from '../../models/entityModels/car';
-import {CartItem} from '../../models/entityModels/cartItem';
 import {faCartPlus, faExclamation, faLiraSign} from '@fortawesome/free-solid-svg-icons';
 import {LocalStorageService} from '../../services/local-storage.service';
+import {CartItem} from '../../models/entityModels/cartItem';
 
 @Component({
   selector: 'app-cart',
@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
   priceIcon = faLiraSign;
   cartIcon = faCartPlus;
 
-  cartItems: CartItem[] = [];
+  cartItem: CartItem;
   baseUrl = environment.baseUrl;
   now = new Date();
   rentalResponse: Rental[];
@@ -40,13 +40,14 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getCart();
-    if (!this.checkCartLength()) {
+    var cartItem = this.cartService.getCart();
+    if (cartItem.car == undefined) {
       this.toastrService.info('Sepetiniz Boş. Yönlendiriliyorsunuz...');
       this.router.navigate(['/']);
     } else {
-      this.totalPrice = this.cartItems[this.cartItems.length - 1].car.dailyPrice;
-      this.rentalService.getRentalByCar(this.cartItems[this.cartItems.length - 1].car.id).subscribe(response => {
+      this.cartItem = cartItem;
+      this.totalPrice = this.cartItem.car.dailyPrice;
+      this.rentalService.getRentalByCar(this.cartItem.car.id).subscribe(response => {
         if (response.data.length != 0) {
           this.rentalResponse = response.data;
           this.carDetailReturnDate = this.rentalResponse[this.rentalResponse.length - 1].returnDate;
@@ -64,10 +65,6 @@ export class CartComponent implements OnInit {
     }
   }
 
-  getCart() {
-    this.cartItems = this.cartService.list();
-  }
-
   createRental() {
     if (!this.checkCarReturnDate()) {
       this.router.navigate(['/cart']);
@@ -75,7 +72,7 @@ export class CartComponent implements OnInit {
       let myRental: RentalDetail = {
         rentDate: new Date(this.rentDate.year, this.rentDate.month - 1, this.rentDate.day + 1),
         returnDate: new Date(this.model.year, this.model.month - 1, this.model.day + 1),
-        carId: this.cartItems[0].car.id,
+        carId: this.cartItem.car.id,
         userId: parseInt(this.localStorageService.getItem('id')),
       };
       this.router.navigate(['/payment/', JSON.stringify(myRental)]);
@@ -106,7 +103,7 @@ export class CartComponent implements OnInit {
       var returnDate = new Date(this.model.year, this.model.month - 1, this.model.day);
       var timeDifference = Math.abs(returnDate.getTime() - rentDate.getTime());
       var dayDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
-      this.totalPrice = dayDifference * this.cartItems[this.cartItems.length - 1].car.dailyPrice;
+      this.totalPrice = dayDifference * this.cartItem.car.dailyPrice;
     } else {
       this.setTotalPriceValue();
     }
@@ -115,14 +112,8 @@ export class CartComponent implements OnInit {
 
   removeFromCart(car: Car) {
     this.cartService.removeFromCart(car);
-    if (this.cartService.list().length == 0) {
-      this.toastrService.info('Anasayfa\'ya Yönlendiriliyor...');
-      this.router.navigate(['/']);
-    }
-  }
-
-  checkCartLength(): boolean {
-    return this.cartService.list().length != 0;
+    this.toastrService.info('Anasayfa\'ya Yönlendiriliyor...');
+    this.router.navigate(['/']);
   }
 
   checkRentalDay(): boolean {
@@ -135,6 +126,7 @@ export class CartComponent implements OnInit {
   }
 
   setTotalPriceValue() {
-    this.totalPrice = this.cartItems[this.cartItems.length - 1].car.dailyPrice;
+    this.totalPrice = this.cartItem.car.dailyPrice;
   }
+
 }
