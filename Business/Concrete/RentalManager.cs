@@ -28,14 +28,9 @@ namespace Business.Concrete
             _paymentService = paymentService;
         }
 
-        [ValidationAspect(typeof(RentalValidator))]
         //[SecuredOperation("Rental.Add")]
         public IResult Add(Rental rental)
         {
-            if (rental.ReturnDate == null && 
-                _rentalDal.GetRentalDetailsById(rental.CarId).Count > 0)
-                return new ErrorResult(Messages.NoReturnDate);
-
             _rentalDal.Add(rental);
             return new SuccessResult(Messages.RentalAdded);
         }
@@ -52,17 +47,11 @@ namespace Business.Concrete
             return new SuccessResult(Messages.RentalDeleted);
         }
 
-        [CacheAspect]
         public IDataResult<List<Rental>> GetAll()
         {
-            if (DateTime.Now.Hour == 00)
-            {
-                return new ErrorDataResult<List<Rental>>(Messages.MaintenanceTime);
-            }
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(), Messages.RentalListed);
         }
 
-        [CacheAspect]
         [PerformanceAspect(5)]
         public IDataResult<Rental> GetById(int id)
         {

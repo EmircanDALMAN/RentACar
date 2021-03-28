@@ -15,21 +15,19 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (RentACarDbContext context = new RentACarDbContext())
             {
-                var result = 
-                    from r in context.Rentals.Where(r=>r.CarId==id)
+                var result = from r in context.Rentals
                              join c in context.Cars on r.CarId equals c.Id
-                             join cu in context.Customers on r.CustomerId equals cu.Id
                              join b in context.Brands on c.BrandId equals b.BrandId
-                             join u in context.Users on cu.UserId equals u.Id
+                             join u in context.Users on r.UserId equals u.Id
+                             where r.CarId == id
                              select new RentalDetailDto
                              {
-                                 Id = r.Id,
-                                 CarId = c.Id,
+                                 CarId = id,
                                  BrandName = b.BrandName,
-                                 CustomerName = cu.CompanyName,
-                                 UserName = $"{u.FirstName} {u.LastName}",
-                                 RentDate = DateTime.Now,
-                                 ReturnDate = r.ReturnDate
+                                 Id = r.Id,
+                                 RentDate = r.RentDate,
+                                 ReturnDate = r.ReturnDate,
+                                 UserName = $"{u.FirstName} {u.LastName}"
                              };
                 return result.ToList();
             }
@@ -42,15 +40,13 @@ namespace DataAccess.Concrete.EntityFramework
                 var result =
                     from r in context.Rentals
                     join c in context.Cars on r.CarId equals c.Id
-                    join cu in context.Customers on r.CustomerId equals cu.Id
                     join b in context.Brands on c.BrandId equals b.BrandId
-                    join u in context.Users on cu.UserId equals u.Id
+                    join u in context.Users on r.UserId equals u.Id
                     select new RentalDetailDto
                     {
                         Id = r.Id,
                         CarId = c.Id,
                         BrandName = b.BrandName,
-                        CustomerName = cu.CompanyName,
                         UserName = $"{u.FirstName} {u.LastName}",
                         RentDate = DateTime.Now,
                         ReturnDate = r.ReturnDate

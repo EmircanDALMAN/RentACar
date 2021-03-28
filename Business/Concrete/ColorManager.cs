@@ -40,14 +40,12 @@ namespace Business.Concrete
             return new SuccessResult(Messages.ColorDeleted);
         }
 
-        [CacheAspect]
         public IDataResult<List<Color>> GetAll()
         {
 
             return new SuccessDataResult<List<Color>>(_colorDal.GetAll(), Messages.ColorListed);
         }
 
-        [CacheAspect]
         [PerformanceAspect(5)]
         public IDataResult<Color> GetById(int id)
         {

@@ -39,15 +39,12 @@ namespace Business.Concrete
             _brandDal.Delete(brand);
             return new SuccessResult(Messages.BrandDeleted);
         }
-
-        [CacheAspect]
         public IDataResult<List<Brand>> GetAll()
         {
             
             return new SuccessDataResult<List<Brand>>(_brandDal.GetAll(), Messages.BrandListed);
         }
 
-        [CacheAspect]
         [PerformanceAspect(5)]
         public IDataResult<Brand> GetById(int id)
         {

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {RentalService} from '../../services/rental.service';
 import {RentalDetail} from '../../models/entityModels/RentalDetail';
 import {ToastrService} from 'ngx-toastr';
@@ -37,7 +37,8 @@ export class PaymentComponent implements OnInit {
               private rentalService: RentalService,
               private toastrService: ToastrService,
               private formBuilder: FormBuilder,
-              private localStorageService: LocalStorageService) {
+              private localStorageService: LocalStorageService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -51,7 +52,8 @@ export class PaymentComponent implements OnInit {
     var expirationMonth = this.localStorageService.getItem('expirationMonth');
     var cardNumber = this.localStorageService.getItem('cardNumber');
     var cvv = this.localStorageService.getItem('cvv');
-    if (cardHolderName != null && expirationMonth != null && expirationYear != null && cardNumber != null && cvv != null) {
+    if (cardHolderName != null && expirationMonth != null && expirationYear != null
+      && cardNumber != null && cvv != null) {
       this.fakeCreditCard.cardHolderName = cardHolderName;
       this.fakeCreditCard.expirationYear = parseInt(expirationYear);
       this.fakeCreditCard.expirationMonth = parseInt(expirationMonth);
@@ -81,7 +83,8 @@ export class PaymentComponent implements OnInit {
       this.localStorageService.setItem('cvv', fakeCreditCard.cvv);
     }
     this.rentalService.addRental(rental, fakeCreditCard).subscribe(response => {
-      this.toastrService.success('Araç kiralandı');
+      this.toastrService.success(response.message);
+      this.router.navigate(['/']);
     }, error => {
       if (error.error.Errors.length > 0) {
         for (let i = 0; i < error.error.Errors.length; i++) {

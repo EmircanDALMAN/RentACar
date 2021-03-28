@@ -59,7 +59,6 @@
   </header>
 </div>
 <div class="header">
-
   <div class="navbar navbar-expand-lg">
     <div class="logo">
       <a href="/"> <img src="assets/images/logo.svg"> </a>
@@ -74,7 +73,9 @@
     </div>
     <div class="icons">
       <div *ngIf="!checkUserLogin()" class="login">
-        <a routerLink="/login"> <fa-icon [icon]="userIcon" class="fa-2x userIcon"> </fa-icon></a>
+        <a routerLink="/login">
+          <fa-icon [icon]="userIcon" class="fa-2x userIcon"></fa-icon>
+        </a>
       </div>
       <div *ngIf="checkUserLogin()" class="dropdown dropdownHeader">
         <button class="dropdownButton dropdown-toggle" type="button"
@@ -83,19 +84,19 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
           <li><a class="dropdown-item" routerLink="profile">Düzenle</a></li>
-          <li><a class="dropdown-item"  (click)="clearAllStorage()" routerLink="/">Çıkış Yap</a></li>
+          <li><a class="dropdown-item" (click)="clearAllStorage()" routerLink="/">Çıkış Yap</a></li>
         </ul>
       </div>
     </div>
     <div class="socialUser">
       <ul>
-        <li><a target="_blank" href="https://github.com/Kontorta16">
+        <li><a target="_blank" href="https://www.instagram.com/emircan.dalmn/">
           <fa-icon [icon]="instagramIcon" class="fa-2x instagramIcon"></fa-icon>
         </a></li>
-        <li><a target="_blank" href="https://www.instagram.com/emircan.dalmn/">
+        <li><a target="_blank" href="https://github.com/Kontorta16">
           <fa-icon [icon]="githubIcon" class="fa-2x githubIcon"></fa-icon>
         </a></li>
-        <li><a href="https://www.linkedin.com/in/kontorta/">
+        <li><a target="_blank" href="https://www.linkedin.com/in/kontorta/">
           <fa-icon class="fa-2x linkedinIcon" [icon]="linkedinIcon"></fa-icon>
         </a></li>
       </ul>

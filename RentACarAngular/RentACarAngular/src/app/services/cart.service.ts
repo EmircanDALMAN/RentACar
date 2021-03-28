@@ -23,7 +23,6 @@ export class CartService {
         this.toastrService.error('Arac Zaten Sepetinizde Mevcut');
       } else {
         cartItem.car = car;
-        cartItem.quantity = 1;
         CartItems.push(cartItem);
         this.toastrService.success(car.brandName + ' ' + car.description, 'Sepete Eklendi');
       }

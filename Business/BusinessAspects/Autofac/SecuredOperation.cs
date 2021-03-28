@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Business.Constants;
 using Castle.DynamicProxy;
 using Core.Extensions;
@@ -16,7 +17,7 @@ namespace Business.BusinessAspects.Autofac
 
         public SecuredOperation(string roles)
         {
-            _roles = roles.Split(',');//Array Çevirir
+            _roles = roles.Split(',');
             _httpContextAccessor = ServiceTool.ServiceProvider.GetService<IHttpContextAccessor>();
 
         }
@@ -24,12 +25,9 @@ namespace Business.BusinessAspects.Autofac
         protected override void OnBefore(IInvocation invocation)
         {
             var roleClaims = _httpContextAccessor.HttpContext.User.ClaimRoles();
-            foreach (var role in _roles)
+            if (_roles.Any(role => roleClaims.Contains(role)))
             {
-                if (roleClaims.Contains(role))
-                {
-                    return;
-                }
+                return;
             }
             throw new Exception(Messages.AuthorizationDenied);
         }

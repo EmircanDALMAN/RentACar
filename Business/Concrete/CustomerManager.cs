@@ -24,7 +24,7 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(CustomerValidator))]
         [CacheRemoveAspect("ICustomerService.Get")]
-        [SecuredOperation("Customer.Add")]
+        //[SecuredOperation("Customer.Add")]
         public IResult Add(Customer customer)
         {
             if (customer.CompanyName.Length <= 2)
@@ -43,7 +43,6 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CustomerDeleted);
         }
 
-        [CacheAspect]
         public IDataResult<List<Customer>> GetAll()
         {
             if (DateTime.Now.Hour == 00)
@@ -53,7 +52,6 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(), Messages.CustomerListed);
         }
 
-        [CacheAspect]
         [PerformanceAspect(5)]
         public IDataResult<Customer> GetById(int id)
         {

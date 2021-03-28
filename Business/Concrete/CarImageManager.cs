@@ -28,13 +28,11 @@ namespace Business.Concrete
             _carService = carService;
         }
 
-        [CacheAspect]
         public IDataResult<List<CarImage>> GetAll()
         {
             return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll());
         }
 
-        [CacheAspect]
         [PerformanceAspect(5)]
         public IDataResult<CarImage> Get(int id)
         {

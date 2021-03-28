@@ -9,7 +9,7 @@ import {RentalDetail} from '../../models/entityModels/RentalDetail';
 import {Rental} from '../../models/entityModels/rental';
 import {Car} from '../../models/entityModels/car';
 import {CartItem} from '../../models/entityModels/cartItem';
-import {faExclamation, faLiraSign} from '@fortawesome/free-solid-svg-icons';
+import {faCartPlus, faExclamation, faLiraSign} from '@fortawesome/free-solid-svg-icons';
 import {LocalStorageService} from '../../services/local-storage.service';
 
 @Component({
@@ -18,16 +18,21 @@ import {LocalStorageService} from '../../services/local-storage.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+  removeIcon = faExclamation;
+  priceIcon = faLiraSign;
+  cartIcon = faCartPlus;
+
   cartItems: CartItem[] = [];
   baseUrl = environment.baseUrl;
-  model = new NgbDate(new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate());
   now = new Date();
   rentalResponse: Rental[];
   date: string;
   totalPrice: number = 0;
   carDetailReturnDate: Date;
-  removeIcon = faExclamation;
-  priceIcon = faLiraSign;
+  minRentDate = new NgbDate(this.now.getFullYear(), this.now.getMonth(), this.now.getDate());
+  minRentalDate = new NgbDate(this.now.getFullYear(), this.now.getMonth(), this.now.getDate() + 1);
+  model = this.minRentalDate;
+  rentDate = this.minRentDate;
 
   constructor(private cartService: CartService, private rentalService: RentalService,
               private  toastrService: ToastrService, private router: Router,
@@ -36,8 +41,8 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCart();
-    if (this.cartService.list().length == 0) {
-      this.toastrService.info('Sepetiniz Boş Yönlendiriliyor...');
+    if (!this.checkCartLength()) {
+      this.toastrService.info('Sepetiniz Boş. Yönlendiriliyorsunuz...');
       this.router.navigate(['/']);
     } else {
       this.totalPrice = this.cartItems[this.cartItems.length - 1].car.dailyPrice;
@@ -45,6 +50,15 @@ export class CartComponent implements OnInit {
         if (response.data.length != 0) {
           this.rentalResponse = response.data;
           this.carDetailReturnDate = this.rentalResponse[this.rentalResponse.length - 1].returnDate;
+          var fullDate = this.carDetailReturnDate.toString().split('-', 3);
+          var year = parseInt(fullDate[0]);
+          var month = parseInt(fullDate[1]);
+          var day = parseInt(fullDate[2]);
+          this.minRentDate = new NgbDate(year, month, day + 1);
+          this.minRentalDate = new NgbDate(year, month, day + 2);
+          this.model = this.minRentalDate;
+          this.rentDate = this.minRentDate;
+          this.toastrService.info('Minimum Alış Tarihi Aracın Dönüş Tarihine Göre Hesaplanmıştır.');
         }
       });
     }
@@ -59,9 +73,10 @@ export class CartComponent implements OnInit {
       this.router.navigate(['/cart']);
     } else {
       let myRental: RentalDetail = {
+        rentDate: new Date(this.rentDate.year, this.rentDate.month - 1, this.rentDate.day + 1),
         returnDate: new Date(this.model.year, this.model.month - 1, this.model.day + 1),
         carId: this.cartItems[0].car.id,
-        customerId: parseInt(this.localStorageService.getItem('id'))
+        userId: parseInt(this.localStorageService.getItem('id')),
       };
       this.router.navigate(['/payment/', JSON.stringify(myRental)]);
       this.toastrService.info('Ödeme sayfasına yönlendiriliyorsunuz...', 'Ödeme İşlemleri');
@@ -69,40 +84,33 @@ export class CartComponent implements OnInit {
   }
 
   checkCarReturnDate(): boolean {
-    if (this.carDetailReturnDate != undefined) {
-      var fullDate = this.carDetailReturnDate.toString().split('-', 3);
-      var day = parseInt(fullDate[2]);
-      var month = parseInt(fullDate[1]);
-      var year = parseInt(fullDate[0]);
-      var date1 = new Date(year, month, day);
-      var date2 = new Date(this.model.year, this.model.month, this.model.day);
-      if (date1.getFullYear() > date2.getFullYear()
-        || date1.getFullYear() == date2.getFullYear() && date1.getMonth() > date2.getMonth()
-        || date1.getFullYear() == date2.getFullYear() && date1.getMonth() == date2.getMonth()
-        && date1.getDate() >= date2.getDate()) {
-        this.toastrService.error('Araç bu tarihte kiradadır!');
-        return false;
-      }
-    } else {
-      if (this.now.getFullYear() > this.model.year
-        || this.now.getFullYear() == this.model.year && this.now.getMonth() > this.model.month
-        || this.now.getFullYear() == this.model.year && this.now.getDate() > this.model.day) {
-        this.toastrService.error('Geçmişe Araç Alınamaz');
-        return false;
-      } else if (this.now.getDate() == this.model.day) {
-        this.toastrService.error('Bugün Teslim Edilmek Şartıyla Araç Alınamaz');
-        return false;
-      }
+    return !(!this.checkRentalDay()
+      || !this.checkDateDifference());
+  }
+
+  checkDateDifference(): boolean {
+    if (
+      this.rentDate.year > this.model.year
+      || this.rentDate.year == this.model.year && this.rentDate.month > this.model.month
+      || this.rentDate.year == this.model.year && this.rentDate.month == this.model.month
+      && this.rentDate.day > this.model.day) {
+      this.toastrService.error('Alış Tarihiniz Teslim Tarihinden Büyük Olamaz!');
+      return false;
     }
     return true;
   }
 
   calculatePrice() {
-    var date1 = new Date(this.now.getUTCFullYear(), this.now.getUTCMonth(), this.now.getUTCDate());
-    var date2 = new Date(this.model.year, this.model.month - 1, this.model.day);
-    var timeDifference = Math.abs(date2.getTime() - date1.getTime());
-    var dayDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
-    this.totalPrice = dayDifference * this.cartItems[this.cartItems.length - 1].car.dailyPrice;
+    if (this.checkDateDifference()) {
+      var rentDate = new Date(this.rentDate.year, this.rentDate.month - 1, this.rentDate.day);
+      var returnDate = new Date(this.model.year, this.model.month - 1, this.model.day);
+      var timeDifference = Math.abs(returnDate.getTime() - rentDate.getTime());
+      var dayDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+      this.totalPrice = dayDifference * this.cartItems[this.cartItems.length - 1].car.dailyPrice;
+    } else {
+      this.setTotalPriceValue();
+    }
+
   }
 
   removeFromCart(car: Car) {
@@ -111,5 +119,22 @@ export class CartComponent implements OnInit {
       this.toastrService.info('Anasayfa\'ya Yönlendiriliyor...');
       this.router.navigate(['/']);
     }
+  }
+
+  checkCartLength(): boolean {
+    return this.cartService.list().length != 0;
+  }
+
+  checkRentalDay(): boolean {
+    if (this.rentDate.day == this.model.day) {
+      this.toastrService.error
+      ('Bugün Teslim Edilmek Şartıyla Araç Alınamaz. Teslim Tarihini Kontrol Ediniz..');
+      return false;
+    }
+    return true;
+  }
+
+  setTotalPriceValue() {
+    this.totalPrice = this.cartItems[this.cartItems.length - 1].car.dailyPrice;
   }
 }
