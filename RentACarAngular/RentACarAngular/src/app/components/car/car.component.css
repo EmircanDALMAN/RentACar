@@ -17,7 +17,7 @@ section:nth-child(3){
 .cars .card{
   position: relative;
   height: 380px;
-  margin: 15px;
+  margin: 0px 15px 0px 15px;
   overflow: hidden;
 }
 .cars .card .imgBx,

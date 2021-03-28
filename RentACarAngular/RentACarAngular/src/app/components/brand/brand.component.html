@@ -1,22 +1,3 @@
-<!--<div *ngIf="dataLoaded==true && brands.length <= 0" class="alert alert-danger alert-dismissible" role="alert" id="myAlert">-->
-<!--  <button type="button" class="close">&times;</button>-->
-<!--  <strong>Başarısız</strong> Şuanda Marka Bulunamadı-->
-<!--</div>-->
-
-<!--<div *ngIf="error === 'HttpErrorResponse'" class="alert alert-danger alert-dismissible" role="alert">-->
-<!--  <strong>OOOPS!</strong> Bağlantı Hatası!-->
-<!--</div>-->
-
-<!--<div *ngIf="dataLoaded==false || brands.length <= 0 ">-->
-<!--  <app-loading></app-loading>-->
-<!--</div>-->
-<!--<div class="content" style="margin-top: 2em;">-->
-<!--  <ul class="snip1155">-->
-<!--    <li ><a routerLink="cars/">Tüm Araçlar</a><hr></li>-->
-<!--    <li *ngFor="let brand of brands"><a routerLink="cars/brand/{{brand.brandId}}">-->
-<!--                      {{brand.brandName}}</a><hr></li>-->
-<!--  </ul>-->
-<!--</div>-->
 
 <select
   (change)="setCurrentBrand()"
@@ -24,7 +5,7 @@
   class="form-select mb-1"
   aria-label="Default select example">
   <option [selected]="allBrandSelected()" [ngValue]="allBrand">
-    Tüm Araçları Getir
+    Markalara Göre Filtrele
   </option>
   <option *ngFor="let brand of brands" [ngValue]="brand">
     {{ brand.brandName }}

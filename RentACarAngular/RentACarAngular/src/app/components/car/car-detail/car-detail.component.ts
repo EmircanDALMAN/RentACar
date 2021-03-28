@@ -22,9 +22,12 @@ export class CarDetailComponent implements OnInit {
   faLira = faLiraSign;
   apiUrl = environment.baseUrl;
   rentalDetail: Rental[];
-  userFindeksForm: FormGroup;
   carFindeks: number;
-  userFindeks: number;
+  brandName:string;
+  modelYear:number;
+  description:string;
+  colorName:string;
+  price:number;
 
   constructor(private carService: CarService, private activatedRoute: ActivatedRoute,
               private cartService: CartService, private rentalService: RentalService,
@@ -39,33 +42,25 @@ export class CarDetailComponent implements OnInit {
         this.getCarDetail(params['carId']);
       }
     });
-    this.createUserFindeksForm();
-  }
-
-  createUserFindeksForm() {
-    this.userFindeksForm = this.formBuilder.group({
-      tcNo: ['', Validators.required],
-      dateYear: ['', Validators.required],
+    $('button').click(function(){
+      $('button').toggleClass('active');
+      $('.title').toggleClass('active');
+      $('nav').toggleClass('active');
     });
   }
 
   getCarDetail(carId: number) {
     this.carService.getCarDetail(carId).subscribe(response => {
       this.carDetails = response.data;
+      this.brandName = response.data[0].brandName;
+      this.modelYear = response.data[0].modelYear;
+      this.description = response.data[0].description;
+      this.price = response.data[0].dailyPrice;
+      this.colorName = response.data[0].colorName;
       this.carFindeks = parseInt(this.carDetails[0].findeksScore);
     });
   }
 
-  getUserFindeks() {
-    if (this.userFindeksForm.valid) {
-      let userFindeksModel = Object.assign({}, this.userFindeksForm.value);
-      this.userService.getUserFindeks(userFindeksModel).subscribe(response => {
-        this.localStorageService.setItem('userFindeks', response.data.userFindeks.toString());
-        this.userFindeks = parseInt(this.localStorageService.getItem('userFindeks'));
-        this.toastrService.info('Findeks Hesaplaması Başarılı. Findeks Puanınız: ' + this.userFindeks);
-      });
-    }
-  }
 
   checkUserFindeks(): boolean {
     var userFindeks = this.localStorageService.getItem('userFindeks');

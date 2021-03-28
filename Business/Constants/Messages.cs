@@ -61,5 +61,9 @@
 
         public static string AuthorizationDenied = "Yetkiniz yok";
         public static string CarRentalSuccess = "Araç Başarıyla Kiralandı";
+        public static string UserDateYearError = "Doğum Tarihi 4 Karakter Olmalıdır";
+        public static string UserIdentityError = "TC Kimlik Numarası 11 Hane Olmalıdır";
+        public static string UserDateYearNotEmpty = "Doğum Tarihi Alanı Boş Bırakılamaz";
+        public static string UserIdentityNotEmpty = "TC Kimlik Numarası Boş Bırakılamaz";
     }
 }

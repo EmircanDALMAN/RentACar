@@ -42,7 +42,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(RentalPaymentDto rentalPaymentDto)
+        public IActionResult Add([FromBody]RentalPaymentDto rentalPaymentDto)
         {
             var paymentResult = _paymentService.MakePayment(rentalPaymentDto.FakeCreditCardModel);
             if (!paymentResult.Success)

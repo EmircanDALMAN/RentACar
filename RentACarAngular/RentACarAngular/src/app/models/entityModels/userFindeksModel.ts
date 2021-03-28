@@ -1,5 +1,4 @@
 export interface UserFindeksModel {
-  tcNo: string;
-  dateYear: string;
-  userFindeks: number;
+  tcNo: number;
+  dateYear: number;
 }

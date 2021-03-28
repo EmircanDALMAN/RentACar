@@ -2,38 +2,47 @@
   font-family: 'Montserrat', sans-serif !important;
 }
 
-.navbar {
+.header{
   background-color: rgb(0, 0, 0);
+}
+.navbar-expand-lg {
   font-size: 1.2em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1400px;
 }
 
-.container {
-  width: auto;
+.containerUser {
+  width:60%;
 }
 .logo img {
-  width: 200px;
+  width: 220px;
   height: 90px;
   padding-top: 28px;
 }
-.menu ul li a {
+
+.menuUser ul li a {
   font-size: 0.9em;
   margin-left: 0.8em;
 }
-.menu {
+.menuUser {
   text-align: center;
   text-transform: uppercase;
 }
-.menu * {
+.menuUser * {
   box-sizing: border-box;
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
-.menu li {
+.menuUser ul {
+  padding-left: 30%;
+}
+.menuUser li {
   display: inline-block;
   list-style: outside none none;
   overflow: hidden;
 }
-.menu a {
+.menuUser a {
   padding: 0.3em 0;
   color: rgba(255, 255, 255, 0.5);
   position: relative;
@@ -42,14 +51,14 @@
   margin: 0;
   text-decoration: none;
 }
-.menu a:before,
-.menu a:after {
+.menuUser a:before,
+.menuUser a:after {
   position: absolute;
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
 
-.menu a:before {
+.menuUser a:before {
   bottom: 100%;
   display: block;
   height: 3px;
@@ -57,7 +66,7 @@
   content: "";
   background-color: #8E44AD;
 }
-.menu a:after {
+.menuUser a:after {
   padding: 0.3em 0;
   position: absolute;
   bottom: 100%;
@@ -67,41 +76,110 @@
   white-space: nowrap;
 }
 
-.menu li:hover a,
-.menu .current a {
+.menuUser li:hover a,
+.menuUser .current a {
   transform: translateY(100%);
 }
 
 .icons{
-  width: 250px;
+  height: 95px;
+  text-align: center;
+  margin-left: 40px;
+  margin-right: 30px;
+}
+
+.icons ul {
+  list-style: none;
+  padding-left: 0;
+}
+.dropdownButton{
+  background-color: black;
+  margin-top: 32px;
+  border: none;
+  font-size: 1em;
+  color: #ebebeb;
+  opacity: 0.7;
+}
+.dropdownButton:hover{
+  opacity:1;
+}
+.dropdownHeader ul{
+  background-color: white;
+  text-align: center;
+  width: 100%;
+}
+.dropdownHeader ul li{
+  color: black;
+  border-top: 3px solid black;
+}
+.dropdownHeader ul li a{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.dropdownHeader ul li:nth-child(1) a:hover{
+  background-color: #9F0DFD;
+}
+
+.dropdownHeader ul li:nth-child(2) a:hover{
+  background-color: #FD0D82;
+}
+.socialUser{
+  width: 200px;
   height: 90px;
 }
-.icons ul{
+.socialUser ul{
   list-style-type: none;
 }
+.login{
+  margin-top: 3px;
+}
 .userIcon{
-  padding-right: 0.3em;
+  color: #ebebeb;
 }
 .instagramIcon{
-  margin-right: 1em;
+  color: #ebebeb;
 }
 .githubIcon{
-  margin-right: 0.5em;
+  color: #ebebeb;
+  padding-right: 25px;
 }
-.userIcon{
-  margin-right: 1em;
+.linkedinIcon{
+  color: #ebebeb;
+  padding-right: 25px;
 }
 fa-icon{
   position:relative;
   float: right;
-  padding-top: 18px;
-  color: #ebebeb;
+  padding-top: 14px;
+  color: black;
 }
-
+fa-icon:hover{
+  color: blue;
+  animation: mouse-pointer 1s cubic-bezier(.36,.07,.57,.99) infinite;
+}
 html {
   box-sizing: border-box;
 }
-
+@keyframes mouse-pointer {
+  0% {
+    transform: scale(1.5);
+  }
+  20% {
+    transform: scale(1.5);
+  }
+  22.5% {
+    transform: scale(1.2);
+  }
+  32.5% {
+    transform: scale(1.2);
+  }
+  35% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -142,7 +220,6 @@ header, footer, nav, section, article, hgroup, figure {
 
 
 .hero {
-  background: url('https://hd.unsplash.com/photo-1454165804606-c3d57bc86b40');
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -172,10 +249,6 @@ header, footer, nav, section, article, hgroup, figure {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-/*
-Using this method because browsers can transition opacity very cheaply as opposed to using background: rgba
-https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
-*/
 #masthead:after {
   content: '';
   position: absolute;
@@ -260,9 +333,7 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   bottom: -6px;
 }
 
-/*
- * Boring
- */
+
 .hamburger--boring .hamburger-inner,
 .hamburger--boring .hamburger-inner::before,
 .hamburger--boring .hamburger-inner::after {
@@ -392,18 +463,6 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
   height: 32px;
 }
 
-#site-nav .social li svg {
-  display: block;
-  fill: #b4b9ba;
-  width: 100%;
-  height: 100%;
-  transition: fill 0.3s ease;
-}
-
-#site-nav .social li:hover svg {
-  fill: #686d6e;
-}
-
 #masthead.is-active ::-webkit-input-placeholder {
   color:    #b4b9ba;
 }
@@ -458,348 +517,3 @@ https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
     transform: translateY(0);
   }
 }
-
-.headerContainer2 {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1200px;
-}
-
-.headerContainer2:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.headerContainer2 {
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  max-width: 1200px;
-}
-
-
-.hero2 {
-  background: url('https://hd.unsplash.com/photo-1454165804606-c3d57bc86b40');
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-
-.hero2:after {
-  content: '';
-  background: rgba(0, 0, 64, 0.5);
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-.hero2 * {
-  position: relative;
-  z-index: 1;
-}
-
-#masthead2 {
-  padding: 2.5em 0;
-  position: relative;
-}
-
-#masthead2.is-active {
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
-}
-
-#masthead2:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-#masthead2.is-active:after {
-  opacity: 1;
-}
-
-.hamburger2{
-  background-color: transparent;
-  border: 0;
-  color: inherit;
-  cursor: pointer;
-  display: inline-block;
-  float: left;
-  font: inherit;
-  margin: 0.8125em 0 0;
-  overflow: visible;
-  outline: none;
-  padding: 0;
-  text-transform: none;
-  transition: opacity 0.15s;
-  -webkit-appearance: none;
-}
-
-.hamburger2:hover {
-  opacity: 0.7;
-}
-
-.hamburger-box2 {
-  width: 30px;
-  height: 24px;
-  display: inline-block;
-  position: relative;
-}
-
-.hamburger-inner2 {
-  display: block;
-  top: 50%;
-  margin-top: -2px;
-}
-
-.hamburger-inner2,
-.hamburger-inner2::before,
-.hamburger-inner2::after{
-  width: 30px;
-  height: 2px;
-  background-color: #fff;
-  border-radius: 4px;
-  position: absolute;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  transition-duration: 0.15s;
-  transition-timing-function: ease;
-}
-
-#masthead2.is-active .hamburger-inner2,
-#masthead2.is-active .hamburger-inner2::before,
-#masthead2.is-active .hamburger-inner2::after {
-  background-color: #000;
-}
-
-.hamburger-inner2::before,
-.hamburger-inner2::after {
-  content: "";
-  display: block;
-}
-
-.hamburger-inner2::before {
-  top: -6px;
-}
-
-.hamburger-inner2::after {
-  bottom: -6px;
-}
-
-.hamburger--boring2 .hamburger-inner2,
-.hamburger--boring2 .hamburger-inner2::before,
-.hamburger--boring2 .hamburger-inner2::after {
-  transition-property: none;
-}
-
-.hamburger--boring2.is-active .hamburger-inner2 {
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.hamburger--boring2.is-active .hamburger-inner2::before {
-  top: 0;
-  opacity: 0;
-}
-
-.hamburger--boring2.is-active .hamburger-inner2::after {
-  bottom: 0;
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-}
-
-.hamburger-label2 {
-  color: #fff;
-  display: inline-block;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  line-height: 1;
-  margin-left: 0.3125em;
-  text-transform: uppercase;
-}
-
-#masthead2.is-active .hamburger-label2 {
-  color: #000;
-}
-
-.hamburger-box2,
-.hamburger-label2 {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-#site-nav2 {
-  clear: both;
-  display: flex;
-  flex-direction: column;
-  height: 0;
-  overflow: hidden;
-  padding-top: 2.5em;
-}
-
-#site-nav2.is-active {
-  height: auto;
-  overflow: visible;
-}
-
-#site-nav2 .col {
-  padding-bottom: 2.5em;
-}
-
-@media screen and (min-width: 550px) {
-  #site-nav2 {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  #site-nav2 .col {
-    flex: 0 0 50%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  #site-nav2 .col {
-    flex: 0 0 33.333333333%;
-  }
-}
-
-@media screen and (min-width: 960px) {
-  #site-nav2 {
-    flex-wrap: nowrap;
-  }
-
-  #site-nav2 .col {
-    flex: 0 0 20%;
-  }
-
-  #site-nav2 .col:last-child {
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-
-#site-nav2 h4 {
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-#site-nav2 ul {
-  list-style-type: none;
-  margin-top: 1em;
-}
-
-#site-nav2 li {
-  margin-bottom: 0.3125em;
-}
-
-#site-nav2 li a {
-  color: #b4b9ba;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-#site-nav2 li a:hover,
-#site-nav2 li a:focus {
-  color: #686d6e;
-}
-
-#site-nav2 .social {
-  margin: 0;
-  overflow: hidden;
-}
-
-#site-nav2 .social li {
-  float: left;
-  margin: 0 0.3125em;
-  width: 32px;
-  height: 32px;
-}
-
-#site-nav2 .social li svg {
-  display: block;
-  fill: #b4b9ba;
-  width: 100%;
-  height: 100%;
-  transition: fill 0.3s ease;
-}
-
-#site-nav2 .social li:hover svg {
-  fill: #686d6e;
-}
-
-#masthead2.is-active {
-  color: #b4b9ba;
-}
-
-#masthead2.is-active {
-  border-color: #b4b9ba;
-}
-
-#masthead2.is-active ::-webkit-input-placeholder {
-  color:    #b4b9ba;
-}
-
-#masthead2.is-active :-moz-placeholder {
-  color:    #b4b9ba;
-  opacity:  1;
-}
-
-#masthead2.is-active ::-moz-placeholder {
-  color:    #b4b9ba;
-  opacity:  1;
-}
-
-#masthead2.is-active :-ms-input-placeholder {
-  color: #b4b9ba
-}
-
-#masthead2 .col {
-  opacity: 0;
-}
-
-#masthead2.is-active .col {
-  transform: translateY(40px);
-  transition: opacity 0.3s ease;
-  animation: fade-in-stagger 0.8s ease forwards;
-}
-
-#masthead2.is-active .col:nth-child(1) {
-  -webkit-animation-delay: 0;
-}
-
-#masthead2.is-active .col:nth-child(2) {
-  -webkit-animation-delay: 0.1s;
-}
-
-#masthead2.is-active .col:nth-child(3) {
-  -webkit-animation-delay: 0.2s;
-}
-
-#masthead2.is-active .col:nth-child(4) {
-  -webkit-animation-delay: 0.3s;
-}
-
-#masthead2.is-active .col:nth-child(5) {
-  -webkit-animation-delay: 0.4s;
-}
-
-@keyframes fade-in-stagger {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-
-
-

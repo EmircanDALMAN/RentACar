@@ -6,8 +6,7 @@ namespace Entities.DTOs
 {
     public class UserFindeksDto
     {
-        public string TcNo { get; set; }
-        public string DateYear { get; set; }
-        public int UserFindeks { get; set; }
+        public long TcNo { get; set; }
+        public int DateYear { get; set; }
     }
 }

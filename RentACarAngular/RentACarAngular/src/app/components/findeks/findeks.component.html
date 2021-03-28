@@ -1,0 +1,17 @@
+
+<Form [formGroup]="userFindeksForm">
+  <div class="mb-3">
+        <div class="form-group">
+          <label>TC Kimlik Numaranız</label>
+          <input type="number" formControlName="tcNo" placeholder="TC Kimlik Numaranız">
+    </div>
+  </div>
+  <div class="mb-3">
+    <div class="form-group">
+      <label>Yalnızca Doğum Yılınız</label>
+      <input type="number" formControlName="dateYear" placeholder="Yalnızca Doğum Yılınız">
+    </div>
+  </div>
+  <button  type="button" class="btn draw-border" [disabled]="!userFindeksForm.valid"
+           (click)="getUserFindeks()">Puanımı Hesapla</button>
+</Form>

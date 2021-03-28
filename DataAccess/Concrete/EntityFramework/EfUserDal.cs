@@ -10,14 +10,14 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfUserDal : EfEntityRepositoryBase<User, RentACarDbContext>, IUserDal
     {
-        public List<OperationClaim> GetClaims(User user)
+        public List<OperationClaim> GetClaims(int id)
         {
             using (var context = new RentACarDbContext())
             {
                 var result = from operationClaim in context.OperationsClaims
                     join userOperationClaim in context.UserOperationsClaims
                         on operationClaim.Id equals userOperationClaim.OperationClaimId
-                    where userOperationClaim.UserId == user.Id
+                    where userOperationClaim.UserId == id
                     select new OperationClaim 
                     { 
                         Id = operationClaim.Id, 

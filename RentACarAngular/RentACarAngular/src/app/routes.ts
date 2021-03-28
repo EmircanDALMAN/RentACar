@@ -22,7 +22,6 @@ import {BrandEditComponent} from './components/brand/brand-edit/brand-edit.compo
 import {LoginGuard} from './guards/login.guard';
 import {UserComponent} from './components/user/user.component';
 import {ModeratorGuard} from './guards/moderator.guard';
-import {AdminGuard} from './guards/admin.guard';
 
 export const appRoutes: Routes = [
   //Users
@@ -30,7 +29,7 @@ export const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'changepassword', component: ChangePasswordComponent},
   {path: 'customers', component: CustomerComponent},
-  {path: 'user/:id', component: UserComponent, canActivate: [LoginGuard]},
+  {path: 'profile', component: UserComponent, canActivate: [LoginGuard]},
 
   //Colors
   {path: 'colors', component: ColorComponent},

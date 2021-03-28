@@ -56,9 +56,9 @@ namespace Business.Concrete
             return new SuccessResult(Messages.UserUpdated);
         }
 
-        public IDataResult<List<OperationClaim>> GetClaims(User user)
+        public IDataResult<List<OperationClaim>> GetClaims(int id)
         {
-            return new SuccessDataResult<List<OperationClaim>>(_userDal.GetClaims(user));
+            return new SuccessDataResult<List<OperationClaim>>(_userDal.GetClaims(id));
         }
 
         public IDataResult<User> GetByMail(string email)
@@ -66,17 +66,14 @@ namespace Business.Concrete
             var user = _userDal.Get(u => u.Email == email);
             return new SuccessDataResult<User>(user);
         }
-
-        public IDataResult<UserFindeksDto> GetUserFindeks(UserFindeksDto userFindeksDto)
+        [ValidationAspect(typeof(UserFindeksValidator))]
+        public IDataResult<UserFindeksReturnDto> GetUserFindeks(UserFindeksDto userFindeksDto)
         {
             Random random = new Random();
-            UserFindeksDto userFindeks = new UserFindeksDto
+            return new SuccessDataResult<UserFindeksReturnDto>(new UserFindeksReturnDto
             {
-                TcNo = userFindeksDto.TcNo,
-                DateYear = userFindeksDto.DateYear,
-                UserFindeks = random.Next(1, 1900),
-            };
-            return new SuccessDataResult<UserFindeksDto>(userFindeks);
+                UserFindeks = random.Next(1,1900)
+            });
         }
 
     }

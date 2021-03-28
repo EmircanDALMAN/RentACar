@@ -63,7 +63,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(UserForUpdateDto userForUpdateDto)
+        public IActionResult Update([FromBody]UserForUpdateDto userForUpdateDto)
         {
             var result = _authService.Update(userForUpdateDto.User, userForUpdateDto.Password);
 
@@ -87,7 +87,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("getuserfindeks")]
-        public IActionResult GetUserFindeks(UserFindeksDto userFindeksDto)
+        public IActionResult GetUserFindeks([FromBody]UserFindeksDto userFindeksDto)
         {
             var result = _userService.GetUserFindeks(userFindeksDto);
             if (result.Success)
@@ -97,10 +97,10 @@ namespace WebAPI.Controllers
 
             return BadRequest(result);
         }
-        [HttpPost("getuserclaims")]
-        public IActionResult GetUserClaims(User user)
+        [HttpGet("getuserclaims")]
+        public IActionResult GetUserClaims(int id)
         {
-            var result = _userService.GetClaims(user);
+            var result = _userService.GetClaims(id);
             if (result.Success)
             {
                 return Ok(result);

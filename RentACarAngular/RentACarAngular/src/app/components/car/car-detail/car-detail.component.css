@@ -1,0 +1,294 @@
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #051321;
+  font-family: 'Montserrat', sans-serif;
+}
+.contact-area {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.contact {
+  position: relative;
+  max-width: 420px;
+  padding: 40px 20px;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: #00f3ff;
+  border-radius: 8px;
+}
+@media (min-width: 1024px) {
+  .contact {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+.contact main {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+.contact main section {
+  border-radius: 5px;
+  float: left;
+  width: 100%;
+}
+.contact main section .content {
+  float: left;
+  width: 100%;
+  padding: 20px 30px 50px 30px;
+  position: relative;
+  text-align: center;
+}
+@media (min-width: 414px) {
+  .contact main section .content {
+    text-align: left;
+  }
+}
+.contact main .title {
+  float: left;
+  width: 100%;
+  background-color: #000000;
+  max-height: 0px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  overflow: hidden;
+  -webkit-transition: all 0.55s;
+  -moz-transition: all 0.55s;
+  -o-transition: all 0.55s;
+  transition: all 0.55s;
+}
+.contact main .title.active {
+  max-height: 100px;
+  -webkit-transition: all 1.3s;
+  -moz-transition: all 1.3s;
+  -o-transition: all 1.3s;
+  transition: all 1.3s;
+}
+.contact main .title.active p {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  transition-delay: 0.2s;
+}
+.contact main .title p {
+  padding: 15px 30px;
+  color: #fff;
+  font-size: 16px;
+  display: inline-block;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+}
+.contact main button {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  background-color: #ffffff;
+  color: black;
+  border: 0;
+  width: 200px;
+  height: 48px;
+  text-align: center;
+  border-radius: 30px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: -24px;
+  margin-right: -100px;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  transition-delay: 0.1s;
+  outline: none;
+  overflow: hidden;
+  z-index: 10;
+  font-family: inherit;
+}
+.contact main button span {
+  opacity: 1;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  transition-delay: 0.4s;
+  display: block;
+  width: 200px;
+  float: left;
+  padding: 15px 0px;
+}
+.contact main button.active {
+  margin-right: 0;
+  right: 20px;
+  width: 65px;
+  height: 65px;
+  margin-bottom: -32.5px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 65px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+.contact main button.active span {
+  opacity: 0;
+  transition-delay: 0s;
+  width: 200px;
+}
+.contact nav {
+  float: left;
+  width: 100%;
+  overflow: hidden;
+  max-height: 0px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.contact nav.active {
+  max-height: 600px;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+.contact nav.active a {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  transition: all 0.7s;
+}
+.contact nav.active a:nth-of-type(1) {
+  transition-delay: 0.5s;
+}
+.contact nav.active a:nth-of-type(2) {
+  transition-delay: 0.7s;
+}
+.contact nav.active a:nth-of-type(3) {
+  transition-delay: 0.9s;
+}
+.contact nav a {
+  float: left;
+  width: 100%;
+  color: black;
+  margin-top: 18px;
+  background-color: #fff;
+  padding: 18px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0;
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+@media (min-width: 414px) {
+  .contact nav a {
+    padding: 18px 30px;
+  }
+}
+.contact nav a .content span {
+  font-size: 1.2em;
+  color: green;
+  display: block;
+  letter-spacing: 0.4px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  cursor: pointer;
+  --c: #000;
+  color: var(--c);
+  font-size: 16px;
+  border: 0.1em solid var(--c);
+  border-radius: 0.5em;
+  width: 100%;
+  height: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 3em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  margin-top: 1.2rem;
+}
+
+nav ul li span {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: var(--c);
+  transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  transition: 0.5s;
+  transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
+}
+
+nav ul li:hover {
+  color: black;
+}
+
+nav ul li:hover span {
+  transform: translateY(0) scale(2);
+}
+
+nav ul li span:nth-child(1) {
+  --n: 1;
+}
+
+nav ul li span:nth-child(2) {
+  --n: 2;
+}
+
+nav ul li span:nth-child(3) {
+  --n: 3;
+}
+
+nav ul li span:nth-child(4) {
+  --n: 4;
+}

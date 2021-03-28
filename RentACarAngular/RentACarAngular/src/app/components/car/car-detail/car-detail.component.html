@@ -1,39 +1,61 @@
 <ngb-carousel>
   <ng-template ngbSlide *ngFor="let car of carDetails">
     <div class="picsum-img-wrapper" style="max-width: 80%;">
-      <img class="d-block w-100" style="width: 900px; padding-left: 20%; height: 700px;" src="{{apiUrl}}{{car.imagePath}}">
+      <img class="d-block w-100" style="width: 900px; padding-left: 20%; height: 700px;"
+           src="{{apiUrl}}{{car.imagePath}}">
     </div>
   </ng-template>
 </ngb-carousel>
+<div class="contact-area">
+  <div class="contact">
+    <main>
+      <section>
+        <div class="content">
+          <button>
+            <span>Detayları Göster</span>
+          </button>
+        </div>
+        <div class="title"><p>{{brandName}}</p></div>
+      </section>
+    </main>
+    <nav>
+      <a class="modelYear">
+        <div class="content">
+          <h4>Model Yılı</h4>
+          <span>{{modelYear}}</span>
+        </div>
+      </a>
 
-<br>
-<Form [formGroup]="userFindeksForm">
-  <div class="mb-3">
-    <div class="form-group">
-      <label>Tc Kimlik Numaranız</label>
-      <input type="text" formControlName="tcNo">
-    </div>
-  </div>
-  <div class="mb-3">
-    <div class="form-group">
-      <label>Doğum Yılınız</label>
-      <input type="text" formControlName="dateYear">
-    </div>
-  </div>
-  <button (click)="getUserFindeks()">Puanımı Hesapla</button>
-</Form>
+      <a  class="colorName">
+        <div class="content">
+          <h4>Renk Adı</h4>
+          <span>{{colorName}}</span>
+        </div>
+      </a>
 
-<div class="card" *ngFor="let car of carDetails; let i = index">
-  <div class="card-body" *ngIf="i<1">
-    <h5 class="card-title" style="text-align: center">{{car.brandName}}</h5>
-    <hr>
-    <p class="card-text"><b>Marka:</b> {{car.brandName}}</p>
-    <p class="card-text"><b>Model Yılı:</b> {{car.modelYear}}</p>
-    <p class="card-text"><b>Açıklama:</b> {{car.description}}</p>
-    <p class="card-text"><b>Renk:</b>{{car.colorName}}</p>
-    <p class="card-text"><b>Fiyat:</b> {{car.dailyPrice}}
-      <fa-icon [icon]="faLira"></fa-icon>
-    </p>
-    <button  (click)="addCart(car)" class="btn btn-primary">Kirala</button>
+      <a class="dailyPrice">
+        <div class="content">
+          <h4>Günlük Fiyat</h4>
+          <span>{{price}}<fa-icon [icon]="faLira"></fa-icon></span>
+        </div>
+      </a>
+      <a class="description">
+        <div class="content">
+          <h4>Açıklama</h4>
+          <span>{{description}}</span>
+        </div>
+      </a>
+      <div>
+      </div>
+      <nav >
+        <ul *ngFor="let car of carDetails; let i = index">
+          <li *ngIf="i<1" (click)="addCart(car)">Hemen Şimdi Kirala
+            <span></span><span></span><span></span><span></span>
+          </li>
+        </ul>
+      </nav>
+    </nav>
   </div>
 </div>
+
+

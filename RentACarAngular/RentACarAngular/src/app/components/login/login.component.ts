@@ -46,13 +46,10 @@ export class LoginComponent implements OnInit {
       this.authService.login(loginModel).subscribe(response => {
           this.localStorageService.setItem('token', response.data.token);
           this.userService.getUser(loginModel.email).subscribe(response => {
-            this.localStorageService.setItem('fullName', response.data.firstName + response.data.lastName);
-            this.localStorageService.setItem('firstName', response.data.firstName);
-            this.localStorageService.setItem('lastName', response.data.lastName);
-            this.localStorageService.setItem('email', response.data.email);
+            this.localStorageService.setItem('fullName', response.data.firstName + ' '+ response.data.lastName);
             this.localStorageService.setItem('id', response.data.id.toString());
           });
-          this.toastrService.info(response.message);
+          this.toastrService.info("Giriş Başarılı. Yönlendiriliyorsunuz..");
           this.router.navigate(['/']);
         }, error => {
           this.toastrService.error(error.error);

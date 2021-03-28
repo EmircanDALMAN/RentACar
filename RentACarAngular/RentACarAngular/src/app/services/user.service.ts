@@ -8,6 +8,7 @@ import {User} from '../models/entityModels/user';
 import {ResponseModel} from '../models/responseModels/responseModel';
 import {ListResponseModel} from '../models/responseModels/listResponseModel';
 import {UserClaimsModel} from '../models/entityModels/userClaimsModel';
+import {UserFindeksResponseModel} from '../models/responseModels/userFindeksResponseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,9 @@ export class UserService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getUserFindeks(userFindeksModel: UserFindeksModel): Observable<SingleResponseModel<UserFindeksModel>> {
-    return this.httpClient.post<SingleResponseModel<UserFindeksModel>>(this.apiUrl + 'getuserfindeks', userFindeksModel);
+  getUserFindeks(userFindeksDto: UserFindeksModel): Observable<SingleResponseModel<UserFindeksResponseModel>> {
+    return this.httpClient.post<SingleResponseModel<UserFindeksResponseModel>>
+    (this.apiUrl + 'getuserfindeks', userFindeksDto);
   }
 
   getUser(email: string): Observable<SingleResponseModel<User>> {
@@ -28,22 +30,15 @@ export class UserService {
   }
 
   updateUser(user: User): Observable<ResponseModel> {
-    return this.httpClient.post<ResponseModel>(this.apiUrl + 'update',
-      {
-        user:
-          {
-            'id': user.id,
-            'firstName': user.firstName,
-            'lastName': user.lastName,
-            'email': user.email,
-            'status': user.status
-          },
-        password: user.password
-      }
-    );
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'update', {user: user, password: user.password});
+
+  }
+
+  getUserById(id: number): Observable<SingleResponseModel<User>> {
+    return this.httpClient.get<SingleResponseModel<User>>(this.apiUrl + 'id?id=' + id);
   }
 
   getUserClaims(id: number): Observable<ListResponseModel<UserClaimsModel>> {
-    return this.httpClient.post<ListResponseModel<UserClaimsModel>>(this.apiUrl + 'getuserclaims', {id: id});
+    return this.httpClient.get<ListResponseModel<UserClaimsModel>>(this.apiUrl + 'getuserclaims?id=' + id);
   }
 }

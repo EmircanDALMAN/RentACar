@@ -26,24 +26,7 @@ export class RentalService {
   }
 
   addRental(rental: RentalDetail, fakeCreditCard: FakeCreditCard): Observable<ResponseModel> {
-    //TODO request düzenlenecek
     return this.httpClient.post<ResponseModel>
-    (this.apiUrl + 'add',
-      {
-        rental:
-          {
-            'carId': rental.carId,
-            'customerId': rental.customerId,
-            'returnDate': rental.returnDate
-          },
-        fakeCreditCardModel:
-          {
-            'cardNumber': fakeCreditCard.cardNumber,
-            'cardHolderName': fakeCreditCard.cardHolderName,
-            'expirationYear': parseInt(fakeCreditCard.expirationYear.toString()),
-            'expirationMonth': parseInt(fakeCreditCard.expirationMonth.toString()),
-            'cvv': fakeCreditCard.cvv
-          }
-      });
+    (this.apiUrl + 'add', {rental: rental, fakeCreditCardModel: fakeCreditCard});
   }
 }

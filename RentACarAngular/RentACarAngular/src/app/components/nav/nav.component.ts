@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {faGithub, faInstagram} from '@fortawesome/free-brands-svg-icons';
+import {faGithub, faInstagram, faLinkedinIn} from '@fortawesome/free-brands-svg-icons';
 import {faUser} from '@fortawesome/free-regular-svg-icons';
 import {LocalStorageService} from '../../services/local-storage.service';
 import {UserService} from '../../services/user.service';
@@ -14,6 +14,7 @@ export class NavComponent implements OnInit {
 
   githubIcon = faGithub;
   instagramIcon = faInstagram;
+  linkedinIcon = faLinkedinIn;
   userIcon = faUser;
   fullName: string;
   id: string;
@@ -54,11 +55,11 @@ export class NavComponent implements OnInit {
   }
 
   getUserClaims() {
-    let id = parseInt(this.localStorageService.getItem('id'));
+    let id = this.localStorageService.getItem('id');
     if (id != null || id != undefined) {
-      this.userService.getUserClaims(id).subscribe(response => {
+      this.userService.getUserClaims(parseInt(id)).subscribe(response => {
         for (let index in response.data) {
-          this.localStorageService.setItem(response.data[index].name+ '-permission', response.data[index].name);
+          this.localStorageService.setItem(response.data[index].name + '-permission', response.data[index].name);
         }
       });
     }
@@ -72,7 +73,7 @@ export class NavComponent implements OnInit {
   checkUserLogin(): boolean {
     var user = this.localStorageService.getItem('fullName');
     var id = this.localStorageService.getItem('id');
-    if (user == null) {
+    if (id == null) {
       return false;
     } else {
       this.fullName = user;

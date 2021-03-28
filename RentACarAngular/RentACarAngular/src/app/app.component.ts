@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import {CarComponent} from "./components/car/car.component";
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +8,10 @@ import {CarComponent} from "./components/car/car.component";
 export class AppComponent {
   title = 'RentACarAngular';
   error = 'message';
+
+  checkUserFindeksScore():boolean {
+    var findeks = localStorage.getItem('userFindeks');
+    return findeks != null;
+
+  }
 }

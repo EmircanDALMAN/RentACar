@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="user" class="container">
   <div class="col-md-12">
     <div class="card">
       <div class="card-header"><h5 class="card-title">Bilgilerimi Güncelle</h5></div>
@@ -8,21 +8,28 @@
             <label for="email" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
               <input type="email" id="email" formControlName="email" class="form-control"
-                      placeholder="Email"/>
+                       placeholder="Email"/>
             </div>
           </div>
           <div class="mb-3 row">
             <label for="firstName" class="col-sm-2 col-form-label">Adınız</label>
             <div class="col-sm-10">
               <input type="text" id="firstName" formControlName="firstName" class="form-control"
-                     placeholder="Adınız"/>
+                             placeholder="Adınız"/>
             </div>
           </div>
           <div class="mb-3 row">
             <label for="lastName" class="col-sm-2 col-form-label">Soyadınız</label>
             <div class="col-sm-10">
               <input type="text" id="lastName" formControlName="lastName" class="form-control"
-                     placeholder="Soyadınız"/>
+                      placeholder="Soyadınız"/>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="password" class="col-sm-2 col-form-label">Şifreniz</label>
+            <div class="col-sm-10">
+              <input type="password" id="password" formControlName="password" class="form-control"
+                     placeholder="Şifreniz"/>
             </div>
           </div>
         </form>

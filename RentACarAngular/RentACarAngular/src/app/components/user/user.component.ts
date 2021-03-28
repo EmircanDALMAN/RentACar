@@ -4,6 +4,7 @@ import {UserService} from '../../services/user.service';
 import {ToastrService} from 'ngx-toastr';
 import {LocalStorageService} from '../../services/local-storage.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {User} from '../../models/entityModels/user';
 
 @Component({
   selector: 'app-user',
@@ -12,33 +13,31 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class UserComponent implements OnInit {
   userUpdateForm: FormGroup;
+  id:number;
+  user:User;
 
   constructor(private formBuilder: FormBuilder,
               private userService: UserService,
               private toastrService: ToastrService,
-              private localStorageService: LocalStorageService,
-              private activatedRoute: ActivatedRoute,
-              private router: Router) {
+              private localStorageService: LocalStorageService) {
   }
 
   ngOnInit(): void {
-    this.createUserUpdateForm();
-    this.activatedRoute.params.subscribe(params => {
-      if (parseInt(this.localStorageService.getItem('id')) != params['id']) {
-        this.toastrService.info('Bu Hesabı Düzenlemeye Yetkiniz Yoktur. Yönlendiriliyorsunuz..');
-        this.router.navigate(['/']);
-      }
-    });
+    this.id = parseInt(this.localStorageService.getItem('id'));
+    this.userService.getUserById(this.id).subscribe(response=>{
+      this.user = response.data;
+      this.createUserUpdateForm();
+    })
   }
 
   createUserUpdateForm() {
     this.userUpdateForm = this.formBuilder.group({
-      id: [parseInt(this.localStorageService.getItem('id'))],
-      email: ['', Validators.required],
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      status: [true],
-      password: ['1234']
+      id: [this.id],
+      email: [this.user.email, Validators.required],
+      firstName: [this.user.firstName, Validators.required],
+      lastName: [this.user.lastName, Validators.required],
+      status: [this.user.status],
+      password: [this.user.password,Validators.required]
     });
   }
 
