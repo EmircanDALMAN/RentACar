@@ -11,34 +11,34 @@
         <div class="col">
           <h4>Araba İşlemleri</h4>
           <ul>
-            <li><a routerLink="authorized/cars/add">Araç Ekleme</a></li>
-            <li><a routerLink="authorized/cars">Araç Güncelleme</a></li>
-            <li><a routerLink="authorized/cars">Araç Silme</a></li>
-            <li><a routerLink="authorized/cars">Araç Resmi Düzenleme</a></li>
+            <li><a routerLink="/authorized/cars/add">Araç Ekleme</a></li>
+            <li><a routerLink="/authorized/cars">Araç Güncelleme</a></li>
+            <li><a routerLink="/authorized/cars">Araç Silme</a></li>
+            <li><a routerLink="/authorized/cars">Araç Resmi Düzenleme</a></li>
           </ul>
         </div>
         <div class="col">
           <h4>Renk İşlemleri</h4>
           <ul>
-            <li><a routerLink="authorized/colors/add">Renk Ekleme</a></li>
-            <li><a routerLink="authorized/colors">Renk Güncelleme</a></li>
-            <li><a routerLink="authorized/colors">Renk Silme</a></li>
+            <li><a routerLink="/authorized/colors/add">Renk Ekleme</a></li>
+            <li><a routerLink="/authorized/colors">Renk Güncelleme</a></li>
+            <li><a routerLink="/authorized/colors">Renk Silme</a></li>
           </ul>
         </div>
         <div class="col">
           <h4>Marka İşlemleri</h4>
           <ul>
-            <li><a routerLink="authorized/brands/add">Marka Ekleme</a></li>
-            <li><a routerLink="authorized/brands">Marka Güncelleme</a></li>
-            <li><a routerLink="authorized/brands">Marka Silme</a></li>
+            <li><a routerLink="/authorized/brands/add">Marka Ekleme</a></li>
+            <li><a routerLink="/authorized/brands">Marka Güncelleme</a></li>
+            <li><a routerLink="/authorized/brands">Marka Silme</a></li>
           </ul>
         </div>
         <div class="col">
           <h4>Kullanıcı İşlemleri</h4>
           <ul>
-            <li><a routerLink="authorized/users/add">Kullanıcı Ekleme</a></li>
-            <li><a routerLink="authorized/users">Kullanıcı Güncelleme</a></li>
-            <li><a routerLink="authorized/users">Kullanıcı Silme</a></li>
+            <li><a routerLink="/authorized/users/add">Kullanıcı Ekleme</a></li>
+            <li><a routerLink="/authorized/users">Kullanıcı Güncelleme</a></li>
+            <li><a routerLink="/authorized/users">Kullanıcı Silme</a></li>
           </ul>
         </div>
         <ul class="social">
@@ -56,51 +56,53 @@
     </div>
   </header>
 </div>
-<div class="header">
-  <div class="navbar navbar-expand-lg">
-    <div class="logo">
-      <a href="/"> <img src="assets/images/logo.svg"> </a>
-    </div>
-    <div class="containerUser">
-      <div class="menuUser">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li><a routerLink="/" data-hover="ANASAYFA" class="nav-link">ANASAYFA</a></li>
-          <li><a routerLink="/brands" data-hover="MARKALAR" class="nav-link">MARKALAR</a></li>
+<div class="user-header">
+  <nav class="navbar navbar-expand-lg"
+       style="max-width: 1400px; margin-left: auto;margin-right: auto">
+    <div class="container-fluid">
+      <a routerLink="/"><img src="../../../assets/img/logo.svg"> </a>
+      <fa-icon [icon]="menuIcon" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+               aria-controls="navbarSupportedContent" aria-expanded="false"
+               class="navbar-toggler menuIcon fa-2x" aria-label="Toggle navigation"></fa-icon>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="snip1217 navbar-nav me-auto mb-lg-0">
+          <li><a class="nav-link hover" [routerLink]="['/']" data-hover="ANASAYFA">ANASAYFA</a></li>
+          <li>
+            <a *ngIf="!checkUserLogin()" [routerLink]="['/login']">
+              <fa-icon [icon]="userIcon" class="fa-2x userIcon"></fa-icon>
+            </a>
+          </li>
+          <li *ngIf="checkUserLogin()" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false"> {{fullName}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" [routerLink]="['/profile']">Düzenle</a></li>
+              <li><a class="dropdown-item" (click)="clearAllStorage()" routerLink="/">Çıkış Yap</a></li>
+            </ul>
+          </li>
+
         </ul>
+        <div class="socialUser">
+          <ul>
+            <li><a target="_blank" href="https://www.instagram.com/emircan.dalmn/">
+              <fa-icon [icon]="instagramIcon" class="fa-2x instagramIcon"></fa-icon>
+            </a></li>
+            <li><a target="_blank" href="https://github.com/Kontorta16">
+              <fa-icon [icon]="githubIcon" class="fa-2x githubIcon"></fa-icon>
+            </a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/in/kontorta/">
+              <fa-icon class="fa-2x linkedinIcon" [icon]="linkedinIcon"></fa-icon>
+            </a></li>
+            <li><a [routerLink]="['/cart']">
+              <fa-icon class="fa-2x cartIcon" [icon]="cartIcon"></fa-icon>
+            </a></li>
+          </ul>
+        </div>
+
       </div>
     </div>
-    <div class="icons">
-      <div *ngIf="!checkUserLogin()" class="login">
-        <a routerLink="/login">
-          <fa-icon [icon]="userIcon" class="fa-2x userIcon"></fa-icon>
-        </a>
-      </div>
-      <div *ngIf="checkUserLogin()" class="dropdown dropdownHeader">
-        <button class="dropdownButton dropdown-toggle" type="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-          {{fullName}}
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" routerLink="profile">Düzenle</a></li>
-          <li><a class="dropdown-item" (click)="clearAllStorage()" routerLink="/">Çıkış Yap</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="socialUser">
-      <ul>
-        <li><a target="_blank" href="https://www.instagram.com/emircan.dalmn/">
-          <fa-icon [icon]="instagramIcon" class="fa-2x instagramIcon"></fa-icon>
-        </a></li>
-        <li><a target="_blank" href="https://github.com/Kontorta16">
-          <fa-icon [icon]="githubIcon" class="fa-2x githubIcon"></fa-icon>
-        </a></li>
-        <li><a target="_blank" href="https://www.linkedin.com/in/kontorta/">
-          <fa-icon class="fa-2x linkedinIcon" [icon]="linkedinIcon"></fa-icon>
-        </a></li>
-        <li><a routerLink="/cart">
-          <fa-icon class="fa-2x cartIcon" [icon]="cartIcon"></fa-icon>
-        </a></li>
-      </ul>
-    </div>
-  </div>
+  </nav>
+
+
 </div>

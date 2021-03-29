@@ -1,100 +1,99 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-</head>
-<body>
-
-<div class="row">
-  <div class="col-75">
-    <div class="container">
-      <form [formGroup]="rentalForm" method="post">
+<div class="container">
+  <form [formGroup]="rentalForm">
+    <div class="row">
+      <div class="col-50">
+        <h3 style="padding-left: 25%; font-size: 1.6em;">Fatura Adresi Bilgileri</h3>
+        <label style="padding-top: 20px;" for="fname">
+          <fa-icon [icon]="userIcon"></fa-icon>
+          İsminiz</label>
+        <input type="text" id="fname" name="firstname" placeholder="Emircan Dalman">
+        <label for="email">
+          <fa-icon [icon]="mailIcon"></fa-icon>
+          Email</label>
+        <input type="text" id="email" name="email" placeholder="emircandalman28@gmail.com">
+        <label for="adr">
+          <fa-icon [icon]="addressIcon"></fa-icon>
+          Adres</label>
+        <input type="text" id="adr" name="address" placeholder="Kodlama.io">
+        <label for="city">
+          <fa-icon [icon]="cityIcon"></fa-icon>
+          Şehir</label>
+        <input type="text" id="city" name="city" placeholder="Şehir">
         <div class="row">
           <div class="col-50">
-            <h3 style="padding-left: 25%; font-size: 1.6em;">Fatura Adresi Bilgileri</h3>
-            <label style="padding-top: 20px;" for="fname"><fa-icon [icon]="userIcon"></fa-icon> İsminiz</label>
-            <input type="text" id="fname" name="firstname" placeholder="Emircan Dalman">
-            <label for="email"><fa-icon [icon]="mailIcon"></fa-icon> Email</label>
-            <input type="text" id="email" name="email" placeholder="emircandalman28@gmail.com">
-            <label for="adr"><fa-icon [icon]="addressIcon"></fa-icon> Adres</label>
-            <input type="text" id="adr" name="address" placeholder="Kodlama.io">
-            <label for="city"><fa-icon [icon]="cityIcon"></fa-icon> Şehir</label>
-            <input type="text" id="city" name="city" placeholder="Şehir">
-            <div class="row">
-              <div class="col-50">
-                <label for="state"> <fa-icon [icon]="streetIcon"></fa-icon> Sokak</label>
-                <input type="text" id="state" name="state" placeholder="Sokak">
-              </div>
-            </div>
+            <label for="state">
+              <fa-icon [icon]="streetIcon"></fa-icon>
+              Sokak</label>
+            <input type="text" id="state" name="state" placeholder="Sokak">
           </div>
-
-          <div class="col-50">
-            <h3 style="padding-left: 25%; font-size: 1.6em;">Kredi Kartı Bilgileri</h3>
-            <label style="padding-top: 20px;" for="fname">Kabul Edilen Kart Tipleri</label>
-            <div class="icon-container">
-              <fa-icon [icon]="masterCardIcon" style="color: red;" class="fa-2x"></fa-icon>
-            </div>
-            <label for="cname">Kart İsmi</label>
-            <input type="text" formControlName="cardHolderName"
-                   [(ngModel)]="fakeCreditCard.cardHolderName" id="cname"
-                   name="cardname" placeholder="Emircan Dalman">
-            <div  class="alert alert-danger"
-                  *ngIf="rentalForm.get('cardHolderName').hasError('required') &&
-                  rentalForm.get('cardHolderName').dirty">Kart Adı Zorunludur!</div>
-
-            <label for="ccnum">Kredi Kartı Numarası</label>
-            <input type="text" formControlName="cardNumber"
-                   [(ngModel)]="fakeCreditCard.cardNumber" id="ccnum"
-                   name="cardnumber" placeholder="1111222233334444">
-            <div  class="alert alert-danger"
-                  *ngIf="rentalForm.get('cardNumber').hasError('required') &&
-                  rentalForm.get('cardNumber').dirty">Kart Numarası Zorunludur</div>
-
-            <label for="expmonth">Ay</label>
-            <input type="text" formControlName="expirationMonth"
-                   [(ngModel)]="fakeCreditCard.expirationMonth" id="expmonth"
-                   name="expmonth" placeholder="5">
-            <div  class="alert alert-danger"
-                  *ngIf="rentalForm.get('expirationMonth').hasError('required') &&
-                  rentalForm.get('expirationMonth').dirty">Geçerlilik Ayı Boş Bırakılamaz</div>
-
-            <div class="row">
-              <div class="col-50">
-                <label for="expyear">Yıl</label>
-                <input type="text" formControlName="expirationYear"
-                       [(ngModel)]="fakeCreditCard.expirationYear" id="expyear"
-                       name="expyear" placeholder="2025">
-                <div  class="alert alert-danger"
-                      *ngIf="rentalForm.get('expirationYear').hasError('required') &&
-                  rentalForm.get('expirationYear').dirty">Geçerlilik Yılı Boş Bırakılamaz</div>
-
-
-              </div>
-              <div class="col-50">
-                <label for="cvv">Cv</label>
-                <input type="text" formControlName="cvv"
-                       [(ngModel)]="fakeCreditCard.cvv" id="cvv"
-                       name="cvv" placeholder="352">
-                <div  class="alert alert-danger"
-                      *ngIf="rentalForm.get('cvv').hasError('required') &&
-                  rentalForm.get('cvv').dirty">Cvv Boş Bırakılamaz</div>
-
-              </div>
-            </div>
-          </div>
-
         </div>
-        <label>
-          <input type="text" placeholder="Kredi Kart İsmi">
-          <input type="checkbox" id="saveCreditCard" checked="checked" name="sameadr">Kredi Kartı Bilgilerimi Kaydet
-        </label>
-        <button (click)="addRental(rental, fakeCreditCard)"
-                [disabled]="!rentalForm.valid" class="btn">Ödemeyi Tamamla</button>
-      </form>
+      </div>
+
+      <div class="col-50">
+        <h3 style="padding-left: 25%; font-size: 1.6em;">Kredi Kartı Bilgileri</h3>
+        <label style="padding-top: 20px;" for="fname">Kabul Edilen Kart Tipleri</label>
+        <div class="icon-container">
+          <fa-icon [icon]="masterCardIcon" style="color: red;" class="fa-2x"></fa-icon>
+        </div>
+        <label for="cname">Kart İsmi</label>
+        <input type="text" formControlName="cardHolderName"
+               [(ngModel)]="fakeCreditCard.cardHolderName" id="cname"
+               name="cardname" placeholder="Emircan Dalman">
+        <div class="alert alert-danger"
+             *ngIf="rentalForm.get('cardHolderName').hasError('required') &&
+                  rentalForm.get('cardHolderName').dirty">Kart Adı Zorunludur!
+        </div>
+
+        <label for="ccnum">Kredi Kartı Numarası</label>
+        <input type="text" formControlName="cardNumber"
+               [(ngModel)]="fakeCreditCard.cardNumber" id="ccnum"
+               name="cardnumber" placeholder="1111222233334444">
+        <div class="alert alert-danger"
+             *ngIf="rentalForm.get('cardNumber').hasError('required') &&
+                  rentalForm.get('cardNumber').dirty">Kart Numarası Zorunludur
+        </div>
+
+        <label for="expmonth">Ay</label>
+        <input type="text" formControlName="expirationMonth"
+               [(ngModel)]="fakeCreditCard.expirationMonth" id="expmonth"
+               name="expmonth" placeholder="5">
+        <div class="alert alert-danger"
+             *ngIf="rentalForm.get('expirationMonth').hasError('required') &&
+                  rentalForm.get('expirationMonth').dirty">Geçerlilik Ayı Boş Bırakılamaz
+        </div>
+
+        <div class="row">
+          <div class="col-50">
+            <label for="expyear">Yıl</label>
+            <input type="text" formControlName="expirationYear"
+                   [(ngModel)]="fakeCreditCard.expirationYear" id="expyear"
+                   name="expyear" placeholder="2025">
+            <div class="alert alert-danger"
+                 *ngIf="rentalForm.get('expirationYear').hasError('required') &&
+                  rentalForm.get('expirationYear').dirty">Geçerlilik Yılı Boş Bırakılamaz
+            </div>
+
+
+          </div>
+          <div class="col-50">
+            <label for="cvv">Cv</label>
+            <input type="text" formControlName="cvv"
+                   [(ngModel)]="fakeCreditCard.cvv" id="cvv"
+                   name="cvv" placeholder="352">
+            <div class="alert alert-danger"
+                 *ngIf="rentalForm.get('cvv').hasError('required') &&
+                  rentalForm.get('cvv').dirty">Cvv Boş Bırakılamaz
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+    <label>
+      <input type="text" placeholder="Kredi Kart İsmi">
+      <input type="checkbox" id="saveCreditCard" checked="checked" name="sameadr">Kredi Kartı Bilgilerimi Kaydet
+    </label>
+    <button (click)="addRental(rental, fakeCreditCard)"
+            [disabled]="!rentalForm.valid" class="btn">Ödemeyi Tamamla
+    </button>
+  </form>
 </div>
-</body>
-</html>

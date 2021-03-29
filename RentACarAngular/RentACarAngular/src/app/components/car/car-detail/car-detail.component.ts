@@ -82,7 +82,7 @@ export class CarDetailComponent implements OnInit {
       this.rentalService.getRentalByCar(car.id).subscribe(response => {
         this.rentalDetail = response.data;
         this.cartService.addToCart(car);
-        this.router.navigate(['/cart']);
+        this.router.navigate(['cart']);
       });
     }
   }

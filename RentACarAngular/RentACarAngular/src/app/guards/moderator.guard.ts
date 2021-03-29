@@ -17,7 +17,7 @@ export class ModeratorGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    if (this.localStorageService.getItem('moderator')) {
+    if (this.localStorageService.getItem('moderator-permission')) {
       return true;
     }
     this.toastrService.info('Bu İşlemi Yapmaya Yetkiniz Yok. Yönlendiriliyorsunuz..');

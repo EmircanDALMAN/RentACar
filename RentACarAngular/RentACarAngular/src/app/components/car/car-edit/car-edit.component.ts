@@ -7,6 +7,7 @@ import {Color} from '../../../models/entityModels/color';
 import {ToastrService} from 'ngx-toastr';
 import {BrandService} from '../../../services/brand.service';
 import {ColorService} from '../../../services/color.service';
+import {Car} from '../../../models/entityModels/car';
 
 @Component({
   selector: 'app-car-edit',
@@ -20,13 +21,15 @@ export class CarEditComponent implements OnInit {
   brands: Brand[] = [];
   colors: Color[] = [];
   carId: number;
+  car: Car;
 
   constructor(private formBuilder: FormBuilder,
               private carService: CarService,
               private toastrService: ToastrService,
               private brandService: BrandService,
               private colorService: ColorService,
-              private activatedRoute: ActivatedRoute
+              private activatedRoute: ActivatedRoute,
+              private router: Router
   ) {
   }
 
@@ -34,6 +37,7 @@ export class CarEditComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       if (params['id']) {
         this.carId = parseInt(params['id']);
+        this.getCarDetails(params['id']);
       }
     });
     this.createCarUpdateForm();
@@ -49,6 +53,12 @@ export class CarEditComponent implements OnInit {
       modelYear: ['', Validators.required],
       dailyPrice: ['', Validators.required],
       description: ['', Validators.required]
+    });
+  }
+
+  getCarDetails(id: number) {
+    this.carService.getCarDetail(id).subscribe(response => {
+      this.car = response.data[0];
     });
   }
 
@@ -69,6 +79,7 @@ export class CarEditComponent implements OnInit {
       let carModel = Object.assign({}, this.carUpdateForm.value);
       this.carService.updateCar(carModel).subscribe(response => {
         this.toastrService.success(response.message, 'Başarılı');
+        this.router.navigate(['/authorized']);
       }, error => {
         if (error.error.Errors.length > 0) {
           for (let i = 0; i < error.error.Errors.length; i++) {

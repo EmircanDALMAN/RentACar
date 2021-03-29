@@ -42,11 +42,23 @@ import {AuthInterceptor} from './interceptors/auth.interceptor';
 import {ErrorInterceptor} from './interceptors/error.interceptor';
 import { UserComponent } from './components/user/user.component';
 import { FindeksComponent } from './components/findeks/findeks.component';
+import { SharedComponent } from './components/shared/shared.component';
+import { AuthorizedComponent } from './components/authorized/authorized.component';
+import { StartComponent } from './components/start/start.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { OtherComponent } from './components/other/other.component';
+import { SidebarComponent } from './components/authorized/sidebar/sidebar.component';
+import { CarListComponent } from './components/car/car-list/car-list.component';
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, CarFilterPipe, LoginComponent, RegisterComponent, ContentComponent, BrandComponent, CarComponent,
-    ColorComponent, CustomerComponent, RentalComponent, LoadingComponent, ChangePasswordComponent, FooterComponent, HowWeWorkComponent, AboutComponent,
-    ContactComponent, CarEditComponent, CarDetailComponent, CartComponent, PaymentComponent, FilterComponent, CarAddComponent, BrandAddComponent, ColorAddComponent, ColorEditComponent, BrandEditComponent, UserComponent, FindeksComponent],
+  declarations: [AppComponent, NavComponent, CarFilterPipe, LoginComponent,
+    RegisterComponent, ContentComponent, BrandComponent, CarComponent,
+    ColorComponent, CustomerComponent, RentalComponent, LoadingComponent,
+    ChangePasswordComponent, FooterComponent, HowWeWorkComponent, AboutComponent,
+    ContactComponent, CarEditComponent, CarDetailComponent, CartComponent,
+    PaymentComponent, FilterComponent, CarAddComponent, BrandAddComponent, ColorAddComponent,
+    ColorEditComponent, BrandEditComponent, UserComponent, FindeksComponent, SharedComponent,
+    AuthorizedComponent, StartComponent, NotFoundComponent, OtherComponent, SidebarComponent, CarListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

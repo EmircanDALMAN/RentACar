@@ -9,9 +9,4 @@ export class AppComponent {
   title = 'RentACarAngular';
   error = 'message';
 
-  checkUserFindeksScore():boolean {
-    var findeks = localStorage.getItem('userFindeks');
-    return findeks != null;
-
-  }
 }

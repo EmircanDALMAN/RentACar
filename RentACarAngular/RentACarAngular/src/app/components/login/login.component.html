@@ -1,3 +1,4 @@
+<app-nav></app-nav>
 <body>
 <form [formGroup]="loginForm" class="login-form">
   <h2>Giriş</h2>
@@ -10,7 +11,7 @@
     <span data-placeholder="Şifre"></span>
   </div>
   <input (click)="login()" type="submit" class="logbtn" value="Giriş">
-  <div class="bottom-text"> Hesabın mı yok? <a routerLink="/register">Kayıt Ol</a></div>
+  <div class="bottom-text"> Hesabın mı yok? <a [routerLink]="['/register']">Kayıt Ol</a></div>
   <div class="changePassword"> Şifreni mi unuttun? <a routerLink="/changepassword">Değiştir</a></div>
 </form>
 </body>

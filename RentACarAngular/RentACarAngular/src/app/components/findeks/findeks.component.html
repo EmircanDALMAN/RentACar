@@ -1,17 +1,47 @@
-
-<Form [formGroup]="userFindeksForm">
-  <div class="mb-3">
-        <div class="form-group">
-          <label>TC Kimlik Numaranız</label>
-          <input type="number" formControlName="tcNo" placeholder="TC Kimlik Numaranız">
+<!--<Form [formGroup]="userFindeksForm">-->
+<!--  <div class="mb-3">-->
+<!--        <div class="form-group">-->
+<!--          <label>TC Kimlik Numaranız</label>-->
+<!--          <input type="number" formControlName="tcNo" placeholder="TC Kimlik Numaranız">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="mb-3">-->
+<!--    <div class="form-group">-->
+<!--      <label>Yalnızca Doğum Yılınız</label>-->
+<!--      <input type="number" formControlName="dateYear" placeholder="Yalnızca Doğum Yılınız">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <button  type="button" class="btn draw-border" [disabled]="!userFindeksForm.valid"-->
+<!--           (click)="getUserFindeks()">Puanımı Hesapla</button>-->
+<!--</Form>-->
+<form [formGroup]="userFindeksForm">
+  <div class="popup-container">
+    <label class="button" for="login-popup">FİNDEKS HESAPLA</label>
+    <input type="checkbox" id="login-popup">
+    <div class="popup">
+      <label for="login-popup"></label>
+      <div class="inner">
+        <div class="title">
+          <h6>FİNDEKS HESAPLA</h6>
+          <label for="login-popup">
+            <fa-icon class="fa-2x" style="color: #001dff" [icon]="closeIcon"></fa-icon>
+          </label>
+        </div>
+        <div class="content">
+          <ul>
+            <li>
+              <input type="number" formControlName="tcNo" placeholder="TC Kimlik Numaranız">
+            </li>
+            <li>
+              <input type="number" formControlName="dateYear" placeholder="Sadece Doğum Yılınız">
+            </li>
+            <li>
+              <button class="draw-border" (click)="getUserFindeks()">
+                <div class="text">HESAPLA</div> </button>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="mb-3">
-    <div class="form-group">
-      <label>Yalnızca Doğum Yılınız</label>
-      <input type="number" formControlName="dateYear" placeholder="Yalnızca Doğum Yılınız">
-    </div>
-  </div>
-  <button  type="button" class="btn draw-border" [disabled]="!userFindeksForm.valid"
-           (click)="getUserFindeks()">Puanımı Hesapla</button>
-</Form>
+</form>

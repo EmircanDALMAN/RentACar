@@ -14,6 +14,7 @@ body {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 0 -16px;
+  max-width: 100%;
 }
 
 .col-25 {

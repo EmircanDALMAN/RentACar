@@ -1,0 +1,48 @@
+<div class="page-wrapper chiller-theme toggled">
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-header">
+        <div class="user-info">
+          <span class="user-name">
+            <strong>{{fullName}}</strong>
+          </span>
+          <span class="user-role">Yetkili</span>
+        </div>
+      </div>
+      <div class="sidebar-menu">
+        <ul>
+          <li class="sidebar-dropdown">
+            <a routerLink="/authorized/cars">
+              <fa-icon [icon]="carIcon"></fa-icon>
+              ARAÇ İŞLEMLERİ
+            </a>
+          </li>
+          <li class="sidebar-dropdown">
+            <a routerLink="/authorized/users">
+              <fa-icon [icon]="userIcon"></fa-icon>
+              KULLANICI İŞLEMLERİ
+            </a>
+          </li>
+          <li class="sidebar-dropdown">
+            <a routerLink="/authorized/customers">
+              <fa-icon [icon]="customerIcon"></fa-icon>
+              MÜŞTERİ İŞLEMLERİ
+            </a>
+          </li>
+          <li>
+            <a routerLink="/authorized/colors">
+              <fa-icon [icon]="colorIcon"></fa-icon>
+              RENK İŞLEMLERİ
+            </a>
+          </li>
+          <li>
+            <a routerLink="/authorized/brands">
+              <fa-icon [icon]="brandIcon"></fa-icon>
+              MARKA İŞLEMLERİ
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

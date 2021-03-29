@@ -1,0 +1,35 @@
+<div *ngIf="dataLoaded && cars.length <= 0" class="alert alert-info" role="alert">
+  Maalesef Şuanda Araç Bulunamadı.
+</div>
+<div *ngIf="dataLoaded && cars.length >0" class="row">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Marka</th>
+      <th scope="col">Renk</th>
+      <th scope="col">Model Yılı</th>
+      <th scope="col">Günlük Fiyatı</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let car of cars">
+      <td>{{car.id}}</td>
+      <td>{{car.brandName}}</td>
+      <td>{{car.colorName}}</td>
+      <td>{{car.modelYear}}</td>
+      <td>{{car.dailyPrice}}</td>
+      <td style="width:30px;">
+        <button routerLink="/authorized/cars/update/{{car.id}}"
+                class="btn btn-outline-primary edit">DÜZENLE
+        </button>
+      </td>
+      <td style="width:30px;">
+        <button class="btn btn-outline-danger remove">SİL</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

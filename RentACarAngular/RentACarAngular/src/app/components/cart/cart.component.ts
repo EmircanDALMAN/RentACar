@@ -75,7 +75,7 @@ export class CartComponent implements OnInit {
         carId: this.cartItem.car.id,
         userId: parseInt(this.localStorageService.getItem('id')),
       };
-      this.router.navigate(['/payment/', JSON.stringify(myRental)]);
+      this.router.navigate(['other/payment/', JSON.stringify(myRental)]);
       this.toastrService.info('Ödeme sayfasına yönlendiriliyorsunuz...', 'Ödeme İşlemleri');
     }
   }
@@ -128,5 +128,4 @@ export class CartComponent implements OnInit {
   setTotalPriceValue() {
     this.totalPrice = this.cartItem.car.dailyPrice;
   }
-
 }

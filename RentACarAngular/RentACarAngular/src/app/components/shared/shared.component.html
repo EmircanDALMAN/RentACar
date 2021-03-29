@@ -1,0 +1,18 @@
+<app-nav></app-nav>
+<div class="container-fluid">
+  <div *ngIf="!checkUserFindeksScore()" style="text-align: center" class="alert alert-info" role="alert">
+    Findeks Puanı Hesaplamadan Araç Kiralanamaz.
+    Lütfen Araç Kiralamaya Gitmeden Önce Sol Taraftaki Menüden Findeks Puanınızı Hesaplayınız.
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <app-filter></app-filter>
+      <div class="findeks">
+        <app-findeks></app-findeks>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -3,7 +3,7 @@ import {faGithub, faInstagram, faLinkedinIn} from '@fortawesome/free-brands-svg-
 import {faUser} from '@fortawesome/free-regular-svg-icons';
 import {LocalStorageService} from '../../services/local-storage.service';
 import {UserService} from '../../services/user.service';
-import {faCartPlus} from '@fortawesome/free-solid-svg-icons';
+import {faCartPlus, faChevronCircleDown} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -18,6 +18,7 @@ export class NavComponent implements OnInit {
   linkedinIcon = faLinkedinIn;
   userIcon = faUser;
   cartIcon = faCartPlus;
+  menuIcon = faChevronCircleDown;
 
   fullName: string;
   id: string;
@@ -41,19 +42,10 @@ export class NavComponent implements OnInit {
         return false;
       });
     });
-    $(function() {
-      $('body').addClass('js');
-
-      var $hamburger2 = $('.hamburger2'),
-        $nav2 = $('#site-nav2'),
-        $masthead2 = $('#masthead2');
-
-      $hamburger2.click(function() {
-        $(this).toggleClass('is-active');
-        $nav2.toggleClass('is-active');
-        $masthead2.toggleClass('is-active');
-        return false;
-      });
+    let mainNav = document.getElementById('js-menu');
+    let navBarToggle = document.getElementById('js-navbar-toggle');
+    navBarToggle.addEventListener('click', function() {
+      mainNav.classList.toggle('active');
     });
   }
 

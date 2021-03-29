@@ -1,5 +1,5 @@
+<app-nav></app-nav>
 <body>
-
 <form [formGroup]="registerForm" class="login-form">
   <h2>Kayıt</h2>
   <div class="txtb">
@@ -23,7 +23,7 @@
 
   <input (click)="register()" type="submit" class="logbtn" value="Kayıt Ol">
 
-  <div class="bottom-text"> Hesabın var mı? <a routerLink="/login">Giriş</a></div>
+  <div class="bottom-text"> Hesabın var mı? <a [routerLink]="['/login']">Giriş</a></div>
 
 </form>
 </body>

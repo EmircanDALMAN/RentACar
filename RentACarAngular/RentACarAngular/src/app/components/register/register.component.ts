@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
       let registerModel = Object.assign({}, this.registerForm.value);
       this.authService.register(registerModel).subscribe(response => {
           this.toastrService.info(response.message);
-          this.router.navigate(['login']);
+          this.router.navigate(['other/login']);
         }, error => {
           this.toastrService.error(error.error);
         }
