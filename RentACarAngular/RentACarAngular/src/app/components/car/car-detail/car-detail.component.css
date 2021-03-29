@@ -4,13 +4,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background: #051321;
   font-family: 'Montserrat', sans-serif;
 }
+
 .contact-area {
   width: 100%;
-  height: 100vh;
+  height: 10vh;
   position: relative;
 }
 .contact {
@@ -19,9 +21,10 @@ body {
   padding: 40px 20px;
   overflow: hidden;
   margin: 0 auto;
-  background-color: #00f3ff;
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 8px;
 }
+
 @media (min-width: 1024px) {
   .contact {
     position: absolute;
@@ -34,16 +37,19 @@ body {
     transform: translate(-50%, -50%);
   }
 }
+
 .contact main {
   float: left;
   width: 100%;
   position: relative;
 }
+
 .contact main section {
   border-radius: 5px;
   float: left;
   width: 100%;
 }
+
 .contact main section .content {
   float: left;
   width: 100%;
@@ -51,15 +57,17 @@ body {
   position: relative;
   text-align: center;
 }
+
 @media (min-width: 414px) {
   .contact main section .content {
     text-align: left;
   }
 }
+
 .contact main .title {
   float: left;
   width: 100%;
-  background-color: #000000;
+  background-color: rgba(0,0,0,0.8);
   max-height: 0px;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
@@ -69,6 +77,7 @@ body {
   -o-transition: all 0.55s;
   transition: all 0.55s;
 }
+
 .contact main .title.active {
   max-height: 100px;
   -webkit-transition: all 1.3s;
@@ -76,6 +85,7 @@ body {
   -o-transition: all 1.3s;
   transition: all 1.3s;
 }
+
 .contact main .title.active p {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -84,10 +94,11 @@ body {
   transform: scale(1);
   transition-delay: 0.2s;
 }
+
 .contact main .title p {
   padding: 15px 30px;
-  color: #fff;
-  font-size: 16px;
+  color: #ebebeb;
+  font-size: 20px;
   display: inline-block;
   font-weight: 500;
   text-transform: uppercase;
@@ -102,6 +113,7 @@ body {
   -o-transform: scale(0);
   transform: scale(0);
 }
+
 .contact main button {
   position: absolute;
   bottom: 0;
@@ -128,6 +140,7 @@ body {
   z-index: 10;
   font-family: inherit;
 }
+
 .contact main button span {
   opacity: 1;
   -webkit-transition: opacity 0.2s;
@@ -139,6 +152,10 @@ body {
   width: 200px;
   float: left;
   padding: 15px 0px;
+}
+fa-icon{
+  color: #0CF66B;
+  padding-left: 5px;
 }
 .contact main button.active {
   margin-right: 0;
@@ -152,11 +169,13 @@ body {
   border-radius: 65px;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
+
 .contact main button.active span {
   opacity: 0;
   transition-delay: 0s;
   width: 200px;
 }
+
 .contact nav {
   float: left;
   width: 100%;
@@ -167,6 +186,7 @@ body {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
+
 .contact nav.active {
   max-height: 600px;
   -webkit-transition: all 1s;
@@ -174,6 +194,7 @@ body {
   -o-transition: all 1s;
   transition: all 1s;
 }
+
 .contact nav.active a {
   opacity: 1;
   -webkit-transform: translateY(0px);
@@ -186,15 +207,19 @@ body {
   -o-transition: all 0.7s;
   transition: all 0.7s;
 }
+
 .contact nav.active a:nth-of-type(1) {
   transition-delay: 0.5s;
 }
+
 .contact nav.active a:nth-of-type(2) {
   transition-delay: 0.7s;
 }
+
 .contact nav.active a:nth-of-type(3) {
   transition-delay: 0.9s;
 }
+
 .contact nav a {
   float: left;
   width: 100%;
@@ -216,14 +241,17 @@ body {
   -o-transform: translateY(-10px);
   transform: translateY(-10px);
 }
+
 @media (min-width: 414px) {
   .contact nav a {
     padding: 18px 30px;
   }
 }
+
 .contact nav a .content span {
-  font-size: 1.2em;
-  color: green;
+  font-size: 1.3em;
+  color: #000000;
+  padding-top: 10px;
   display: block;
   letter-spacing: 0.4px;
 }
@@ -236,7 +264,7 @@ nav ul {
 
 nav ul li {
   cursor: pointer;
-  --c: #000;
+  --c: #0CF66B;
   color: var(--c);
   font-size: 16px;
   border: 0.1em solid var(--c);

@@ -118,14 +118,14 @@
   padding-bottom: 15px;
 }
 .dropdownHeader ul li:nth-child(1) a:hover{
-  background-color: #9F0DFD;
+  background-color: #00ff48;
 }
 
 .dropdownHeader ul li:nth-child(2) a:hover{
-  background-color: #FD0D82;
+  background-color: #ff0000;
 }
 .socialUser{
-  width: 200px;
+  width: 300px;
   height: 90px;
 }
 .socialUser ul{
@@ -148,6 +148,10 @@
   color: #ebebeb;
   padding-right: 25px;
 }
+.cartIcon{
+  color: #ebebeb;
+  padding-right: 25px;
+}
 fa-icon{
   position:relative;
   float: right;
@@ -155,7 +159,7 @@ fa-icon{
   color: black;
 }
 fa-icon:hover{
-  color: blue;
+  color: #00ff48;
   animation: mouse-pointer 1s cubic-bezier(.36,.07,.57,.99) infinite;
 }
 html {
@@ -163,22 +167,16 @@ html {
 }
 @keyframes mouse-pointer {
   0% {
-    transform: scale(1.5);
+    transform: scale(1);
   }
   20% {
-    transform: scale(1.5);
-  }
-  22.5% {
-    transform: scale(1.2);
-  }
-  32.5% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   35% {
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
   100% {
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
 }
 *, *:before, *:after {
@@ -419,7 +417,7 @@ header, footer, nav, section, article, hgroup, figure {
   }
 
   #site-nav .col {
-    flex: 0 0 20%;
+    flex: 0 0 22%;
   }
 
   #site-nav .col:last-child {
@@ -455,7 +453,6 @@ header, footer, nav, section, article, hgroup, figure {
 
 #site-nav .social {
   margin: 0;
-  overflow: hidden;
 }
 
 #site-nav .social li {

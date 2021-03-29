@@ -3,6 +3,7 @@ import {faGithub, faInstagram, faLinkedinIn} from '@fortawesome/free-brands-svg-
 import {faUser} from '@fortawesome/free-regular-svg-icons';
 import {LocalStorageService} from '../../services/local-storage.service';
 import {UserService} from '../../services/user.service';
+import {faCartPlus} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -16,6 +17,8 @@ export class NavComponent implements OnInit {
   instagramIcon = faInstagram;
   linkedinIcon = faLinkedinIn;
   userIcon = faUser;
+  cartIcon = faCartPlus;
+
   fullName: string;
   id: string;
 
