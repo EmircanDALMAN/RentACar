@@ -9,7 +9,7 @@ import {Car} from '../../../models/entityModels/car';
 import {CartService} from '../../../services/cart.service';
 import {environment} from '../../../../environments/environment';
 import {UserService} from '../../../services/user.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder} from '@angular/forms';
 import {LocalStorageService} from '../../../services/local-storage.service';
 
 @Component({

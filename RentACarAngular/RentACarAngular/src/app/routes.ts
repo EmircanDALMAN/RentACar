@@ -22,6 +22,8 @@ import {RentalComponent} from './components/rental/rental.component';
 import {PaymentComponent} from './components/payment/payment.component';
 import {CartComponent} from './components/cart/cart.component';
 import {CarListComponent} from './components/car/car-list/car-list.component';
+import {CarImageAddComponent} from './components/car/car-image/car-image-add/car-image-add.component';
+import {CarImageEditComponent} from './components/car/car-image/car-image-edit/car-image-edit.component';
 
 export const appRoutes: Routes = [
   {
@@ -39,6 +41,8 @@ export const appRoutes: Routes = [
       {path: 'brands/update/:id', component: BrandEditComponent},
       {path: 'cars/add', component: CarAddComponent},
       {path: 'cars/update/:id', component: CarEditComponent},
+      {path: 'cars/image/add/:id', component: CarImageAddComponent},
+      {path: 'cars/image/delete/:id', component: CarImageEditComponent},
       {path: 'rentals', component: RentalComponent},
     ]
   },

@@ -75,7 +75,8 @@ export class CartComponent implements OnInit {
         carId: this.cartItem.car.id,
         userId: parseInt(this.localStorageService.getItem('id')),
       };
-      this.router.navigate(['other/payment/', JSON.stringify(myRental)]);
+      this.router.navigate
+      (['/payment/', JSON.stringify(myRental)]).then(() => window.location.reload());
       this.toastrService.info('Ödeme sayfasına yönlendiriliyorsunuz...', 'Ödeme İşlemleri');
     }
   }

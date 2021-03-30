@@ -51,7 +51,6 @@ namespace Business.Concrete
             });
         }
 
-       // [SecuredOperation("CarImage.Add")]
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Add(IFormFile file,CarImage carImage)
         {
@@ -75,7 +74,6 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarImageUpdated);
         }
 
-        [SecuredOperation("CarImage.Delete")]
         public IResult Delete(CarImage carImage)
         {
             var entity = _carImageDal.Get(ci => ci.Id == carImage.Id);

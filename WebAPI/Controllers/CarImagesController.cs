@@ -34,8 +34,8 @@ namespace WebAPI.Controllers
             return Ok(result);
         }
 
-        [HttpDelete]
-        public IActionResult Delete([FromForm] CarImage carImage)
+        [HttpPost("delete")]
+        public IActionResult Delete([FromBody] CarImage carImage)
         {
             var result = _carImageService.Delete(carImage);
             if (!result.Success) 

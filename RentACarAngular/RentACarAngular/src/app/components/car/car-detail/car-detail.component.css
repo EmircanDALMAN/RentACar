@@ -264,7 +264,7 @@ nav ul {
 
 nav ul li {
   cursor: pointer;
-  --c: #0CF66B;
+  --c: #00ffff;
   color: var(--c);
   font-size: 16px;
   border: 0.1em solid var(--c);

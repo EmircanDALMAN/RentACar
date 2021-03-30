@@ -40,11 +40,16 @@ export class CarService {
     return this.httpClient.get<ListResponseModel<Car>>(newPath);
   }
 
-  addCar(car: Car):Observable<ResponseModel> {
+  addCar(car: Car): Observable<ResponseModel> {
     return this.httpClient.post<ResponseModel>(this.apiUrl + 'cars/add', car);
   }
-  updateCar(car:Car):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl + 'cars/update',car);
+
+  updateCar(car: Car): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'cars/update', car);
+  }
+
+  removeCar(car: Car): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'cars/delete', car);
   }
 }
 

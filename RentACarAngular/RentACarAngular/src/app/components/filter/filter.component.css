@@ -1,7 +1,9 @@
 * {
   font-family: 'Montserrat', sans-serif !important;
 }
-
+.sidebar{
+  margin-left: 10%;
+}
 .list-group-item {
   background-color: rgba(0, 0, 0, 0.7);
   color: #ebebeb;

@@ -5,7 +5,6 @@
   <table class="table">
     <thead>
     <tr>
-      <th scope="col"></th>
       <th scope="col">Marka</th>
       <th scope="col">Renk</th>
       <th scope="col">Model Yılı</th>
@@ -16,7 +15,6 @@
     </thead>
     <tbody>
     <tr *ngFor="let car of cars">
-      <td>{{car.id}}</td>
       <td>{{car.brandName}}</td>
       <td>{{car.colorName}}</td>
       <td>{{car.modelYear}}</td>
@@ -27,9 +25,25 @@
         </button>
       </td>
       <td style="width:30px;">
-        <button class="btn btn-outline-danger remove">SİL</button>
+        <button class="btn btn-outline-danger remove"
+                data-bs-toggle="modal" data-bs-target="#exampleModal">SİL</button>
       </td>
     </tr>
     </tbody>
   </table>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <b class="modal-title" id="exampleModalLabel">Araç Silme</b>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Silmek İstediğinize Emin Misiniz?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="removeCar()">Sil</button>
+      </div>
+    </div>
+  </div>
 </div>

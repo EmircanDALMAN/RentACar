@@ -8,6 +8,8 @@ import {ToastrService} from 'ngx-toastr';
 import {BrandService} from '../../../services/brand.service';
 import {ColorService} from '../../../services/color.service';
 import {Car} from '../../../models/entityModels/car';
+import {environment} from '../../../../environments/environment';
+import {CarImageService} from '../../../services/car-image.service';
 
 @Component({
   selector: 'app-car-edit',
@@ -22,6 +24,8 @@ export class CarEditComponent implements OnInit {
   colors: Color[] = [];
   carId: number;
   car: Car;
+  cars: Car[] = [];
+  apiUrl = environment.baseUrl;
 
   constructor(private formBuilder: FormBuilder,
               private carService: CarService,
@@ -29,7 +33,8 @@ export class CarEditComponent implements OnInit {
               private brandService: BrandService,
               private colorService: ColorService,
               private activatedRoute: ActivatedRoute,
-              private router: Router
+              private router: Router,
+
   ) {
   }
 
@@ -52,15 +57,17 @@ export class CarEditComponent implements OnInit {
       colorId: ['', Validators.required],
       modelYear: ['', Validators.required],
       dailyPrice: ['', Validators.required],
-      description: ['', Validators.required]
+      description: ['', Validators.required],
     });
   }
 
   getCarDetails(id: number) {
     this.carService.getCarDetail(id).subscribe(response => {
       this.car = response.data[0];
+      this.cars = response.data;
     });
   }
+
 
   brandList() {
     this.brandService.getBrands().subscribe(response => {

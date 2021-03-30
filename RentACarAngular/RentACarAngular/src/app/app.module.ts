@@ -40,15 +40,19 @@ import {ColorEditComponent} from './components/color/color-edit/color-edit.compo
 import {BrandEditComponent} from './components/brand/brand-edit/brand-edit.component';
 import {AuthInterceptor} from './interceptors/auth.interceptor';
 import {ErrorInterceptor} from './interceptors/error.interceptor';
-import { UserComponent } from './components/user/user.component';
-import { FindeksComponent } from './components/findeks/findeks.component';
-import { SharedComponent } from './components/shared/shared.component';
-import { AuthorizedComponent } from './components/authorized/authorized.component';
-import { StartComponent } from './components/start/start.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { OtherComponent } from './components/other/other.component';
-import { SidebarComponent } from './components/authorized/sidebar/sidebar.component';
-import { CarListComponent } from './components/car/car-list/car-list.component';
+import {UserComponent} from './components/user/user.component';
+import {FindeksComponent} from './components/findeks/findeks.component';
+import {SharedComponent} from './components/shared/shared.component';
+import {AuthorizedComponent} from './components/authorized/authorized.component';
+import {StartComponent} from './components/start/start.component';
+import {NotFoundComponent} from './components/not-found/not-found.component';
+import {OtherComponent} from './components/other/other.component';
+import {SidebarComponent} from './components/authorized/sidebar/sidebar.component';
+import {CarListComponent} from './components/car/car-list/car-list.component';
+import {CommonModule} from '@angular/common';
+import { CarImageComponent } from './components/car/car-image/car-image.component';
+import { CarImageAddComponent } from './components/car/car-image/car-image-add/car-image-add.component';
+import { CarImageEditComponent } from './components/car/car-image/car-image-edit/car-image-edit.component';
 
 @NgModule({
   declarations: [AppComponent, NavComponent, CarFilterPipe, LoginComponent,
@@ -58,8 +62,13 @@ import { CarListComponent } from './components/car/car-list/car-list.component';
     ContactComponent, CarEditComponent, CarDetailComponent, CartComponent,
     PaymentComponent, FilterComponent, CarAddComponent, BrandAddComponent, ColorAddComponent,
     ColorEditComponent, BrandEditComponent, UserComponent, FindeksComponent, SharedComponent,
-    AuthorizedComponent, StartComponent, NotFoundComponent, OtherComponent, SidebarComponent, CarListComponent],
+    AuthorizedComponent, StartComponent, NotFoundComponent, OtherComponent, SidebarComponent,
+    CarListComponent,
+    CarImageComponent,
+    CarImageAddComponent,
+    CarImageEditComponent],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -71,7 +80,7 @@ import { CarListComponent } from './components/car/car-list/car-list.component';
     RouterModule.forRoot(appRoutes),
     NgbModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
