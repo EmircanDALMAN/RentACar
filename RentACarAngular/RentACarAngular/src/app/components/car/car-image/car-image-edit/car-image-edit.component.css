@@ -1,0 +1,33 @@
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+input {
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 1.1em;
+
+}
+input:hover {
+  border: 1px solid green;
+}
+.row {
+  width: 30%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.removeImage {
+  border: 1px solid red;
+  margin-top: 10px;
+  height: 50px;
+  font-size: 1.2em;
+}
+
+.removeImage:hover {
+  color: #ebebeb;
+  border: 2px solid red;
+  background-color: black;
+}

@@ -1,0 +1,37 @@
+<div class="mt-5"></div>
+<ngb-carousel>
+  <ng-template ngbSlide *ngFor="let car of cars">
+    <div class="picsum-img-wrapper" style="text-align: center">
+      <img class="d-block w-100" style="width: 800px;height: 700px;"
+           src="{{apiUrl}}{{car.imagePath}}">
+      <label class="imageId">Resim ID: <b>{{car.imageId}}</b></label>
+    </div>
+  </ng-template>
+</ngb-carousel>
+<form [formGroup]="imageUpdateForm">
+  <div class="row">
+    <input type="number" formControlName="imageId" placeholder="Resim Id"/>
+    <button style="margin-bottom: 60px;" class="btn btn-outline-danger removeImage"
+            data-bs-toggle="modal" data-bs-target="#exampleModal">Bu Resmi Sil
+    </button>
+  </div>
+</form>
+<div class="modal fade" id="exampleModal" tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <b class="modal-title" id="exampleModalLabel">Resim Silme</b>
+        <button type="button" class="btn btn-close"
+                data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Silmek İstediğinize Emin Misiniz?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                (click)="removeImage()">Sil
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
