@@ -25,14 +25,33 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(UserValidator))]
         [CacheRemoveAspect("IUserService.Get")]
-        //[SecuredOperation("User.Add")]
         public IResult Add(User user)
         {
             _userDal.Add(user);
             return new SuccessResult(Messages.UserAdded);
         }
 
-        [SecuredOperation("User.Delete")]
+        public IResult UpdateForAuthorized(UserUpdateForAuthorizedDto userUpdateForAuthorized)
+        {
+            var user = _userDal.Get(u => u.Id == userUpdateForAuthorized.Id);
+            if (user == null)
+            {
+                return new ErrorResult(Messages.UserNotFound);
+            }
+            var updatedUser = new User
+            {
+                Email = userUpdateForAuthorized.Email,
+                FirstName = userUpdateForAuthorized.FirstName,
+                Id = userUpdateForAuthorized.Id,
+                LastName = userUpdateForAuthorized.LastName,
+                PasswordHash = user.PasswordHash,
+                PasswordSalt = user.PasswordSalt,
+                Status = userUpdateForAuthorized.Status
+            };
+            _userDal.Update(updatedUser);
+            return new SuccessResult(Messages.UserUpdated);
+        }
+
         public IResult Delete(User user)
         {
             _userDal.Delete(user);
@@ -72,7 +91,7 @@ namespace Business.Concrete
             Random random = new Random();
             return new SuccessDataResult<UserFindeksReturnDto>(new UserFindeksReturnDto
             {
-                UserFindeks = random.Next(1,1900)
+                UserFindeks = random.Next(1, 1900)
             });
         }
 

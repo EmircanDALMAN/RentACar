@@ -9,6 +9,7 @@ namespace Business.Abstract
     {
         IResult Add(User user);
         IResult Update(User user);
+        IResult UpdateForAuthorized(UserUpdateForAuthorizedDto userUpdateForAuthorized);
         IResult Delete(User user);
         IDataResult<List<User>> GetAll();
         IDataResult<User> GetById(int userId);

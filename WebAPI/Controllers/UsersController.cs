@@ -73,6 +73,17 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+        [HttpPost("updateforauthorized")]
+        public IActionResult UpdateForAuthorized(UserUpdateForAuthorizedDto userUpdateForAuthorized)
+        {
+            var result = _userService.UpdateForAuthorized(userUpdateForAuthorized);
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
 
         [HttpGet("getuserbyemail")]
         public IActionResult GetUserByEmail(string email)
