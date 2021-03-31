@@ -10,38 +10,115 @@
         </div>
       </div>
       <div class="sidebar-menu">
-        <ul>
-          <li class="sidebar-dropdown">
-            <a routerLink="/authorized/cars">
-              <fa-icon [icon]="carIcon"></fa-icon>
-              ARAÇ İŞLEMLERİ
-            </a>
-          </li>
-          <li class="sidebar-dropdown">
-            <a routerLink="/authorized/users">
-              <fa-icon [icon]="userIcon"></fa-icon>
-              KULLANICI İŞLEMLERİ
-            </a>
-          </li>
-          <li class="sidebar-dropdown">
-            <a routerLink="/authorized/customers">
-              <fa-icon [icon]="customerIcon"></fa-icon>
-              MÜŞTERİ İŞLEMLERİ
-            </a>
-          </li>
-          <li>
-            <a routerLink="/authorized/colors">
-              <fa-icon [icon]="colorIcon"></fa-icon>
-              RENK İŞLEMLERİ
-            </a>
-          </li>
-          <li>
-            <a routerLink="/authorized/brands">
-              <fa-icon [icon]="brandIcon"></fa-icon>
-              MARKA İŞLEMLERİ
-            </a>
-          </li>
-        </ul>
+        <div class="dropdown">
+          <fa-icon [icon]="carIcon"></fa-icon><span>ARABA İŞLEMLERİ</span>
+          <div class="dropdown-content">
+            <ul>
+              <li class="sidebar-dropdown">
+                <a routerLink="/authorized/cars/add">Araba Ekle</a>
+              </li>
+              <li class="sidebar-dropdown">
+                <a routerLink="/authorized/cars/list">Araba Güncelle</a>
+              </li>
+              <li class="sidebar-dropdown">
+                <a routerLink="/authorized/cars/list">Araba Sil</a>
+              </li>
+              <li class="sidebar-dropdown">
+                <a routerLink="/authorized/cars/list">Araba Resmi Ekle</a>
+              </li>
+              <li class="sidebar-dropdown">
+                <a routerLink="/authorized/cars/list">Araba Resmi Sil</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sidebar-menu">
+          <div class="dropdown">
+            <fa-icon [icon]="brandIcon"></fa-icon><span>MARKA İŞLEMLERİ</span>
+            <div class="dropdown-content">
+              <ul>
+                <li class="sidebar-dropdown">
+                  <a routerLink="/authorized/brands/add">Marka Ekle</a>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a routerLink="/authorized/brands/list">Marka Güncelle</a>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a routerLink="/authorized/brands/list">Marka Sil</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar-menu">
+          <div class="dropdown">
+            <fa-icon [icon]="userIcon"></fa-icon> <span>KULLANICI İŞLEMLERİ</span>
+            <div class="dropdown-content">
+              <ul>
+                <li class="sidebar-dropdown">
+                  <a routerLink="/authorized/users/add">Kullanıcı Ekle</a>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a routerLink="/authorized/users/list">Kullanıcı Güncelle</a>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a routerLink="/authorized/users/list">Kullanıcı Sil</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar-menu">
+          <div class="dropdown">
+            <fa-icon [icon]="customerIcon"></fa-icon><span>MÜŞTERİ İŞLEMLERİ</span>
+            <div class="dropdown-content">
+              <ul>
+                <li class="sidebar-dropdown">
+                  <a routerLink="/authorized/customers/add">Müşteri Ekle</a>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a routerLink="/authorized/customers/list">Müşteri Güncelle</a>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a routerLink="/authorized/customers/list">Müşteri Sil</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar-menu">
+          <div class="dropdown">
+            <fa-icon [icon]="colorIcon"></fa-icon><span>RENK İŞLEMLERİ</span>
+            <div class="dropdown-content">
+              <ul>
+                <li class="sidebar-dropdown">
+                  <a routerLink="/authorized/colors/add">Renk Ekle</a>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a routerLink="/authorized/colors/list">Renk Güncelle</a>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a routerLink="/authorized/colors/list">Renk Sil</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar-menu">
+          <div class="dropdown">
+            <fa-icon [icon]="payIcon"></fa-icon> <span>KİRALAMA İŞLEMLERİ</span>
+            <div class="dropdown-content">
+              <ul>
+                <li class="sidebar-dropdown">
+                  <a routerLink="/authorized/rentals/">Kiralamalar</a>
+                </li>
+                <li class="sidebar-dropdown">
+                  <a routerLink="/authorized/rentals/add">Kiralama Güncelle</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </nav>

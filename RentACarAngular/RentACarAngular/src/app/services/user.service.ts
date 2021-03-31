@@ -20,18 +20,33 @@ export class UserService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getUserFindeks(userFindeksDto: UserFindeksModel): Observable<SingleResponseModel<UserFindeksResponseModel>> {
+  getUsers(): Observable<ListResponseModel<User>> {
+    return this.httpClient.get<ListResponseModel<User>>(this.apiUrl);
+  }
+
+  removeUser(user: User): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'delete', user);
+  }
+
+  getUserFindeks(userFindeksDto: UserFindeksModel):
+    Observable<SingleResponseModel<UserFindeksResponseModel>> {
     return this.httpClient.post<SingleResponseModel<UserFindeksResponseModel>>
     (this.apiUrl + 'getuserfindeks', userFindeksDto);
   }
 
   getUser(email: string): Observable<SingleResponseModel<User>> {
-    return this.httpClient.get<SingleResponseModel<User>>(this.apiUrl + 'getuserbyemail?email=' + email);
+    return this.httpClient.get<SingleResponseModel<User>>
+    (this.apiUrl + 'getuserbyemail?email=' + email);
   }
 
   updateUser(user: User): Observable<ResponseModel> {
-    return this.httpClient.post<ResponseModel>(this.apiUrl + 'update', {user: user, password: user.password});
+    return this.httpClient.post<ResponseModel>
+    (this.apiUrl + 'update', {user: user, password: user.password});
+  }
 
+  updateUserForAuthorized(user: User): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>
+    (this.apiUrl + 'updateforauthorized', user);
   }
 
   getUserById(id: number): Observable<SingleResponseModel<User>> {
@@ -39,6 +54,7 @@ export class UserService {
   }
 
   getUserClaims(id: number): Observable<ListResponseModel<UserClaimsModel>> {
-    return this.httpClient.get<ListResponseModel<UserClaimsModel>>(this.apiUrl + 'getuserclaims?id=' + id);
+    return this.httpClient.get<ListResponseModel<UserClaimsModel>>
+    (this.apiUrl + 'getuserclaims?id=' + id);
   }
 }

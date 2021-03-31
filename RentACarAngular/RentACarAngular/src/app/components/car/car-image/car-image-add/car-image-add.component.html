@@ -1,1 +1,28 @@
-<p>car-image-add works!</p>
+<div *ngIf="!carDetails" class="alert alert-info" role="alert">Şuanda Araç Resmi Bulunmuyor..</div>
+<div style="height: 40px; width: 100%;"></div>
+<ngb-carousel *ngIf="carDetails">
+  <ng-template ngbSlide *ngFor="let car of carDetails">
+    <div class="picsum-img-wrapper">
+      <img class="d-block w-100" style="width: 500px;height: 750px;"
+           src="{{apiUrl}}{{car.imagePath}}">
+    </div>
+  </ng-template>
+</ngb-carousel>
+<div class="alert alert-info" *ngIf="lastUploadedPhotoName">
+  En Son Upload Edilen Araç Adı --> {{lastUploadedPhotoName}}</div>
+<div class="container">
+  <form [formGroup]="imageAddForm" (ngSubmit)="addImage()">
+    <div class="form-group">
+      <input type="file" style="display:none;" id="fileName"
+             (change)="uploadFile($event)" accept=".png,.jpg,.jpeg">
+      <label class="custom-file-input" for="fileName">Fotoğraf Seçin</label>
+    </div>
+    <div class="form-group">
+      <button
+        class="btn btn-danger btn-block btn-lg">Resmi Ekle
+      </button>
+    </div>
+  </form>
+  <div style="margin-top: 100px; height: 100px; width: 100%"></div>
+
+</div>

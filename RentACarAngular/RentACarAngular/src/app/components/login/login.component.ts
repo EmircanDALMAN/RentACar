@@ -50,7 +50,10 @@ export class LoginComponent implements OnInit {
             this.localStorageService.setItem('id', response.data.id.toString());
           });
           this.toastrService.info('Giriş Başarılı. Yönlendiriliyorsunuz..');
-          this.router.navigate(['/']).then(() => window.location.reload());
+          this.router.navigate(['/']).then(() =>
+            setTimeout(function() {
+              window.location.reload();
+            }, 1200));
         }, error => {
           this.toastrService.error(error.error);
         }

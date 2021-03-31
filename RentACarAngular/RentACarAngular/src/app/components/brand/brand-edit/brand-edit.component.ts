@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
@@ -18,18 +18,19 @@ export class BrandEditComponent implements OnInit {
   constructor(private brandService: BrandService,
               private formBuilder: FormBuilder,
               private activatedRoute: ActivatedRoute,
-              private toastrService:ToastrService) {
+              private toastrService: ToastrService) {
   }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      if (params['id']) {
-        this.brandId = parseInt(params['id']);
-        this.getBrandById(params['id']);
+      if (params['brandId']) {
+        this.brandId = parseInt(params['brandId']);
+        this.getBrandById(params['brandId']);
       }
     });
     this.createBrandUpdateForm();
   }
+
   updateBrand() {
     if (this.brandUpdateForm.valid) {
       let brandModel = Object.assign({}, this.brandUpdateForm.value);
@@ -46,6 +47,7 @@ export class BrandEditComponent implements OnInit {
       this.toastrService.error('Form Bilgileriniz Eksik!', 'Hata');
     }
   }
+
   getBrandById(id: number) {
     this.brandService.getBrandById(id).subscribe(response => {
       this.brand = response.data;

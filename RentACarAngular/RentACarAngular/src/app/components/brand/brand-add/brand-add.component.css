@@ -1,0 +1,24 @@
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+.container{
+  margin-top: 30px;
+}
+.card-header{
+  text-align: center;
+  color: green;
+}
+.card-footer{
+  text-align: center;
+}
+.btn{
+  width: 30%;
+  height: 40px;
+  font-size: 1.1em;
+  letter-spacing: 0.1em;
+  border: 1px solid green;
+  color: black;
+}
+.btn:hover{
+  color: #ebebeb;
+}

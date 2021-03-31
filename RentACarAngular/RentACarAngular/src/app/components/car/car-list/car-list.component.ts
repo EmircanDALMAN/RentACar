@@ -12,6 +12,7 @@ export class CarListComponent implements OnInit {
 
   cars: Car[] = [];
   dataLoaded = false;
+  removedCar: Car;
 
   constructor(private carService: CarService,
               private toastrService: ToastrService) {
@@ -24,8 +25,12 @@ export class CarListComponent implements OnInit {
     });
   }
 
+  setSelectedCar(car: Car) {
+    this.removedCar = car;
+  }
+
   removeCar() {
-    this.carService.removeCar(this.cars[0]).subscribe(response => {
+    this.carService.removeCar(this.removedCar).subscribe(response => {
       this.toastrService.success(response.message);
       setTimeout(function() {
         window.location.reload();

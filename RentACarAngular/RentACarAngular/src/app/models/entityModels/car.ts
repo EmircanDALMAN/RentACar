@@ -5,7 +5,7 @@ export interface Car {
   modelYear: number;
   dailyPrice: number;
   description: string;
-  findeksScore: string;
+  findeksScore: number;
   imageId: number
   imagePath: string
   date: Date

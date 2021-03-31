@@ -1,7 +1,7 @@
 <div *ngIf="dataLoaded && cars.length <= 0" class="alert alert-info" role="alert">
   Maalesef Şuanda Araç Bulunamadı.
 </div>
-<div *ngIf="dataLoaded && cars.length >0" class="row">
+<div *ngIf="dataLoaded && cars.length >0" style="margin-top: 40px;" class="row">
   <table class="table">
     <thead>
     <tr>
@@ -9,6 +9,8 @@
       <th scope="col">Renk</th>
       <th scope="col">Model Yılı</th>
       <th scope="col">Günlük Fiyatı</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
       <th scope="col"></th>
       <th scope="col"></th>
     </tr>
@@ -25,8 +27,19 @@
         </button>
       </td>
       <td style="width:30px;">
+        <button class="btn btn-outline-danger remove" (click)="setSelectedCar(car)"
+                data-bs-toggle="modal" data-bs-target="#exampleModal">SİL
+        </button>
+      </td>
+      <td style="width:150px;">
+        <button routerLink="/authorized/cars/image/add/{{car.id}}"
+                class="btn btn-outline-primary edit">RESİM EKLE
+        </button>
+      </td>
+      <td style="width:140px;">
         <button class="btn btn-outline-danger remove"
-                data-bs-toggle="modal" data-bs-target="#exampleModal">SİL</button>
+                routerLink="/authorized/cars/image/delete/{{car.id}}">RESİM SİL
+        </button>
       </td>
     </tr>
     </tbody>
@@ -41,8 +54,10 @@
       </div>
       <div class="modal-body">Silmek İstediğinize Emin Misiniz?</div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="removeCar()">Sil</button>
+        <button type="button" class="btn btn-secondary"
+                data-bs-dismiss="modal">Vazgeç</button>
+        <button type="button" class="btn btn-primary"
+                data-bs-dismiss="modal" (click)="removeCar()">Sil</button>
       </div>
     </div>
   </div>

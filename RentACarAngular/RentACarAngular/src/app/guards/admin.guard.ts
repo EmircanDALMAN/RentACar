@@ -17,7 +17,7 @@ export class AdminGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    if (this.localStorageService.getItem('admin')) {
+    if (this.localStorageService.getItem('admin-permission')) {
       return true;
     }
     this.toastrService.info('Bu İşlemi Yapmaya Yetkiniz Yok. Yönlendiriliyorsunuz..');

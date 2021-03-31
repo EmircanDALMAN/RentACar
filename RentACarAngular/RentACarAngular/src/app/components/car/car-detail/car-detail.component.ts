@@ -57,7 +57,7 @@ export class CarDetailComponent implements OnInit {
       this.description = response.data[0].description;
       this.price = response.data[0].dailyPrice;
       this.colorName = response.data[0].colorName;
-      this.carFindeks = parseInt(this.carDetails[0].findeksScore);
+      this.carFindeks = this.carDetails[0].findeksScore;
     });
   }
 

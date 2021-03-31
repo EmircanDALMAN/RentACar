@@ -6,6 +6,7 @@ import {Brand} from '../models/entityModels/brand';
 import {environment} from '../../environments/environment';
 import {ResponseModel} from '../models/responseModels/responseModel';
 import {SingleResponseModel} from '../models/responseModels/singleResponseModel';
+import {Car} from '../models/entityModels/car';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,10 @@ export class BrandService {
 
   getBrands(): Observable<ListResponseModel<Brand>> {
     return this.httpClient.get<ListResponseModel<Brand>>(this.apiUrl);
+  }
+
+  removeBrand(brand: Brand): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'delete', brand);
   }
 
   addBrand(brand: Brand): Observable<ResponseModel> {

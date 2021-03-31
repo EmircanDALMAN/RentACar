@@ -6,8 +6,8 @@ import {BrandService} from '../../../services/brand.service';
 import {ColorService} from '../../../services/color.service';
 import {Brand} from '../../../models/entityModels/brand';
 import {Color} from '../../../models/entityModels/color';
-import {Router} from '@angular/router';
 import {Car} from '../../../models/entityModels/car';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-car-add',
@@ -17,23 +17,25 @@ import {Car} from '../../../models/entityModels/car';
 export class CarAddComponent implements OnInit {
 
   carAddForm: FormGroup;
-  car:Car;
+  car: Car;
   brands: Brand[] = [];
   colors: Color[] = [];
   cars: Car[] = [];
+  sendCarId: number;
 
   constructor(private formBuilder: FormBuilder,
               private carService: CarService,
               private toastrService: ToastrService,
               private brandService: BrandService,
-              private colorService: ColorService) {
+              private colorService: ColorService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
     this.createCarAddForm();
     this.brandList();
     this.colorList();
-    this.getCars()
+    this.getCars();
   }
 
   getCars() {
@@ -49,6 +51,7 @@ export class CarAddComponent implements OnInit {
       modelYear: ['', Validators.required],
       dailyPrice: ['', Validators.required],
       description: ['', Validators.required],
+      findeksScore: ['', Validators.required],
     });
   }
 
@@ -65,20 +68,20 @@ export class CarAddComponent implements OnInit {
   }
 
   addCar() {
-    if (this.carAddForm.valid) {
-      let carModel = Object.assign({}, this.carAddForm.value);
-      this.carService.addCar(carModel).subscribe(response => {
-        this.toastrService.success(response.message, 'Başarılı');
-        location.reload();
-      }, error => {
-        if (error.error.Errors.length > 0) {
-          for (let i = 0; i < error.error.Errors.length; i++) {
-            this.toastrService.error(error.error.Errors[i].ErrorMessage, 'Doğrulama hatası');
-          }
-        }
+    let carModel = Object.assign({}, this.carAddForm.value);
+    this.carService.addCar(carModel).subscribe(response => {
+      this.carService.getOnlyCars().subscribe(response => {
+        this.sendCarId = response.data[response.data.length - 1].id;
+        this.toastrService.success
+        ('Araç Eklendi. Resim Ekleme Sayfasına Gönderiliyorsunuz..');
+        this.router.navigate(['/authorized/cars/image/add/', this.sendCarId]);
       });
-    } else {
-      this.toastrService.error('Form Bilgileriniz Eksik!', 'Hata');
-    }
+    }, error => {
+      if (error.error.Errors.length > 0) {
+        for (let i = 0; i < error.error.Errors.length; i++) {
+          this.toastrService.error(error.error.Errors[i].ErrorMessage, 'Doğrulama hatası');
+        }
+      }
+    });
   }
 }

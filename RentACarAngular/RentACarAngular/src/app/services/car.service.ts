@@ -5,6 +5,7 @@ import {ListResponseModel} from '../models/responseModels/listResponseModel';
 import {Car} from '../models/entityModels/car';
 import {environment} from '../../environments/environment';
 import {ResponseModel} from '../models/responseModels/responseModel';
+import {OnlyCar} from '../models/entityModels/onlyCar';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,10 @@ export class CarService {
   getCars(): Observable<ListResponseModel<Car>> {
     let newPath = this.apiUrl + 'cars/details';
     return this.httpClient.get<ListResponseModel<Car>>(newPath);
+  }
+
+  getOnlyCars(): Observable<ListResponseModel<OnlyCar>> {
+    return this.httpClient.get<ListResponseModel<OnlyCar>>(this.apiUrl + 'cars/');
   }
 
   getCarsByBrand(brandId: number): Observable<ListResponseModel<Car>> {

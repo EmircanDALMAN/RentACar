@@ -24,6 +24,16 @@ import {CartComponent} from './components/cart/cart.component';
 import {CarListComponent} from './components/car/car-list/car-list.component';
 import {CarImageAddComponent} from './components/car/car-image/car-image-add/car-image-add.component';
 import {CarImageEditComponent} from './components/car/car-image/car-image-edit/car-image-edit.component';
+import {UserAddComponent} from './components/user/user-add/user-add.component';
+import {UserEditComponent} from './components/user/user-edit/user-edit.component';
+import {ColorListComponent} from './components/color/color-list/color-list.component';
+import {BrandListComponent} from './components/brand/brand-list/brand-list.component';
+import {UserListComponent} from './components/user/user-list/user-list.component';
+import {CustomerAddComponent} from './components/customer/customer-add/customer-add.component';
+import {CustomerEditComponent} from './components/customer/customer-edit/customer-edit.component';
+import {RentalEditComponent} from './components/rental/rental-edit/rental-edit.component';
+import {RentalListComponent} from './components/rental/rental-list/rental-list.component';
+import {CustomerListComponent} from './components/customer/customer-list/customer-list.component';
 
 export const appRoutes: Routes = [
   {
@@ -31,19 +41,35 @@ export const appRoutes: Routes = [
     component: AuthorizedComponent,
     canActivate: [ModeratorGuard],
     children: [
+
+      //Cars
       {path: '', component: CarListComponent},
       {path: 'cars', component: CarComponent},
-      {path: 'users', component: CarComponent},
-      {path: 'customers', component: CustomerComponent},
-      {path: 'colors/add', component: ColorAddComponent},
-      {path: 'colors/update/:id', component: ColorEditComponent},
-      {path: 'brands/add', component: BrandAddComponent},
-      {path: 'brands/update/:id', component: BrandEditComponent},
+      {path: 'cars/list', component: CarListComponent},
       {path: 'cars/add', component: CarAddComponent},
       {path: 'cars/update/:id', component: CarEditComponent},
       {path: 'cars/image/add/:id', component: CarImageAddComponent},
       {path: 'cars/image/delete/:id', component: CarImageEditComponent},
-      {path: 'rentals', component: RentalComponent},
+
+      //Colors && Brands
+      {path: 'colors/add', component: ColorAddComponent},
+      {path: 'colors/update/:id', component: ColorEditComponent},
+      {path: 'colors/list', component: ColorListComponent},
+      {path: 'brands/add', component: BrandAddComponent},
+      {path: 'brands/update/:brandId', component: BrandEditComponent},
+      {path: 'brands/list', component: BrandListComponent},
+
+      //Users && Customers
+      {path: 'users/add', component: UserAddComponent},
+      {path: 'users/update/:id', component: UserEditComponent},
+      {path: 'users/list', component: UserListComponent},
+      {path: 'customers/add', component: CustomerAddComponent},
+      {path: 'customers/update/:id', component: CustomerEditComponent},
+      {path: 'customers/list', component: CustomerListComponent},
+
+      //Rentals
+      {path: 'rentals/list', component: RentalListComponent},
+      {path: 'rentals/update/:id', component: RentalEditComponent},
     ]
   },
   {path: 'register', component: RegisterComponent},

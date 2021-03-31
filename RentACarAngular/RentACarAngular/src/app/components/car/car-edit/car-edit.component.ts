@@ -68,7 +68,6 @@ export class CarEditComponent implements OnInit {
     });
   }
 
-
   brandList() {
     this.brandService.getBrands().subscribe(response => {
       this.brands = response.data;

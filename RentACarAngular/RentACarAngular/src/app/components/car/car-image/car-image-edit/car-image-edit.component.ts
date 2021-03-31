@@ -40,7 +40,7 @@ export class CarImageEditComponent implements OnInit {
 
   createImageUpdateForm() {
     this.imageUpdateForm = this.formBuilder.group({
-      imageId: ['', Validators.required],
+      id: ['', Validators.required],
     });
   }
 
@@ -61,7 +61,7 @@ export class CarImageEditComponent implements OnInit {
   checkIfExistsImageId(): boolean {
     let model = Object.assign({}, this.imageUpdateForm.value);
     for (let i = 0; i <= this.imageIds.length; i++) {
-      if (model.imageId == this.imageIds[i]) {
+      if (model.id == this.imageIds[i]) {
         return true;
       }
     }
@@ -73,7 +73,7 @@ export class CarImageEditComponent implements OnInit {
       this.toastrService.error('Hatalı Id Girişi');
     } else {
       let model = Object.assign({}, this.imageUpdateForm.value);
-      this.carImageService.deleteImageById(model).subscribe(response => {
+      this.carImageService.deleteImageById(model.id).subscribe(response => {
         this.toastrService.info(response.message);
         setTimeout(function() {
           window.location.reload();

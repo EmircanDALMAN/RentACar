@@ -50,9 +50,19 @@ import {OtherComponent} from './components/other/other.component';
 import {SidebarComponent} from './components/authorized/sidebar/sidebar.component';
 import {CarListComponent} from './components/car/car-list/car-list.component';
 import {CommonModule} from '@angular/common';
-import { CarImageComponent } from './components/car/car-image/car-image.component';
-import { CarImageAddComponent } from './components/car/car-image/car-image-add/car-image-add.component';
-import { CarImageEditComponent } from './components/car/car-image/car-image-edit/car-image-edit.component';
+import {CarImageComponent} from './components/car/car-image/car-image.component';
+import {CarImageAddComponent} from './components/car/car-image/car-image-add/car-image-add.component';
+import {CarImageEditComponent} from './components/car/car-image/car-image-edit/car-image-edit.component';
+import {UserAddComponent} from './components/user/user-add/user-add.component';
+import {UserEditComponent} from './components/user/user-edit/user-edit.component';
+import {ColorListComponent} from './components/color/color-list/color-list.component';
+import {BrandListComponent} from './components/brand/brand-list/brand-list.component';
+import {UserListComponent} from './components/user/user-list/user-list.component';
+import {CustomerAddComponent} from './components/customer/customer-add/customer-add.component';
+import {CustomerEditComponent} from './components/customer/customer-edit/customer-edit.component';
+import {RentalEditComponent} from './components/rental/rental-edit/rental-edit.component';
+import {RentalListComponent} from './components/rental/rental-list/rental-list.component';
+import {CustomerListComponent} from './components/customer/customer-list/customer-list.component';
 
 @NgModule({
   declarations: [AppComponent, NavComponent, CarFilterPipe, LoginComponent,
@@ -66,7 +76,18 @@ import { CarImageEditComponent } from './components/car/car-image/car-image-edit
     CarListComponent,
     CarImageComponent,
     CarImageAddComponent,
-    CarImageEditComponent],
+    CarImageEditComponent,
+    UserAddComponent,
+    UserEditComponent,
+    ColorListComponent,
+    BrandListComponent,
+    UserListComponent,
+    CustomerAddComponent,
+    CustomerEditComponent,
+    RentalEditComponent,
+    RentalListComponent,
+    CustomerListComponent,
+  ],
   imports: [
     CommonModule,
     BrowserModule,

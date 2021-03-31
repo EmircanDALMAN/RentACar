@@ -1,4 +1,6 @@
-﻿namespace Entities.DTOs
+﻿using System;
+
+namespace Entities.DTOs
 {
     public class UserFindeksReturnDto
     {
