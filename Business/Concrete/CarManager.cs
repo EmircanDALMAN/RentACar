@@ -8,6 +8,7 @@ using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq.Expressions;
 using Business.BusinessAspects.Autofac;
 using Core.Aspects.Autofac.Caching;
@@ -19,10 +20,11 @@ namespace Business.Concrete
     public class CarManager : ICarService
     {
         private readonly ICarDal _carDal;
-
-        public CarManager(ICarDal carDal)
+        private readonly ICarImageDal _carImageDal;
+        public CarManager(ICarDal carDal, ICarImageDal carImageDal)
         {
             _carDal = carDal;
+            _carImageDal = carImageDal;
         }
 
         [ValidationAspect(typeof(CarValidator))]
@@ -30,6 +32,15 @@ namespace Business.Concrete
         public IResult Add(Car car)
         {
             _carDal.Add(car);
+            var cars = _carDal.GetAll();
+            var carId = cars[cars.Count - 1].Id;
+            var image = new CarImage
+            {
+                CarId = carId,
+                Date = DateTime.Now,
+                ImagePath = "/Images/default.jpg"
+            };
+            _carImageDal.Add(image);
             return new SuccessResult(Messages.CarAdded);
 
         }
@@ -46,19 +57,20 @@ namespace Business.Concrete
         }
         public IDataResult<List<CarDetailDto>> GetCarDetailsByBrandAndColor(int brandId, int colorId)
         {
-            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetailsByBrandAndColor(brandId, colorId));
+            return new SuccessDataResult<List<CarDetailDto>>
+                (_carDal.GetCarDetailsByBrandAndColor(brandId, colorId));
         }
 
         [PerformanceAspect(5)]
         public IDataResult<Car> GetById(int carId)
         {
-            
+
             return new SuccessDataResult<Car>(_carDal.Get(c => c.Id == carId));
         }
 
-        public IDataResult<List<CarDetailDto>> GetCarDetails(Expression<Func<Car,bool>> filter = null)
+        public IDataResult<List<CarDetailDto>> GetCarDetails(Expression<Func<Car, bool>> filter = null)
         {
-            return new SuccessDataResult<List<CarDetailDto>>( _carDal.GetCarDetails());
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails());
         }
 
         public IDataResult<List<CarDetailDto>> GetCarDetailsById(int carId)
@@ -66,20 +78,15 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetailById(carId));
         }
 
-        public IDataResult<List<CarDetailDto>> GetCarBrandAndColor(int brandId, int colorId)
-        {
-            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(p=>p.BrandId==brandId && p.ColorId==colorId));
-        }
-
         public IDataResult<List<CarDetailDto>> GetCarsDetailByBrandId(int brandId)
         {
-            
-            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(p=>p.BrandId==brandId));
+
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(p => p.BrandId == brandId));
         }
 
         public IDataResult<List<CarDetailDto>> GetCarsDetailByColorId(int colorId)
         {
-          
+
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(p => p.ColorId == colorId));
         }
 

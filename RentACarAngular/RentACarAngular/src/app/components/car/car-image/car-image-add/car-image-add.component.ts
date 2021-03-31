@@ -89,11 +89,7 @@ export class CarImageAddComponent implements OnInit {
           window.location.reload();
         }, 1200);
       }, error => {
-        if (error.error.Errors.length > 0) {
-          for (let i = 0; i < error.error.Errors.length; i++) {
-            this.toastrService.error(error.error.Errors[i].ErrorMessage, 'Doğrulama hatası');
-          }
-        }
+        this.toastrService.error(error.error.message);
       });
     } else {
       this.toastrService.error('Form Bilgileriniz Eksik');

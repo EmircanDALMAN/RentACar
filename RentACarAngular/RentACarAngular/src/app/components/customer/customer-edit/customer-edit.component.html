@@ -1,1 +1,21 @@
-<p>customer-edit works!</p>
+<div *ngIf="customer" class="container">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header"><h5 class="card-title">Müşteriyi Düzenle</h5></div>
+      <div class="card-body">
+        <form [formGroup]="customerUpdateForm">
+          <div class="mb-3 row">
+            <label for="companyName" class="col-sm-2 mt-4 col-form-label">Şirket Adı</label>
+            <div class="col-sm-10">
+              <label class="mb-1">Şuanki Şirket Adı <b>{{customer.companyName}}</b></label>
+              <input type="text" id="companyName" formControlName="companyName"
+                     class="form-control"  placeholder="Şirket Adı"/>
+            </div>
+          </div>
+        </form>
+      </div>
+      <button class="btn rounded" (click)="updateCustomer()">
+        <span class="text-green">Güncellemeyi Onayla</span></button>
+    </div>
+  </div>
+</div>

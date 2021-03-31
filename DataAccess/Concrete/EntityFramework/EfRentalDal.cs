@@ -24,6 +24,7 @@ namespace DataAccess.Concrete.EntityFramework
                              {
                                  CarId = id,
                                  BrandName = b.BrandName,
+                                 UserId = u.Id,
                                  Id = r.Id,
                                  RentDate = r.RentDate,
                                  ReturnDate = r.ReturnDate,
@@ -47,8 +48,9 @@ namespace DataAccess.Concrete.EntityFramework
                         Id = r.Id,
                         CarId = c.Id,
                         BrandName = b.BrandName,
+                        UserId = u.Id,
                         UserName = $"{u.FirstName} {u.LastName}",
-                        RentDate = DateTime.Now,
+                        RentDate = r.RentDate,
                         ReturnDate = r.ReturnDate
                     };
                 return result.ToList();

@@ -60,7 +60,6 @@ import {BrandListComponent} from './components/brand/brand-list/brand-list.compo
 import {UserListComponent} from './components/user/user-list/user-list.component';
 import {CustomerAddComponent} from './components/customer/customer-add/customer-add.component';
 import {CustomerEditComponent} from './components/customer/customer-edit/customer-edit.component';
-import {RentalEditComponent} from './components/rental/rental-edit/rental-edit.component';
 import {RentalListComponent} from './components/rental/rental-list/rental-list.component';
 import {CustomerListComponent} from './components/customer/customer-list/customer-list.component';
 
@@ -84,7 +83,6 @@ import {CustomerListComponent} from './components/customer/customer-list/custome
     UserListComponent,
     CustomerAddComponent,
     CustomerEditComponent,
-    RentalEditComponent,
     RentalListComponent,
     CustomerListComponent,
   ],

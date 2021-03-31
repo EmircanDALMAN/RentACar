@@ -46,6 +46,7 @@ namespace WebAPI.Controllers
 
         }
 
+
         [HttpGet("details")]
         public IActionResult GetCarDetails()
         {

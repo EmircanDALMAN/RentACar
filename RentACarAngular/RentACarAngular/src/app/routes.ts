@@ -18,7 +18,6 @@ import {BrandEditComponent} from './components/brand/brand-edit/brand-edit.compo
 import {CarAddComponent} from './components/car/car-add/car-add.component';
 import {CarEditComponent} from './components/car/car-edit/car-edit.component';
 import {CarDetailComponent} from './components/car/car-detail/car-detail.component';
-import {RentalComponent} from './components/rental/rental.component';
 import {PaymentComponent} from './components/payment/payment.component';
 import {CartComponent} from './components/cart/cart.component';
 import {CarListComponent} from './components/car/car-list/car-list.component';
@@ -31,7 +30,6 @@ import {BrandListComponent} from './components/brand/brand-list/brand-list.compo
 import {UserListComponent} from './components/user/user-list/user-list.component';
 import {CustomerAddComponent} from './components/customer/customer-add/customer-add.component';
 import {CustomerEditComponent} from './components/customer/customer-edit/customer-edit.component';
-import {RentalEditComponent} from './components/rental/rental-edit/rental-edit.component';
 import {RentalListComponent} from './components/rental/rental-list/rental-list.component';
 import {CustomerListComponent} from './components/customer/customer-list/customer-list.component';
 
@@ -64,12 +62,11 @@ export const appRoutes: Routes = [
       {path: 'users/update/:id', component: UserEditComponent},
       {path: 'users/list', component: UserListComponent},
       {path: 'customers/add', component: CustomerAddComponent},
-      {path: 'customers/update/:id', component: CustomerEditComponent},
+      {path: 'customers/update/:customer', component: CustomerEditComponent},
       {path: 'customers/list', component: CustomerListComponent},
 
       //Rentals
       {path: 'rentals/list', component: RentalListComponent},
-      {path: 'rentals/update/:id', component: RentalEditComponent},
     ]
   },
   {path: 'register', component: RegisterComponent},

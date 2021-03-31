@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ColorService} from '../../../services/color.service';
 import {Color} from '../../../models/entityModels/color';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 
 @Component({
@@ -19,7 +19,8 @@ export class ColorEditComponent implements OnInit {
   constructor(private colorService: ColorService,
               private formBuilder: FormBuilder,
               private activatedRoute: ActivatedRoute,
-              private toastrService:ToastrService) {
+              private toastrService: ToastrService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -31,11 +32,13 @@ export class ColorEditComponent implements OnInit {
     });
     this.createColorUpdateForm();
   }
+
   updateColor() {
     if (this.colorUpdateForm.valid) {
       let colorModel = Object.assign({}, this.colorUpdateForm.value);
       this.colorService.updateColor(colorModel).subscribe(response => {
         this.toastrService.success(response.message, 'Başarılı');
+        this.router.navigate(['/authorized/colors/list']);
       }, error => {
         if (error.error.Errors.length > 0) {
           for (let i = 0; i < error.error.Errors.length; i++) {
@@ -47,10 +50,10 @@ export class ColorEditComponent implements OnInit {
       this.toastrService.error('Form Bilgileriniz Eksik!', 'Hata');
     }
   }
+
   getColorById(id: number) {
     this.colorService.getColorById(id).subscribe(response => {
       this.color = response.data;
-      console.log(response);
     });
   }
 

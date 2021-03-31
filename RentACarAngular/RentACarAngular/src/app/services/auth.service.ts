@@ -4,7 +4,6 @@ import {LoginModel} from '../models/entityModels/loginModel';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {TokenModel} from '../models/responseModels/tokenModel';
-import {ResponseModel} from '../models/responseModels/responseModel';
 import {SingleResponseModel} from '../models/responseModels/singleResponseModel';
 import {RegisterModel} from '../models/entityModels/registerModel';
 

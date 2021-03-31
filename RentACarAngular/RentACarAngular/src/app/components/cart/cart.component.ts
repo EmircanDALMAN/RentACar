@@ -29,10 +29,10 @@ export class CartComponent implements OnInit {
   date: string;
   totalPrice: number = 0;
   carDetailReturnDate: Date;
-  minRentDate = new NgbDate(this.now.getFullYear(), this.now.getMonth(), this.now.getDate());
-  minRentalDate = new NgbDate(this.now.getFullYear(), this.now.getMonth(), this.now.getDate() + 1);
-  model = this.minRentalDate;
-  rentDate = this.minRentDate;
+  minRentDate: NgbDate;
+  minRentalDate: NgbDate;
+  model: NgbDate;
+  rentDate: NgbDate;
 
   constructor(private cartService: CartService, private rentalService: RentalService,
               private  toastrService: ToastrService, private router: Router,
@@ -48,20 +48,40 @@ export class CartComponent implements OnInit {
       this.cartItem = cartItem;
       this.totalPrice = this.cartItem.car.dailyPrice;
       this.rentalService.getRentalByCar(this.cartItem.car.id).subscribe(response => {
-        if (response.data.length != 0) {
-          this.rentalResponse = response.data;
-          this.carDetailReturnDate = this.rentalResponse[this.rentalResponse.length - 1].returnDate;
-          var fullDate = this.carDetailReturnDate.toString().split('-', 3);
-          var year = parseInt(fullDate[0]);
-          var month = parseInt(fullDate[1]);
-          var day = parseInt(fullDate[2]);
-          this.minRentDate = new NgbDate(year, month, day + 1);
-          this.minRentalDate = new NgbDate(year, month, day + 2);
-          this.model = this.minRentalDate;
-          this.rentDate = this.minRentDate;
-          this.toastrService.info('Minimum Alış Tarihi Aracın Dönüş Tarihine Göre Hesaplanmıştır.');
-        }
+        this.checkMinDateAndReturnDate(response);
       });
+    }
+  }
+
+  checkMinDateAndReturnDate(response: any) {
+    if (response.data.length != 0) {
+      this.rentalResponse = response.data;
+      this.carDetailReturnDate = this.rentalResponse[this.rentalResponse.length - 1].returnDate;
+      var fullDate = this.carDetailReturnDate.toString().split('-', 3);
+      var year = parseInt(fullDate[0]);
+      var month = parseInt(fullDate[1]);
+      var day = parseInt(fullDate[2]);
+      if (
+        year > this.now.getFullYear()
+        || year == this.now.getFullYear() && month > this.now.getMonth()
+        || year == this.now.getFullYear() && month == this.now.getMonth()
+        && day > this.now.getDate()) {
+        this.minRentDate = new NgbDate(year, month, day + 1);
+        this.minRentalDate = new NgbDate(year, month, day + 2);
+        this.toastrService.info('Minimum Alış Tarihi Aracın Dönüş Tarihine Göre Hesaplanmıştır.');
+      } else {
+        this.minRentDate = new NgbDate(this.now.getFullYear(),
+          this.now.getMonth() + 1, this.now.getDate());
+        this.minRentalDate = new NgbDate(this.now.getFullYear(),
+          this.now.getMonth() + 1, this.now.getDate());
+      }
+      this.model = this.minRentalDate;
+      this.rentDate = this.minRentDate;
+    } else {
+      this.minRentDate = new NgbDate(this.now.getFullYear(), this.now.getMonth() + 1, this.now.getDate());
+      this.minRentalDate = new NgbDate(this.now.getFullYear(), this.now.getMonth() + 1, this.now.getDate());
+      this.model = this.minRentalDate;
+      this.rentDate = this.minRentDate;
     }
   }
 
@@ -118,9 +138,9 @@ export class CartComponent implements OnInit {
   }
 
   checkRentalDay(): boolean {
-    if (this.rentDate.day == this.model.day) {
-      this.toastrService.error
-      ('Bugün Teslim Edilmek Şartıyla Araç Alınamaz. Teslim Tarihini Kontrol Ediniz..');
+    if (this.rentDate.year == this.model.year && this.rentDate.month == this.model.month
+      && this.rentDate.day == this.model.day) {
+      this.toastrService.error('Alış Tarihi ve Teslim Tarihi Eşit Olamaz');
       return false;
     }
     return true;

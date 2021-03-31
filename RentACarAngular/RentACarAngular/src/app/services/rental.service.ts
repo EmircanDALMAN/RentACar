@@ -22,7 +22,15 @@ export class RentalService {
   }
 
   getRentalByCar(id: number) {
-    return this.httpClient.get<ListResponseModel<Rental>> (this.apiUrl + 'detailsbycar?id=' + id);
+    return this.httpClient.get<ListResponseModel<Rental>>(this.apiUrl + 'detailsbycar?id=' + id);
+  }
+
+  removeRental(rental: Rental) {
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'delete', rental);
+  }
+
+  updateRental(rental: Rental) {
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'update', rental);
   }
 
   addRental(rental: RentalDetail, fakeCreditCard: FakeCreditCard): Observable<ResponseModel> {

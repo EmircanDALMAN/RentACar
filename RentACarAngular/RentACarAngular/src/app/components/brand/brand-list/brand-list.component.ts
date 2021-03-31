@@ -39,7 +39,7 @@ export class BrandListComponent implements OnInit {
     }, error => {
       if (error.error.StatusCode == '500') {
         this.toastrService.error
-        ('Bu Renk Başka Araçlar Tarafından Kullanılıyor.','Silinemez!');
+        ('Bu Marka Başka Araçlar Tarafından Kullanılıyor.','Silinemez!');
       }
     });
   }

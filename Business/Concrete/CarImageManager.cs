@@ -21,11 +21,9 @@ namespace Business.Concrete
     public class CarImageManager : ICarImageService
     {
         private readonly ICarImageDal _carImageDal;
-        private ICarService _carService;
-        public CarImageManager(ICarImageDal carImageDal, ICarService carService)
+        public CarImageManager(ICarImageDal carImageDal)
         {
             _carImageDal = carImageDal;
-            _carService = carService;
         }
 
         public IDataResult<List<CarImage>> GetAll()
@@ -52,13 +50,20 @@ namespace Business.Concrete
         }
 
         [ValidationAspect(typeof(CarImageValidator))]
-        public IResult Add(IFormFile file,CarImage carImage)
+        public IResult Add(IFormFile file, CarImage carImage)
         {
             var result = BusinessRules.Run(CheckCarImagesCount(carImage.CarId));
             if (result != null) return result;
-            carImage.ImagePath = FileHelper.SaveImageFile("Images",file);
+            carImage.ImagePath = FileHelper.SaveImageFile("Images", file);
             carImage.Date = DateTime.Now;
             _carImageDal.Add(carImage);
+            var deletedImageCar = _carImageDal.Get(
+                ci => ci.CarId == carImage.CarId
+                      && ci.ImagePath.Contains("/Images/default.jpg"));
+            if (deletedImageCar != null)
+            {
+                _carImageDal.Delete(deletedImageCar);
+            }
             return new SuccessResult(Messages.CarImageAdded);
         }
 

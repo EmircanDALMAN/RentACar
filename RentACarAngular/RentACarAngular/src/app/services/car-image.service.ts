@@ -20,7 +20,6 @@ export class CarImageService {
   }
 
   deleteImageById(imageId: number): Observable<ResponseModel> {
-    console.log(imageId);
     return this.httpClient.post<ResponseModel>(this.apiUrl + 'delete', {id: imageId});
   }
 }

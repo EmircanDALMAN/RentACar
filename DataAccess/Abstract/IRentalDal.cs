@@ -11,5 +11,6 @@ namespace DataAccess.Abstract
     {
         List<RentalDetailDto> GetRentalDetailsById(int id);
         List<RentalDetailDto> GetRentalDetails();
+        //CarDetailDto GetBestCar();
     }
 }

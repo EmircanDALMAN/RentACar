@@ -1,1 +1,46 @@
-<p>color-list works!</p>
+<div *ngIf="dataLoaded && colors.length <= 0" class="alert alert-info" role="alert">
+  Maalesef Şuanda Renk Bulunamadı.
+</div>
+<div *ngIf="dataLoaded && colors.length >0" style="margin-top: 40px;" class="row">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Renk</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let color of colors">
+      <td>{{color.colorName}}</td>
+      <td style="width:30px;">
+        <button routerLink="/authorized/colors/update/{{color.colorId}}"
+                class="btn btn-outline-primary edit">DÜZENLE
+        </button>
+      </td>
+      <td style="width:30px;">
+        <button class="btn btn-outline-danger remove" (click)="setSelectedColor(color)"
+                data-bs-toggle="modal" data-bs-target="#exampleModal">SİL
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <b class="modal-title" id="exampleModalLabel">Renk Silme</b>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Silmek İstediğinize Emin Misiniz?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                (click)="removeColor()">Sil</button>
+      </div>
+    </div>
+  </div>
+</div>

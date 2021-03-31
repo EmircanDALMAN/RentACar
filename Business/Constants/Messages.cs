@@ -65,5 +65,8 @@
         public static string UserIdentityError = "TC Kimlik Numarası 11 Hane Olmalıdır";
         public static string UserDateYearNotEmpty = "Doğum Tarihi Alanı Boş Bırakılamaz";
         public static string UserIdentityNotEmpty = "TC Kimlik Numarası Boş Bırakılamaz";
+
+        public static string CarNotFound = "Bu Id ' ye Sahip Araç Bulunamadı";
+        public static string CustomerAlreadyExists = "Bu Kullanıcı Zaten Kayıtlı";
     }
 }

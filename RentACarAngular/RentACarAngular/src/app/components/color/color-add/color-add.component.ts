@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
 import {ColorService} from '../../../services/color.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-color-add',
@@ -14,7 +15,8 @@ export class ColorAddComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private colorService:ColorService,
-              private toastrService:ToastrService) {
+              private toastrService:ToastrService,
+              private router:Router) {
   }
 
   ngOnInit(): void {
@@ -31,6 +33,7 @@ export class ColorAddComponent implements OnInit {
       let colorModel = Object.assign({}, this.colorAddForm.value);
       this.colorService.addColor(colorModel).subscribe(response => {
         this.toastrService.success(response.message, 'Başarılı');
+        this.router.navigate(['/authorized/colors/list'])
       }, error => {
         if (error.error.Errors.length > 0) {
           for (let i = 0; i < error.error.Errors.length; i++) {

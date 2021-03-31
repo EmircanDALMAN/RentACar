@@ -1,1 +1,51 @@
-<p>rental-list works!</p>
+<div *ngIf="dataLoaded && rentals.length <= 0" class="alert alert-info" role="alert">
+  Maalesef Şuanda Araç Bulunamadı.
+</div>
+<div *ngIf="dataLoaded && rentals.length >0" style="margin-top: 40px;" class="row">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Marka</th>
+      <th scope="col">Kiralayan</th>
+      <th scope="col">Alış Tarihi</th>
+      <th scope="col">Teslim Tarihi</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let rental of rentals">
+      <td>{{rental.brandName}}</td>
+      <td>{{rental.userName}}</td>
+      <td>{{rental.rentDate}}</td>
+      <td>{{rental.returnDate}}</td>
+      <td style="width:30px;">
+        <button class="btn btn-outline-danger remove" (click)="setSelectedRental(rental)"
+                data-bs-toggle="modal" data-bs-target="#exampleModal">SİL
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <b class="modal-title" id="exampleModalLabel">Rental Silme</b>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Silmek İstediğinize Emin Misiniz?</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"
+                data-bs-dismiss="modal">Vazgeç
+        </button>
+        <button type="button" class="btn btn-primary"
+                data-bs-dismiss="modal" (click)="removeRental()">Sil
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

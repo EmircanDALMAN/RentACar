@@ -89,5 +89,29 @@ namespace DataAccess.Concrete.EntityFramework
                     .Select(p => p.FirstOrDefault()).ToList(); ;
             }
         }
+
+        //public CarDetailDto GetMostRentedCar()
+        //{
+        //    using (RentACarDbContext context = new RentACarDbContext())
+        //    {
+        //        var result = (from c in context.Cars 
+        //            join co in context.Colors on c.ColorId equals co.ColorId
+        //            join d in context.Brands on c.BrandId equals d.BrandId
+        //            join im in context.CarImages on c.Id equals im.CarId
+        //            select new CarDetailDto
+        //            {
+        //                BrandName = d.BrandName,
+        //                ColorName = co.ColorName,
+        //                DailyPrice = c.DailyPrice,
+        //                Description = c.Description,
+        //                ModelYear = c.ModelYear,
+        //                FindeksScore = c.FindeksScore,
+        //                Id = c.Id,
+        //                Date = im.Date,
+        //                ImagePath = im.ImagePath,
+        //                ImageId = im.Id
+        //            }).ToList();
+        //    }
+        //}
     }
 }
