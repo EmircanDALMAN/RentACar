@@ -68,5 +68,6 @@
 
         public static string CarNotFound = "Bu Id ' ye Sahip Araç Bulunamadı";
         public static string CustomerAlreadyExists = "Bu Kullanıcı Zaten Kayıtlı";
+        public static string UserBlocked = "Kullanıcı Bloklanmış";
     }
 }

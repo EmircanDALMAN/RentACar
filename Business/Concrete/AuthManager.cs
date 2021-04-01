@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
 using Core.Entities.Concrete;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using Core.Utilities.Security.Hashing;
 using Core.Utilities.Security.JWT;
@@ -38,20 +39,38 @@ namespace Business.Concrete
 
         public IDataResult<User> Login(UserForLoginDto userForLoginDto)
         {
-            var userToCheck = _userService.GetByMail(userForLoginDto.Email).Data;
-            if (userToCheck == null)
-            {
-                return new ErrorDataResult<User>(Messages.UserNotFound);
-            }
+            var result = BusinessRules.Run
+            (CheckUserExistsByEmail(userForLoginDto.Email),
+                CheckUserIsBlocked(userForLoginDto.Email));
+            if (result != null) return new ErrorDataResult<User>(result.Message);
 
-            if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
+            var user = _userService.GetByMail(userForLoginDto.Email).Data;
+            if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, user.PasswordHash, user.PasswordSalt))
             {
                 return new ErrorDataResult<User>(Messages.PasswordError);
             }
 
-            return new SuccessDataResult<User>(userToCheck, Messages.SuccessfulLogin);
+            return new SuccessDataResult<User>(user, Messages.SuccessfulLogin);
         }
 
+        private IResult CheckUserExistsByEmail(string email)
+        {
+            var user = _userService.GetByMail(email).Data;
+            if (user != null)
+            {
+                return new SuccessResult();
+            }
+            return new ErrorResult(Messages.UserNotFound);
+        }
+        private IResult CheckUserIsBlocked(string email)
+        {
+            var user = _userService.GetByMail(email).Data;
+            if (user.Status == false)
+            {
+                return new ErrorResult(Messages.UserBlocked);
+            }
+            return new SuccessResult();
+        }
         public IResult UserExists(string email)
         {
             if (_userService.GetByMail(email).Data != null)
