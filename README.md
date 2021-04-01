@@ -1,4 +1,4 @@
-##Tanıtım Videosu: https://youtu.be/hZbNErAwtKM
+## Tanıtım Videosu: https://youtu.be/hZbNErAwtKM
 
 #### Kullanılan Teknikler
                 
@@ -8,3 +8,5 @@
 4. LOGLAMA
 5. SOLID PRENSİPLERİ
 6. JWT YAPILANDIRILMASI
+7. FLUENT VALİDATİON
+8. ÇOK DAHA FAZLASI..
