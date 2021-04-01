@@ -11,6 +11,16 @@
       </div>
       <div class="sidebar-menu">
         <div class="dropdown">
+          <fa-icon [icon]="homeIcon"></fa-icon><span (click)="goHomePage()">SİTEYE GİT</span>
+        </div>
+      </div>
+      <div class="sidebar-menu">
+        <div class="dropdown">
+          <fa-icon [icon]="homeIcon"></fa-icon><a><span routerLink="/authorized/">DASHBOARD</span></a>
+        </div>
+      </div>
+      <div class="sidebar-menu">
+        <div class="dropdown">
           <fa-icon [icon]="carIcon"></fa-icon><span>ARABA İŞLEMLERİ</span>
           <div class="dropdown-content">
             <ul>

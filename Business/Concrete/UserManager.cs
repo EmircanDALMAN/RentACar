@@ -69,6 +69,11 @@ namespace Business.Concrete
             return new SuccessDataResult<User>(_userDal.Get(b => b.Id == id));
         }
 
+        public IDataResult<User> GetLastRegisterUser()
+        {
+            return new SuccessDataResult<User>(_userDal.GetLastRegisterUser());
+        }
+
         public IResult Update(User user)
         {
             _userDal.Update(user);
@@ -95,5 +100,9 @@ namespace Business.Concrete
             });
         }
 
+        public IDataResult<User> GetMostRentedUser()
+        {
+            return new SuccessDataResult<User>(_userDal.GetMostRentedUser());
+        }
     }
 }

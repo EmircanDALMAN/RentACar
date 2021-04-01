@@ -1,0 +1,30 @@
+.card-header{
+  text-align: center;
+  background-color: #2c3e50;
+  color: #ebebeb;
+  border-radius: 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.best-car-description{
+  text-transform: uppercase;
+}
+.best-car-description-left{
+  color: black;
+}
+.dot {
+  margin-top: 62px;
+  padding: 0;
+  height: 125px;
+  width: 125px;
+  cursor: alias;
+  font-size: 5em;
+  text-align: center;
+  background-color: #ffffff;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: inline-block;
+}
+img{
+  border-radius: 18px;
+}

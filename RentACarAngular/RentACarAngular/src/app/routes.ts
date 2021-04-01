@@ -6,7 +6,6 @@ import {ModeratorGuard} from './guards/moderator.guard';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {LoginComponent} from './components/login/login.component';
 import {RegisterComponent} from './components/register/register.component';
-import {CustomerComponent} from './components/customer/customer.component';
 import {UserComponent} from './components/user/user.component';
 import {LoginGuard} from './guards/login.guard';
 import {ColorComponent} from './components/color/color.component';
@@ -32,6 +31,7 @@ import {CustomerAddComponent} from './components/customer/customer-add/customer-
 import {CustomerEditComponent} from './components/customer/customer-edit/customer-edit.component';
 import {RentalListComponent} from './components/rental/rental-list/rental-list.component';
 import {CustomerListComponent} from './components/customer/customer-list/customer-list.component';
+import {DashboardComponent} from './components/dashboard/dashboard.component';
 
 export const appRoutes: Routes = [
   {
@@ -39,10 +39,9 @@ export const appRoutes: Routes = [
     component: AuthorizedComponent,
     canActivate: [ModeratorGuard],
     children: [
+      {path: '', component: DashboardComponent},
 
       //Cars
-      {path: '', component: CarListComponent},
-      {path: 'cars', component: CarComponent},
       {path: 'cars/list', component: CarListComponent},
       {path: 'cars/add', component: CarAddComponent},
       {path: 'cars/update/:id', component: CarEditComponent},

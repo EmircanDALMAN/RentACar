@@ -10,9 +10,12 @@ img{
   height: 90px;
   padding-top: 26px;
 }
+.fullName{
+  padding-top: 12px;
+}
 .hover{
   color: #ebebeb !important;
-  margin-top: 5px;
+  margin-top: 10px;
   letter-spacing: 0.2em;
 }
 .snip1217 * {
@@ -104,22 +107,25 @@ img{
 }
 .instagramIcon{
   color: #ebebeb;
+  padding-top: 21px;
 }
 .githubIcon{
   color: #ebebeb;
   padding-right: 25px;
+  padding-top: 21px;
 }
 .linkedinIcon{
   color: #ebebeb;
   padding-right: 25px;
+  padding-top: 21px;
 }
 .cartIcon{
   color: #ebebeb;
   padding-right: 25px;
+  padding-top: 21px;
 }
 fa-icon{
   float: right;
-  padding-top: 21px;
   color: black;
 }
 fa-icon:hover{

@@ -8,5 +8,8 @@ namespace DataAccess.Abstract
     public interface IUserDal : IEntityRepository<User>
     {
         List<OperationClaim> GetClaims(int id);
+        User GetMostRentedUser();
+        User GetLastRegisterUser();
+
     }
 }

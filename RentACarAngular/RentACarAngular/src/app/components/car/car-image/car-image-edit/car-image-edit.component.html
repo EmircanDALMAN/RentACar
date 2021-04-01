@@ -1,13 +1,16 @@
 <div class="mt-5"></div>
-<ngb-carousel>
-  <ng-template ngbSlide *ngFor="let car of cars">
-    <div class="picsum-img-wrapper" style="text-align: center">
-      <img class="d-block w-100" style="width: 800px;height: 700px;"
-           src="{{apiUrl}}{{car.imagePath}}">
-      <label class="imageId">Resim ID: <b>{{car.imageId}}</b></label>
-    </div>
-  </ng-template>
-</ngb-carousel>
+<div class="container">
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let car of cars">
+      <div class="picsum-img-wrapper" style="text-align: center">
+        <img class="d-block w-100" style="width: 800px;height: 700px;"
+             src="{{apiUrl}}{{car.imagePath}}">
+        <label class="imageId">Resim ID: <b>{{car.imageId}}</b></label>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+
 <form [formGroup]="imageUpdateForm">
   <div class="row">
     <input type="number" formControlName="id" placeholder="Resim Id"/>

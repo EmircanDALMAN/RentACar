@@ -1,0 +1,180 @@
+<div class="container mt-5">
+  <div class="row">
+    <div *ngIf="lastAddedCar" class="col-sm-4">
+      <div>
+        <div class="card-header">SON EKLENEN ARABA</div>
+        <div class="mt-3">
+          <div class="col-6 best-car-description-left" style="float: left; text-align: left">
+            <div class="card-body">MARKA</div>
+            <div class="card-body">RENK</div>
+            <div class="card-body">GÜNLÜK FİYAT</div>
+            <div class="card-body">MODEL YILI</div>
+            <div class="card-body">FİNDEKS PUANI</div>
+            <div class="card-body">EKLENME TARİHİ</div>
+          </div>
+          <div class="col-6" style="float: right; text-align: left">
+            <div class="card-body"><b>{{lastAddedCar.brandName}}</b></div>
+            <div class="card-body"><b>{{lastAddedCar.colorName}}</b></div>
+            <div class="card-body"><b>{{lastAddedCar.dailyPrice}}</b></div>
+            <div class="card-body"><b>{{lastAddedCar.modelYear}}</b></div>
+            <div class="card-body"><b>{{lastAddedCar.findeksScore}}</b></div>
+            <div class="card-body"><b>{{lastAddedCarYear}} {{lastAddedCarMonth}} {{lastAddedCarDay}}</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="bringNewest" class="col-sm-4">
+      <div>
+        <div class="card-header">SON MODEL ARABA</div>
+        <div class="mt-3">
+          <div class="col-6 best-car-description-left" style="float: left; text-align: left">
+            <div class="card-body">MARKA</div>
+            <div class="card-body">RENK</div>
+            <div class="card-body">GÜNLÜK FİYAT</div>
+            <div class="card-body">MODEL YILI</div>
+            <div class="card-body">FİNDEKS PUANI</div>
+            <div class="card-body">EKLENME TARİHİ</div>
+          </div>
+          <div class="col-6" style="float: right; text-align: left">
+            <div class="card-body"><b>{{bringNewest.brandName}}</b></div>
+            <div class="card-body"><b>{{bringNewest.colorName}}</b></div>
+            <div class="card-body"><b>{{bringNewest.dailyPrice}}</b></div>
+            <div class="card-body"><b>{{bringNewest.modelYear}}</b></div>
+            <div class="card-body"><b>{{bringNewest.findeksScore}}</b></div>
+            <div class="card-body"><b>{{lastAddedCarYear}} {{lastAddedCarMonth}} {{lastAddedCarDay}}</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div>
+        <div class="card-header">GÜNCEL ARAÇ SAYISI</div>
+        <div class="card-body">
+          <div style="text-align:center">
+            <span class="dot">{{carsCount}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5"></div>
+    <div class="col-sm-8">
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor="let car of carDetails">
+          <div class="picsum-img-wrapper" style="max-width: 100%;">
+            <img class="d-block w-100" style="height:450px;"
+                 src="{{apiUrl}}{{car.imagePath}}">
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+    <div *ngIf="car" class="col-sm-4 best-car-description">
+      <div class="card-header" style="text-align: center">EN ÇOK KİRALANAN ARABA</div>
+      <div class="mt-3">
+        <div class="col-6 best-car-description-left" style="float: left; text-align: left">
+          <div class="card-body">MARKA</div>
+          <div class="card-body">RENK</div>
+          <div class="card-body">GÜNLÜK FİYAT</div>
+          <div class="card-body">MODEL YILI</div>
+          <div class="card-body">FİNDEKS PUANI</div>
+          <div class="card-body">EKLENME TARİHİ</div>
+        </div>
+        <div class="col-6" style="float: right; text-align: left">
+          <div class="card-body"><b>{{car.brandName}}</b></div>
+          <div class="card-body"><b>{{car.colorName}}</b></div>
+          <div class="card-body"><b>{{car.dailyPrice}}</b></div>
+          <div class="card-body"><b>{{car.modelYear}}</b></div>
+          <div class="card-body"><b>{{car.findeksScore}}</b></div>
+          <div class="card-body"><b>{{carYear}} {{carMonth}} {{carDay}}</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-xl-5">
+  <div class="row">
+    <div class="col-sm-4">
+      <div>
+        <div class="card-header">EN SON KAYIT OLAN KULLANICI</div>
+        <div *ngIf="lastRegisterUser" class="mt-3">
+          <div class="col-6 best-car-description-left" style="float: left; text-align: left">
+            <div class="card-body">ADI</div>
+            <div class="card-body">SOYADI</div>
+            <div class="card-body">EMAİL</div>
+            <div class="card-body">DURUM</div>
+          </div>
+          <div class="col-6" style="float: right; text-align: left">
+            <div class="card-body"><b>{{lastRegisterUser.firstName}}</b></div>
+            <div class="card-body"><b>{{lastRegisterUser.lastName}}</b></div>
+            <div class="card-body"><b>{{lastRegisterUser.email}}</b></div>
+            <div class="card-body"><b>{{lastRegisterUser.status}}</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div>
+        <div class="card-header">EN ÇOK ARAÇ KİRALAYAN KULLANICI</div>
+        <div *ngIf="mostRentedUser" class="mt-3">
+          <div class="col-6 best-car-description-left" style="float: left; text-align: left">
+            <div class="card-body">ADI</div>
+            <div class="card-body">SOYADI</div>
+            <div class="card-body">EMAİL</div>
+            <div class="card-body">DURUM</div>
+          </div>
+          <div class="col-6" style="float: right; text-align: left">
+            <div class="card-body"><b>{{mostRentedUser.firstName}}</b></div>
+            <div class="card-body"><b>{{mostRentedUser.lastName}}</b></div>
+            <div class="card-body"><b>{{mostRentedUser.email}}</b></div>
+            <div class="card-body"><b>{{mostRentedUser.status}}</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="usersCount" class="col-sm-4">
+      <div>
+        <div class="card-header">GÜNCEL KULLANICI SAYISI</div>
+        <div class="card-body">
+          <div style="text-align:center">
+            <span class="dot">{{usersCount}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-xl-5">
+  <div class="row">
+    <div *ngIf="nowRentedCarsCount" class="col-sm-4">
+      <div>
+        <div class="card-header">KİRADA OLAN ARAÇ SAYISI</div>
+        <div class="card-body">
+          <div style="text-align:center">
+            <span class="dot">{{nowRentedCarsCount}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="usersCount" class="col-sm-4">
+      <div>
+        <div class="card-header">TOPLAM KULLANICI SAYISI</div>
+        <div class="card-body">
+          <div style="text-align:center">
+            <span class="dot">{{usersCount}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="customersCount" class="col-sm-4">
+      <div>
+        <div class="card-header">TOPLAM MÜŞTERİ SAYISI</div>
+        <div class="card-body">
+          <div style="text-align:center">
+            <span class="dot">{{customersCount}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mt-5"></div>

@@ -6,6 +6,7 @@ import {Car} from '../models/entityModels/car';
 import {environment} from '../../environments/environment';
 import {ResponseModel} from '../models/responseModels/responseModel';
 import {OnlyCar} from '../models/entityModels/onlyCar';
+import {SingleResponseModel} from '../models/responseModels/singleResponseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -16,9 +17,32 @@ export class CarService {
   constructor(private httpClient: HttpClient) {
   }
 
+  getCarsCount() {
+    return this.httpClient.get(this.apiUrl + 'cars/count');
+  }
+
   getCars(): Observable<ListResponseModel<Car>> {
     let newPath = this.apiUrl + 'cars/details';
     return this.httpClient.get<ListResponseModel<Car>>(newPath);
+  }
+
+  getNowRentedCars() {
+    return this.httpClient.get<ListResponseModel<Car>>(this.apiUrl + 'cars/getnowrented');
+  }
+  getNowRentedCarsCount() {
+    return this.httpClient.get(this.apiUrl + 'cars/getnowrentedcount');
+  }
+
+  getBringNewestCar() {
+    return this.httpClient.get<SingleResponseModel<Car>>(this.apiUrl + 'cars/getbringnewest');
+  }
+
+  getLastAddedCar() {
+    return this.httpClient.get<SingleResponseModel<Car>>(this.apiUrl + 'cars/lastaddedcar');
+  }
+
+  getMostRentedCar(): Observable<ListResponseModel<Car>> {
+    return this.httpClient.get<ListResponseModel<Car>>(this.apiUrl + 'cars/mostrented');
   }
 
   getOnlyCars(): Observable<ListResponseModel<OnlyCar>> {

@@ -13,8 +13,10 @@ namespace Business.Abstract
         IResult Delete(User user);
         IDataResult<List<User>> GetAll();
         IDataResult<User> GetById(int userId);
+        IDataResult<User> GetLastRegisterUser();
         IDataResult<List<OperationClaim>> GetClaims(int id);
         IDataResult<User> GetByMail(string email);
         IDataResult<UserFindeksReturnDto> GetUserFindeks(UserFindeksDto userFindeksDto);
+        IDataResult<User> GetMostRentedUser();
     }
 }

@@ -15,22 +15,24 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (RentACarDbContext context = new RentACarDbContext())
             {
+                if (context.Rentals == null) return null;
                 var result = from r in context.Rentals
-                             join c in context.Cars on r.CarId equals c.Id
-                             join b in context.Brands on c.BrandId equals b.BrandId
-                             join u in context.Users on r.UserId equals u.Id
-                             where r.CarId == id
-                             select new RentalDetailDto
-                             {
-                                 CarId = id,
-                                 BrandName = b.BrandName,
-                                 UserId = u.Id,
-                                 Id = r.Id,
-                                 RentDate = r.RentDate,
-                                 ReturnDate = r.ReturnDate,
-                                 UserName = $"{u.FirstName} {u.LastName}"
-                             };
+                    join c in context.Cars on r.CarId equals c.Id
+                    join b in context.Brands on c.BrandId equals b.BrandId
+                    join u in context.Users on r.UserId equals u.Id
+                    where r.CarId == id
+                    select new RentalDetailDto
+                    {
+                        CarId = id,
+                        BrandName = b.BrandName,
+                        UserId = u.Id,
+                        Id = r.Id,
+                        RentDate = r.RentDate,
+                        ReturnDate = r.ReturnDate,
+                        UserName = $"{u.FirstName} {u.LastName}"
+                    };
                 return result.ToList();
+
             }
         }
 
@@ -38,6 +40,7 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (RentACarDbContext context = new RentACarDbContext())
             {
+                if (context.Rentals == null) return null;
                 var result =
                     from r in context.Rentals
                     join c in context.Cars on r.CarId equals c.Id
@@ -53,7 +56,9 @@ namespace DataAccess.Concrete.EntityFramework
                         RentDate = r.RentDate,
                         ReturnDate = r.ReturnDate
                     };
+
                 return result.ToList();
+
             }
         }
     }

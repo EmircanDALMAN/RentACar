@@ -1,16 +1,20 @@
 <div *ngIf="!carDetails" class="alert alert-info" role="alert">Şuanda Araç Resmi Bulunmuyor..</div>
 <div style="height: 40px; width: 100%;"></div>
-<ngb-carousel *ngIf="carDetails">
-  <ng-template ngbSlide *ngFor="let car of carDetails">
-    <div class="picsum-img-wrapper">
-      <img class="d-block w-100" style="width: 500px;height: 750px;"
-           src="{{apiUrl}}{{car.imagePath}}">
-    </div>
-  </ng-template>
-</ngb-carousel>
-<div class="alert alert-info" *ngIf="lastUploadedPhotoName">
-  En Son Upload Edilen Araç Adı --> {{lastUploadedPhotoName}}</div>
 <div class="container">
+  <ngb-carousel *ngIf="carDetails">
+    <ng-template ngbSlide *ngFor="let car of carDetails">
+      <div class="picsum-img-wrapper">
+        <img class="d-block w-100" style="width: 500px;height: 750px;"
+             src="{{apiUrl}}{{car.imagePath}}">
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+
+
+<div class="container">
+  <div class="alert alert-info" *ngIf="lastUploadedPhotoName">
+    En Son Upload Edilen Araç Adı --> {{lastUploadedPhotoName}}</div>
   <form [formGroup]="imageAddForm" (ngSubmit)="addImage()">
     <div class="form-group">
       <input type="file" style="display:none;" id="fileName"

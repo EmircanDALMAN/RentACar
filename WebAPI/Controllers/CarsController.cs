@@ -26,6 +26,46 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+        [HttpGet("lastaddedcar")]
+        public IActionResult GetLastAddedCar()
+        {
+            var result = _carService.GetLastAddedCar();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("getnowrented")]
+        public IActionResult GetNowRentedCars()
+        {
+            var result = _carService.GetNowRentedCars();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("getnowrentedcount")]
+        public IActionResult GetNowRentedCarsCount()
+        {
+            var result = _carService.GetNowRentedCars();
+            if (result.Success)
+            {
+                return Ok(result.Data.Count);
+            }
+            return BadRequest(result.Message);
+        }
+        [HttpGet("getbringnewest")]
+        public IActionResult GetBringNewestCar()
+        {
+            var result = _carService.GetBringNewestCar();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
 
         [HttpGet("id")]
         public IActionResult GetById(int id)
@@ -45,7 +85,29 @@ namespace WebAPI.Controllers
             return BadRequest(result);
 
         }
+        [HttpGet("count")]
+        public IActionResult GetAllCarsCount()
+        {
+            var result = _carService.GetAll();
+            if (result.Success)
+            {
+                return Ok(result.Data.Count);
+            }
 
+            return BadRequest(result.Message);
+        }
+
+        [HttpGet("mostrented")]
+        public IActionResult GetMostRentedCar()
+        {
+            var result = _carService.GetMostRentedCar();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
 
         [HttpGet("details")]
         public IActionResult GetCarDetails()

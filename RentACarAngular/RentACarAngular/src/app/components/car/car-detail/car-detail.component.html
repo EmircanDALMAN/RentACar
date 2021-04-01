@@ -1,7 +1,9 @@
+
 <ngb-carousel>
   <ng-template ngbSlide *ngFor="let car of carDetails">
-    <div class="picsum-img-wrapper" style="max-width: 80%;">
-      <img class="d-block w-100" style="width: 900px; padding-left: 20%; height: 700px;"
+    <div class="picsum-img-wrapper" style="max-width: 90%;">
+      <img class="d-block w-100"
+           style="width: 900px; border-radius: 18px; padding-left: 10%; height: 650px;"
            src="{{apiUrl}}{{car.imagePath}}">
     </div>
   </ng-template>

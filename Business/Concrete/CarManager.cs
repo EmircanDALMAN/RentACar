@@ -21,10 +21,12 @@ namespace Business.Concrete
     {
         private readonly ICarDal _carDal;
         private readonly ICarImageDal _carImageDal;
-        public CarManager(ICarDal carDal, ICarImageDal carImageDal)
+        private IRentalService _rentalService;
+        public CarManager(ICarDal carDal, ICarImageDal carImageDal, IRentalService rentalService)
         {
             _carDal = carDal;
             _carImageDal = carImageDal;
+            _rentalService = rentalService;
         }
 
         [ValidationAspect(typeof(CarValidator))]
@@ -59,6 +61,26 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<CarDetailDto>>
                 (_carDal.GetCarDetailsByBrandAndColor(brandId, colorId));
+        }
+
+        public IDataResult<List<CarDetailDto>> GetMostRentedCar()
+        {
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetMostRentedCar());
+        }
+
+        public IDataResult<CarDetailDto> GetLastAddedCar()
+        {
+            return new SuccessDataResult<CarDetailDto>(_carDal.GetLastAddedCar());
+        }
+
+        public IDataResult<CarDetailDto> GetBringNewestCar()
+        {
+            return new SuccessDataResult<CarDetailDto>(_carDal.GetBringNewestCar());
+        }
+
+        public IDataResult<List<CarDetailDto>> GetNowRentedCars()
+        {
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetNowRentedCars());
         }
 
         [PerformanceAspect(5)]

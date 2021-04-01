@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {Brand} from '../../../models/entityModels/brand';
 import {BrandService} from '../../../services/brand.service';
@@ -18,7 +18,8 @@ export class BrandEditComponent implements OnInit {
   constructor(private brandService: BrandService,
               private formBuilder: FormBuilder,
               private activatedRoute: ActivatedRoute,
-              private toastrService: ToastrService) {
+              private toastrService: ToastrService,
+              private router:Router) {
   }
 
   ngOnInit(): void {
@@ -36,6 +37,7 @@ export class BrandEditComponent implements OnInit {
       let brandModel = Object.assign({}, this.brandUpdateForm.value);
       this.brandService.updateBrand(brandModel).subscribe(response => {
         this.toastrService.success(response.message, 'Başarılı');
+        this.router.navigate(['/authorized/brands/list'])
       }, error => {
         if (error.error.Errors.length > 0) {
           for (let i = 0; i < error.error.Errors.length; i++) {

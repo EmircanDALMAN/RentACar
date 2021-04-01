@@ -20,6 +20,18 @@ export class UserService {
   constructor(private httpClient: HttpClient) {
   }
 
+  getLastRegisterUser() {
+    return this.httpClient.get<SingleResponseModel<User>>(this.apiUrl + 'getlastregister');
+  }
+
+  getMostRentedUser() {
+    return this.httpClient.get<SingleResponseModel<User>>(this.apiUrl + 'mostrented');
+  }
+
+  getUsersCount() {
+    return this.httpClient.get(this.apiUrl + 'count');
+  }
+
   getUsers(): Observable<ListResponseModel<User>> {
     return this.httpClient.get<ListResponseModel<User>>(this.apiUrl);
   }

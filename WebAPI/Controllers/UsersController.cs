@@ -29,6 +29,29 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("mostrented")]
+        public IActionResult GetMostRentedUser()
+        {
+            var result = _userService.GetMostRentedUser();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("count")]
+        public IActionResult GetAllUsersCount()
+        {
+            var result = _userService.GetAll();
+            if (result.Success)
+            {
+                return Ok(result.Data.Count);
+            }
+
+            return BadRequest(result.Message);
+        }
+
         [HttpGet("id")]
         public IActionResult GetById(int id)
         {
@@ -63,7 +86,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update([FromBody]UserForUpdateDto userForUpdateDto)
+        public IActionResult Update([FromBody] UserForUpdateDto userForUpdateDto)
         {
             var result = _authService.Update(userForUpdateDto.User, userForUpdateDto.Password);
 
@@ -71,6 +94,18 @@ namespace WebAPI.Controllers
             {
                 return Ok(result);
             }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getlastregister")]
+        public IActionResult GetLastRegisterUser()
+        {
+            var result = _userService.GetLastRegisterUser();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
             return BadRequest(result);
         }
         [HttpPost("updateforauthorized")]
@@ -98,7 +133,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("getuserfindeks")]
-        public IActionResult GetUserFindeks([FromBody]UserFindeksDto userFindeksDto)
+        public IActionResult GetUserFindeks([FromBody] UserFindeksDto userFindeksDto)
         {
             var result = _userService.GetUserFindeks(userFindeksDto);
             if (result.Success)

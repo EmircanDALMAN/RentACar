@@ -44,7 +44,6 @@ import {UserComponent} from './components/user/user.component';
 import {FindeksComponent} from './components/findeks/findeks.component';
 import {SharedComponent} from './components/shared/shared.component';
 import {AuthorizedComponent} from './components/authorized/authorized.component';
-import {StartComponent} from './components/start/start.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {OtherComponent} from './components/other/other.component';
 import {SidebarComponent} from './components/authorized/sidebar/sidebar.component';
@@ -62,6 +61,7 @@ import {CustomerAddComponent} from './components/customer/customer-add/customer-
 import {CustomerEditComponent} from './components/customer/customer-edit/customer-edit.component';
 import {RentalListComponent} from './components/rental/rental-list/rental-list.component';
 import {CustomerListComponent} from './components/customer/customer-list/customer-list.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [AppComponent, NavComponent, CarFilterPipe, LoginComponent,
@@ -71,7 +71,7 @@ import {CustomerListComponent} from './components/customer/customer-list/custome
     ContactComponent, CarEditComponent, CarDetailComponent, CartComponent,
     PaymentComponent, FilterComponent, CarAddComponent, BrandAddComponent, ColorAddComponent,
     ColorEditComponent, BrandEditComponent, UserComponent, FindeksComponent, SharedComponent,
-    AuthorizedComponent, StartComponent, NotFoundComponent, OtherComponent, SidebarComponent,
+    AuthorizedComponent, NotFoundComponent, OtherComponent, SidebarComponent,
     CarListComponent,
     CarImageComponent,
     CarImageAddComponent,
@@ -85,6 +85,7 @@ import {CustomerListComponent} from './components/customer/customer-list/custome
     CustomerEditComponent,
     RentalListComponent,
     CustomerListComponent,
+    DashboardComponent,
   ],
   imports: [
     CommonModule,

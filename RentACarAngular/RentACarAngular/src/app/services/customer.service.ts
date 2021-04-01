@@ -16,6 +16,10 @@ export class CustomerService {
   constructor(private httpClient: HttpClient) {
   }
 
+  getCustomersCount() {
+    return this.httpClient.get(this.apiUrl + 'count');
+  }
+
   addCustomer(customer: Customer): Observable<ResponseModel> {
     return this.httpClient.post<ResponseModel>(this.apiUrl + 'add', customer);
   }
