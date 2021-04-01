@@ -25,12 +25,12 @@ namespace Business.Concrete
         {
             _carImageDal = carImageDal;
         }
-
+        [CacheAspect()]
         public IDataResult<List<CarImage>> GetAll()
         {
             return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll());
         }
-
+        [CacheAspect()]
         [PerformanceAspect(5)]
         public IDataResult<CarImage> Get(int id)
         {
@@ -38,7 +38,7 @@ namespace Business.Concrete
             if (carImage == null) return new ErrorDataResult<CarImage>(Messages.CarImageNotFound);
             return new SuccessDataResult<CarImage>(carImage);
         }
-
+        [CacheAspect()]
         public IDataResult<List<CarImage>> GetByCarId(int carId)
         {
             var result = _carImageDal.GetAll(ci => ci.Id == carId);
@@ -48,7 +48,7 @@ namespace Business.Concrete
                 new CarImage{ ImagePath = "default.jpg", Date = DateTime.Now }
             });
         }
-
+        [CacheRemoveAspect("ICarImageService.Get")]
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Add(IFormFile file, CarImage carImage)
         {
@@ -66,7 +66,7 @@ namespace Business.Concrete
             }
             return new SuccessResult(Messages.CarImageAdded);
         }
-
+        [CacheRemoveAspect("ICarImageService.Get")]
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Update(IFormFile file, CarImage carImage)
         {
@@ -78,7 +78,7 @@ namespace Business.Concrete
             _carImageDal.Update(entity);
             return new SuccessResult(Messages.CarImageUpdated);
         }
-
+        [CacheRemoveAspect("ICarImageService.Get")]
         public IResult Delete(CarImage carImage)
         {
             var entity = _carImageDal.Get(ci => ci.Id == carImage.Id);

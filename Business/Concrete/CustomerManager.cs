@@ -26,42 +26,43 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(CustomerValidator))]
         [CacheRemoveAspect("ICustomerService.Get")]
-        //[SecuredOperation("Customer.Add")]
+        [SecuredOperation("Customer.Add")]
         public IResult Add(Customer customer)
         {
-            var result = BusinessRules.Run(CheckIfExistsCustomer(customer.UserId));
+            var result = BusinessRules.Run
+                (CheckIfExistsCustomer(customer.UserId));
             if (result != null) return result;
 
             _customerDal.Add(customer);
             return new SuccessResult(Messages.CustomerAdded);
 
         }
-
+        [CacheRemoveAspect("ICustomerService.Get")]
         [SecuredOperation("Customer.Delete")]
         public IResult Delete(Customer customer)
         {
             _customerDal.Delete(customer);
             return new SuccessResult(Messages.CustomerDeleted);
         }
-
+        [CacheAspect()]
         public IDataResult<List<Customer>> GetAll()
         {
             return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(), Messages.CustomerListed);
         }
-
+        [CacheAspect()]
         [PerformanceAspect(5)]
         public IDataResult<Customer> GetById(int id)
         {
             return new SuccessDataResult<Customer>(_customerDal.Get(b => b.UserId == id));
         }
-
+        [CacheRemoveAspect("ICustomerService.Get")]
         public IResult Update(Customer customer)
         {
             _customerDal.Update(customer);
             return new SuccessResult(Messages.CustomerUpdated);
         }
 
-        public IResult CheckIfExistsCustomer(int userId)
+        private IResult CheckIfExistsCustomer(int userId)
         {
             var customer = _customerDal.Get(c => c.UserId == userId);
             if (customer != null)
@@ -70,7 +71,7 @@ namespace Business.Concrete
             }
             return new SuccessResult();
         }
-
+        [CacheAspect()]
         public IDataResult<List<CustomerDetailDto>> GetCustomerDetails()
         {
             return new SuccessDataResult<List<CustomerDetailDto>>(_customerDal.GetCustomerDetails());

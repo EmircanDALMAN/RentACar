@@ -34,24 +34,26 @@ namespace Business.Concrete
             return new SuccessResult(Messages.BrandAdded);
 
         }
+        [CacheRemoveAspect("IBrandService.Get")]
         public IResult Delete(Brand brand)
         {
             _brandDal.Delete(brand);
             return new SuccessResult(Messages.BrandDeleted);
         }
+        [CacheAspect]
         public IDataResult<List<Brand>> GetAll()
         {
             
             return new SuccessDataResult<List<Brand>>(_brandDal.GetAll(), Messages.BrandListed);
         }
-
+        [CacheAspect]
         [PerformanceAspect(5)]
         public IDataResult<Brand> GetById(int id)
         {
             
             return new SuccessDataResult<Brand>(_brandDal.Get(b => b.BrandId == id));
         }
-
+        [CacheRemoveAspect("IBrandService.Get")]
         public IResult Update(Brand brand)
         {
             _brandDal.Update(brand);

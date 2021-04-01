@@ -28,7 +28,8 @@ namespace Business.Concrete
             _paymentService = paymentService;
         }
 
-        //[SecuredOperation("Rental.Add")]
+        [SecuredOperation("Rental.Add")]
+        [CacheRemoveAspect("IRentalService.Get")]
         public IResult Add(Rental rental)
         {
             _rentalDal.Add(rental);
@@ -40,35 +41,36 @@ namespace Business.Concrete
             _rentalDal.Add(rental);
             return new SuccessResult(Messages.CarRentalSuccess);
         }
+        [CacheRemoveAspect("IRentalService.Get")]
         [SecuredOperation("Rental.Delete")]
         public IResult Delete(Rental rental)
         {
             _rentalDal.Delete(rental);
             return new SuccessResult(Messages.RentalDeleted);
         }
-
+        [CacheAspect()]
         public IDataResult<List<Rental>> GetAll()
         {
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(), Messages.RentalListed);
         }
-
+        [CacheAspect()]
         [PerformanceAspect(5)]
         public IDataResult<Rental> GetById(int id)
         {
             return new SuccessDataResult<Rental>(_rentalDal.Get(b => b.Id == id));
         }
-
+        [CacheAspect()]
         public IDataResult<List<RentalDetailDto>> GetRentalDetailsById(int id)
         {
             return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetailsById(id));
         }
-
+        [CacheAspect()]
         public IDataResult<List<RentalDetailDto>> GetRentalDetails()
         {
             return new SuccessDataResult<List<RentalDetailDto>>
                 (_rentalDal.GetRentalDetails());
         }
-
+        [CacheRemoveAspect("IRentalService.Get")]
         [SecuredOperation("Rental.Update")]
         public IResult Update(Rental rental)
         {

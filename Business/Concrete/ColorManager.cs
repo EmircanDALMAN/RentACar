@@ -33,25 +33,25 @@ namespace Business.Concrete
             return new SuccessResult(Messages.ColorAdded);
 
         }
-
+        [CacheRemoveAspect("IColorService.Get")]
         public IResult Delete(Color color)
         {
             _colorDal.Delete(color);
             return new SuccessResult(Messages.ColorDeleted);
         }
-
+        [CacheAspect()]
         public IDataResult<List<Color>> GetAll()
         {
 
             return new SuccessDataResult<List<Color>>(_colorDal.GetAll(), Messages.ColorListed);
         }
-
+        [CacheAspect()]
         [PerformanceAspect(5)]
         public IDataResult<Color> GetById(int id)
         {
             return new SuccessDataResult<Color>(_colorDal.Get(c => c.ColorId == id));
         }
-
+        [CacheRemoveAspect("IColorService.Get")]
         public IResult Update(Color color)
         {
             _colorDal.Update(color);
