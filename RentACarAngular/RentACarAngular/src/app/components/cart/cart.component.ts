@@ -120,8 +120,8 @@ export class CartComponent implements OnInit {
 
   calculatePrice() {
     if (this.checkDateDifference()) {
-      var rentDate = new Date(this.rentDate.year, this.rentDate.month - 1, this.rentDate.day);
-      var returnDate = new Date(this.model.year, this.model.month - 1, this.model.day);
+      var rentDate = new Date(this.rentDate.year, this.rentDate.month, this.rentDate.day);
+      var returnDate = new Date(this.model.year, this.model.month, this.model.day);
       var timeDifference = Math.abs(returnDate.getTime() - rentDate.getTime());
       var dayDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
       this.totalPrice = dayDifference * this.cartItem.car.dailyPrice;
