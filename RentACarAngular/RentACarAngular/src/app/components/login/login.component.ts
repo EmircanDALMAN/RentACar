@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       let loginModel = Object.assign({}, this.loginForm.value);
       this.authService.login(loginModel).subscribe(response => {
-          this.localStorageService.setItem('token', response.data.token);
+          this.localStorageService.setToken(response.data);
           this.userService.getUser(loginModel.email).subscribe(response => {
             this.localStorageService.setItem('fullName', response.data.firstName + ' ' + response.data.lastName);
             this.localStorageService.setItem('id', response.data.id.toString());
