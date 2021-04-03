@@ -12,7 +12,6 @@ import {appRoutes} from './routes';
 import {RouterModule} from '@angular/router';
 import {LoginComponent} from './components/login/login.component';
 import {RegisterComponent} from './components/register/register.component';
-import {ContentComponent} from './components/content/content.component';
 import {BrandComponent} from './components/brand/brand.component';
 import {CarComponent} from './components/car/car.component';
 import {ColorComponent} from './components/color/color.component';
@@ -21,10 +20,7 @@ import {RentalComponent} from './components/rental/rental.component';
 import {LoadingComponent} from './components/loading/loading.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {ChangePasswordComponent} from './components/change-password/change-password.component';
-import {FooterComponent} from './components/footer/footer.component';
-import {HowWeWorkComponent} from './components/how-we-work/how-we-work.component';
 import {AboutComponent} from './components/about/about.component';
-import {ContactComponent} from './components/contact/contact.component';
 import {CarEditComponent} from './components/car/car-edit/car-edit.component';
 import {CarDetailComponent} from './components/car/car-detail/car-detail.component';
 import {NgbAlertModule, NgbModule, NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
@@ -45,7 +41,6 @@ import {FindeksComponent} from './components/findeks/findeks.component';
 import {SharedComponent} from './components/shared/shared.component';
 import {AuthorizedComponent} from './components/authorized/authorized.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
-import {OtherComponent} from './components/other/other.component';
 import {SidebarComponent} from './components/authorized/sidebar/sidebar.component';
 import {CarListComponent} from './components/car/car-list/car-list.component';
 import {CommonModule} from '@angular/common';
@@ -62,16 +57,17 @@ import {CustomerEditComponent} from './components/customer/customer-edit/custome
 import {RentalListComponent} from './components/rental/rental-list/rental-list.component';
 import {CustomerListComponent} from './components/customer/customer-list/customer-list.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {ExpirationInterceptor} from './interceptors/expiration.interceptor';
 
 @NgModule({
   declarations: [AppComponent, NavComponent, CarFilterPipe, LoginComponent,
-    RegisterComponent, ContentComponent, BrandComponent, CarComponent,
+    RegisterComponent, BrandComponent, CarComponent,
     ColorComponent, CustomerComponent, RentalComponent, LoadingComponent,
-    ChangePasswordComponent, FooterComponent, HowWeWorkComponent, AboutComponent,
-    ContactComponent, CarEditComponent, CarDetailComponent, CartComponent,
+    ChangePasswordComponent, AboutComponent,
+    CarEditComponent, CarDetailComponent, CartComponent,
     PaymentComponent, FilterComponent, CarAddComponent, BrandAddComponent, ColorAddComponent,
     ColorEditComponent, BrandEditComponent, UserComponent, FindeksComponent, SharedComponent,
-    AuthorizedComponent, NotFoundComponent, OtherComponent, SidebarComponent,
+    AuthorizedComponent, NotFoundComponent, SidebarComponent,
     CarListComponent,
     CarImageComponent,
     CarImageAddComponent,
@@ -104,7 +100,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ExpirationInterceptor, multi: true},
   ],
   bootstrap: [AppComponent],
 })

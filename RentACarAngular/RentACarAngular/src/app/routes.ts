@@ -88,11 +88,4 @@ export const appRoutes: Routes = [
     ]
   },
   {path: '**', component: NotFoundComponent},
-
-  // //Others
-  // {path: 'about', component: AboutComponent},
-  // {path: 'contact', component: ContactComponent},
-  // {path: 'content', component: ContentComponent},
-  // {path: '**', redirectTo: 'content', pathMatch: 'full'}
-
 ];
