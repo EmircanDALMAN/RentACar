@@ -13,6 +13,7 @@ using System.Linq.Expressions;
 using Business.BusinessAspects.Autofac;
 using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Performance;
+using Core.Aspects.Autofac.Transaction;
 using Core.CrossCuttingConcerns.Validation;
 
 namespace Business.Concrete
@@ -29,6 +30,7 @@ namespace Business.Concrete
             _rentalService = rentalService;
         }
 
+        [TransactionScopeAspect]
         [ValidationAspect(typeof(CarValidator))]
         [SecuredOperation("car.add")]
         [CacheRemoveAspect("ICarService.Get")]

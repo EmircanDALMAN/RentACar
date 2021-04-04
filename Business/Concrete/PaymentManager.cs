@@ -12,7 +12,6 @@ namespace Business.Concrete
     {
         [ValidationAspect(typeof(FakePaymentValidator))]
         [PerformanceAspect(5)]
-        [TransactionScopeAspect]
         public IResult MakePayment(IPaymentModel paymentModel)
         {
             return new SuccessResult();

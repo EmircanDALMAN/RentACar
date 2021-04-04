@@ -1,19 +1,14 @@
 ﻿using Business.Abstract;
 using Business.Constants;
-using Business.ValidationRules.FluentValidation;
-using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
-using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using Business.BusinessAspects.Autofac;
 using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Performance;
 using Core.Aspects.Autofac.Transaction;
-using Core.Entities.Concrete;
 
 namespace Business.Concrete
 {
@@ -36,11 +31,13 @@ namespace Business.Concrete
             return new SuccessResult(Messages.RentalAdded);
         }
         [TransactionScopeAspect]
-        public IResult TransactionalOperation(Rental rental)
+        public IResult AddRentalAndPayment(RentalPaymentDto rentalPaymentDto)
         {
-            _rentalDal.Add(rental);
-            return new SuccessResult(Messages.CarRentalSuccess);
+            _paymentService.MakePayment(rentalPaymentDto.FakeCreditCardModel);
+            _rentalDal.Add(rentalPaymentDto.Rental);
+            return new SuccessResult(Messages.RentalAddedAndPaymentSuccessful);
         }
+
         [CacheRemoveAspect("IRentalService.Get")]
         [SecuredOperation("Rental.Delete")]
         public IResult Delete(Rental rental)

@@ -7,6 +7,7 @@ using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Performance;
+using Core.Aspects.Autofac.Transaction;
 using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Business;
 using Core.Utilities.FileHelper;
@@ -48,6 +49,7 @@ namespace Business.Concrete
                 new CarImage{ ImagePath = "default.jpg", Date = DateTime.Now }
             });
         }
+        [TransactionScopeAspect]
         [CacheRemoveAspect("ICarImageService.Get")]
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Add(IFormFile file, CarImage carImage)
@@ -66,6 +68,7 @@ namespace Business.Concrete
             }
             return new SuccessResult(Messages.CarImageAdded);
         }
+        [TransactionScopeAspect]
         [CacheRemoveAspect("ICarImageService.Get")]
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Update(IFormFile file, CarImage carImage)
@@ -78,6 +81,7 @@ namespace Business.Concrete
             _carImageDal.Update(entity);
             return new SuccessResult(Messages.CarImageUpdated);
         }
+        [TransactionScopeAspect]
         [CacheRemoveAspect("ICarImageService.Get")]
         public IResult Delete(CarImage carImage)
         {

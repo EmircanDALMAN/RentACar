@@ -35,7 +35,6 @@ export class CarImageAddComponent implements OnInit {
       if (params['id']) {
         this.carId = params['id'];
         this.getCarDetail(params['id']);
-        console.log(this.carId);
       }
     });
     this.createImageAddForm();
