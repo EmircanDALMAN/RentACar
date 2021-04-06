@@ -38,10 +38,8 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.valid) {
       let registerModel = Object.assign({}, this.registerForm.value);
       this.authService.register(registerModel).subscribe(response => {
-          this.toastrService.info(response.message);
-          this.router.navigate(['other/login']);
-        }, error => {
-          this.toastrService.error(error.error);
+          this.toastrService.info("Kayıt Başarılı");
+          this.router.navigate(['/login']);
         }
       );
     }

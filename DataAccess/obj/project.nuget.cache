@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZtAZgr5IyEXvcdu45SOtaiSVLp8tcryPKMvLfPNsm8CCQ9cYndzcVQqMRfxsYfklSeawZqB9VdtOOgnDeR3MMA==",
+  "dgSpecHash": "bO27VK+dTDJsA/QVZUMQ98Qim81K6tpCx7XN3+97ojMDCuJ0ec5amZiFEJKoiSfkdiGUZIRdrywhKwPtCt4QdA==",
   "success": true,
   "projectFilePath": "D:\\Masaüstü belgeleri\\RentACar\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\emiq1\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.0\\autofac.extras.dynamicproxy.6.0.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\fluentvalidation\\9.5.1\\fluentvalidation.9.5.1.nupkg.sha512",
+    "C:\\Users\\emiq1\\.nuget\\packages\\log4net\\2.0.12\\log4net.2.0.12.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.3\\microsoft.aspnetcore.http.features.5.0.3.nupkg.sha512",

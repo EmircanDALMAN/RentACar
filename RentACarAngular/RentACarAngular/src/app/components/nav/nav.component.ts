@@ -74,5 +74,6 @@ export class NavComponent implements OnInit {
 
   clearAllStorage() {
     this.localStorageService.clearAll();
+    window.location.reload();
   }
 }

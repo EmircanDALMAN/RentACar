@@ -34,3 +34,15 @@ C:\Users\emiq1\OneDrive\Masaüstü\Rent A Car\RentACar\Entities\obj\Debug\netsta
 C:\Users\emiq1\OneDrive\Masaüstü\Rent A Car\RentACar\Entities\obj\Debug\netstandard2.0\Entities.csproj.CopyComplete
 C:\Users\emiq1\OneDrive\Masaüstü\Rent A Car\RentACar\Entities\obj\Debug\netstandard2.0\Entities.dll
 C:\Users\emiq1\OneDrive\Masaüstü\Rent A Car\RentACar\Entities\obj\Debug\netstandard2.0\Entities.pdb
+D:\Masaüstü belgeleri\RentACar\Entities\bin\Debug\netstandard2.0\Entities.deps.json
+D:\Masaüstü belgeleri\RentACar\Entities\bin\Debug\netstandard2.0\Entities.dll
+D:\Masaüstü belgeleri\RentACar\Entities\bin\Debug\netstandard2.0\Entities.pdb
+D:\Masaüstü belgeleri\RentACar\Entities\bin\Debug\netstandard2.0\Core.dll
+D:\Masaüstü belgeleri\RentACar\Entities\bin\Debug\netstandard2.0\Core.pdb
+D:\Masaüstü belgeleri\RentACar\Entities\obj\Debug\netstandard2.0\Entities.csprojAssemblyReference.cache
+D:\Masaüstü belgeleri\RentACar\Entities\obj\Debug\netstandard2.0\Entities.AssemblyInfoInputs.cache
+D:\Masaüstü belgeleri\RentACar\Entities\obj\Debug\netstandard2.0\Entities.AssemblyInfo.cs
+D:\Masaüstü belgeleri\RentACar\Entities\obj\Debug\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
+D:\Masaüstü belgeleri\RentACar\Entities\obj\Debug\netstandard2.0\Entities.csproj.CopyComplete
+D:\Masaüstü belgeleri\RentACar\Entities\obj\Debug\netstandard2.0\Entities.dll
+D:\Masaüstü belgeleri\RentACar\Entities\obj\Debug\netstandard2.0\Entities.pdb

@@ -40,3 +40,17 @@ C:\Users\emiq1\OneDrive\Masaüstü\Rent A Car\RentACar\DataAccess\obj\Debug\nets
 C:\Users\emiq1\OneDrive\Masaüstü\Rent A Car\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CopyComplete
 C:\Users\emiq1\OneDrive\Masaüstü\Rent A Car\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
 C:\Users\emiq1\OneDrive\Masaüstü\Rent A Car\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb
+D:\Masaüstü belgeleri\RentACar\DataAccess\bin\Debug\netstandard2.0\DataAccess.deps.json
+D:\Masaüstü belgeleri\RentACar\DataAccess\bin\Debug\netstandard2.0\DataAccess.dll
+D:\Masaüstü belgeleri\RentACar\DataAccess\bin\Debug\netstandard2.0\DataAccess.pdb
+D:\Masaüstü belgeleri\RentACar\DataAccess\bin\Debug\netstandard2.0\Core.dll
+D:\Masaüstü belgeleri\RentACar\DataAccess\bin\Debug\netstandard2.0\Entities.dll
+D:\Masaüstü belgeleri\RentACar\DataAccess\bin\Debug\netstandard2.0\Core.pdb
+D:\Masaüstü belgeleri\RentACar\DataAccess\bin\Debug\netstandard2.0\Entities.pdb
+D:\Masaüstü belgeleri\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.csprojAssemblyReference.cache
+D:\Masaüstü belgeleri\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfoInputs.cache
+D:\Masaüstü belgeleri\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs
+D:\Masaüstü belgeleri\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\Masaüstü belgeleri\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CopyComplete
+D:\Masaüstü belgeleri\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
+D:\Masaüstü belgeleri\RentACar\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb

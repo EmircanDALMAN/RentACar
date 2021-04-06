@@ -57,18 +57,15 @@ namespace Business.Concrete
             _userDal.Delete(user);
             return new SuccessResult(Messages.UserDeleted);
         }
-        [CacheAspect()]
         public IDataResult<List<User>> GetAll()
         {
             return new SuccessDataResult<List<User>>(_userDal.GetAll(), Messages.UserListed);
         }
-        [CacheAspect()]
         [PerformanceAspect(5)]
         public IDataResult<User> GetById(int id)
         {
             return new SuccessDataResult<User>(_userDal.Get(b => b.Id == id));
         }
-        [CacheAspect()]
         public IDataResult<User> GetLastRegisterUser()
         {
             return new SuccessDataResult<User>(_userDal.GetLastRegisterUser());
@@ -79,18 +76,15 @@ namespace Business.Concrete
             _userDal.Update(user);
             return new SuccessResult(Messages.UserUpdated);
         }
-        [CacheAspect()]
         public IDataResult<List<OperationClaim>> GetClaims(int id)
         {
             return new SuccessDataResult<List<OperationClaim>>(_userDal.GetClaims(id));
         }
-        [CacheAspect()]
         public IDataResult<User> GetByMail(string email)
         {
             var user = _userDal.Get(u => u.Email == email);
             return new SuccessDataResult<User>(user);
         }
-        [CacheAspect()]
         [ValidationAspect(typeof(UserFindeksValidator))]
         public IDataResult<UserFindeksReturnDto> GetUserFindeks(UserFindeksDto userFindeksDto)
         {
@@ -100,7 +94,6 @@ namespace Business.Concrete
                 UserFindeks = random.Next(1, 1900)
             });
         }
-        [CacheAspect()]
         public IDataResult<User> GetMostRentedUser()
         {
             return new SuccessDataResult<User>(_userDal.GetMostRentedUser());

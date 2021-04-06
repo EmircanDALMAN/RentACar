@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Pg0WGa6YfmIzcbZvHDu7Tqxg51alGHgNcxshLIHJHGiEsouHiWwe5gpCd4l1LU8dIgZ6lYkc6hh+A3nKJ3diPg==",
+  "dgSpecHash": "8B4Ee0vCIc/OIT9d3YAdN56XcS9YQ40w+W9MiXJl68HvHsQaUgGkLAstUfPFTBcMvaSV5dF7x+1/YtGoLcqKcw==",
   "success": true,
   "projectFilePath": "D:\\Masaüstü belgeleri\\RentACar\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\emiq1\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.0\\autofac.extras.dynamicproxy.6.0.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\fluentvalidation\\9.5.1\\fluentvalidation.9.5.1.nupkg.sha512",
+    "C:\\Users\\emiq1\\.nuget\\packages\\log4net\\2.0.12\\log4net.2.0.12.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

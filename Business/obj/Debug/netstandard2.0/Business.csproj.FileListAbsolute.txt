@@ -46,3 +46,19 @@ C:\Users\emiq1\OneDrive\Masaüstü\Rent A Car\RentACar\Business\obj\Debug\netsta
 C:\Users\emiq1\OneDrive\Masaüstü\Rent A Car\RentACar\Business\obj\Debug\netstandard2.0\Business.csproj.CopyComplete
 C:\Users\emiq1\OneDrive\Masaüstü\Rent A Car\RentACar\Business\obj\Debug\netstandard2.0\Business.dll
 C:\Users\emiq1\OneDrive\Masaüstü\Rent A Car\RentACar\Business\obj\Debug\netstandard2.0\Business.pdb
+D:\Masaüstü belgeleri\RentACar\Business\obj\Debug\netstandard2.0\Business.csprojAssemblyReference.cache
+D:\Masaüstü belgeleri\RentACar\Business\obj\Debug\netstandard2.0\Business.AssemblyInfoInputs.cache
+D:\Masaüstü belgeleri\RentACar\Business\obj\Debug\netstandard2.0\Business.AssemblyInfo.cs
+D:\Masaüstü belgeleri\RentACar\Business\obj\Debug\netstandard2.0\Business.csproj.CoreCompileInputs.cache
+D:\Masaüstü belgeleri\RentACar\Business\obj\Debug\netstandard2.0\Business.dll
+D:\Masaüstü belgeleri\RentACar\Business\obj\Debug\netstandard2.0\Business.pdb
+D:\Masaüstü belgeleri\RentACar\Business\bin\Debug\netstandard2.0\Business.deps.json
+D:\Masaüstü belgeleri\RentACar\Business\bin\Debug\netstandard2.0\Business.dll
+D:\Masaüstü belgeleri\RentACar\Business\bin\Debug\netstandard2.0\Business.pdb
+D:\Masaüstü belgeleri\RentACar\Business\bin\Debug\netstandard2.0\Core.dll
+D:\Masaüstü belgeleri\RentACar\Business\bin\Debug\netstandard2.0\DataAccess.dll
+D:\Masaüstü belgeleri\RentACar\Business\bin\Debug\netstandard2.0\Entities.dll
+D:\Masaüstü belgeleri\RentACar\Business\bin\Debug\netstandard2.0\DataAccess.pdb
+D:\Masaüstü belgeleri\RentACar\Business\bin\Debug\netstandard2.0\Entities.pdb
+D:\Masaüstü belgeleri\RentACar\Business\bin\Debug\netstandard2.0\Core.pdb
+D:\Masaüstü belgeleri\RentACar\Business\obj\Debug\netstandard2.0\Business.csproj.CopyComplete

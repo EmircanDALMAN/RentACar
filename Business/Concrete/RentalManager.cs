@@ -15,7 +15,7 @@ namespace Business.Concrete
     public class RentalManager : IRentalService
     {
         private readonly IRentalDal _rentalDal;
-        private IPaymentService _paymentService;
+        private readonly IPaymentService _paymentService;
 
         public RentalManager(IRentalDal rentalDal, IPaymentService paymentService)
         {
@@ -45,23 +45,19 @@ namespace Business.Concrete
             _rentalDal.Delete(rental);
             return new SuccessResult(Messages.RentalDeleted);
         }
-        [CacheAspect()]
         public IDataResult<List<Rental>> GetAll()
         {
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(), Messages.RentalListed);
         }
-        [CacheAspect()]
         [PerformanceAspect(5)]
         public IDataResult<Rental> GetById(int id)
         {
             return new SuccessDataResult<Rental>(_rentalDal.Get(b => b.Id == id));
         }
-        [CacheAspect()]
         public IDataResult<List<RentalDetailDto>> GetRentalDetailsById(int id)
         {
             return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetailsById(id));
         }
-        [CacheAspect()]
         public IDataResult<List<RentalDetailDto>> GetRentalDetails()
         {
             return new SuccessDataResult<List<RentalDetailDto>>

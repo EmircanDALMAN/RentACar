@@ -13,7 +13,7 @@ export class AuthInterceptor implements HttpInterceptor {
     const token = this.localStorageService.getToken();
     let newRequest: HttpRequest<any>;
     newRequest = request.clone({
-      headers: request.headers.set('Authorization', 'Bearer ' + token)
+      headers: request.headers.set('Authorization', 'Bearer ' + token.token)
     });
     return next.handle(newRequest);
   }
