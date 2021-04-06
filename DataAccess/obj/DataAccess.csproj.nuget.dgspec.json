@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj": {}
+    "D:\\Masaüstü belgeleri\\RentACar\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj": {
+    "D:\\Masaüstü belgeleri\\RentACar\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj",
+        "projectUniqueName": "D:\\Masaüstü belgeleri\\RentACar\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj",
+        "projectPath": "D:\\Masaüstü belgeleri\\RentACar\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\emiq1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\obj\\",
+        "outputPath": "D:\\Masaüstü belgeleri\\RentACar\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -105,14 +105,14 @@
         }
       }
     },
-    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj": {
+    "D:\\Masaüstü belgeleri\\RentACar\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\Masaüstü belgeleri\\RentACar\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj",
+        "projectPath": "D:\\Masaüstü belgeleri\\RentACar\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\emiq1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\obj\\",
+        "outputPath": "D:\\Masaüstü belgeleri\\RentACar\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -133,11 +133,11 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj"
+              "D:\\Masaüstü belgeleri\\RentACar\\Core\\Core.csproj": {
+                "projectPath": "D:\\Masaüstü belgeleri\\RentACar\\Core\\Core.csproj"
               },
-              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj"
+              "D:\\Masaüstü belgeleri\\RentACar\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\Masaüstü belgeleri\\RentACar\\Entities\\Entities.csproj"
               }
             }
           }
@@ -177,14 +177,14 @@
         }
       }
     },
-    "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj": {
+    "D:\\Masaüstü belgeleri\\RentACar\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj",
+        "projectUniqueName": "D:\\Masaüstü belgeleri\\RentACar\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj",
+        "projectPath": "D:\\Masaüstü belgeleri\\RentACar\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\emiq1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\obj\\",
+        "outputPath": "D:\\Masaüstü belgeleri\\RentACar\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -205,8 +205,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj"
+              "D:\\Masaüstü belgeleri\\RentACar\\Core\\Core.csproj": {
+                "projectPath": "D:\\Masaüstü belgeleri\\RentACar\\Core\\Core.csproj"
               }
             }
           }

@@ -7615,11 +7615,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "D:\\Masaüstü belgeleri\\RentACar\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\WebAPI\\WebAPI.csproj",
+      "projectPath": "D:\\Masaüstü belgeleri\\RentACar\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\emiq1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\WebAPI\\obj\\",
+      "outputPath": "D:\\Masaüstü belgeleri\\RentACar\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7640,17 +7640,17 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Business\\Business.csproj"
+            "D:\\Masaüstü belgeleri\\RentACar\\Business\\Business.csproj": {
+              "projectPath": "D:\\Masaüstü belgeleri\\RentACar\\Business\\Business.csproj"
             },
-            "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj"
+            "D:\\Masaüstü belgeleri\\RentACar\\Core\\Core.csproj": {
+              "projectPath": "D:\\Masaüstü belgeleri\\RentACar\\Core\\Core.csproj"
             },
-            "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\DataAccess\\DataAccess.csproj"
+            "D:\\Masaüstü belgeleri\\RentACar\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "D:\\Masaüstü belgeleri\\RentACar\\DataAccess\\DataAccess.csproj"
             },
-            "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Entities\\Entities.csproj"
+            "D:\\Masaüstü belgeleri\\RentACar\\Entities\\Entities.csproj": {
+              "projectPath": "D:\\Masaüstü belgeleri\\RentACar\\Entities\\Entities.csproj"
             }
           }
         }

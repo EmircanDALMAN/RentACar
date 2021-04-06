@@ -1,14 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "f8rw8VcWh/6xO5gwzbtN3w+EDYZ+ckYNeu5FSCzYFiS1rY6x/taGWUBT4pIoYWgD8gq4und7uHOlxONAD+HegA==",
+  "dgSpecHash": "sun6G9hH0rWnWPRJ3b0AtfqNh6KjDD9ZxK9aYIpRAvYVnnNmV7DgFGclo6rIjk5Ge1LaZUEyfBA/GSZiXZCKtQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\emiq1\\OneDrive\\Masaüstü\\RentACar\\Core\\Core.csproj",
+  "projectFilePath": "D:\\Masaüstü belgeleri\\RentACar\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\emiq1\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.0\\autofac.extras.dynamicproxy.6.0.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\fluentvalidation\\9.5.1\\fluentvalidation.9.5.1.nupkg.sha512",
+    "C:\\Users\\emiq1\\.nuget\\packages\\log4net\\2.0.12\\log4net.2.0.12.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\emiq1\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.3\\microsoft.aspnetcore.http.features.5.0.3.nupkg.sha512",
